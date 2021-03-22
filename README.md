@@ -4,7 +4,7 @@ Proyecto Final de ciclo Daw
 Buenas chicos, para quien no se acuerde para bajar el repositorio teneis que:
 1. Crear una carpeta nueva en local, con cualquier nombre.
 2. Entrar en la carpeta, haced clic derecho y escoger "Git Bash Here" (Doy por supuesto que teneis el Git descargado (: ).
-3. Cuando se habra la terminal escribid "git clone https://github.com/FrankPalomino/proyectoFinal.git ." (el punto es para que se copie todo en esa misma carpeta y no cree otra).
+3. Cuando se habra la terminal escribid ``git clone https://github.com/FrankPalomino/proyectoFinal.git .`` (el punto es para que se copie todo en esa misma carpeta y no cree otra).
 4. Ya tendreis el repositorio en local, ahora teneis que crear una nueva rama con "git checkout -b sergi" o "git checkout -b kevin".
 5. Ahora podreis trabajar en vuestra rama.
 
