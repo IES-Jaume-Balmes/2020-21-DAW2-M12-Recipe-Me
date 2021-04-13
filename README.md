@@ -37,4 +37,4 @@ Próximamente...
 5. Finalmente aparece una pantalla mostrando si hay conflictos o no con otros archivos.
    Si no hay conflictos le damos a -> Merge pull request
 
-Ahora el main estará actualizado con lo que he añadido.
+6. Ahora el main estará actualizado con lo que he añadido.
