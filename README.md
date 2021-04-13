@@ -32,6 +32,9 @@ Próximamente...
 
 1. Después de hacer `git push origin sergi` entro a la web de github.
 2. Aparece un baner amarillo que pone compare & pull request.
+
+- Si no os aparece el baner. Desde la web accedeis a vuestra Branch y encontrareis un banner blanco que pone algo tipo: This branch is 2 commits behind main. Aqui le dáis a pull request.
+
 3. Accedo y escribo un mensaje de las cosas que he modificado.
 4. Le doy al botón hacer pull request (petición de agregación).
 5. Finalmente aparece una pantalla mostrando si hay conflictos o no con otros archivos.
