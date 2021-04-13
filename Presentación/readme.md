@@ -1,1 +1,1 @@
-## Aqui pondremos nuestros archivos para la presentación final
+## Este directorio contendrá los archivos de la presentación final.
