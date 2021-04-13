@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px;
+}
+
+body {
+  background-color: #ffffff;
+  height: 40em;
+  padding: 1em;
+  font-family: sans-serif;
+  background: url("../img/background1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+############################### ALL #####################
+*/
+
+h1 {
+  font-family: sans-serif;
+  font-size: 2.4em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid white;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 66%;
+}
+
+.container {
+  border-radius: 10px;
+  width: 50%;
+  height: fit-content;
+  margin: 10em auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(255, 1, 29);
+  background: linear-gradient(
+    359deg,
+    rgb(21 195 115) 0%,
+    rgb(11 255 109) 0%,
+    rgb(29 214 171) 100%
+  );
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 75%;
+  align-self: center;
+  border-radius: 5px;
+}
+
+#submit {
+  margin-top: 1em;
+  width: 30%;
+  border-radius: 10px;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+}
+
+/*
+############################### INDEX #####################
+*/
+
+#index {
+  height: 50%;
+}
+
+#index a {
+  width: 45%;
+  align-self: center;
+  font-size: 1em;
+  margin: unset;
+}
+
+/*
+############################### LOGGIN #####################
+*/
+
+#loggin form {
+  align-items: center;
+}
+
+/*
+############################### DADES_PERSONALS #####################
+*/
+
+#dades_personals form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+#dades_personals input:not(#submit) {
+  width: 60%;
+  align-self: center;
+}
+
+#dades_personals {
+  height: fit-content;
+}
+
+/*
+############################### MATRICULA #####################
+*/
+
+#matricula {
+  margin-top: 1em;
+  height: fit-content;
+}
+
+#matricula form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  font-size: 1em;
+}
+
+#matricula input {
+  width: initial;
+}
+
+#matricula label {
+  height: fit-content;
+  margin-right: 2em;
+}
+
+#matricula .modul {
+  display: flex;
+  margin-bottom: 0.2em;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  /* align-items: center; */
+  /* width: 45%; */
+  /* align-self: center; */
+}
+
+#matricula p {
+  width: fit-content;
+  font-weight: bold;
+  margin-right: 2em;
+}
+
+/*
+############################### POSAR_NOTES #####################
+*/
+
+#posar_notes {
+  margin-top: unset;
+  height: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#posar_notes form {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+#posar_notes input:not(#submit) {
+  width: 31%;
+  height: 2em;
+  border-radius: 3px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#posar_notes input[type="submit"] {
+  align-self: center;
+  margin-top: 3em;
+}
+
+.container-entrada {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 87%;
+  padding: 1em;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.entrada {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+
+/*
+############################### RESUM_NOTES #####################
+*/
+
+#resum_notes {
+  height: fit-content;
+}
+
+.dades {
+  display: flex;
+  border: 1px solid black;
+  width: fit-content;
+  align-self: baseline;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+.titol {
+  font-weight: bold;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+.container.bulleti {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: fit-content;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.definicio {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.feed {
+  border: 1px solid red;
+  width: 70%;
+  margin: auto;
+  background: white;
+}
