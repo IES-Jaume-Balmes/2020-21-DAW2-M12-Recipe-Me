@@ -28,33 +28,48 @@ El proyecto sera tanto de front como de backend. Nosotros generaremos una base d
 * Nos gustaria que la app sea diseñada al estilo movile first para que la experiencia sea más adecuada al día a día del usuario.
 
 ## Funcionamiento
+Habrá un perfil de usuario.
 
-La aplicación consta de una base de datos de recetas de comidas, la cual es accesible a través de un loggin. También permite añadir y registrar más recetas, acceder a la BDD global y guardar recetas como favoritas en la base de datos del usuario.
-Estás recetas pueden ser desplegadas en una lista de la compra compuesta por los ingredientes de cada receta.
+### Usuario:
+- Registro: el usuario tiene que poder registrarse.
+- Darse de baja: un usuario que se ha registrado tiene que poder darse de baja (borrarse).
+- Login: el usuario registrado tiene que poder iniciar sesión.
+- Logout: el usuario que ha iniciado sesión, tiene que poder cerrar sesión.
 
-La lista podremos gestionarla y modificarla a través de nuestra aplicación, incluso eviarla por correo electrónico. De todos modos, nuestra idea es que la propia aplicación permita interactuar con la lista generada, ofreciendo ventajas respecto a un texto plano.
+### Recetas:  
+- Buscar: un usuario registrado tiene que poder buscar recetas en la base de datos.
+- Crear: un usuario registrado tiene que poder crear recetas nuevas en la base de datos.
+- Borrado: un usuario tiene que poder borrar de una receta que haya creado él.
 
-Al entrar a la aplicación tendrás unas recetas por defecto aleatorias basadas en tus #tags (recetas del día, recomendados segun tus gutos, mas valoradas... ). Ejemplo.: Usuario: vegano, favorito-fruta, favorito-tofu.
+### Listas de recetas:
+- Crear: un usuario tiene que poder crear listas privadas.
+- Borrar: un usuario tiene que poder borrar sus listas.
+- Listar propias: ver sus listas de recetas.
+- Añadir recetas a sus listas.
+- Quitar recetas de sus listas.
 
-Ejemplo de uso:  
-Introduzco en la app 14 platos que quiero comer durante la semana (entiendanse comidas y cenas).  
-La app me generara una lista de la compra con información de los productos y las cantidades necesarias, asi como del precio aproximado (maximo - mínimo) de toda la compra.
-El lunes me voy al mercado con el móbil en la mano y la lista generada anteriorment. Voy tachando lo que meto en el carrito.
+### Lista de la compra
+- Generar lista de la compra a partir de una lista de recetas.
+- Enviar la lista de la compra a través de mail.
 
 ## Herramientas, lenguajes y frameworks utilizados
 
 1. Herramientas:
    - GitHub.
    - VS code.
-   - MySQL
+   - MySQL: Base de Datos
 2. Lenguajes:
-   - HTML
+   - HTML: 
    - JavaScript
    - PHP
    - CSS
 3. Frameworks:
-   - React
-   - Symfony
+   - React: Frontend
+   - Symfony: Backend
+4. Otros:
+   - Documentación: MarkDown
+   - Presentación: Next.js
+   - Capacitor: app android
 
 ## Arquitectura de la aplicación
 
