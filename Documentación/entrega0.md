@@ -21,7 +21,7 @@ Recipe-Me se trata de una aplicacion web de servicio al ciudadano de a pié. Fac
 
 El proyecto sera tanto de front como de backend. Nosotros generaremos una base de datos relacional en MySQL, donde el mismo cliente nos ayudará a llenarla.
 
-- Con Symfoni nos encargaremos de la parte backend y la gestión de usuarios y recetas.
+- Con Symfony nos encargaremos de la parte backend y la gestión de usuarios y recetas.
 
 - Con React le daremos cara y ojos a la aplicación.
 
