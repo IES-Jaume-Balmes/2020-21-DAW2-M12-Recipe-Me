@@ -39,11 +39,18 @@
 
 
 ## Creamos el formulario de registro
-    - php bin/console make:form <-- Configurar
+    - php bin/console make:form
+    - Nos preguntara a que Entity va asociado. Le ponemos User.
+    - De nombre el que queramos.
+    - Vamos a ./src/Form/nuestro_form:
+    - en caso de duda copiamos el del tutorial:
+    - https://stackoverflow.com/questions/46734428/symfony-check-if-user-exist-in-database/46738306
 
 ## Creamos el login
-    
-    - php bin/console make:auth <-- Configurar
+    - php bin/console make:auth 
+    - Respondemos de manera logica a los parametro.
+    - Le asignamos como controlador la clase SecurityController que hemos creado antes.
+    - Vamos a ./src/Controllers/SecurityController y cambiamos la ruta por defecto y que sea nuestro index (/)
 
 4. Configuramos la base de datos accediendo al archivo ./env
     - DATABASE_URL=mysql://USUARIO:CLAVE@127.0.0.1:3306/DB_NOMBRE?serverVersion=5.7
@@ -51,8 +58,29 @@
     - php bin/console doctrine:schema:update --force <-- Crea las tablas con los Entity
 
 
+5. Vamos a config/packages/security.yaml y asignamos como ruta del "logout" la raiz (/)
 
-4. Modificamos la ruta por defecto cuando accedemos a "Logout"
+6. Finalmente falta crear la vistas para el usuario. Esto lo podemos hacer con react, o con el pseudo-framework
+que usa el tutorial: Twig. La verdad es que se integra muy bién con esta aplicacion.
+- Recomiendo copiar y pegar el del tutorial y luego entenderlo.
+- Copiar y pegar el del tutorial no hara que la app se vea como las fotos del tutorial.
+- Se tienen que colocar un par de IFS (en los TWIG) para evitar que la app pete. Por ejemplo:
+    - En ./templates/security/login.html.twig
+    - Este template nos dara problemas, porque accede a variables globales (error y user) que
+    en un determinado momento són NULL. Tenemos que decirle que solo acceda al contenido si estas
+    variables no són nulas.
+- Finalmente, tendremos que añadir una función para cuando el usuario se identifique correctamente.
+
+// src/Security/LoginFormAuthenticator
+
+public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+{
+    if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+        return new RedirectResponse($targetPath);
+    }
+
+    return new RedirectResponse($this->urlGenerator->generate('list'));
+}
     
 
 
