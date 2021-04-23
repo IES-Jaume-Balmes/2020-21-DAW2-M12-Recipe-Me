@@ -14,14 +14,35 @@
     - composer require symfony/web-profiler-bundle
 - Hay mas, pero en principio, el resto ya vendran por defecto.
 
-3. Creamos los archivos con el maker de symfony.
+3. Creamos los archivos necesarios con el maker de symfony.
 - Creamos los controladores (las templates para cada uno se crearan automaticamente):
     - php bin/console make:controller DemoController
     - php bin/console make:controller RegistrationController
     - php bin/console make:controller SecurityController
 
-    - php bin/console make:user <-- Configurar
+## Creamos la entidad Usuario
+    -> php bin/console make:user
+
+    - Queremos almacenar su informacion en la base de datos (contestamos yes).
+    - Accedemos a ./src/entity/User Añadiremos el parametro name, junto con getter y seter respectivos
+    - Pasaremos informacion como atributo de la entidad, como comentario:    
+
+    /**
+    * @ORM\Entity(repositoryClass=UserRepository::class)
+    * @UniqueEntity(
+    * fields={"email"},
+    * errorPath="email",
+    * message="Este usuario ya se encuentra en uso."
+    * )
+    */
+    class User implements UserInterface
+
+
+## Creamos el formulario de registro
     - php bin/console make:form <-- Configurar
+
+## Creamos el login
+    
     - php bin/console make:auth <-- Configurar
 
 4. Configuramos la base de datos accediendo al archivo ./env
