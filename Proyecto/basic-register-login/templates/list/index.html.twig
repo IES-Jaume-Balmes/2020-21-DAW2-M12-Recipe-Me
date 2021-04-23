@@ -25,13 +25,13 @@ body %}
                     </NonAmpContent>
                 </div>
             </div>
-            {% endif %}
-
+            {% else %}
             <AmpContent>
                 <a href="{{ path('app_login') }}" class="btn btn-info">
                     You need to login to see the list 😜😜 >>
                 </a>
             </NonAmpContent>
+            {% endif %}
         </div>
     </div>
 </div>
