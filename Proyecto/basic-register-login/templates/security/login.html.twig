@@ -18,11 +18,13 @@ title %}Log in!
 
                                 </NonAmpContent>
                                 <AmpContent>
+                                    {% if app.user != null %}
                                     <div class="mb-3">
                                         You are logged in as
                                         {{ app.user.username }},
                                         <a href="{{ path('app_logout') }}">Logout</a>
                                     </div>
+                                    {% endif %}
 
                                     </NonAmpContent>
                                     <div class="card-header mb-3">Please sign in</div>
