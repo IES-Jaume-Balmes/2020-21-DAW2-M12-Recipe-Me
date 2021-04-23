@@ -12,7 +12,7 @@ title %}Log in!
                     <div class="card-body">
                         <form class="form-horizontal" role="form" method="post">
                             <AmpContent>
-                                {% if error != null %}
+                                {% if error %}
                                 <div class="alert alert-danger">
                                 {{ error.messageKey|trans(error.messageData, 'security') }}
                                 </div>
@@ -21,7 +21,7 @@ title %}Log in!
 
                                 </NonAmpContent>
                                 <AmpContent>
-                                    {% if app.user != null %}
+                                    {% if app.user  %}
                                     <div class="mb-3">
                                         You are logged in as
                                         {{ app.user.username }},
