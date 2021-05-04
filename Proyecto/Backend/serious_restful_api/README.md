@@ -56,3 +56,15 @@ Antes de empezar a trabajar siempre tendremos que hacer:
 ```
 docker-compose up -d
 ```
+
+
+# INSTRUCCIONES DOCTRINE
+
+1. Para resetear de 0 la base de datos usaremos
+```
+bin/console doctrine:database:drop --force
+```
+- En el caso de la base de datos de docker seria:
+```
+symfony console doctrine:database:drop --force
+```
