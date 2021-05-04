@@ -73,6 +73,9 @@ symfony console doctrine:database:drop --force
 # ERRORES COMUNES
 
 A la hora de testear la api asegurarse de guardar la contraseñas codificadas en la base de datos.
+```
+bin/console security:encode-password
+```
 Ejemplo:
 - En base de datos guardamos: $argon2id$v=19$m=65536,t=4,p=1$zUZd7LRg219hXD44qgSEtg$1LR0AmBZjjovcXwztUyx7Jz2JbKE9CmBzHDuSHqF2HE
 - En el ``POST`` ponemos el password sin codificar
