@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-
+import '../css/main.css'
 import Sidebar from '../components/sidebar';
-import Content from '../components/content';
+import Content from './Content';
 function Main() {
     return (
-        <div>
+    <div className='container'>
       <div className='sideBar'>
-        <Sidebar />        
+        <Sidebar />               
       </div>
       <div>
-          <Content />
+        <Content /> 
       </div>
-      </div>
+    </div>
       
     );
   }
