@@ -58,6 +58,7 @@ class User implements UserInterface
     private $username;
 
     /**
+     * @Groups({"user:read"})
      * @ORM\OneToMany(targetEntity=ListaCompra::class, mappedBy="propietario")
      */
     private $listaCompras;
