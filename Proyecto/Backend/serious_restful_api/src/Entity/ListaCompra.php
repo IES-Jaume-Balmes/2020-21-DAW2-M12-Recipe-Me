@@ -9,8 +9,13 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *      normalizationContext={"groups"={"lista_compra:read"}},
- *      denormalizationContext={"groups"={"lista_compra:write"}},
+ *      collectionOperations={"get", "post"},
+ *      itemOperations={
+ *          "get"={
+ *              "normalization_context"={"groups"={"lista_compra:read","cheese_listing:item:get"}},
+ *          },
+ *          "put"
+ *      }
  * )
  * @ORM\Entity(repositoryClass=ListaCompraRepository::class)
  */
