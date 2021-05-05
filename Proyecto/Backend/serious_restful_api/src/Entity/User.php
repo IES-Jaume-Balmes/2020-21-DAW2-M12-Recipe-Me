@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -54,6 +56,16 @@ class User implements UserInterface
      * @Assert\NotBlank()
      */
     private $username;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ListaCompra::class, mappedBy="propietario")
+     */
+    private $listaCompras;
+
+    public function __construct()
+    {
+        $this->listaCompras = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -139,6 +151,36 @@ class User implements UserInterface
     public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ListaCompra[]
+     */
+    public function getListaCompras(): Collection
+    {
+        return $this->listaCompras;
+    }
+
+    public function addListaCompra(ListaCompra $listaCompra): self
+    {
+        if (!$this->listaCompras->contains($listaCompra)) {
+            $this->listaCompras[] = $listaCompra;
+            $listaCompra->setPropietario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeListaCompra(ListaCompra $listaCompra): self
+    {
+        if ($this->listaCompras->removeElement($listaCompra)) {
+            // set the owning side to null (unless already changed)
+            if ($listaCompra->getPropietario() === $this) {
+                $listaCompra->setPropietario(null);
+            }
+        }
 
         return $this;
     }
