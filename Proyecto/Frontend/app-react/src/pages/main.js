@@ -1,2 +1,14 @@
 import React, { Component } from 'react'
-import { SidebarData } from './SidebarData';
+
+import Sidebar from '../components/sidebar';
+
+function Main() {
+    return (
+      <div className='sideBar'>
+        <Sidebar />
+      </div>
+      
+    );
+  }
+  
+  export default Main;
