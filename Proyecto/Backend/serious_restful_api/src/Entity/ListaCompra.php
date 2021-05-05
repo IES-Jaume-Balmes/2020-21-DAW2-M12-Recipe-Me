@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\ListaCompraRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ListaCompraRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource()
@@ -27,11 +28,13 @@ class ListaCompra
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"cheese_listing:read", "cheese_listing:write", "user:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"cheese_listing:read", "cheese_listing:write", "user:read"})
      */
     private $createdAt;
 
