@@ -10,11 +10,11 @@ use Faker\Factory;
 
 class RecipeFixtures extends Fixture implements DependentFixtureInterface
 {
-    //public const RECIPE_REFERENCE = 'organization-';
     private $faker;
 
     public function load(ObjectManager $manager)
     {
+        // CARGAMOS RECETAS
         for ($i = 0; $i < 5; $i++) {
             $this->faker = Factory::create();
             $receta = new Recipe();

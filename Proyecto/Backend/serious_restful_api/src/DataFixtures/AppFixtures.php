@@ -12,6 +12,8 @@ class AppFixtures extends Fixture
 {
     private $faker;
 
+    public const USER_REFERENCE = 'user-';
+
     public function load(ObjectManager $manager)
     {
         //CARGAMOS ADMINS
@@ -37,6 +39,7 @@ class AppFixtures extends Fixture
             $usuario->setEmail($this->faker->email);
             $usuario->setPassword($this->faker->password);
             $manager->persist($usuario);
+            $this->addReference(self::USER_REFERENCE . $i, $usuario);
         }
 
         $manager->flush();
