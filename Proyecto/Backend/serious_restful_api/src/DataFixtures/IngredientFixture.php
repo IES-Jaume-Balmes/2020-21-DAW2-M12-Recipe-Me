@@ -13,7 +13,7 @@ class IngredientFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         // CARGAMOS INGREDIENTES
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 40; $i++) {
             $ingrediente = new Ingredient();
             $ingrediente->setName("Ingrediente $i");
             $manager->persist($ingrediente);
