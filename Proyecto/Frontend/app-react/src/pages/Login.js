@@ -37,18 +37,36 @@ export default class Login extends Component {
       })
       .then((response) => {
         if (response != null) {
-          let userTemp = {nombre: "Frank", apellido:"Palomino"};
-          cookie.set("nombre", userTemp.nombre, { path: "/" });
-          cookie.set("apellido", userTemp.apellido, { path: "/" });
-          window.location.href="./principal";
+          //response = {user: 1, username:"Frank"};
+          cookie.set("user", response.user, { path: "/" });
+          cookie.set("username", response.username, { path: "/" });
+          window.location.href = "./main";
         } else {
           alert("El usuario o contraseña no son correctos");
         }
       })
       .catch((error) => {
         console.log(error);
-      });
+        alert('Contraseña o usuario Incorrecto')
+      })
+      //SOLO PARA TEST SIN API (BORRAR!!)
+      /* .finally((response) => {
+        cookie.set("user", response.user, { path: "/" });
+        cookie.set("username", response.username, { path: "/" });
+        window.location.href = "./main";
+      }); */
   };
+
+  registrarse = ()=>{
+    window.location.href = "./register";
+  }
+
+  componentDidMount() {
+    if(cookie.get('user')){
+      window.location.href ="./main";
+    }
+  }
+  
 
   render() {
     return (
@@ -79,6 +97,15 @@ export default class Login extends Component {
             type="button"
           >
             Ingresar!
+          </button>
+          <br />
+          <br />
+          <button
+            className="btn btn-success"
+            onClick={() => this.registrarse()}
+            type="button"
+          >
+            Registrate!
           </button>
         </form>
       </div>
