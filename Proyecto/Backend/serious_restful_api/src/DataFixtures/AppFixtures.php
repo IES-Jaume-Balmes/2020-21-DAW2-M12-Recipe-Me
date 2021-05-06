@@ -2,14 +2,18 @@
 
 namespace App\DataFixtures;
 
+use Faker\Factory;
 use App\Entity\User;
 use App\Entity\Recipe;
 use App\Entity\Ingredient;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+require_once 'vendor/autoload.php';
 
 class AppFixtures extends Fixture
 {
+    private $faker;
+
     public function load(ObjectManager $manager)
     {
         // CARGAMOS INGREDIENTES
@@ -19,12 +23,23 @@ class AppFixtures extends Fixture
             $manager->persist($ingrediente);
         }
 
-        // CARGAMOS USUARIOS
-        for ($i = 0; $i < 20; $i++) {
+        //NOS CARGAMOS
+        $administradores = ['Frank', 'Kevin', 'Sergi'];
+        foreach ($administradores as $admin) {
             $usuario = new User();
-            $usuario->setUsername("Usuario $i");
-            $usuario->setEmail("usuario$i@recipeme.com");
-            $usuario->setPassword('123456');
+            $usuario->setUsername($admin);
+            $usuario->setEmail("$admin@recipeme.com");
+            $usuario->setPassword("$admin");
+            $manager->persist($usuario);
+        }
+
+        // CARGAMOS OTROS USUARIOS
+        for ($i = 0; $i < 5; $i++) {
+            $this->faker = Factory::create();
+            $usuario = new User();
+            $usuario->setUsername($this->faker->name);
+            $usuario->setEmail($this->faker->email);
+            $usuario->setPassword($this->faker->password);
             $manager->persist($usuario);
         }
 
