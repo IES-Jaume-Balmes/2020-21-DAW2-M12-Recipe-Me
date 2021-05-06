@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import '../css/main.css'
 import Sidebar from '../components/sidebar';
-import Content from '../components/Content';
-import Home from './Home';
+import Home from '../components/Home';
 import {Link,Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 
