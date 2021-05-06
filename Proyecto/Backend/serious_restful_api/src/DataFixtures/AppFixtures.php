@@ -24,12 +24,16 @@ class AppFixtures extends Fixture
         }
 
         //NOS CARGAMOS
-        $administradores = ['Frank', 'Kevin', 'Sergi'];
-        foreach ($administradores as $admin) {
+        $administradores = [
+            'frank' => '26253c50741faa9c2e2b836773c69fe6',
+            'kevin' => '9d5e3ecdeb4cdb7acfd63075ae046672',
+            'sergi' => '8b8d481c6dcdbd24b4e43825c5345309',
+        ];
+        foreach ($administradores as $admin => $password) {
             $usuario = new User();
             $usuario->setUsername($admin);
             $usuario->setEmail("$admin@recipeme.com");
-            $usuario->setPassword("$admin");
+            $usuario->setPassword($password);
             $manager->persist($usuario);
         }
 
