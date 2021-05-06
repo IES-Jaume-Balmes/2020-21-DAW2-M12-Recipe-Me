@@ -1,7 +1,7 @@
 # Pasos para hacer el run local
 1. Ponerse en el directorio serious_resful_api
 4. hacer un ``composer install``
-
+5. En caso de no funcionar probar con el siguiente comando "symfony composer update"
 # Run con Docker
 0. Ponerse en la carpeta donde está el docker-compose.yaml
 1. Hacer un ```docker-compose up -d``` 
