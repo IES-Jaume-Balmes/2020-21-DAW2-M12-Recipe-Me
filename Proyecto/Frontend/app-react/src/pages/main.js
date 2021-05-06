@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../css/main.css'
 import Sidebar from '../components/sidebar';
-import Content from './Content';
+import Content from '../components/Content';
 function Main() {
     return (
     <div className='container'>

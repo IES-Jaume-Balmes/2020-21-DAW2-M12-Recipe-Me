@@ -10,7 +10,7 @@ export default class Register extends Component {
   state = {
     form: {
       email: "",
-      user: "",
+      nombre: "",
       password: "",
     },
   };
@@ -27,7 +27,7 @@ export default class Register extends Component {
   registrarse = async () => {
     let jsonPeticion = {
       email: this.state.form.email,
-      username: this.state.form.user,
+      username: this.state.form.nombre,
       password: md5(this.state.form.password)
     };
     console.log(jsonPeticion);
@@ -57,12 +57,12 @@ export default class Register extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <label>Usuario</label>
+          <label>Nombre completo</label>
           <br />
           <input
             type="text"
             className="form-control"
-            name="user"
+            name="nombre"
             onChange={this.handleChange}
           />
           <br />
