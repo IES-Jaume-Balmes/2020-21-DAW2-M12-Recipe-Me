@@ -4,7 +4,7 @@ import React from 'react';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/',
+    path: '../pages/Content',
     cName: 'nav-text'
   },
   {
@@ -13,7 +13,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Recetas',
+    title: 'Crear receta',
     path: '/recetas',
     cName: 'nav-text'
   },
