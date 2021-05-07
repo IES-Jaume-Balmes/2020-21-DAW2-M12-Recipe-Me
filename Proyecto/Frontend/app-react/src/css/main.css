@@ -1,3 +1,4 @@
+/* SideBar*/
 .container{
     display: grid;
     width:100%;
@@ -41,6 +42,8 @@
     align-items: center;
     padding: 0 20px;
   }
+/* Fin sidebar*/
+
 
   .buttonLogout{
     float: right;
