@@ -1,6 +1,6 @@
-# INSTRUCCIONS BASE
+# INSTRUCCIONES BACKEND
 
-https://symfonycasts.com/screencast/api-platform/json-ld#play
+TUTORIAL: https://symfonycasts.com/screencast/api-platform/json-ld#play
 
 1. symfony new nom
 2. composer require api
