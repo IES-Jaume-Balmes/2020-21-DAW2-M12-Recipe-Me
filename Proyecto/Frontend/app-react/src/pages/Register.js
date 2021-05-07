@@ -40,7 +40,7 @@ export default class Register extends Component {
       })
       .catch((error) => {
         console.log(error);
-        alert("Contraseña o usuario Incorrecto");
+        alert("Ha ocurrido un error");
       });
   };
 
