@@ -3,7 +3,7 @@
 **Tutorial:** 
 https://symfonycasts.com/screencast/api-platform/json-ld#play
 
-### Pasos para crear nuestra API:
+## Pasos para crear nuestra API:
 
 1. Creamos un proyecto symfony: 
 ```php
@@ -29,3 +29,24 @@ https://symfonycasts.com/screencast/api-platform/json-ld#play
 ```php
 > symfony server:stop
 ```
+
+## Resultados obtenidos:
+Por cada **entidad** que hayamos creado, la dependencia **API** nos va a generar automáticamente los métodos **HTTP** base, que són:
+> GET (general)
+
+> POST (general)
+
+> GET (pasamos id)
+
+> PUT (pasamos id)
+
+> DELETE (pasamos id)
+
+> PATCH (pasamos id)
+
+A partir de esta base nosotros podemos modificar nuestra entidad a voluntad. Podemos controlar:
+-  A cuales de estos **métodos podemos acceder**.
+- Que parametros de los que contienen cada entidad podermos **leer y escribir**.
+- Que parametros de cada entidad seran visibles des de los métodos **HTTP** de otras entidades.
+
+### Existen mas características que aún tenemos pendientes de explorar.

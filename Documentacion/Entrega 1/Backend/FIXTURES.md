@@ -9,9 +9,20 @@ Para crear una Fixture lo haremos con el comando:
 bin/console make:fixture
 ```
 
+Podemos crear tantas como queramos. Es recomendable crear un archivo **Fixture** para cada tabla que queramos rellenar, de este modo el codigo quedará mas legible.
+
 La dirección de los archivos la encontraremos en ``AppSymfony/src/DataFixtures/``
 
 ## Interrelacion:
+Para insertar **Datos** que dependen de otros **Datos** lo hacemos mediante referencias.
+
+**Ejemplo**:
+- Queremos generar una ``receta`` que contiene ``ingredientes``:
+    1. Cuando vamos a insertar un **ingrediente**, le añadimos un ``String`` de para referirnos al mismo.
+    2. En **RecetasFixture** vamos a añadir una función para que recoja las referencias generadas en ingredientes.
+    3. Cuando vamos a crear una **receta** le pasamos un ingrediente por referencia (el ``String`` que le hemos añadido al **ingrediente** en primera instancia).
+
+## Aplicación:
 
 Nosotros hemos creado 4 clases que se encargan de rellenar nuestra **DB** con datos falsos pero posibles.
 
