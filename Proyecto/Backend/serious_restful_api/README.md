@@ -2,32 +2,34 @@
 
 TUTORIAL: https://symfonycasts.com/screencast/api-platform/json-ld#play
 
-1. symfony new nom
-2. composer require api
-3. composer require maker --dev
-4. bin/console make:entity
-5. symfony serve -d
-6. check /api
-7. enjoy
+### Pasos para crear nuestra API:
+
+1. Creamos un proyecto symfony: ``symfony new nom_proj``
+2. Añadimos dependencia: ``composer require api``
+3. Añadimos utilidades: ``composer require maker --dev``
+4. Creamos las entidades que necesitemos: ``bin/console make:entity``
+5. Encendemos el servidor: ``symfony serve -d``
+6. Ya podemos acceder a la api.
 
 
 # INSTRUCCIONES DOCKER
 
-1. Descargar docker desktop de la pagina oficial.
-2. Ir a la carpeta donde queremos instalar contenedores.
+- Descargar docker desktop de la pagina oficial.
+- Ir a la carpeta donde queremos instalar contenedores.
+- Lo instalamos para tener una base de datos en común, independiente de nuestra máquina.
 
-## Vamos a instalar un contenedor con mysql (en su ultima versión):
+### Instalamos un contenedor con mysql:
 
-1. Creamos un contenedor con mysql
+- Creamos un contenedor de mysql:
 ```
 bin/console make:docker:database 
 ```
 
-2. Ejecutamos ``TODOS`` los contenedores disponibles. Tarda unos segundos en encenderlo todo.
+- Ejecutamos ``TODOS`` los contenedores disponibles. Tarda unos segundos en encenderlo todo.
 ```
 docker-compose up -d
 ```
-3. Accedemos a la base de datos
+- Para acceder a la base de datos:
 ```
 docker-compose exec database mysql -u root --password=password
 ```
@@ -60,11 +62,7 @@ docker-compose up -d
 
 # INSTRUCCIONES DOCTRINE
 
-1. Para resetear de 0 la base de datos usaremos
-```
-bin/console doctrine:database:drop --force
-```
-- En el caso de la base de datos de docker seria:
+- Para resetear de 0 la base de datos usaremos
 ```
 symfony console doctrine:database:drop --force
 ```
@@ -72,10 +70,12 @@ symfony console doctrine:database:drop --force
 
 # ERRORES COMUNES
 
+Tubimos dificultades a la hora de testear el login de la pagina.
+
 A la hora de testear la api asegurarse de guardar la contraseñas codificadas en la base de datos.
 ```
 bin/console security:encode-password
 ```
 Ejemplo:
-- En base de datos guardamos: $argon2id$v=19$m=65536,t=4,p=1$zUZd7LRg219hXD44qgSEtg$1LR0AmBZjjovcXwztUyx7Jz2JbKE9CmBzHDuSHqF2HE
+- En base de datos guardamos: ``$argon2id$v=19$m=65536,t=4,p=1$zUZd7LRg219hXD44qgSEtg$1LR0AmBZjjovcXwztUyx7Jz2JbKE9CmBzHDuSHqF2HE``
 - En el ``POST`` ponemos el password sin codificar
