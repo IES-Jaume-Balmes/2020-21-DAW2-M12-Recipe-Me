@@ -7,17 +7,17 @@ El objetivo es tener una base de datos en común, independiente de nuestra máqu
 
 ### Instalamos un contenedor con mysql:
 
-```
-bin/console make:docker:database 
+```php
+> bin/console make:docker:database 
 ```
 
 - Ejecutamos **TODOS** los contenedores disponibles. Tarda unos segundos en encenderlo todo.
-```
-docker-compose up -d
+```php
+> docker-compose up -d
 ```
 - Para acceder a la base de datos:
-```
-docker-compose exec database mysql -u root --password=password
+```php
+> docker-compose exec database mysql -u root --password=password
 ```
 
 ### Otros comandos:
@@ -27,11 +27,11 @@ docker-compose exec database mysql -u root --password=password
 - Chequea los contenedores que estan encendidos: ``docker-compose ps``
 
 ### Checkear las variables de entorno que esta ejecutando symfony
-```
-symfony var:export --multiline
+```php
+> symfony var:export --multiline
 ```
 
 ### Antes de empezar a trabajar siempre tendremos que hacer:
-```
-docker-compose up -d
+```php
+> docker-compose up -d
 ```

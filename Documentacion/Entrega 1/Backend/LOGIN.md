@@ -8,21 +8,21 @@ ___
 
 1. Añadimos las dependencias que vamos a necesitar:
 ```php
-composer require doctrine/doctrine-bundle
-composer require doctrine/orm
-composer require symfony/maker-bundle
-composer require symfony/security-bundle
-composer require symfony/web-profiler-bundle
+> composer require doctrine/doctrine-bundle
+> composer require doctrine/orm
+> composer require symfony/maker-bundle
+> composer require symfony/security-bundle
+> composer require symfony/web-profiler-bundle
 ```
 - Hay mas, pero en principio, el resto ya vendran por defecto.
 
 2. Creamos los archivos necesarios con el maker de symfony.
 ```php
-bin/console make:controller SecurityController
+> bin/console make:controller SecurityController
 ```
 ## Creamos la entidad Usuario:
 ```php
-bin/console make:user
+> bin/console make:user
 ```
 - Queremos almacenar su informacion en la base de datos **[YES]**.
 - Symfony se encarga automaticamente de generar el archivo y las rutas. También se encarga de definir las tablas y las columnas de nuestra **BDD**.
@@ -30,7 +30,7 @@ bin/console make:user
 
 ## Creamos el sistema de autentificación:
 ```php
-bin/console make:auth 
+> bin/console make:auth 
 ```
 - Respondemos de manera logica a los parametros.
 - Le asignamos como controlador la clase **SecurityController** que hemos creado antes.

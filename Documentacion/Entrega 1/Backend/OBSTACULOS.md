@@ -1,5 +1,6 @@
 # OBSTACULOS
 
+## Login:
 Tuvimos dificultades a la hora de testear el login de la pagina, porque aún no habíamos implementado la
 encriptación en el momento de insertar datos en la BDD y la herramienta de login encriptaba el password
 automáticamente antes de hacer la comprobación con la BDD.

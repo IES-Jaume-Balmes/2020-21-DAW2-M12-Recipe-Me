@@ -1,12 +1,30 @@
 # INSTRUCCIONES DOCTRINE
+---
 
-- Para resetear de 0 la base de datos usaremos
+## Utilidad:
+- La dependencia **doctrine** va a generar automaticamente sentencias SQL para trabajar con una base de datos.
+
+- Podemos trabajar con una base de datos en nuestro ``MySql`` o podemos hacerlo trabajando con el ``MySql``de nuestro contenedor de ``Docker``.
+
+La diferencia entre trabajar con Docker o con nuestro servidor MySql esta en el comando:
+- Para **Servidor Docker**: ``symfony console [sentencia]``
+- Para **Servidor Local**: ``bin/console [sentencia]``
+
+## Configuramos la base de datos 
+Creamos la base de datos en el **Contenedor Docker**:
+```php
+> symfony console doctrine:database:create
 ```
-symfony console doctrine:database:drop --force
+Creamos una migración (sentencia SQL a la espera de ser ejecutada):
+```php
+> symfony console make:migration
+```
+Ejecutamos las migraciones que ya tenemos preparadas:
+```php
+> symfony console doctrine:migrations:migrate
 ```
 
-
-### Configuramos la base de datos accediendo al archivo ./env
-    - DATABASE_URL=mysql://USUARIO:CLAVE@127.0.0.1:3306/DB_NOMBRE?serverVersion=5.7
-    - php bin/console doctrine:database:create <-- Crea la DB
-    - php bin/console doctrine:schema:update --force <-- Crea las tablas con los Entity
+Para destruir la base de datos [luego eliminar migraciones manualmente]:
+```php
+> symfony console doctrine:database:drop --force
+```
