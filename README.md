@@ -2,6 +2,14 @@
 
 Proyecto Final de ciclo Daw
 
+# Integrantes del proyecto
+-Frank Palomino
+-Kevin Rodríguez
+-Sergi Francés
+
+# Tutor
+-Pepe Osca
+
 ## Descargar el repositorio
 
 Buenas chicos, para quien no se acuerde para bajar el repositorio teneis que:
