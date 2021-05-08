@@ -20,7 +20,7 @@ class IngredientFixture extends Fixture
             );
 
             $ingrediente = new Ingredient();
-            $ingrediente->setName($faker->vegetableName());
+            $ingrediente->setName($faker->unique()->vegetableName());
             $manager->persist($ingrediente);
             $this->addReference(self::INGREDIENT_REFERENCE . $i, $ingrediente);
         }

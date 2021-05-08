@@ -19,7 +19,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
             );
             $receta = new Recipe();
             $receta->setDescription('random description');
-            $receta->setName($faker->foodName());
+            $receta->setName($faker->unique()->foodName());
             for ($n = 0; $n < 4; $n++) {
                 $receta->addIngredient(
                     $this->getReference('ingredient-' . random_int(0, 19))
