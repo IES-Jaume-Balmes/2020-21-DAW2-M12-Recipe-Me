@@ -30,3 +30,12 @@ Las ejecutamos en el terminal:
 ```php
 symfony console doctrine:fixtures:load
 ```
+
+## FakerPHP:
+FakerPHP es una libreria que nos permite generar datos aleatorios para poblar nuestra base de datos.
+
+> Comida:
+https://github.com/jzonta/FakerRestaurant
+
+> Otros Datos:
+https://github.com/FakerPHP/Faker/
