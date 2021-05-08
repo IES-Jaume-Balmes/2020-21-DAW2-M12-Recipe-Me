@@ -37,5 +37,5 @@ FakerPHP es una libreria que nos permite generar datos aleatorios para poblar nu
 > Comida:
 https://github.com/jzonta/FakerRestaurant
 
-> Otros Datos:
-https://github.com/FakerPHP/Faker/
+> Mas variedad de datos:
+https://packagist.org/packages/mbezhanov/faker-provider-collection

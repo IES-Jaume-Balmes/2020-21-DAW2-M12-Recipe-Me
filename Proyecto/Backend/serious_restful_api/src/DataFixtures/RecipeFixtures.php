@@ -15,11 +15,11 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i < 5; $i++) {
             $faker = \Faker\Factory::create();
             $faker->addProvider(
-                new \FakerRestaurant\Provider\es_PE\Restaurant($faker)
+                new \FakerRestaurant\Provider\en_US\Restaurant($faker)
             );
             $receta = new Recipe();
             $receta->setDescription('random description');
-            $receta->setName($faker->unique()->foodName());
+            $receta->setName($faker->foodName());
             for ($n = 0; $n < 4; $n++) {
                 $receta->addIngredient(
                     $this->getReference('ingredient-' . random_int(0, 19))
