@@ -4,8 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Cookie from "universal-cookie";
 
-
-const baseUrl = "http://localhost:8000/login";
+const baseUrl = "https://localhost:8000/login";
 const cookie = new Cookie();
 
 export default class Login extends Component {
@@ -48,26 +47,25 @@ export default class Login extends Component {
       })
       .catch((error) => {
         console.log(error);
-        alert('Contraseña o usuario Incorrecto')
-      })
-      //SOLO PARA TEST SIN API (BORRAR!!)
-      /* .finally((response) => {
+        alert("Contraseña o usuario Incorrecto");
+      });
+    //SOLO PARA TEST SIN API (BORRAR!!)
+    /* .finally((response) => {
         cookie.set("user", response.user, { path: "/" });
         cookie.set("username", response.username, { path: "/" });
         window.location.href = "./main";
       }); */
   };
 
-  registrarse = ()=>{
+  registrarse = () => {
     window.location.href = "./register";
-  }
+  };
 
   componentDidMount() {
-    if(cookie.get('user')){
-      window.location.href ="./main";
+    if (cookie.get("user")) {
+      window.location.href = "./main";
     }
   }
-  
 
   render() {
     return (
