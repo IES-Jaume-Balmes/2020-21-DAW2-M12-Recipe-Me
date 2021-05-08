@@ -99,3 +99,7 @@ Este componente renderiza un mapeo de la array que esta en sidebarData.js.
 ```
 
 ```
+## Recetas
+Dentro del menu de navegación el usuario se encuentra un partado que muestra todas las recetas que existen en la aplicación.
+En este componente se debería hacer una petición a la API, la cual aún no está implementada, de momento existe un json que imita el formato devuelto por la API para poder hacer las pruebas de desarrollo.
+El componentes recibe un array de objetos que representan a cada una de las recetas, luego se renderiza cada una de estas recetas en una tarjeta para su correcta visualización.
