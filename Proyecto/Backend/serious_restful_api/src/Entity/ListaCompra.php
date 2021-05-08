@@ -40,13 +40,13 @@ class ListaCompra
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"lista_compra:read"})
+     * @Groups({"lista_compra:read","lista_compra:write"})
      */
     private $createdAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Ingredient::class)
-     * @Groups({"lista_compra:read", "lista_compra:write"})
+     * @Groups({"lista_compra:read"})
      */
     private $ingredients;
 
