@@ -10,7 +10,10 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"lista_compra:read"}},
+ *      denormalizationContext={"groups"={"lista_compra:write"}}
+ * )
  * @ORM\Entity(repositoryClass=ListaCompraRepository::class)
  */
 class ListaCompra
@@ -25,21 +28,25 @@ class ListaCompra
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="listaCompras")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"lista_compra:read", "lista_compra:write"})
      */
     private $propietario;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"lista_compra:read", "lista_compra:write"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"lista_compra:read"})
      */
     private $createdAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Ingredient::class)
+     * @Groups({"lista_compra:read", "lista_compra:write"})
      */
     private $ingredients;
 
