@@ -16,3 +16,10 @@ bin/console security:encode-password
 **Error:**
 - Guardar en la base de datos un plain string:
 > password
+
+## Dependencias
+Hemos tenido problemas de dependencias ya que la version de PHP era menor a la que el composer nos solicitaba. Lo hemos arreglado con el siguiente comand
+
+```cmd
+symfony composer update
+```

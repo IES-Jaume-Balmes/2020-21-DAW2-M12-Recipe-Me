@@ -96,10 +96,51 @@ Este componente renderiza un mapeo de la array que esta en sidebarData.js.
 
 - Este sidebar es pintado en el apartado ./css/main.css
 
+### Sidebardata,js(Component)
+Este archivo simplemente contiene un array con la información que queremos mostrr en nuestro sidebar.
+
+### 2 Contenido
+En este div es donde iremos renderizando las diferentes partes de nuestra aplicación mediante el route y switch siendo clicado por Links.
+
+```js
+
+      <Router>
+        <div className="container">
+          <div className="sideBar">
+            <Sidebar />
+          </div>
+          <div>
+            <Switch>
+              <Route path="/home" exact>
+                <Recetas />
+              </Route>
+            </Switch>
+          </div>
+          <div>
+            <button className="buttonLogout" onClick={()=>this.cerrarSesion()}>
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </Router>
 ```
 
+## 3 Botón cerrar sesión
+- Toda aplicación tiene un botón para poder salir el cual nos devolvera al principio en el apartado de registrarse / login
+
+```js
+<button className="buttonLogout" onClick={()=>this.cerrarSesion()}>
+Cerrar Sesión
+</button>
+```
+```js
+  cerrarSesion = () => {
+    cookie.remove("user", { path: "/" });
+    cookie.remove("username", { path: "/" });
+    window.location.href = "./";
+  };
 ```
 ## Recetas
-Dentro del menu de navegación el usuario se encuentra un partado que muestra todas las recetas que existen en la aplicación.
+Dentro del menu de navegación el usuario se encuentra un apartado que muestra todas las recetas que existen en la aplicación.
 En este componente se debería hacer una petición a la API, la cual aún no está implementada, de momento existe un json que imita el formato devuelto por la API para poder hacer las pruebas de desarrollo.
 El componentes recibe un array de objetos que representan a cada una de las recetas, luego se renderiza cada una de estas recetas en una tarjeta para su correcta visualización.

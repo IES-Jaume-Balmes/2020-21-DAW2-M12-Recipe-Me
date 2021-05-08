@@ -1,5 +1,5 @@
 ---
-name: Inicio
+name: React_Inicio
 ---
 
 ## Generar proyecto
