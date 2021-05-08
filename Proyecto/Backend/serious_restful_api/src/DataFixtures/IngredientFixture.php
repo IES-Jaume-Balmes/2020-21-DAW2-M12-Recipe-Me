@@ -14,8 +14,13 @@ class IngredientFixture extends Fixture
     {
         // CARGAMOS INGREDIENTES
         for ($i = 0; $i < 40; $i++) {
+            $faker = \Faker\Factory::create();
+            $faker->addProvider(
+                new \FakerRestaurant\Provider\es_PE\Restaurant($faker)
+            );
+
             $ingrediente = new Ingredient();
-            $ingrediente->setName("Ingrediente $i");
+            $ingrediente->setName($faker->vegetableName());
             $manager->persist($ingrediente);
             $this->addReference(self::INGREDIENT_REFERENCE . $i, $ingrediente);
         }
