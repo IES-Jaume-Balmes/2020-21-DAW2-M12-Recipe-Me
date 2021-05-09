@@ -49,4 +49,31 @@ A partir de esta base nosotros podemos modificar nuestra entidad a voluntad. Pod
 - Que parametros de los que contienen cada entidad podermos **leer y escribir**.
 - Que parametros de cada entidad seran visibles des de los métodos **HTTP** de otras entidades.
 
+## How to use:
+Para insertar una **receta**:
+> POST: https://127.0.0.1:8000/recipes
+
+```json
+{
+  "name": "string",
+  "description": "string",
+  "ingredients": [
+    "/ingredients/828"
+  ]
+}
+```
+Para insertar una **lista de la compra**:
+> POST: https://127.0.0.1:8000/lista_compras
+
+```json
+{
+  "propietario": "/users/284",
+  "name": "string",
+  "createdAt": "2021-05-09T12:07:29.467Z",
+  "ingredients": [
+    "/ingredients/828"
+  ]
+}
+```
+
 ### Existen mas características que aún tenemos pendientes de explorar.
