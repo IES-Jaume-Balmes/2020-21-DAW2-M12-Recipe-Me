@@ -20,9 +20,9 @@
 
 5. En ./config/packages/security.yaml añadimos:  
 access_control:   
-        - { path: ^/login$, roles:  IS_AUTHENTICATED_ANONYMOUSLY }  
-        - { path: ^/*, roles: ROLE_USER }  
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        -  path: ^/login$, roles:  IS_AUTHENTICATED_ANONYMOUSLY 
+        -  path: ^/*, roles: ROLE_USER   
+        -  path: ^/admin, roles: ROLE_ADMIN 
 
 6. Conectamos con base de datos:
     - composer require --dev orm-fixtures
