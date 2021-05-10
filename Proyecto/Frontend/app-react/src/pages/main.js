@@ -9,7 +9,6 @@ import Cookie from "universal-cookie";
 const cookie = new Cookie();
 
 export default class Main extends Component {
-  
   cerrarSesion = () => {
     cookie.remove("user", { path: "/" });
     cookie.remove("username", { path: "/" });
@@ -18,12 +17,12 @@ export default class Main extends Component {
   };
 
   componentDidMount() {
-    if(!cookie.get('user')){
-      window.location.href ="./";
+    if (!cookie.get("user")) {
+      window.location.href = "./";
     }
   }
 
-  render(){
+  render() {
     return (
       <Router>
         <div className="container">
@@ -38,13 +37,15 @@ export default class Main extends Component {
             </Switch>
           </div>
           <div>
-            <button className="buttonLogout" onClick={()=>this.cerrarSesion()}>
+            <button
+              className="buttonLogout"
+              onClick={() => this.cerrarSesion()}
+            >
               Cerrar Sesión
             </button>
           </div>
         </div>
       </Router>
-    )
+    );
   }
-  
 }
