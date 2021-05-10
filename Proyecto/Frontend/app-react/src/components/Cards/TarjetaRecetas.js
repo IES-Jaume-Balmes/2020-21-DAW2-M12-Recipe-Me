@@ -1,23 +1,39 @@
 import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
 
 const TarjetaRecetas = ({ recetas }) => {
   return (
-    <div>
+    <>
       {recetas.map((receta) => (
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{receta.name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{receta.description}</h6>
+        <Card className="card">
+          <CardMedia />
+          <CardContent className="card-body">
+            <Typography component="p" variant="h6">
+              {receta.name}
+            </Typography>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {receta.description}
+            </h6>
             <ul>
               {receta.ingredients.map((ingre) => {
                 return <li>{ingre.name}</li>;
               })}
             </ul>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       ))}
-    </div>
+    </>
   );
 };
 
-export default TarjetaRecetas;
+export default withStyles({
+  item: {
+    minWidth: "300px",
+    margin: "1em",
+    boxSizing: "border-box",
+  },
+  media: {
+    minHeight: "150px",
+  },
+})(TarjetaRecetas);

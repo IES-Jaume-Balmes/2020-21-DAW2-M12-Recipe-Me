@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/Recetas.css";
 import TarjetaRecetas from "./Cards/TarjetaRecetas";
+import RecipeCard from "./Cards/RecipeCard";
 
 export default class Recetas extends Component {
   state = {
@@ -17,6 +18,6 @@ export default class Recetas extends Component {
   }
 
   render() {
-    return <TarjetaRecetas recetas={this.state.recetas} />;
+    return <RecipeCard recetas={this.state.recetas} />;
   }
 }
