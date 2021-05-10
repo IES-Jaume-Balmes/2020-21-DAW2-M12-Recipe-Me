@@ -14,7 +14,7 @@ export const SidebarData = [
   },
   {
     title: 'Crear receta',
-    path: '/recetas',
+    path: '/crearReceta',
     cName: 'nav-text'
   },
   {
