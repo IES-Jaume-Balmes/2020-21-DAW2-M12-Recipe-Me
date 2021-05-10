@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/main.css";
 import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
-import CrearReceta from "../components/crearReceta";
+import CrearReceta from "../components/CrearReceta";
 import Listas from "../components/Listas";
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
