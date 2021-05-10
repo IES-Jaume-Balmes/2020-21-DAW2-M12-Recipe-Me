@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/main.css";
 import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
-import GenerarLista from "../components/GenerarLista";
+import Listas from "../components/Listas";
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Cookie from "universal-cookie";
@@ -35,8 +35,8 @@ export default class Main extends Component {
               <Route path="/home" exact>
                 <Recetas />
               </Route>
-              <Route path="/listaCompra" exact>
-                <GenerarLista />
+              <Route path="/listas" exact>
+                <Listas />
               </Route>
             </Switch>
           </div>
