@@ -1,0 +1,22 @@
+{
+  "/_app": "pages/_app.js",
+  "/entrega_0/entrega_0": "pages/entrega_0/entrega_0.html",
+  "/entrega_0/instrucciones/logginForm_symfony": "pages/entrega_0/instrucciones/logginForm_symfony.html",
+  "/entrega_0/instrucciones/registerForm_symfony": "pages/entrega_0/instrucciones/registerForm_symfony.html",
+  "/entrega_0/instrucciones/setup_symfony_basic": "pages/entrega_0/instrucciones/setup_symfony_basic.html",
+  "/entrega_1/backend/API": "pages/entrega_1/backend/API.html",
+  "/entrega_1/backend/DOCKER": "pages/entrega_1/backend/DOCKER.html",
+  "/entrega_1/backend/DOCTRINE": "pages/entrega_1/backend/DOCTRINE.html",
+  "/entrega_1/backend/FIXTURES": "pages/entrega_1/backend/FIXTURES.html",
+  "/entrega_1/backend/LOGIN": "pages/entrega_1/backend/LOGIN.html",
+  "/entrega_1/backend/OBSTACULOS": "pages/entrega_1/backend/OBSTACULOS.html",
+  "/entrega_1/backend/RECURSOS": "pages/entrega_1/backend/RECURSOS.html",
+  "/entrega_1/base_de_datos/bbdd": "pages/entrega_1/base_de_datos/bbdd.html",
+  "/entrega_1/frontend/Aplicacion": "pages/entrega_1/frontend/Aplicacion.html",
+  "/entrega_1/frontend/Obstaculos": "pages/entrega_1/frontend/Obstaculos.html",
+  "/entrega_1/frontend/React_Inicio": "pages/entrega_1/frontend/React_Inicio.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
