@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import "../css/main.css";
 import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
+<<<<<<< HEAD
 import CrearReceta from "../components/crearReceta";
+=======
+import Listas from "../components/Listas";
+>>>>>>> 16636ac2d837b4ea746537aa1b965b5c7001c734
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Cookie from "universal-cookie";
@@ -35,8 +39,14 @@ export default class Main extends Component {
               <Route path="/home" exact>
                 <Recetas />
               </Route>
+              <Route path="/listas" exact>
+                <Listas />
+<<<<<<< HEAD
+              </Route>
               <Route path="/crearReceta" exact>
                 <CrearReceta />
+=======
+>>>>>>> 16636ac2d837b4ea746537aa1b965b5c7001c734
               </Route>
             </Switch>
           </div>

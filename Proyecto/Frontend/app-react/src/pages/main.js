@@ -3,6 +3,7 @@ import "../css/main.css";
 import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
 import CrearReceta from "../components/crearReceta";
+import Listas from "../components/Listas";
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Cookie from "universal-cookie";

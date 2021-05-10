@@ -12,9 +12,15 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+<<<<<<< HEAD
+    title: 'Crear receta',
+    path: '/crearReceta',
+    cName: 'nav-text'
+=======
     title: "Crear receta",
     path: "/recetas",
     cName: "nav-text",
+>>>>>>> 16636ac2d837b4ea746537aa1b965b5c7001c734
   },
   {
     title: "Mi perfil",
