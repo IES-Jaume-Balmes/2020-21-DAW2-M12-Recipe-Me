@@ -32,17 +32,9 @@ export default class Main extends Component {
             <Sidebar />
           </div>
           <div>
-            <Switch>
-              <Route path="/home" exact>
-                <Recetas />
-              </Route>
-              <Route path="/listas" exact>
-                <Listas />
-              </Route>
-              <Route path="/crearReceta" exact>
-                <CrearReceta />
-              </Route>
-            </Switch>
+            <Route path="/home" component={Recetas} />
+            <Route path="/listas" component={Listas} />
+            <Route path="/crearReceta" component={CrearReceta} />
           </div>
           <div>
             <button

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../css/Recetas.css";
-import TarjetaRecetas from "./TarjetaRecetas";
+import TarjetaRecetas from "./Cards/TarjetaRecetas";
 
 export default class Recetas extends Component {
   state = {
