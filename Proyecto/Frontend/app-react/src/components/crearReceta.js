@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import Ingredients from "./Ingredients";
+import TarjetaIngredients from "./TarjetaIngredients";
 const baseUrl = "http://localhost:8000/ingredients";
 
 
@@ -31,7 +31,7 @@ export class crearReceta extends Component {
         fetch(baseUrl)
         .then(res => res.json())
         .then((data) => {
-          this.setState({ ingredients: data });
+          this.setState({ ingredients: data["hydra:member"] });
         })
         .catch(console.log);
       }
@@ -46,7 +46,7 @@ export class crearReceta extends Component {
           
           <input name="titulo" className="form-control my-2" />
         </div>
-        <Ingredients ingredients={this.state.ingredients} />
+        <TarjetaIngredients ingredients={this.state.ingredients} />
         
       </div>
     );

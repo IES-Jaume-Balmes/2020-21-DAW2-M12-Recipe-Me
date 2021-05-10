@@ -35,6 +35,9 @@ export default class Main extends Component {
               <Route path="/home" exact>
                 <Recetas />
               </Route>
+              <Route path="/listas" exact>
+                <Listas />
+              </Route>
               <Route path="/crearReceta" exact>
                 <CrearReceta />
               </Route>
