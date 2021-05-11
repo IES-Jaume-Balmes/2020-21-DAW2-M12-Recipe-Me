@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Recipeme docs</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/</link>
+    <description>Recent content in Backend on Recipeme docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 May 2021 19:58:18 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instrucciones Backend</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/API/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/API/</guid>
+      <description>Tutorial: https://symfonycasts.com/screencast/api-platform/json-ld#play
+Pasos para crear nuestra API:     Creamos un proyecto symfony:  &amp;gt; symfony new nom_proj Añadimos la dependencia principal:  &amp;gt; composer require api Añadimos otras utilidades:  &amp;gt; composer require maker --dev Creamos las entidades que necesitemos:  &amp;gt; bin/console make:entity Encendemos el servidor:  &amp;gt; symfony serve -d Para pararlo usaremos:  &amp;gt; symfony server:stop Resultados obtenidos:    Por cada entidad que hayamos creado, la dependencia API nos va a generar automáticamente los métodos HTTP base, que són:</description>
+    </item>
+    
+    <item>
+      <title>Instrucciones Docker</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/DOCKER/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/DOCKER/</guid>
+      <description>El objetivo es tener una base de datos en común, independiente de nuestra máquina. De este modo no necesitaremos modificar nunca el archivo de variables de entorno .env de nuestra aplicación.
+ Descargar Docker desktop de la pagina oficial. Ir al directorio donde queremos instalar contenedores.  Instalamos un contenedor con mysql:    &amp;gt; bin/console make:docker:database  Ejecutamos TODOS los contenedores disponibles. Tarda unos segundos en encenderlo todo.  &amp;gt; docker-compose up -d  Para acceder a la base de datos:  &amp;gt; docker-compose exec database mysql -u root --password=password Otros comandos:     Paramos los contenedores activos: docker-compose stop Paramos contenedores y eliminamos su imagen por completo [elimina el mini server]: docker-compose down Chequea los contenedores que estan encendidos: docker-compose ps  Checkear las variables de entorno que esta ejecutando symfony    &amp;gt; symfony var:export --multiline Antes de empezar a trabajar siempre tendremos que hacer:    &amp;gt; docker-compose up -d </description>
+    </item>
+    
+    <item>
+      <title>Instrucciones Doctrine</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/DOCTRINE/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/DOCTRINE/</guid>
+      <description>Utilidad:      La dependencia doctrine va a generar automaticamente sentencias SQL para trabajar con una base de datos.
+  Podemos trabajar con una base de datos en nuestro MySql o podemos hacerlo trabajando con el MySqlde nuestro contenedor de Docker.
+  La diferencia entre trabajar con Docker o con nuestro servidor MySql esta en el comando:
+ Para Servidor Docker: symfony console [sentencia] Para Servidor Local: bin/console [sentencia]  Configuramos la base de datos    Creamos la base de datos en el Contenedor Docker:</description>
+    </item>
+    
+    <item>
+      <title>Instrucciones Fixtures</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/FIXTURES/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/FIXTURES/</guid>
+      <description>Las Fixtures o Utilidades son scripts php en nuestro proyecto Symfony que nos ayudan a realizar tareas de testeo y desarrollo de nuestra web app.
+Creacion:    Para crear una Fixture lo haremos con el comando:
+bin/console make:fixture Podemos crear tantas como queramos. Es recomendable crear un archivo Fixture para cada tabla que queramos rellenar, de este modo el codigo quedará mas legible.
+La dirección de los archivos la encontraremos en AppSymfony/src/DataFixtures/</description>
+    </item>
+    
+    <item>
+      <title>Instrucciones Login</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/</guid>
+      <description>Dependencias:     Añadimos las dependencias que vamos a necesitar:  &amp;gt; composer require doctrine/doctrine-bundle &amp;gt; composer require doctrine/orm &amp;gt; composer require symfony/maker-bundle &amp;gt; composer require symfony/security-bundle &amp;gt; composer require symfony/web-profiler-bundle  Hay mas, pero en principio, el resto ya vendran por defecto.  Creamos los archivos necesarios con el maker de symfony.  &amp;gt; bin/console make:controller SecurityController Creamos la entidad Usuario:    &amp;gt; bin/console make:user  Queremos almacenar su informacion en la base de datos [YES].</description>
+    </item>
+    
+    <item>
+      <title>Obstaculos</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/OBSTACULOS/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/OBSTACULOS/</guid>
+      <description>Login:    Tuvimos dificultades a la hora de testear el login de la pagina, porque aún no habíamos implementado la encriptación en el momento de insertar datos en la BDD y la herramienta de login encriptaba el password automáticamente antes de hacer la comprobación con la BDD.
+A la hora de testear la api asegurarse de guardar la contraseñas codificadas en la base de datos.
+bin/console security:encode-password Correcto:</description>
+    </item>
+    
+    <item>
+      <title>Recursos para dudas</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/RECURSOS/</link>
+      <pubDate>Tue, 11 May 2021 19:58:18 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/RECURSOS/</guid>
+      <description> https://symfony.com/doc/current/security.html https://symfony.com/doc/current/security/form_login_setup.html https://symfony.com/doc/current/configuration/secrets.html https://stackoverflow.com/questions/46734428/symfony-check-if-user-exist-in-database/46738306 https://auth0.com/blog/creating-your-first-symfony-app-and-adding-authentication/  </description>
+    </item>
+    
+  </channel>
+</rss>
