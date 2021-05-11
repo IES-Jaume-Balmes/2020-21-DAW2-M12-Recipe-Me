@@ -4,6 +4,7 @@ import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
 import CrearReceta from "../components/CrearReceta";
 import Listas from "../components/Listas";
+import Usuario from "../components/Usuario";
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Cookie from "universal-cookie";
@@ -34,7 +35,8 @@ export default class Main extends Component {
           <div>
             <Route path="/home" component={Recetas} />
             <Route path="/listas" component={Listas} />
-            <Route path="/crearReceta" component={CrearReceta} />
+            <Route path="/CrearReceta" component={CrearReceta} />
+            <Route path="/perfil" component={Usuario} />
           </div>
           <div>
             <button
