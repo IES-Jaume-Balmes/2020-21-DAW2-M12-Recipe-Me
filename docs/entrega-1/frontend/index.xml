@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on Recipeme docs</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/</link>
+    <description>Recent content in Frontend on Recipeme docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 May 2021 19:59:07 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/Aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/Aplicacion/</guid>
+      <description>Circuito de la aplicación    Para llevar a cabo nuestra idea primeramente hemos pensado en realizar un registro/login para que el usuario pueda, entrar a través del portal o registrarse.
+Login    Se compone de dos inputs:
+ Campo Username (Correo electrónico) Campo Password.  A nivel de código el Login tiene una variable de estado que controlará los inputs y los cambios en este. Que serán el email y el password.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/Obstaculos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/Obstaculos/</guid>
+      <description>PROBLEMAS    Error from chokidar (macOS)    Al hacer npm start me aparecen varias líneas con un error que hace referencia a chokidar.
+Lo he solucionado eliminando la carpeta entera de node_modules y reinstalandola con npm install.
+Error con fetch (biblioteca nativa para hacer peticiones Ajax de JS)    Al hacer la petición con Fetch el servidor para realizar el loggin, el servidor no respondía, pero al hacer la petición desde un recurso externo como Postman, la petición si que se llevaba a cabo correctamente.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/React_Inicio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/React_Inicio/</guid>
+      <description>Generar proyecto    Entrar en la carpeta de front end y crear una aplicación react para empezar el proyecto.
+npx create-react-app app-react Cambiamos a la carpeta de este &amp;ldquo;app-react&amp;rdquo;
+cd app-react Comando para iniciar en el directorio ./app-react
+npm start Run Local    Para hacer un run en local del programa una vez clonado del repositorio
+npm install Luego escribir en la linea de comandos
+npm start Y se abrirá en el puerto 3000 del localhost</description>
+    </item>
+    
+  </channel>
+</rss>

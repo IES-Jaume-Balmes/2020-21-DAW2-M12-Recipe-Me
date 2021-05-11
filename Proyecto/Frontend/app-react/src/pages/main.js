@@ -2,21 +2,17 @@ import React, { Component } from "react";
 import "../css/main.css";
 import Sidebar from "../components/sidebar";
 import Recetas from "../components/Recetas";
+import CrearReceta from "../components/CrearReceta";
 import Listas from "../components/Listas";
-import { Switch, Route } from "react-router-dom";
+import Usuario from "../components/Usuario";
+import { Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Cookie from "universal-cookie";
 
 const cookie = new Cookie();
 
 export default class Main extends Component {
-  cerrarSesion = () => {
-    cookie.remove("user", { path: "/" });
-    cookie.remove("username", { path: "/" });
-
-    window.location.href = "./";
-  };
-
+  
   componentDidMount() {
     if (!cookie.get("user")) {
       window.location.href = "./";
@@ -31,22 +27,10 @@ export default class Main extends Component {
             <Sidebar />
           </div>
           <div>
-            <Switch>
-              <Route path="/home" exact>
-                <Recetas />
-              </Route>
-              <Route path="/listas" exact>
-                <Listas />
-              </Route>
-            </Switch>
-          </div>
-          <div>
-            <button
-              className="buttonLogout"
-              onClick={() => this.cerrarSesion()}
-            >
-              Cerrar Sesión
-            </button>
+            <Route path="/home" component={Recetas} />
+            <Route path="/listas" component={Listas} />
+            <Route path="/CrearReceta" component={CrearReceta} />
+            <Route path="/perfil" component={Usuario} />
           </div>
         </div>
       </Router>
