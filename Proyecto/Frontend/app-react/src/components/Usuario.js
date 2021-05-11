@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "../css/Recetas.css";
 import TarjetaUser from "./Cards/TarjetaUser";
 import Cookie from "universal-cookie";
@@ -8,6 +8,13 @@ const cookie = new Cookie();
 export default class Usuario extends Component {
   state = {
     usuario: {},
+  };
+
+  cerrarSesion = () => {
+    cookie.remove("user", { path: "/" });
+    cookie.remove("username", { path: "/" });
+
+    window.location.href = "./";
   };
 
   componentDidMount() {
@@ -23,6 +30,15 @@ export default class Usuario extends Component {
   }
 
   render() {
-    return <TarjetaUser usuario={this.state.usuario} />;
+    return (
+      <>
+        <TarjetaUser usuario={this.state.usuario} />
+        <div>
+          <button className="buttonLogout" onClick={() => this.cerrarSesion()}>
+            Cerrar Sesión
+          </button>
+        </div>
+      </>
+    );
   }
 }

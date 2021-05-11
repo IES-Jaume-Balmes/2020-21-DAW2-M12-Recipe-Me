@@ -15,6 +15,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +48,10 @@ export default function RecipeReviewCard({ recetas }) {
     setExpanded(!expanded);
   };
 
+  const anadirLista = () => {
+    console.log("añadido versión 2")
+  }
+
   return (
     <>
       {recetas.map((receta) => (
@@ -78,6 +83,9 @@ export default function RecipeReviewCard({ recetas }) {
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
+            <IconButton aria-label="add to Lista" onClick={anadirLista}>
+              <AddShoppingCartIcon />
+            </IconButton>
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />
             </IconButton>

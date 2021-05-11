@@ -10,7 +10,7 @@ const TarjetaRecetas = ({ recetas }) => {
           <CardMedia />
           <CardContent className="card-body">
             <Typography component="p" variant="h6">
-              {receta.name}
+              {receta.name} Frank
             </Typography>
             <h6 className="card-subtitle mb-2 text-muted">
               {receta.description}
