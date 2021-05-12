@@ -7,16 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 11 May 2021 19:45:08 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SetupSymfony</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/setupSymfony/</link>
-      <pubDate>Tue, 11 May 2021 19:53:22 +0200</pubDate>
-      
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/setupSymfony/</guid>
-      <description>## https://symfonycasts.com/screencast/symfony
- Anar a ./config/routes.yaml Crear un &amp;ldquo;mapping&amp;rdquo; (direcció) que junti un path amb un controller Anam a ./src/Controller i crear el controlador. És un classe de PHP. Dintre del controlador crearem una funció pública que farà algo. Tornem a ./config/routes.yaml i afegim la funció a la direcció del controlador.  </description>
-    </item>
-    
-    <item>
       <title>Entrega 0</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/entrega_0/</link>
       <pubDate>Tue, 11 May 2021 19:53:02 +0200</pubDate>
@@ -25,30 +15,6 @@
       <description>Integrantes del equipo     Frank Palomino Kevin Rodriguez Sergi Francés  Descripción    Recipe-Me se trata de una aplicacion web de servicio al ciudadano de a pié. Facilita las tareas quotidianas relacionadas con las necesidades básicas de alimento:
   Lista de la compra. ¿Por que ir al mercadona 3 veces a la semana cuando puedes comprarlo todo de una tacada?
   Gestion de dietas.</description>
-    </item>
-    
-    <item>
-      <title>Registro</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/registerForm/</link>
-      <pubDate>Tue, 11 May 2021 19:53:02 +0200</pubDate>
-      
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/registerForm/</guid>
-      <description>  Crear el formulari de registre: https://symfony.com/doc/4.2/doctrine/registration_form.html
-  Configurar base de dades https://symfony.com/doc/current/doctrine.html#configuring-the-database
- php bin/console doctrine:database:create php bin/console make:entity php bin/console make:migration php bin/console doctrine:migrations:migrate    </description>
-    </item>
-    
-    <item>
-      <title>Instrucciones login Symfony</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/loginForm/</link>
-      <pubDate>Tue, 11 May 2021 19:52:40 +0200</pubDate>
-      
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/loginForm/</guid>
-      <description>Tutorial youtube:    https://www.youtube.com/watch?v=1lKHlYeusgQ      TERMINAL: symfony new nombre_proyecto
-  Configurar database:
- Vamos al archivo ./.env y descomentamos la base de datos que vamos a utilizar. DATABASE_URL=&amp;ldquo;mysql://USUARIO:CONTRASEÑA@127.0.0.1:3306/DATABASE_NOMBRE?serverVersion=5.7&amp;rdquo; Borramos las otras para que no se confunda.    Insertamos en el terminal del proyecto:
- composer require symfony/security-bundle bin/console make:user bin/console make:migration    Conectamos con la base de datos:
- bin/console doctrine:migrations:migrate bin/console make:auth    En .</description>
     </item>
     
   </channel>
