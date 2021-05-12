@@ -13,7 +13,6 @@ Proyecto Final de ciclo Daw
 # Documentación
 
 [Documentacion en pages](https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/)
-[Ver documentación](https://documentacion-gamma.vercel.app/)
 
 ## Descargar el repositorio
 
