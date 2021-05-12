@@ -10,6 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Recetas from "../components/Recetas";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -146,6 +147,7 @@ export default function SearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
+      <Recetas />
     </div>
   );
 }
