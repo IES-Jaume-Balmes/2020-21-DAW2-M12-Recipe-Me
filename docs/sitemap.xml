@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/base_de_datos/</loc>
-    <lastmod>2021-05-11T19:59:27+02:00</lastmod>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/</loc>
+    <lastmod>2021-05-12T15:57:08+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</loc>
+    <lastmod>2021-05-12T15:57:08+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/base_de_datos/</loc>
     <lastmod>2021-05-11T19:59:27+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/frontend/</loc>
