@@ -79,9 +79,34 @@ export default function SignInSide() {
     event.preventDefault();
   }
 
-  // TODO: Crear función de petición a AXIOS
+  async function peticionApi() {
+    const axios = require("axios");
 
-  function peticionApi() {}
+    let jsonPeticion = {
+      email: email,
+      password: password,
+    };
+
+    await axios
+      .post(baseUrl, jsonPeticion)
+      .then((response) => {
+        return response.data;
+      })
+      .then((response) => {
+        if (response != null) {
+          //response = {user: 1, username:"Frank"};
+          cookie.set("user", response.user, { path: "/" });
+          cookie.set("username", response.username, { path: "/" });
+          window.location.href = "./main";
+        } else {
+          alert("El usuario o contraseña no son correctos");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Contraseña o usuario Incorrecto");
+      });
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -142,7 +167,7 @@ export default function SignInSide() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
