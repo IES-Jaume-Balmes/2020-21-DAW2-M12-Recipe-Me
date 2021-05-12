@@ -117,20 +117,20 @@ export default function SignInSide() {
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
-                  autoComplete="fname"
-                  name="firstName"
+                  autoComplete="uname"
+                  name="userName"
                   variant="outlined"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="userName"
+                  label="User Name"
                   autoFocus
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              {/* <Grid item xs={12} sm={6}>
                 <TextField
                   variant="outlined"
                   required
@@ -140,7 +140,7 @@ export default function SignInSide() {
                   name="lastName"
                   autoComplete="lname"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   variant="outlined"
