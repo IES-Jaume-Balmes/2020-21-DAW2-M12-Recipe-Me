@@ -80,4 +80,4 @@ Habrá un perfil de usuario.
 MVC  
 El cliente se comunica con el controlador que tendremos y este con la base de datos.
 
-![alt text](./img/arquitectura.jpeg)
+![Arquitecura de nuestra web](/2020-21-DAW2-M12-Recipe-Me/Arquitectura.jpeg)
