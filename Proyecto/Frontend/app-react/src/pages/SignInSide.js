@@ -79,6 +79,10 @@ export default function SignInSide() {
     event.preventDefault();
   }
 
+  // TODO: Crear función de petición a AXIOS
+
+  function peticionApi() {}
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -127,6 +131,7 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
               disabled={!validateForm()}
+              onClick={peticionApi}
             >
               Sign In
             </Button>
