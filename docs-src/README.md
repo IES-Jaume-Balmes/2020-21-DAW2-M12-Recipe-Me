@@ -12,3 +12,8 @@ https://gohugo.io/getting-started/quick-start/
 
 ### Crear build en /docs:
 > `hugo -D`
+
+### Poner imagenes
+1. Colocar imagen en docs-src/static
+2. Enlazar la imagen con la ruta siguiente:
+`/2020-21-DAW2-M12-Recipe-Me/imagen.jpeg`
