@@ -15,7 +15,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import Cookie from "universal-cookie";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,14 +49,25 @@ export default function RecipeReviewCard({ recetas }) {
     setExpanded(!expanded);
   };
 
-  const anadirLista = () => {
-    console.log("añadido versión 2")
-  }
+  const anadirLista = (lista) => {
+    const cookie = new Cookie();
+    let ingres = []
+    if(cookie.get("ingredientes")){
+      ingres = cookie.get("ingredientes")
+    }
+    
+    lista.forEach((i)=>{
+      ingres.push(i.name);
+    });
+
+    cookie.set("ingredientes", ingres, { path: "/" });
+    console.log(cookie);
+  };
 
   return (
     <>
       {recetas.map((receta) => (
-        <Card className={classes.root}>
+        <Card key={receta["@id"]} className={classes.root}>
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
@@ -73,17 +85,20 @@ export default function RecipeReviewCard({ recetas }) {
           <CardMedia
             className={classes.media}
             image="https://www.hola.com/imagenes/cocina/recetas/20200917175530/paella-valenciana-clasica/0-866-670/paella-age-m.jpg"
-            title="Paella dish"
+            title={receta.name}
           />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
+              {receta.description}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
-            <IconButton aria-label="add to Lista" onClick={anadirLista}>
+            <IconButton
+              aria-label="add to Lista"
+              onClick={() => {
+                anadirLista(receta.ingredients);
+              }}
+            >
               <AddShoppingCartIcon />
             </IconButton>
             <IconButton aria-label="add to favorites">

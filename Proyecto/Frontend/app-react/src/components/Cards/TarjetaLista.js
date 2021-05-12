@@ -4,10 +4,10 @@ const TarjetaLista = ({ listas }) => {
   return (
     <div>
       {listas.map((lista) => (
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{lista.name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{lista.createdAt}</h6>
+        <div key={lista.name} className="card">
+          <div className="card-body">
+            <h5 className="card-title">{lista.name}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">{lista.createdAt}</h6>
           </div>
         </div>
       ))}

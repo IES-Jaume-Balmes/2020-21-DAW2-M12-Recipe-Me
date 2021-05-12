@@ -3,10 +3,10 @@ import React from "react";
 const TarjetaUser = ({ usuario }) => {
   return (
     <div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{usuario.username}</h5>
-          <h5 class="card-title">{usuario.email}</h5>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{usuario.username}</h5>
+          <h5 className="card-title">{usuario.email}</h5>
         </div>
       </div>
     </div>

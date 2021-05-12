@@ -57,7 +57,7 @@ export default class CrearReceta extends Component {
           />
           <h5>Descripcion</h5>
           <textarea
-            class="form-control"
+            className="form-control"
             name="description"
             rows="3"
             onChange={this.handleChange}
