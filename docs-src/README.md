@@ -11,4 +11,4 @@ https://gohugo.io/getting-started/quick-start/
 > `hugo new directorio/nombre_archivo`
 
 ### Crear build en /docs:
-> `hugo -D -d ../docs`
+> `hugo -D`
