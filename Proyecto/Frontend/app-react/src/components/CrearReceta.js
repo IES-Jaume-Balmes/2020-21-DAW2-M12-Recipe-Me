@@ -22,8 +22,26 @@ export default class CrearReceta extends Component {
       .catch(console.log);
   }
 
-  activateLasers() {
-    console.log("Clic");
+  handleChangeOption = async (e) => {
+    
+    let options = e.target.options;
+    
+    let value =[];
+    for (var i = 0, l = options.length; i < l; i++) {
+      if (options[i].selected) {
+        value.push(options[i].value);
+      }    
+    }
+    console.log(value);
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+        
+      },
+    });
+    
+    
   }
 
   handleChange = async (e) => {
@@ -63,9 +81,11 @@ export default class CrearReceta extends Component {
             onChange={this.handleChange}
           ></textarea>
           <h5>Ingredientes</h5>
+          <select multiple name="ingredients" onChange={this.handleChangeOption}>
           <TarjetaIngredients
             ingredientsOption={this.state.ingredientsOption}
           />
+          </select>
         </div>
         <button onClick={() => this.registrarse()}>Crear Receta</button>
       </div>
