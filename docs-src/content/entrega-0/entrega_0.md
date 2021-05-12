@@ -80,4 +80,4 @@ Habrá un perfil de usuario.
 MVC  
 El cliente se comunica con el controlador que tendremos y este con la base de datos.
 
-![Arquitecura de nuestra web](../../static/Arquitectura.jpeg)
+![Arquitecura de nuestra web](../../Arquitectura.jpeg)

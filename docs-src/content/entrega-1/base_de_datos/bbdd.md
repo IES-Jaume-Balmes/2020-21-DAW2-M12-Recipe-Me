@@ -1,1 +1,1 @@
-![Mapa base de datos](../../../static/BBDD.jpeg)
+![Mapa base de datos](../../../BBDD.jpeg)
