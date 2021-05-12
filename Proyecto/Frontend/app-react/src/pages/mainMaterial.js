@@ -11,6 +11,11 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Recetas from "../components/Recetas";
+import CrearReceta from "../components/CrearReceta";
+import Listas from "../components/Listas";
+import Usuario from "../components/Usuario";
+import { Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
