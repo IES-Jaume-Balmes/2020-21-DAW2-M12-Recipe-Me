@@ -90,14 +90,14 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
             Recipe-me!
           </Typography>
@@ -139,8 +139,9 @@ export default function SearchAppBar() {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
+              <MenuItem onClick={handleClose}>Mi perfil</MenuItem>
+              <MenuItem onClick={handleClose}>Mis listas</MenuItem>
+              <MenuItem onClick={handleClose}>Mis recetas</MenuItem>
             </Menu>
           </div>
         </Toolbar>
