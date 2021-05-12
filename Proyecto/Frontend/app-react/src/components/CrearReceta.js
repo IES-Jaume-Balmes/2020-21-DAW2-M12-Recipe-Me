@@ -5,28 +5,69 @@ const baseUrl = "https://localhost:8000/ingredients";
 
 export default class CrearReceta extends Component {
   state = {
-    ingredients: [],
+    ingredientsOption: [],
+    form: {
+      name: "",
+      description: "",
+      ingredients: [],
+    },
   };
 
   componentDidMount() {
     fetch(baseUrl)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ ingredients: data["hydra:member"] });
+        this.setState({ ingredientsOption: data["hydra:member"] });
       })
       .catch(console.log);
   }
 
+  activateLasers() {
+    console.log("Clic");
+  }
+
+  handleChange = async (e) => {
+    await this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  registrarse = async () => {
+    let jsonPeticion = {
+      name: this.state.form.name,
+      description: this.state.form.description,
+      ingredients: this.state.form.ingredients,
+    };
+    console.log(jsonPeticion);
+  };
+
   render() {
     return (
       <div>
-        CREAR RECETA
         <div>
           <h1>Receta</h1>
-
-          <input name="titulo" className="form-control my-2" />
+          <h5>Nombre</h5>
+          <input
+            name="name"
+            className="form-control my-2"
+            onChange={this.handleChange}
+          />
+          <h5>Descripcion</h5>
+          <textarea
+            class="form-control"
+            name="description"
+            rows="3"
+            onChange={this.handleChange}
+          ></textarea>
+          <h5>Ingredientes</h5>
+          <TarjetaIngredients
+            ingredientsOption={this.state.ingredientsOption}
+          />
         </div>
-        <TarjetaIngredients ingredients={this.state.ingredients} />
+        <button onClick={() => this.registrarse()}>Crear Receta</button>
       </div>
     );
   }

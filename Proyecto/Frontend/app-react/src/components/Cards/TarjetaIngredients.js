@@ -1,14 +1,14 @@
 import React from "react";
 
-const TarjetaIngredients = ({ ingredients }) => {
+const TarjetaIngredients = ({ ingredientsOption }) => {
   return (
-    <div>
-      {ingredients.map((ingredient) => (
-        <div class="card-body">
-          <h5 class="card-title">{ingredient.name}</h5>
-        </div>
+    <select multiple name="ingredients" onChange={this.handleChange}>
+      {ingredientsOption.map((ingredient) => (
+        
+          <option id={ingredient["@id"]}>{ingredient.name}</option>
+        
       ))}
-    </div>
+    </select>
   );
 };
 
