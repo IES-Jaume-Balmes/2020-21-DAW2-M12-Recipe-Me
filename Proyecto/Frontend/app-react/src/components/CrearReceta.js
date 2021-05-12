@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TarjetaIngredients from "./Cards/TarjetaIngredients";
 const baseUrl = "https://localhost:8000/ingredients";
-
+let arrayPuente = [];
 export default class CrearReceta extends Component {
   state = {
     ingredientsOption: [],
@@ -22,27 +22,20 @@ export default class CrearReceta extends Component {
       .catch(console.log);
   }
 
+  
   handleChangeOption = async (e) => {
+    //console.log(this.state.form.ingredients);
     
-    let options = e.target.options;
-    
-    let value =[];
-    for (var i = 0, l = options.length; i < l; i++) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }    
-    }
-    console.log(value);
+    arrayPuente.push(this.state.form.ingredients)
+    console.log(arrayPuente)
     this.setState({
       form: {
         ...this.state.form,
-        [e.target.name]: e.target.value,
-        
+        ingredients:e.target.value,
       },
     });
-    
-    
-  }
+      
+  };
 
   handleChange = async (e) => {
     await this.setState({
@@ -57,7 +50,7 @@ export default class CrearReceta extends Component {
     let jsonPeticion = {
       name: this.state.form.name,
       description: this.state.form.description,
-      ingredients: this.state.form.ingredients,
+      ingredients: arrayPuente,
     };
     console.log(jsonPeticion);
   };
@@ -81,10 +74,14 @@ export default class CrearReceta extends Component {
             onChange={this.handleChange}
           ></textarea>
           <h5>Ingredientes</h5>
-          <select multiple name="ingredients" onChange={this.handleChangeOption}>
-          <TarjetaIngredients
-            ingredientsOption={this.state.ingredientsOption}
-          />
+          <select
+            name="ingredients"
+            onChange={this.handleChangeOption}
+            value={this.state.value}
+          >
+            <TarjetaIngredients
+              ingredientsOption={this.state.ingredientsOption}
+            />
           </select>
         </div>
         <button onClick={() => this.registrarse()}>Crear Receta</button>

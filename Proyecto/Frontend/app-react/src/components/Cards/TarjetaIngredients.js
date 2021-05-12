@@ -4,7 +4,7 @@ const TarjetaIngredients = ({ ingredientsOption }) => {
   return (
     <>
       {ingredientsOption.map((ingredient) => (        
-          <option id={ingredient["@id"]}>{ingredient.name}</option>        
+          <option value={ingredient["@id"]}>{ingredient.name}</option>        
       ))}
     </>
   );
