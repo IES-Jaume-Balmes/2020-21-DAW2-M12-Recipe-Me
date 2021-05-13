@@ -4,7 +4,12 @@ import Listas from "../components/Listas";
 import Perfil from "../components/Usuario";
 import Cookie from "universal-cookie";
 import Recetas from "../components/Recetas";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
@@ -38,7 +43,11 @@ export default function Routes() {
         <Route path="/login" component={SignInSide} />
         <Route path="/register" component={SignUpSide} />
         <div className={classes.root}>
-          <Route path="/" component={Drawer} />
+          {cookie.get("user") ? (
+            <Route path="/" component={Drawer} />
+          ) : (
+            <Redirect to="/login" />
+          )}
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <Router>
