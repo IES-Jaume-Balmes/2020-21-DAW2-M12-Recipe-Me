@@ -21,7 +21,6 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import Recetas from "../components/Recetas";
 import SearchBar from "../pages/mainMaterial";
-import Body from "./Body";
 
 const drawerWidth = 240;
 
@@ -178,7 +177,7 @@ export default function MiniDrawer() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Body />
+        <Recetas />
       </main>
     </div>
   );
