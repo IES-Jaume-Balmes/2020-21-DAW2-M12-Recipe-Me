@@ -100,7 +100,7 @@ export default function MiniDrawer() {
   };
 
   return (
-    <div className={classes.root}>
+    <>
       <CssBaseline />
 
       <AppBar
@@ -175,10 +175,6 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Recetas />
-      </main>
-    </div>
+    </>
   );
 }
