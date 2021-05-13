@@ -9,6 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -17,10 +18,14 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import HomeIcon from "@material-ui/icons/Home";
 
 const drawerWidth = 240;
+
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -150,27 +155,39 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {["Recetas", "Listas", "Panel Usuario", "Drafts"].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <FastfoodIcon /> : <ShoppingCartIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+          <ListItemLink href="/">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemLink>
+          <ListItemLink href="/listas">
+            <ListItemIcon>
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Listas" />
+          </ListItemLink>
+          <ListItemLink href="/recetas">
+            <ListItemIcon>
+              <FastfoodIcon />
+            </ListItemIcon>
+            <ListItemText primary="Recetas" />
+          </ListItemLink>
+          <ListItemLink href="/perfil">
+            <ListItemIcon>
+              <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Perfil" />
+          </ListItemLink>
         </List>
         <Divider />
         <List>
-          {["Ayuda"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItemLink href="/">
+            <ListItemIcon>
+              <ContactSupportIcon />
+            </ListItemIcon>
+            <ListItemText primary="Ayuda" />
+          </ListItemLink>
         </List>
       </Drawer>
     </>
