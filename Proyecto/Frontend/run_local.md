@@ -7,3 +7,6 @@
 1. npm install @material-ui/core
 2. npm install @material-ui/icons
 > https://material-ui.com/components/cards/
+
+1. instalar yarn add react-select
+2. https://react-select.com/

@@ -6,6 +6,7 @@ const TarjetaIngredients = ({ ingredientsOption }) => {
     return { value: ingredient["@id"], label: ingredient.name };
   });
 
+  
   return (
     <>
       {/* {ingredientsOption.map((ingredient) => (        
@@ -18,6 +19,7 @@ const TarjetaIngredients = ({ ingredientsOption }) => {
         options={ingredientObj}
         className="basic-multi-select"
         classNamePrefix="select"
+        
       />
     </>
   );
