@@ -86,7 +86,7 @@ export default function RecipeReviewCard({ recetas }) {
             />
             <CardMedia
               className={classes.media}
-              image="https://www.hola.com/imagenes/cocina/recetas/20200917175530/paella-valenciana-clasica/0-866-670/paella-age-m.jpg"
+              image="https://source.unsplash.com/collection/1353633"
               title={receta.name}
             />
             <CardContent>
