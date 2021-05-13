@@ -58,11 +58,15 @@ export default function RecipeReviewCard({ recetas }) {
     }
 
     lista.forEach((i) => {
-      ingres.push(i.name);
+      ingres.push({
+        id : i["@id"],
+        nombre : i.name
+      })
+      
     });
 
     cookie.set("ingredientes", ingres, { path: "/" });
-    console.log(cookie);
+    console.log(cookie.get("ingredientes"));
   };
 
   return (

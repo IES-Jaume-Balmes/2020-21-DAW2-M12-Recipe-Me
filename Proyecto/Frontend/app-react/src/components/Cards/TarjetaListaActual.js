@@ -14,7 +14,7 @@ export const TarjetaListaActual = () => {
       <>
         <div>
           {arrayIngres.map((ing) => {
-            return <li key={ing}>{ing}</li>;
+            return <li key={ing.id}>{ing.nombre}</li>;
           })}
         </div>
         <button type="button" className="btn btn-primary" onClick={()=>{guardarListaCompra()}}>Guardar Lista de la compra</button>
