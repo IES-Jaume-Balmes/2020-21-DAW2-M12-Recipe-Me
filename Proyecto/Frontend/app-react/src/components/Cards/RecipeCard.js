@@ -50,6 +50,8 @@ export default function RecipeReviewCard({ recetas }) {
     setExpanded(!expanded);
   };
 
+  
+
   const anadirLista = (lista) => {
     const cookie = new Cookie();
     let ingres = [];
@@ -58,11 +60,26 @@ export default function RecipeReviewCard({ recetas }) {
     }
 
     lista.forEach((i) => {
-      ingres.push(i.name);
+      ingres.push({
+        id : i["@id"],
+        nombre : i.name
+      })
+      
     });
 
-    cookie.set("ingredientes", ingres, { path: "/" });
-    console.log(cookie);
+    let noRepes = [];
+
+    let otro = ingres.filter((obj)=>{
+      if(noRepes.includes(obj.id)){
+        return false;
+        
+      }
+      noRepes.push(obj.id);
+      return true;
+    })
+
+    cookie.set("ingredientes", otro, { path: "/" });
+    console.log(cookie.get("ingredientes"));
   };
 
   return (

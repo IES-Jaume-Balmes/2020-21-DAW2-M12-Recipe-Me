@@ -14,6 +14,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
+import Main from "../pages/main";
 
 const cookie = new Cookie();
 
