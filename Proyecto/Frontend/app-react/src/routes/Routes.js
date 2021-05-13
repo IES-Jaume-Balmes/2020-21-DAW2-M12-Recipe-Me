@@ -50,12 +50,10 @@ export default function Routes() {
           )}
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Router>
-              <Route path="/" exact component={Recetas} />
-              <Route path="/recetas" component={CrearReceta} />
-              <Route path="/listas" component={Listas} />
-              <Route path="/perfil" component={Perfil} />
-            </Router>
+            <Route path="/" exact component={Recetas} />
+            <Route path="/recetas" component={CrearReceta} />
+            <Route path="/listas" component={Listas} />
+            <Route path="/perfil" component={Perfil} />
           </main>
         </div>
       </Switch>
