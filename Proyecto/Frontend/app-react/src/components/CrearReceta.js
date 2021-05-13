@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TarjetaIngredients from "./Cards/TarjetaIngredients";
 const baseUrl = "https://localhost:8000/ingredients";
