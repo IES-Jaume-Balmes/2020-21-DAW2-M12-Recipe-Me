@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
-import MainMaterial from "../pages/mainMaterial";
 import Drawer from "../pages/Drawer";
 import Cookie from "universal-cookie";
 
