@@ -14,7 +14,13 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
+<<<<<<< HEAD
+import MainMaterial from "../pages/mainMaterial";
+import Cookie from "universal-cookie";
+import Main from "../pages/main";
+=======
 
+>>>>>>> 4f77b14368e5386184b755d80b9dad21a3a50b50
 const cookie = new Cookie();
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +46,15 @@ export default function Routes() {
   return (
     <Router>
       <Switch>
+<<<<<<< HEAD
+        <Route exact path="/" component={SignInSide} />
+        <Route exact path="/register" component={SignUpSide} />
+        {cookie.get("user") ? (
+          <Route exact path="/main" component={Main} />
+        ) : (
+          <Redirect to="/" />
+        )}
+=======
         <Route path="/login" component={SignInSide} />
         <Route path="/register" component={SignUpSide} />
         <div className={classes.root}>
@@ -58,6 +73,7 @@ export default function Routes() {
             </Router>
           </main>
         </div>
+>>>>>>> 4f77b14368e5386184b755d80b9dad21a3a50b50
       </Switch>
     </Router>
   );
