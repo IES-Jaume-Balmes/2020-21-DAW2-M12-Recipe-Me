@@ -1,8 +1,18 @@
-import React, { Component, useState} from "react";
+import React, { Component, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TarjetaIngredients from "./Cards/TarjetaIngredients";
+import axios from "axios";
+
+
+//instalar yarn add react-select
+
 const baseUrl = "https://localhost:8000/ingredients";
-let arrayPuente = [];
+const baseUrlAdd = "https://localhost:8000/recipes";
+
+//Array a la que le introduciremos los ingredientes y despues la cargaremos a
+//state.form.ingredients.
+let arrayLoadedIngredients = [];
+
 export default class CrearReceta extends Component {
   state = {
     ingredientsOption: [],
@@ -22,19 +32,19 @@ export default class CrearReceta extends Component {
       .catch(console.log);
   }
 
-  
   handleChangeOption = async (e) => {
-    //console.log(this.state.form.ingredients);
     
-    arrayPuente.push(this.state.form.ingredients)
-    console.log(arrayPuente)
+
     this.setState({
       form: {
         ...this.state.form,
-        ingredients:e.target.value,
+        ingredients: e.target.value,
       },
     });
-      
+    if (this.state.form.ingredients.length !== 0) {
+      arrayLoadedIngredients.push(this.state.form.ingredients);
+      console.log(arrayLoadedIngredients);
+    }
   };
 
   handleChange = async (e) => {
@@ -46,14 +56,24 @@ export default class CrearReceta extends Component {
     });
   };
 
-  registrarse = async () => {
+  crearReceta = async () => {
     let jsonPeticion = {
       name: this.state.form.name,
       description: this.state.form.description,
-      ingredients: arrayPuente,
+      ingredients: arrayLoadedIngredients,
     };
     console.log(jsonPeticion);
+    await axios
+      .post(baseUrlAdd, jsonPeticion)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Ha ocurrido un error");
+      });
   };
+
 
   render() {
     return (
@@ -74,17 +94,18 @@ export default class CrearReceta extends Component {
             onChange={this.handleChange}
           ></textarea>
           <h5>Ingredientes</h5>
-          <select
+          {/*<select
             name="ingredients"
             onChange={this.handleChangeOption}
             value={this.state.value}
           >
-            <TarjetaIngredients
+          </select>*/}
+          <TarjetaIngredients
+              onChange={this.handleChange}
               ingredientsOption={this.state.ingredientsOption}
             />
-          </select>
         </div>
-        <button onClick={() => this.registrarse()}>Crear Receta</button>
+        <button onClick={() => this.crearReceta()}>Crear Receta</button>
       </div>
     );
   }

@@ -4,7 +4,7 @@ import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
 import MainMaterial from "../pages/mainMaterial";
 import Cookie from "universal-cookie";
-
+import Main from "../pages/main";
 const cookie = new Cookie();
 
 function Routes() {
@@ -14,7 +14,7 @@ function Routes() {
         <Route exact path="/" component={SignInSide} />
         <Route exact path="/register" component={SignUpSide} />
         {cookie.get("user") ? (
-          <Route exact path="/main" component={MainMaterial} />
+          <Route exact path="/main" component={Main} />
         ) : (
           <Redirect to="/" />
         )}
