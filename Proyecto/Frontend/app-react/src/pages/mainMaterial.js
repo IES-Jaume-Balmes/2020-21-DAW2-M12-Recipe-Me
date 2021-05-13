@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
-      width: "100%",
+      width: "50%",
     },
   },
   searchIcon: {
@@ -121,61 +121,18 @@ export default function SearchAppBar(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <ElevationScroll {...props}>
-        <AppBar position="fixed">
-          <Toolbar>
-            <Typography className={classes.title} variant="h6" noWrap>
-              Recipe-me!
-            </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ "aria-label": "search" }}
-              />
-            </div>
-            <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Mi perfil</MenuItem>
-                <MenuItem onClick={handleClose}>Mis listas</MenuItem>
-                <MenuItem onClick={handleClose}>Mis recetas</MenuItem>
-              </Menu>
-            </div>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
-
-      <Recetas />
+    <div className={classes.search}>
+      <div className={classes.searchIcon}>
+        <SearchIcon />
+      </div>
+      <InputBase
+        placeholder="Search…"
+        classes={{
+          root: classes.inputRoot,
+          input: classes.inputInput,
+        }}
+        inputProps={{ "aria-label": "search" }}
+      />
     </div>
   );
 }

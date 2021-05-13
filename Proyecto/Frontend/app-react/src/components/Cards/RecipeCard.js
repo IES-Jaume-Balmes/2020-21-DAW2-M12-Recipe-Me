@@ -106,9 +106,9 @@ export default function RecipeReviewCard({ recetas }) {
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
-              <IconButton aria-label="share">
+              {/* <IconButton aria-label="share">
                 <ShareIcon />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
