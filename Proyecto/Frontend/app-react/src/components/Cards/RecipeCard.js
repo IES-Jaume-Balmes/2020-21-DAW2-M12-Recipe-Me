@@ -68,7 +68,7 @@ export default function RecipeReviewCard({ recetas }) {
   return (
     <>
       {recetas.map((receta) => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={3}>
           <Card key={receta["@id"]} className={classes.root}>
             <CardHeader
               avatar={
@@ -86,7 +86,7 @@ export default function RecipeReviewCard({ recetas }) {
             />
             <CardMedia
               className={classes.media}
-              image="https://www.hola.com/imagenes/cocina/recetas/20200917175530/paella-valenciana-clasica/0-866-670/paella-age-m.jpg"
+              image="https://source.unsplash.com/collection/1353633"
               title={receta.name}
             />
             <CardContent>
@@ -106,9 +106,9 @@ export default function RecipeReviewCard({ recetas }) {
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
-              <IconButton aria-label="share">
+              {/* <IconButton aria-label="share">
                 <ShareIcon />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
