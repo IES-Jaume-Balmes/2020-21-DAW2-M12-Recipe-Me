@@ -30,7 +30,7 @@ class Recetas extends Component {
     const { classes } = this.props;
     return (
       <Grid container spacing={4} className={classes.gridContainer}>
-        <RecipeCard recetas={this.state.recetas} />;
+        <RecipeCard recetas={this.state.recetas} />
       </Grid>
     );
   }

@@ -85,7 +85,7 @@ export default function RecipeReviewCard({ recetas }) {
   return (
     <>
       {recetas.map((receta) => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={3}>
           <Card key={receta["@id"]} className={classes.root}>
             <CardHeader
               avatar={
@@ -123,9 +123,9 @@ export default function RecipeReviewCard({ recetas }) {
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
-              <IconButton aria-label="share">
+              {/* <IconButton aria-label="share">
                 <ShareIcon />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,

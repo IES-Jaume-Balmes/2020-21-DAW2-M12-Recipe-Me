@@ -98,7 +98,7 @@ export default function SignInSide() {
           //response = {user: 1, username:"Frank"};
           cookie.set("user", response.user, { path: "/" });
           cookie.set("username", response.username, { path: "/" });
-          window.location.href = "./main";
+          window.location.href = "./";
         } else {
           alert("El usuario o contraseña no son correctos");
         }
