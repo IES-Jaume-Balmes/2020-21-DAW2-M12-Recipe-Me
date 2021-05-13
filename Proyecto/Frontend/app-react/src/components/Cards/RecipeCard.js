@@ -68,7 +68,7 @@ export default function RecipeReviewCard({ recetas }) {
   return (
     <>
       {recetas.map((receta) => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={3}>
           <Card key={receta["@id"]} className={classes.root}>
             <CardHeader
               avatar={
