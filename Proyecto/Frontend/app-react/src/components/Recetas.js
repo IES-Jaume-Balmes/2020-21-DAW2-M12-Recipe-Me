@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import "../css/Recetas.css";
 import RecipeCard from "./Cards/RecipeCard";
+import { Grid } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 
-export default class Recetas extends Component {
+const styles = (theme) => ({
+  gridContainer: {
+    paddingTop: "30px",
+    paddingLeft: "30px",
+    paddingRight: "30px",
+  },
+});
+
+class Recetas extends Component {
   state = {
     recetas: [],
   };
@@ -17,6 +27,13 @@ export default class Recetas extends Component {
   }
 
   render() {
-    return <RecipeCard recetas={this.state.recetas} />;
+    const { classes } = this.props;
+    return (
+      <Grid container spacing={4} className={classes.gridContainer}>
+        <RecipeCard recetas={this.state.recetas} />;
+      </Grid>
+    );
   }
 }
+
+export default withStyles(styles)(Recetas);
