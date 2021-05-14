@@ -15,12 +15,10 @@ import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
 <<<<<<< HEAD
-import MainMaterial from "../pages/mainMaterial";
-import Cookie from "universal-cookie";
-import Main from "../pages/main";
-=======
 
->>>>>>> 4f77b14368e5386184b755d80b9dad21a3a50b50
+=======
+>>>>>>> 02423e8e01fdf85ec95e10ce27f45d3aaf682cb0
+
 const cookie = new Cookie();
 
 const useStyles = makeStyles((theme) => ({
@@ -46,15 +44,6 @@ export default function Routes() {
   return (
     <Router>
       <Switch>
-<<<<<<< HEAD
-        <Route exact path="/" component={SignInSide} />
-        <Route exact path="/register" component={SignUpSide} />
-        {cookie.get("user") ? (
-          <Route exact path="/main" component={Main} />
-        ) : (
-          <Redirect to="/" />
-        )}
-=======
         <Route path="/login" component={SignInSide} />
         <Route path="/register" component={SignUpSide} />
         <div className={classes.root}>
@@ -65,15 +54,12 @@ export default function Routes() {
           )}
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Router>
-              <Route path="/" exact component={Recetas} />
-              <Route path="/recetas" component={CrearReceta} />
-              <Route path="/listas" component={Listas} />
-              <Route path="/perfil" component={Perfil} />
-            </Router>
+            <Route path="/" exact component={Recetas} />
+            <Route path="/recetas" component={CrearReceta} />
+            <Route path="/listas" component={Listas} />
+            <Route path="/perfil" component={Perfil} />
           </main>
         </div>
->>>>>>> 4f77b14368e5386184b755d80b9dad21a3a50b50
       </Switch>
     </Router>
   );

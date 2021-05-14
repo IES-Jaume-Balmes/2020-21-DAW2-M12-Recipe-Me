@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TarjetaIngredients from "./Cards/TarjetaIngredients";
 import axios from "axios";
 
-
 //instalar yarn add react-select
 
 const baseUrl = "https://localhost:8000/ingredients";
@@ -40,10 +39,11 @@ export default class CrearReceta extends Component {
         ingredients: e.target.value,
       },
     });
-      if(this.state.form.ingredients!=0){
-      arrayLoadedIngredients.push(this.state.form.ingredients);
-      }
     
+    if (this.state.form.ingredients != 0) {
+      arrayLoadedIngredients.push(this.state.form.ingredients);
+    }
+
     console.log(arrayLoadedIngredients);
   };
 
@@ -74,7 +74,6 @@ export default class CrearReceta extends Component {
       });
   };
 
-
   render() {
     return (
       <div>
@@ -91,7 +90,7 @@ export default class CrearReceta extends Component {
             className="form-control"
             name="description"
             rows="3"
-            onChange={this.handleChange}    
+            onChange={this.handleChange}
           ></textarea>
           <h5>Ingredientes</h5>
           <select
@@ -99,14 +98,18 @@ export default class CrearReceta extends Component {
             onChange={this.handleChangeOption}
             value={this.state.value}
           >
-            <TarjetaIngredients ingredientsOption={this.state.ingredientsOption}/>
+            <TarjetaIngredients
+              ingredientsOption={this.state.ingredientsOption}
+            />
           </select>
           {/*<TarjetaIngredients
               onChange={this.handleChangeOption}
               ingredientsOption={this.state.ingredientsOption}
           />*/}
         </div>
-        <button className="btn btn-primary" onClick={() => this.crearReceta()}>Crear Receta</button>
+        <button className="btn btn-primary" onClick={() => this.crearReceta()}>
+          Crear Receta
+        </button>
       </div>
     );
   }
