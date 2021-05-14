@@ -6,9 +6,9 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = (theme) => ({
   gridContainer: {
-    paddingTop: "30px",
-    paddingLeft: "30px",
-    paddingRight: "30px",
+    // paddingTop: "30px",
+    // paddingLeft: "30px",
+    // paddingRight: "30px",
   },
 });
 
@@ -30,7 +30,9 @@ class Recetas extends Component {
     const { classes } = this.props;
     return (
       <Grid container spacing={4} className={classes.gridContainer}>
-        <RecipeCard recetas={this.state.recetas} />
+        {this.state.recetas.map((element) => (
+          <RecipeCard receta={element} />
+        ))}
       </Grid>
     );
   }

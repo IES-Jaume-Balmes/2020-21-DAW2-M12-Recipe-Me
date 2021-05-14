@@ -5,7 +5,43 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Recipeme docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 May 2021 15:57:08 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 17:26:55 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</link>
+      <pubDate>Fri, 14 May 2021 17:26:55 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</guid>
+      <description>Añadidos    Hacemos que el parametro createdAtde la entidad Usuario se costruya automáticamente des de backend. No es necesario introducirla des de frontend, pero se puede hacer.</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/docs/hugo/</link>
+      <pubDate>Fri, 14 May 2021 16:10:23 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/docs/hugo/</guid>
+      <description>Template escogida: https://geekdocs.de/usage/getting-started/#option-1-download-pre-build-release-bundle
+Deployement: https://gohugo.io/getting-started/quick-start/
+Crear nuevo archivo:     hugo new nombre_archivo hugo new directorio/nombre_archivo
+ Crear build en /docs:    Para hacer que la build se genere automaticamente en docs, hemos tenido que modificar el archivo de configuración config.toml. Añadimos la línea:
+ publishDir = &amp;quot;../docs&amp;quot;
+ Para generar la build ejecutamos el comando:
+ hugo -D
+ Poner imagenes     Colocar imagen en docs-src/static Enlazar la imagen con la ruta siguiente: /2020-21-DAW2-M12-Recipe-Me/imagen.</description>
+    </item>
+    
+    <item>
+      <title>Vista</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/vista/</link>
+      <pubDate>Fri, 14 May 2021 16:08:40 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/vista/</guid>
+      <description>Material UI    Material UI es una plataforma que ofrece una gran variedad de plantillas y componentes preconstruidos con el objetivo de facilitar y acelerar el desarrollo de paginas web.
+Para generar la vista nos estamos basando en varias de las plantillas y los componentes que nos ofrece https://material-ui.com/ adaptandolos a nuestras necesidades.
+Maquillaje main page    Por maquillaje nos estamos refiriendo a la parte visual, lo que conformaría composición de los elementos y su css.</description>
+    </item>
+    
     <item>
       <title>Instrucciones Backend</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/API/</link>
@@ -167,6 +203,17 @@ cd app-react Comando para iniciar en el directorio ./app-react
 npm start Run Local    Para hacer un run en local del programa una vez clonado del repositorio
 npm install Luego escribir en la linea de comandos
 npm start Y se abrirá en el puerto 3000 del localhost</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/</guid>
+      <description>Login    Ahora los usarios se cargan desde la base de datos y se comprueba su autentificación. Para esto se está utilizando la librería universal-cookie, esta cookie se guardará al ser un login correcto.
+RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada receta
+&amp;lt;IconButton aria-label=&amp;#34;add to Lista&amp;#34; onClick={anadirLista}&amp;gt; &amp;lt;AddShoppingCartIcon /&amp;gt; &amp;lt;/IconButton&amp;gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada</description>
     </item>
     
   </channel>

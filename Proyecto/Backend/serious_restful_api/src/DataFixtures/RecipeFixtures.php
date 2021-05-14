@@ -12,13 +12,13 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         // CARGAMOS RECETAS
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $faker = \Faker\Factory::create();
             $faker->addProvider(
                 new \FakerRestaurant\Provider\en_US\Restaurant($faker)
             );
             $receta = new Recipe();
-            $receta->setDescription('random description');
+            $receta->setDescription($faker->text($maxNbChars = 40));
             $receta->setName($faker->foodName());
             for ($n = 0; $n < 4; $n++) {
                 $receta->addIngredient(
