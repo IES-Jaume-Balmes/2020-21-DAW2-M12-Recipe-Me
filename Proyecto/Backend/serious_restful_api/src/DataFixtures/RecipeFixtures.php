@@ -18,7 +18,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
                 new \FakerRestaurant\Provider\en_US\Restaurant($faker)
             );
             $receta = new Recipe();
-            $receta->setDescription('random description');
+            $receta->setDescription($faker->text($maxNbChars = 200));
             $receta->setName($faker->foodName());
             for ($n = 0; $n < 4; $n++) {
                 $receta->addIngredient(
