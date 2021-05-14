@@ -82,15 +82,20 @@ export default function RecipeReviewCard({ receta }) {
   const imgString =
     "https://source.unsplash.com/collection/1353633/" +
     receta["@id"].substr(receta["@id"].length - 1);
+  const imgAvatar =
+    "https://source.unsplash.com/collection/1718802/" +
+    receta["@id"].substr(receta["@id"].length - 1);
 
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card key={receta["@id"]} className={classes.root}>
         <CardHeader
           avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              ?
-            </Avatar>
+            <Avatar
+              alt="Remy Sharp"
+              src={imgAvatar}
+              className={classes.large}
+            />
           }
           action={
             <IconButton aria-label="settings">
