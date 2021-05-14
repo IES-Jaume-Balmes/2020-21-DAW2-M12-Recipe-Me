@@ -15,7 +15,6 @@ import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
 
-
 const cookie = new Cookie();
 
 const useStyles = makeStyles((theme) => ({
@@ -51,12 +50,10 @@ export default function Routes() {
           )}
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Router>
-              <Route path="/" exact component={Recetas} />
-              <Route path="/recetas" component={CrearReceta} />
-              <Route path="/listas" component={Listas} />
-              <Route path="/perfil" component={Perfil} />
-            </Router>
+            <Route path="/" exact component={Recetas} />
+            <Route path="/recetas" component={CrearReceta} />
+            <Route path="/listas" component={Listas} />
+            <Route path="/perfil" component={Perfil} />
           </main>
         </div>
       </Switch>
