@@ -98,7 +98,8 @@ export default function RecipeReviewCard({ receta }) {
             </IconButton>
           }
           title={receta.name}
-          subheader="September 14, 2016"
+          // subheader="September 14, 2016"
+          subheader={receta.createdAt}
         />
         <CardMedia
           className={classes.media}

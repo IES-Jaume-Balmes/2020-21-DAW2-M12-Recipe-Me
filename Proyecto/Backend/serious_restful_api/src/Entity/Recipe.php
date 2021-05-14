@@ -46,6 +46,7 @@ class Recipe
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"recipe:read"})
      */
     private $createdAt;
 
