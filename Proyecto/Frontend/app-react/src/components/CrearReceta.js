@@ -40,11 +40,11 @@ export default class CrearReceta extends Component {
         ingredients: e.target.value,
       },
     });
-    if (this.state.form.ingredients.length !== 0) {
+      if(this.state.form.ingredients!=0){
       arrayLoadedIngredients.push(this.state.form.ingredients);
-      
-    }
-    console.log(e.target.value);
+      }
+    
+    console.log(arrayLoadedIngredients);
   };
 
   handleChange = async (e) => {
@@ -63,7 +63,7 @@ export default class CrearReceta extends Component {
       ingredients: arrayLoadedIngredients,
     };
     console.log(jsonPeticion);
-    /*await axios
+    await axios
       .post(baseUrlAdd, jsonPeticion)
       .then((response) => {
         console.log(response.data);
@@ -71,7 +71,7 @@ export default class CrearReceta extends Component {
       .catch((error) => {
         console.log(error);
         alert("Ha ocurrido un error");
-      });*/
+      });
   };
 
 
@@ -91,19 +91,20 @@ export default class CrearReceta extends Component {
             className="form-control"
             name="description"
             rows="3"
-            onChange={this.handleChange}
+            onChange={this.handleChange}    
           ></textarea>
           <h5>Ingredientes</h5>
-          {/*<select
+          <select
             name="ingredients"
             onChange={this.handleChangeOption}
             value={this.state.value}
           >
-          </select>*/}
-          <TarjetaIngredients
+            <TarjetaIngredients ingredientsOption={this.state.ingredientsOption}/>
+          </select>
+          {/*<TarjetaIngredients
               onChange={this.handleChangeOption}
               ingredientsOption={this.state.ingredientsOption}
-            />
+          />*/}
         </div>
         <button className="btn btn-primary" onClick={() => this.crearReceta()}>Crear Receta</button>
       </div>
