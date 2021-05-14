@@ -99,7 +99,7 @@ export default function RecipeReviewCard({ receta }) {
           }
           title={receta.name}
           // subheader="September 14, 2016"
-          subheader={receta.createdAt}
+          subheader={receta.createdAtAgo}
         />
         <CardMedia
           className={classes.media}
