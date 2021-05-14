@@ -37,17 +37,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Routes() {
   const classes = useStyles();
+
+  if (!cookie.get("user")) {
+    return (
+      <Router>
+        <Route path="/login" component={SignInSide} />
+        <Route path="/register" component={SignUpSide} />
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <Switch>
-        <Route path="/login" component={SignInSide} />
-        <Route path="/register" component={SignUpSide} />
         <div className={classes.root}>
-          {cookie.get("user") ? (
-            <Route path="/" component={Drawer} />
-          ) : (
-            <Redirect to="/login" />
-          )}
+          <Route path="/" component={Drawer} />
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <Route path="/" exact component={Recetas} />
