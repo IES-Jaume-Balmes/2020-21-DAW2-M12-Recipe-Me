@@ -78,6 +78,11 @@ export default function RecipeReviewCard({ receta }) {
     console.log(cookie.get("ingredientes"));
   };
 
+  // Para generar una imagen aleatoria colocamos un digito al final del string.
+  const imgString =
+    "https://source.unsplash.com/collection/1353633/" +
+    receta["@id"].substr(receta["@id"].length - 1);
+
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card key={receta["@id"]} className={classes.root}>
@@ -97,7 +102,7 @@ export default function RecipeReviewCard({ receta }) {
         />
         <CardMedia
           className={classes.media}
-          image="https://source.unsplash.com/collection/1353633"
+          image={imgString}
           title={receta.name}
         />
         <CardContent>
