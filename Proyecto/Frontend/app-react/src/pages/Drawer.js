@@ -20,6 +20,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import HomeIcon from "@material-ui/icons/Home";
+import RestaurantIcon from "@material-ui/icons/Restaurant";
 
 const drawerWidth = 240;
 
@@ -169,7 +170,7 @@ export default function MiniDrawer() {
           </ListItemLink>
           <ListItemLink href="/recetas">
             <ListItemIcon>
-              <FastfoodIcon />
+              <RestaurantIcon />
             </ListItemIcon>
             <ListItemText primary="Recetas" />
           </ListItemLink>

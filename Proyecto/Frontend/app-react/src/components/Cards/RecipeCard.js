@@ -89,7 +89,7 @@ export default function RecipeReviewCard({ receta }) {
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
-              R
+              ?
             </Avatar>
           }
           action={
@@ -125,7 +125,7 @@ export default function RecipeReviewCard({ receta }) {
           {/* <IconButton aria-label="share">
                 <ShareIcon />
               </IconButton> */}
-          <IconButton
+          {/* <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
             })}
@@ -134,9 +134,9 @@ export default function RecipeReviewCard({ receta }) {
             aria-label="show more"
           >
             <ExpandMoreIcon />
-          </IconButton>
+          </IconButton> */}
         </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
+        {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>Method:</Typography>
             <Typography paragraph>
@@ -167,7 +167,7 @@ export default function RecipeReviewCard({ receta }) {
               serve.
             </Typography>
           </CardContent>
-        </Collapse>
+        </Collapse> */}
       </Card>
     </Grid>
   );
