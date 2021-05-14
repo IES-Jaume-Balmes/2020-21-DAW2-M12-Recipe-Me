@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TarjetaIngredients from "./Cards/TarjetaIngredients";
+//import TarjetaIngredients from "./Cards/TarjetaIngredients";
 import axios from "axios";
+import Select from "react-select";
 
 //instalar yarn add react-select
 
@@ -12,15 +13,26 @@ const baseUrlAdd = "https://localhost:8000/recipes";
 //state.form.ingredients.
 let arrayLoadedIngredients = [];
 
+
 export default class CrearReceta extends Component {
   state = {
-    ingredientsOption: [],
+    ingredientsOption:[],
     form: {
       name: "",
       description: "",
       ingredients: [],
     },
   };
+
+  
+  TarjetaIngredients = ({ ingredientsOption }) => {
+    //const[ingredient,setIngredients] = useState([]);
+     ingredientsOption.map((ingredient) => {
+      console.log(ingredient)
+      return { value: ingredient["@id"], label: ingredient.name };
+    });
+  };
+
 
   componentDidMount() {
     fetch(baseUrl)
@@ -36,15 +48,15 @@ export default class CrearReceta extends Component {
     this.setState({
       form: {
         ...this.state.form,
-        ingredients: e.target.value,
+        [e.target.name]: e.target.value,
       },
     });
-    
+
     if (this.state.form.ingredients != 0) {
       arrayLoadedIngredients.push(this.state.form.ingredients);
     }
 
-    console.log(arrayLoadedIngredients);
+    //console.log(arrayLoadedIngredients);
   };
 
   handleChange = async (e) => {
@@ -54,6 +66,7 @@ export default class CrearReceta extends Component {
         [e.target.name]: e.target.value,
       },
     });
+    console.log(this.state.ingredientsOption);
   };
 
   crearReceta = async () => {
@@ -93,19 +106,15 @@ export default class CrearReceta extends Component {
             onChange={this.handleChange}
           ></textarea>
           <h5>Ingredientes</h5>
-          <select
+
+          <Select
+            isMulti
             name="ingredients"
-            onChange={this.handleChangeOption}
-            value={this.state.value}
-          >
-            <TarjetaIngredients
-              ingredientsOption={this.state.ingredientsOption}
-            />
-          </select>
-          {/*<TarjetaIngredients
-              onChange={this.handleChangeOption}
-              ingredientsOption={this.state.ingredientsOption}
-          />*/}
+            options={this.TarjetaIngredients}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            placeholder="Buscar Ingrediente..."
+          />
         </div>
         <button className="btn btn-primary" onClick={() => this.crearReceta()}>
           Crear Receta
