@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/Recetas.css";
 import TarjetaLista from "./Cards/TarjetaLista";
-import { TarjetaListaActual } from "./Cards/TarjetaListaActual";
+import TarjetaListaActual from "./Cards/TarjetaListaActual";
 
 export default class Listas extends Component {
   state = {
