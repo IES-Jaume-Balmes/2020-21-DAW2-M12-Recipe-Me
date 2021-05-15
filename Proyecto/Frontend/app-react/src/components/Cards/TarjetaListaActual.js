@@ -21,9 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TarjetaListaActual2() {
+export default function TarjetaListaActual() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
+  const [list, setList] = React.useState(arrayIngres);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -39,13 +40,19 @@ export default function TarjetaListaActual2() {
   };
 
   const guardarListaCompra = ()=>{
-    console.log(arrayIngres)
+    console.log(list)
+  }
+
+  const handleRemove = (id)=>{
+    console.log(id)
+    const newList = list.filter((item)=>{return item.id !== id})
+    setList(newList)
   }
 
   return (
     <>
     <List className={classes.root}>
-      {arrayIngres.map((value,index) => {
+      {list.map((value,index) => {
         const labelId = `checkbox-list-label-${index}`;
 
         return (
@@ -67,7 +74,7 @@ export default function TarjetaListaActual2() {
             </ListItemIcon>
             <ListItemText id={labelId} primary={`${value.nombre}`} />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="comments">
+              <IconButton edge="end" aria-label="comments" onClick={()=>{handleRemove(value.id)}}>
                 <CancelIcon />
               </IconButton>
             </ListItemSecondaryAction>
@@ -75,7 +82,7 @@ export default function TarjetaListaActual2() {
         );
       })}
     </List>
-    <button type="button" className="btn btn-primary" onClick={()=>{guardarListaCompra()}}>Guardar Lista de la compra</button>
+    <button type="button" className="btn btn-primary mt-2" onClick={()=>{guardarListaCompra()}}>Guardar Lista de la compra</button>
     </>
     
   );
