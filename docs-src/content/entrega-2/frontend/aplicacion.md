@@ -38,3 +38,10 @@ Se tuvo que corregir un error que se producía al entrar en en la lista y la coo
 ```js
 if(cookie.get("ingredientes"))
 ```
+
+# TarjetaListaAcutal.js
+Este componente se encarga de gestionar la lista de la compra actual o "default" es la lista en la que se van guardando ingredienes de las recetas selecionadas.
+- Tiene habilitado un checkbox y un boton de eliminar de la lista de la compra.
+
+ ## Obstaculos
+ Aún ninguno de relevancia.
