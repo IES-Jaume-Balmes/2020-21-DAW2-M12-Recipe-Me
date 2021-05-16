@@ -25,14 +25,15 @@ export default class CrearReceta extends Component {
   };
 
   
-  TarjetaIngredients = ({ ingredientsOption }) => {
     //const[ingredient,setIngredients] = useState([]);
-     ingredientsOption.map((ingredient) => {
+    
+    /*ingredientsOption.map((ingredient) => {
       console.log(ingredient)
       return { value: ingredient["@id"], label: ingredient.name };
     });
   };
-
+*/
+  
 
   componentDidMount() {
     fetch(baseUrl)
@@ -88,6 +89,12 @@ export default class CrearReceta extends Component {
   };
 
   render() {
+
+    let options = this.state.ingredientsOption.map(function (ingredient) {
+      return { value: ingredient["@id"], label: ingredient.name }; 
+    })
+    
+
     return (
       <div>
         <div>
@@ -110,10 +117,11 @@ export default class CrearReceta extends Component {
           <Select
             isMulti
             name="ingredients"
-            options={this.TarjetaIngredients}
+            options={this.state.ingredientsOption}
             className="basic-multi-select"
             classNamePrefix="select"
             placeholder="Buscar Ingrediente..."
+            
           />
         </div>
         <button className="btn btn-primary" onClick={() => this.crearReceta()}>
