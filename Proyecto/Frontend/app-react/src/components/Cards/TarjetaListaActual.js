@@ -50,7 +50,7 @@ export default function TarjetaListaActual() {
   }
 
   return (
-    <>
+    <div>
     <List className={classes.root}>
       {list.map((value,index) => {
         const labelId = `checkbox-list-label-${index}`;
@@ -83,7 +83,7 @@ export default function TarjetaListaActual() {
       })}
     </List>
     <button type="button" className="btn btn-primary mt-2" onClick={()=>{guardarListaCompra()}}>Guardar Lista de la compra</button>
-    </>
+    </div>
     
   );
 }
