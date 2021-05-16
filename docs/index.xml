@@ -12,7 +12,9 @@
       <pubDate>Fri, 14 May 2021 17:26:55 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</guid>
-      <description>Añadidos    Hacemos que el parametro createdAtde la entidad Usuario se costruya automáticamente des de backend. No es necesario introducirla des de frontend, pero se puede hacer.</description>
+      <description>Añadidos      Hacemos que el parametro createdAtde la entidad Usuario se costruya automáticamente des de backend. No es necesario introducirla des de frontend, pero se puede hacer.
+  Entidad Receta -&amp;gt; Nuevo parametro fecha de creación. Usamos un método derivado de la dependencia Carbon para obtener los datos de una manera más legible. Ejemplo: 8 hours ago.
+  </description>
     </item>
     
     <item>
@@ -213,7 +215,7 @@ npm start Y se abrirá en el puerto 3000 del localhost</description>
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/</guid>
       <description>Login    Ahora los usarios se cargan desde la base de datos y se comprueba su autentificación. Para esto se está utilizando la librería universal-cookie, esta cookie se guardará al ser un login correcto.
 RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada receta
-&amp;lt;IconButton aria-label=&amp;#34;add to Lista&amp;#34; onClick={anadirLista}&amp;gt; &amp;lt;AddShoppingCartIcon /&amp;gt; &amp;lt;/IconButton&amp;gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada</description>
+&amp;lt;IconButton aria-label=&amp;#34;add to Lista&amp;#34; onClick={anadirLista}&amp;gt; &amp;lt;AddShoppingCartIcon /&amp;gt; &amp;lt;/IconButton&amp;gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada.</description>
     </item>
     
   </channel>

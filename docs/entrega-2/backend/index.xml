@@ -12,7 +12,9 @@
       <pubDate>Fri, 14 May 2021 17:26:55 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</guid>
-      <description>Añadidos    Hacemos que el parametro createdAtde la entidad Usuario se costruya automáticamente des de backend. No es necesario introducirla des de frontend, pero se puede hacer.</description>
+      <description>Añadidos      Hacemos que el parametro createdAtde la entidad Usuario se costruya automáticamente des de backend. No es necesario introducirla des de frontend, pero se puede hacer.
+  Entidad Receta -&amp;gt; Nuevo parametro fecha de creación. Usamos un método derivado de la dependencia Carbon para obtener los datos de una manera más legible. Ejemplo: 8 hours ago.
+  </description>
     </item>
     
   </channel>

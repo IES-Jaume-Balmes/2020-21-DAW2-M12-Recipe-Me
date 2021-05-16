@@ -41,6 +41,7 @@ export default function Routes() {
   if (!cookie.get("user")) {
     return (
       <Router>
+        <Redirect to="/login" />
         <Route path="/login" component={SignInSide} />
         <Route path="/register" component={SignUpSide} />
       </Router>

@@ -81,7 +81,6 @@ export default function SignInSide() {
   }
 
   async function peticionApi() {
-    const axios = require("axios");
 
     let jsonPeticion = {
       email: email,
@@ -95,7 +94,6 @@ export default function SignInSide() {
       })
       .then((response) => {
         if (response != null) {
-          //response = {user: 1, username:"Frank"};
           cookie.set("user", response.user, { path: "/" });
           cookie.set("username", response.username, { path: "/" });
           window.location.href = "./";

@@ -1,11 +1,23 @@
 import React, { Component } from "react";
 import "../css/Recetas.css";
 import TarjetaLista from "./Cards/TarjetaLista";
-import { TarjetaListaActual } from "./Cards/TarjetaListaActual";
+import TarjetaListaActual from "./Cards/TarjetaListaActual";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 
 export default class Listas extends Component {
   state = {
     listas: [],
+    classes: useStyles,
   };
 
   componentDidMount() {
@@ -19,8 +31,10 @@ export default class Listas extends Component {
   render() {
     return (
       <>
-        <h1>Lista Actual</h1>
-        <TarjetaListaActual />
+        <form className={this.state.classes.root} noValidate autoComplete="off">
+          <TextField id="outlined-basic" label="Lista Actual" variant="outlined" />
+        </form>
+        <TarjetaListaActual className="m-2"/>
         <h1>Listas Guardadas</h1>
         <TarjetaLista listas={this.state.listas} />
       </>
