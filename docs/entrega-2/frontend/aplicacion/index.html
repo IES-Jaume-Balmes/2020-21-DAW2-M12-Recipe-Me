@@ -12,7 +12,7 @@
 
     <meta name="description" content="Login    Ahora los usarios se cargan desde la base de datos y se comprueba su autentificación. Para esto se está utilizando la librería universal-cookie, esta cookie se guardará al ser un login correcto.
 RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada receta
-&lt;IconButton aria-label=&#34;add to Lista&#34; onClick={anadirLista}&gt; &lt;AddShoppingCartIcon /&gt; &lt;/IconButton&gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada">
+&lt;IconButton aria-label=&#34;add to Lista&#34; onClick={anadirLista}&gt; &lt;AddShoppingCartIcon /&gt; &lt;/IconButton&gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada.">
 
 
 
@@ -1001,15 +1001,26 @@ RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada r
 <div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">IconButton</span> <span class="na">aria</span><span class="err">-</span><span class="na">label</span><span class="o">=</span><span class="s">&#34;add to Lista&#34;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">anadirLista</span><span class="p">}&gt;</span>
   <span class="p">&lt;</span><span class="nt">AddShoppingCartIcon</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">IconButton</span><span class="p">&gt;</span>
-</code></pre></div><p>Este boton al ser clickado llama a la función <code>anadirLista()</code> que creará una cookie con los ingredientes de la receta clickada</p>
+</code></pre></div><p>Este boton al ser clickado llama a la función <code>anadirLista()</code> que creará una cookie con los ingredientes de la receta clickada.</p>
+<ul>
+<li>Los ingredientes eran pasados por nombre, no había gestión de los edpoints para que la crear la lista se hiciera la petición correcta con los endpoints de los ingredientes correspondiente. Ahora no solo se para los nombres de los ingredientes sino que también los endpoints en un array de objetos con la siguiente estructura.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">{</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="s2">&#34;enpoint&#34;</span><span class="p">,</span>
+  <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&#34;nombreIngrediente&#34;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>Se ha modificado para que controle que los ingredientes no se repitan</li>
+</ul>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="obstaculo">
-        Obstaculo
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculo" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculo" href="#obstaculo">
+    <h2 id="obstaculos">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div><p>Al intentar guardar la lista de los ingredientes utilizados en una receta se intento utilizar un EventEmitter para poder enviar los datos de componente a componente, ya que el componente emisor y el componente emisor no tenían una relación de padre-hijo ni siblings. Pero esta implementación no sirvió. Por lo que se optó por utilizar cookies, está solición además es una ventaja para el usuario, ya que al estar guardada la lista de la compra en una cookie, cuando el usuario pierda la sesión esta lista seguirá guardada.</p>
+<p>Al controlar los ingredientes duplicados se comentó la linea que creaba la cookie, lo que ocacionó que el código no funcionara, pero fue resuelto al activar el código con la generación de cookies.</p>
 <div class="gdoc-page__anchorwrap">
     <h1 id="listasjs">
         Listas.js
@@ -1020,15 +1031,34 @@ RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada r
 </div><p>Se ha integrado un div más en el cual se pondrá la lista de la compra actual, que no estará guardada por defecto.
 Este componente recoge los datos de la cookie y los muestra en la lista de la compra.</p>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="obstaculo-1">
-        Obstaculo
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculo-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculo" href="#obstaculo-1">
+    <h2 id="obstaculos-1">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculos-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-1">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div><p>Se tuvo que corregir un error que se producía al entrar en en la lista y la cookie no existía. Introdución un condicional este error se solucionó</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">if</span><span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&#34;ingredientes&#34;</span><span class="p">))</span>
-</code></pre></div>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="tarjetalistaacutaljs">
+        TarjetaListaAcutal.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#tarjetalistaacutaljs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TarjetaListaAcutal.js" href="#tarjetalistaacutaljs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><p>Este componente se encarga de gestionar la lista de la compra actual o &ldquo;default&rdquo; es la lista en la que se van guardando ingredienes de las recetas selecionadas.</p>
+<ul>
+<li>Tiene habilitado un checkbox y un boton de eliminar de la lista de la compra.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-2">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculos-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-2">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Aún ninguno de relevancia.</p>
+
 
     </article>
 
