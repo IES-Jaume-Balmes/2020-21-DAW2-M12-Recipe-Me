@@ -45,3 +45,28 @@ Este componente se encarga de gestionar la lista de la compra actual o "default"
 
  ## Obstaculos
  Aún ninguno de relevancia.
+
+ ## CrearReceta.js
+
+ Este componente consta de tres inputs para Nombre de receta descripcion y un select generado con todos los ingredientes de la API. Para mostrar este hacemos una llamada a la api para que nos devuelva los ingredientes y lo pintamos importando react-select.
+
+ ```jsx
+ componentDidMount() {
+    fetch(baseUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ ingredientsOption: data["hydra:member"] });
+      })
+      .catch(console.log);
+  }
+  ```
+
+
+## Obstaculos 
+React-select desconociamos este componente y hemos estado haciendo pruebas con la documentación aun sin exito.
+Tenemos problemas para acceder al id y al nombre que de los ingredientes que nos devuelve la api.
+Problemas para ejecutar una funcion onclick
+en javascript para llamar a la funcion utilizamos hola() en react se pone la funcion sin ()
+solamente {hola}.
+Como utilizar el useState hemos tenido problemas para pasar a la api una receta para añadirla a la base de datos.
+ha sido complicado acceder al objeto form.ingredients ya que es algo fuera de lo normal añadir a aun array valores.
