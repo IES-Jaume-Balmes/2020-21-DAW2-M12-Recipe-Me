@@ -44,3 +44,4 @@ Hemos preparado las peticiones a **API** para cada una de nuestras pantallas.
 Para ello hemos creado una série de componentes **Tarjeta** que se encargan de recibir los objetos obtenidos como respuesta de nuestras peticiones a la API.
 
 Las peticiones las hemos hecho mediante la herramienta `fetch`. Hemos usado las operaciones `GET`y `POST`.
+
