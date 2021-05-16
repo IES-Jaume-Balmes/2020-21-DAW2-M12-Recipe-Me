@@ -1058,6 +1058,36 @@ Este componente recoge los datos de la cookie y los muestra en la lista de la co
         </a>
     </h2>
 </div><p>Aún ninguno de relevancia.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="crearrecetajs">
+        CrearReceta.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#crearrecetajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CrearReceta.js" href="#crearrecetajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Este componente consta de tres inputs para Nombre de receta descripcion y un select generado con todos los ingredientes de la API. Para mostrar este hacemos una llamada a la api para que nos devuelva los ingredientes y lo pintamos importando react-select.</p>
+<div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
+     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">ingredientsOption</span><span class="o">:</span> <span class="nx">data</span><span class="p">[</span><span class="s2">&#34;hydra:member&#34;</span><span class="p">]</span> <span class="p">});</span>
+     <span class="p">})</span>
+     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-3">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/#obstaculos-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-3">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>React-select desconociamos este componente y hemos estado haciendo pruebas con la documentación aun sin exito.
+Tenemos problemas para acceder al id y al nombre que de los ingredientes que nos devuelve la api.
+Problemas para ejecutar una funcion onclick
+en javascript para llamar a la funcion utilizamos hola() en react se pone la funcion sin ()
+solamente {hola}.
+Como utilizar el useState hemos tenido problemas para pasar a la api una receta para añadirla a la base de datos.
+ha sido complicado acceder al objeto form.ingredients ya que es algo fuera de lo normal añadir a aun array valores.</p>
 
 
     </article>
