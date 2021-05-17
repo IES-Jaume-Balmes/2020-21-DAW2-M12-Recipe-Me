@@ -59,7 +59,7 @@ class User implements UserInterface
 
     /**
      * @Groups({"user:read"})
-     * @ORM\OneToMany(targetEntity=ListaCompra::class, mappedBy="propietario")
+     * @ORM\OneToMany(targetEntity=ListaCompra::class, mappedBy="propietario", orphanRemoval=true)
      */
     private $listaCompras;
 
