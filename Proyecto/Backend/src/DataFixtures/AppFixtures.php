@@ -18,9 +18,12 @@ class AppFixtures extends Fixture
     {
         //CARGAMOS ADMINS
         $administradores = [
-            'frank' => '26253c50741faa9c2e2b836773c69fe6',
-            'kevin' => '9d5e3ecdeb4cdb7acfd63075ae046672',
-            'sergi' => '8b8d481c6dcdbd24b4e43825c5345309',
+            'frank' =>
+                '$argon2id$v=19$m=65536,t=4,p=1$DA9CKHKdwC64prui1eozrA$5FvVjljuE84X6Z86Ec/4NRWRHUWjkVlifo+h1RQCueQ',
+            'kevin' =>
+                '$argon2id$v=19$m=65536,t=4,p=1$3tOBJthGX124W5ifeh55QA$TOaQoojWBGzVmdrvRdRans/71kBnzJI4D8GP9ZGXcQ8',
+            'sergi' =>
+                '$argon2id$v=19$m=65536,t=4,p=1$j03sW8c4FrXCJeAGYldKFA$dgUX970UATBgSu7zKuA8fMDr+zsVGhqq6nx9i0Jhxdk',
         ];
         foreach ($administradores as $admin => $password) {
             $usuario = new User();

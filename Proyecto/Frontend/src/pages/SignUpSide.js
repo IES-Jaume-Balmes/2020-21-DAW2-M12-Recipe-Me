@@ -76,7 +76,6 @@ export default function SignInSide() {
   }
 
   async function peticionApi() {
-
     let jsonPeticion = {
       email: email,
       username: username,
@@ -88,7 +87,7 @@ export default function SignInSide() {
       .post(baseUrl, jsonPeticion)
       .then((response) => {
         console.log(response.data);
-        window.location.href = "./";
+        window.location.href = "./login";
       })
       .catch((error) => {
         console.log(error);
@@ -106,7 +105,7 @@ export default function SignInSide() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Regístrate
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
@@ -140,7 +139,7 @@ export default function SignInSide() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Correo electrónico"
                   name="email"
                   autoComplete="email"
                   onChange={(e) => setEmail(e.target.value)}
