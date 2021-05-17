@@ -28,6 +28,7 @@ export default class Usuario extends Component {
   cerrarSesion = () => {
     cookie.remove("user", { path: "/" });
     cookie.remove("username", { path: "/" });
+    cookie.remove("ingredientes", { path: "/" })
 
     window.location.href = "./login";
   };
