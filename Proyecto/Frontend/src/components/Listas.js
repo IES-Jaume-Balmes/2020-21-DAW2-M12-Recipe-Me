@@ -20,6 +20,16 @@ export default class Listas extends Component {
     classes: useStyles,
   };
 
+ /* handleChange = async (e) => {
+    await this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form.name);
+  };*/
+
   componentDidMount() {
     fetch("https://127.0.0.1:8000/lista_compras")
       .then((res) => res.json())
@@ -28,11 +38,13 @@ export default class Listas extends Component {
       });
   }
 
+
+
   render() {
     return (
       <>
         <form className={this.state.classes.root} noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="Lista Actual" variant="outlined" />
+          <TextField id="outlined-basic" label="Lista Actual"  variant="outlined" />
         </form>
         <TarjetaListaActual className="m-2"/>
         <h1>Listas Guardadas</h1>

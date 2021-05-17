@@ -37,11 +37,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Routes() {
   const classes = useStyles();
-
   if (!cookie.get("user")) {
     return (
-      <Router>
-        <Redirect to="/login" />
+      <Router>        
+        {/*<Redirect to="/login" />*/}
         <Route path="/login" component={SignInSide} />
         <Route path="/register" component={SignUpSide} />
       </Router>
