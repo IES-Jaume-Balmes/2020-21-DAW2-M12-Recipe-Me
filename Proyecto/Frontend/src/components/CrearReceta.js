@@ -4,14 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Select from "react-select";
 
-//instalar yarn add react-select
-
 const baseUrl = "https://localhost:8000/ingredients";
 const baseUrlAdd = "https://localhost:8000/recipes";
-
-//Array a la que le introduciremos los ingredientes y despues la cargaremos a
-//state.form.ingredients.
-let arrayLoadedIngredients = [];
 
 export default class CrearReceta extends Component {
   state = {
@@ -22,15 +16,6 @@ export default class CrearReceta extends Component {
       ingredients: [],
     },
   };
-
-  //const[ingredient,setIngredients] = useState([]);
-
-  /*ingredientsOption.map((ingredient) => {
-      console.log(ingredient)
-      return { value: ingredient["@id"], label: ingredient.name };
-    });
-  };
-*/
 
   componentDidMount() {
     fetch(baseUrl)
