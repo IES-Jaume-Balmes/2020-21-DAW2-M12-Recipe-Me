@@ -4,36 +4,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Select from "react-select";
 
-//instalar yarn add react-select
-
 const baseUrl = "https://localhost:8000/ingredients";
 const baseUrlAdd = "https://localhost:8000/recipes";
 
-//Array a la que le introduciremos los ingredientes y despues la cargaremos a
-//state.form.ingredients.
-let arrayLoadedIngredients = [];
-
-
 export default class CrearReceta extends Component {
   state = {
-    ingredientsOption:[],
+    ingredientsOption: [],
     form: {
       name: "",
       description: "",
       ingredients: [],
     },
   };
-
-  
-    //const[ingredient,setIngredients] = useState([]);
-    
-    /*ingredientsOption.map((ingredient) => {
-      console.log(ingredient)
-      return { value: ingredient["@id"], label: ingredient.name };
-    });
-  };
-*/
-  
 
   componentDidMount() {
     fetch(baseUrl)
@@ -46,18 +28,13 @@ export default class CrearReceta extends Component {
 
   //Cambia la barra del buscador de ingredientes
   handleChangeOption = async (e) => {
-    this.setState({
+    await this.setState({
       form: {
         ...this.state.form,
-        [e.target.name]: e.target.value,
+        ingredients: e,
       },
     });
-
-    if (this.state.form.ingredients != 0) {
-      arrayLoadedIngredients.push(this.state.form.ingredients);
-    }
-
-    //console.log(arrayLoadedIngredients);
+    console.log(this.state.form);
   };
 
   handleChange = async (e) => {
@@ -67,20 +44,29 @@ export default class CrearReceta extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    console.log(this.state.ingredientsOption);
+    console.log(this.state.form);
   };
 
   crearReceta = async () => {
+    let arraySoloId = this.state.form.ingredients.map((i) => i.value);
     let jsonPeticion = {
       name: this.state.form.name,
       description: this.state.form.description,
-      ingredients: arrayLoadedIngredients,
+      ingredients: arraySoloId,
     };
     console.log(jsonPeticion);
     await axios
       .post(baseUrlAdd, jsonPeticion)
       .then((response) => {
         console.log(response.data);
+        this.setState({
+          form: {
+            name: "",
+            description: "",
+            ingredients: [],
+          },
+        });
+        alert("Receta creada correctamente");
       })
       .catch((error) => {
         console.log(error);
@@ -89,11 +75,9 @@ export default class CrearReceta extends Component {
   };
 
   render() {
-
     let options = this.state.ingredientsOption.map(function (ingredient) {
-      return { value: ingredient["@id"], label: ingredient.name }; 
-    })
-    
+      return { value: ingredient["@id"], label: ingredient.name };
+    });
 
     return (
       <div>
@@ -117,14 +101,17 @@ export default class CrearReceta extends Component {
           <Select
             isMulti
             name="ingredients"
-            options={this.state.ingredientsOption}
+            options={options}
             className="basic-multi-select"
             classNamePrefix="select"
             placeholder="Buscar Ingrediente..."
-            
+            onChange={this.handleChangeOption}
           />
         </div>
-        <button className="btn btn-primary" onClick={() => this.crearReceta()}>
+        <button
+          className="btn btn-primary mt-3"
+          onClick={() => this.crearReceta()}
+        >
           Crear Receta
         </button>
       </div>

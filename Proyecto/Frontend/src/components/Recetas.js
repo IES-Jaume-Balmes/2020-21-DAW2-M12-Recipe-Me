@@ -56,7 +56,7 @@ class Recetas extends Component {
         </Grid>
         <Grid container spacing={4} className={classes.gridContainer}>
           {this.state.recetas.map((element) => (
-            <RecipeCard receta={element} />
+            <RecipeCard key={element["@id"]} receta={element} />
           ))}
         </Grid>
       </>

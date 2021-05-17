@@ -8,9 +8,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
@@ -40,9 +39,11 @@ export default function Routes() {
   if (!cookie.get("user")) {
     return (
       <Router>        
-        {/*<Redirect to="/login" />*/}
-        <Route path="/login" component={SignInSide} />
-        <Route path="/register" component={SignUpSide} />
+        <Switch>
+          <Route path="/login" component={SignInSide} />
+          <Route path="/register" component={SignUpSide} />
+          <Route component={SignInSide} />
+        </Switch>
       </Router>
     );
   }
