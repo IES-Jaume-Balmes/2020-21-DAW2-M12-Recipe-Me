@@ -20,15 +20,6 @@ export default class Listas extends Component {
     classes: useStyles,
   };
 
- /* handleChange = async (e) => {
-    await this.setState({
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
-    });
-    console.log(this.state.form.name);
-  };*/
 
   componentDidMount() {
     fetch("https://127.0.0.1:8000/lista_compras")

@@ -8,16 +8,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CrearReceta from "../components/CrearReceta";
 import SignInSide from "../pages/SignInSide";
 import SignUpSide from "../pages/SignUpSide";
-<<<<<<< HEAD
-
-=======
->>>>>>> 02423e8e01fdf85ec95e10ce27f45d3aaf682cb0
 
 const cookie = new Cookie();
 
@@ -41,17 +36,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Routes() {
   const classes = useStyles();
+  if (!cookie.get("user")) {
+    return (
+<<<<<<< HEAD
+      <Router>        
+        {/*<Redirect to="/login" />*/}
+        <Route path="/login" component={SignInSide} />
+        <Route path="/register" component={SignUpSide} />
+=======
+      <Router>
+        <Switch>
+          <Route path="/login" component={SignInSide} />
+          <Route path="/register" component={SignUpSide} />
+          <Route component={SignInSide} />
+        </Switch>
+>>>>>>> 08789b21566e0e6a70b45f542ce5d60cc99de0b4
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <Switch>
-        <Route path="/login" component={SignInSide} />
-        <Route path="/register" component={SignUpSide} />
         <div className={classes.root}>
-          {cookie.get("user") ? (
-            <Route path="/" component={Drawer} />
-          ) : (
-            <Redirect to="/login" />
-          )}
+          <Route path="/" component={Drawer} />
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <Route path="/" exact component={Recetas} />

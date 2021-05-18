@@ -12,7 +12,7 @@ import Cookie from "universal-cookie";
 import axios from "axios";
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
-let baseUrl = 'https://127.0.0.1:8000/lista_compras';
+let baseUrl = "https://127.0.0.1:8000/lista_compras";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,28 +40,27 @@ export default function TarjetaListaActual() {
     setChecked(newChecked);
   };
 
-  const guardarListaCompra = async() => {
-    
+  const guardarListaCompra = async () => {
+    let arraySoloId = list.map((i,il) => i.id);
     let jsonPeticion = {
-      propietario: "users/"+cookie.get("user"),
+      propietario: "/users/" + cookie.get("user"),
       name: cookie.get("username"),
-      ingredients: list[0].nombre,
+      ingredients: arraySoloId,
     };
-    console.log(list[0].nombre)
-    //console.log(jsonPeticion);
+    //console.log(arraySoloId);
+    console.log(jsonPeticion);
     await axios
       .post(baseUrl, jsonPeticion)
       .then((response) => {
         console.log(response.data);
-        alert("lista añadida correctamente")
+        alert("Receta creada correctamente");
       })
       .catch((error) => {
         console.log(error);
         alert("Ha ocurrido un error");
       });
-      
+
     //console.log(list);
-    console.log("users/"+cookie.get("user"));
   };
 
   const handleRemove = (id) => {
