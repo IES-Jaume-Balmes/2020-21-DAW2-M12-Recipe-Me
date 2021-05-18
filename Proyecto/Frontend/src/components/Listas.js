@@ -97,7 +97,7 @@ class Listas extends Component {
             <TarjetaListaActual titulo={this.state.textField} className="m-2" />
           </div>
           <Button variant="contained" color="primary" className="mt-3">
-            Guardar recetas
+            Guardar lista de la compra
           </Button>
         </Grid>
         <Grid item xs={4}>
