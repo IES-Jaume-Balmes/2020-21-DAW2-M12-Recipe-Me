@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TarjetaListaActual() {
+export default function TarjetaListaActual(props) {
+  const titulo = props.titulo;
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
   const [list, setList] = React.useState(arrayIngres);
@@ -41,10 +42,10 @@ export default function TarjetaListaActual() {
   };
 
   const guardarListaCompra = async () => {
-    let arraySoloId = list.map((i,il) => i.id);
+    let arraySoloId = list.map((i) => i.id);
     let jsonPeticion = {
       propietario: "/users/" + cookie.get("user"),
-      name: cookie.get("username"),
+      name: titulo,
       ingredients: arraySoloId,
     };
     //console.log(arraySoloId);
@@ -70,7 +71,7 @@ export default function TarjetaListaActual() {
     });
     setList(newList);
   };
-
+  
   if (cookie.get("ingredientes")) {
     return (
       <div>
@@ -86,6 +87,7 @@ export default function TarjetaListaActual() {
                 button
                 onClick={handleToggle(index)}
               >
+              
                 <ListItemIcon>
                   <Checkbox
                     edge="start"

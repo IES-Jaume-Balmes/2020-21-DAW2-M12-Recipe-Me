@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
 import "../css/Recetas.css";
 import TarjetaLista from "./Cards/TarjetaLista";
 import TarjetaListaActual from "./Cards/TarjetaListaActual";
@@ -14,12 +14,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default class Listas extends Component {
+   
   state = {
     listas: [],
     classes: useStyles,
+    textField:"k"
   };
 
+  handleText = async (e)=>{
+    this.setState({
+      textField: e.target.value
+    })
+  }
 
   componentDidMount() {
     fetch("https://127.0.0.1:8000/lista_compras")
@@ -35,9 +43,9 @@ export default class Listas extends Component {
     return (
       <>
         <form className={this.state.classes.root} noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="Lista Actual"  variant="outlined" />
+          <TextField id="outlined-basic" onChange={this.handleText} label="Lista Actual"  variant="outlined" />
         </form>
-        <TarjetaListaActual className="m-2"/>
+        <TarjetaListaActual titulo={this.state.textField} className="m-2"/>
         <h1>Listas Guardadas</h1>
         <TarjetaLista listas={this.state.listas} />
       </>
