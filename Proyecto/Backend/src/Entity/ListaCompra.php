@@ -47,7 +47,7 @@ class ListaCompra
 
     /**
      * @ORM\ManyToMany(targetEntity=Ingredient::class)
-     * @Groups({"lista_compra:read"})
+     * @Groups({"lista_compra:read", "lista_compra:write"})
      */
     private $ingredients;
 
