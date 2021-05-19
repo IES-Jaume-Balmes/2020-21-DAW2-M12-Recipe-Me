@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 // https://www.davidhu.io/react-spinners/
 import CircleLoader from "react-spinners/CircleLoader";
+import { EventEmitter } from "./utils/eventEmitter";
 
 const styles = (theme) => ({
   gridContainer: {
@@ -24,20 +25,34 @@ const styles = (theme) => ({
 });
 
 class Recetas extends Component {
-  state = {
-    recetas: [],
-    loading: true,
-    color: "#3F51B6",
-  };
+  constructor(){
+    super()
+    this.state = {
+      recetas: [],
+      busquedaRecetas: [],
+      loading: true,
+      color: "#3F51B6",
+    };
+  }
+
+  mapearBusqueda(palabraABuscar){
+    let nuevoRecetas = this.state.recetas.filter((elemento)=>{
+      return elemento.name.toLowerCase().includes(palabraABuscar)
+    })
+    this.setState({busquedaRecetas: nuevoRecetas})
+  }
+  
 
   componentDidMount() {
     fetch("https://127.0.0.1:8000/recipes")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ recetas: data["hydra:member"] });
+        this.setState({ busquedaRecetas: data["hydra:member"] });
         this.setState({ loading: false });
       })
       .catch(console.log);
+    EventEmitter.subscribe('buscar', (event)=>{this.mapearBusqueda(event)})
   }
 
   render() {
@@ -55,7 +70,7 @@ class Recetas extends Component {
           </Grid>
         </Grid>
         <Grid container spacing={4} className={classes.gridContainer}>
-          {this.state.recetas.map((element) => (
+          {this.state.busquedaRecetas.map((element) => (
             <RecipeCard key={element["@id"]} receta={element} />
           ))}
         </Grid>
