@@ -1,14 +1,12 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "../css/Recetas.css";
 import TarjetaLista from "./Cards/TarjetaLista";
 import TarjetaListaActual from "./Cards/TarjetaListaActual";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
 import TextField from "@material-ui/core/TextField";
 import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-
-import Paper from "@material-ui/core/Paper";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -78,6 +76,13 @@ class Listas extends Component {
       });
   }
 
+  eliminar = (id) => {
+    const newList = this.state.listas.filter((item) => {
+      return item["@id"] !== id;
+    });
+    this.setState({listas : newList});
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -104,7 +109,11 @@ class Listas extends Component {
           <h1>Listas Guardadas</h1>
           <div className={classes.oldListas}>
             {this.state.listas.map((element) => (
-              <TarjetaLista key={element["@id"]} lista={element} />
+              <TarjetaLista
+                key={element["@id"]}
+                lista={element}
+                eliminar={this.eliminar}
+              />
             ))}
           </div>
         </Grid>
