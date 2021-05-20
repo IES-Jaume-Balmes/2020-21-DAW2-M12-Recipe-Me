@@ -12,11 +12,10 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import axios from "axios";
 import Cookie from "universal-cookie";
-import { redirect } from "next/dist/next-server/server/api-utils";
 
 const baseUrl = "https://localhost:8000/login";
 const cookie = new Cookie();
@@ -83,7 +82,6 @@ export default function SignInSide() {
   }
 
   async function peticionApi() {
-
     let jsonPeticion = {
       email: email,
       password: password,
@@ -167,12 +165,13 @@ export default function SignInSide() {
                   Forgot password?
                 </Link>
               </Grid>
-              {<Grid item>
-                <Link href="/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>}
-              
+              {
+                <Grid item>
+                  <Link href="/register" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              }
             </Grid>
             <Box mt={5}>
               <Copyright />

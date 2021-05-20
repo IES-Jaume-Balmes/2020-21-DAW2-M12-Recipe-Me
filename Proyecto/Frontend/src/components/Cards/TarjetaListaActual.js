@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#FDF0A0",
   },
 }));
 
@@ -71,7 +71,7 @@ export default function TarjetaListaActual(props) {
     });
     setList(newList);
   };
-  
+
   if (cookie.get("ingredientes")) {
     return (
       <div>
@@ -87,7 +87,6 @@ export default function TarjetaListaActual(props) {
                 button
                 onClick={handleToggle(index)}
               >
-              
                 <ListItemIcon>
                   <Checkbox
                     edge="start"
@@ -113,15 +112,15 @@ export default function TarjetaListaActual(props) {
             );
           })}
         </List>
-        <button
+        {/* <button
           type="button"
-          className="btn btn-primary mt-2"
+          className="btn btn-primary mt-3"
           onClick={() => {
             guardarListaCompra();
           }}
         >
           Guardar Lista de la compra
-        </button>
+        </button> */}
       </div>
     );
   } else {
