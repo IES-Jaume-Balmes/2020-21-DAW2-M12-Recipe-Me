@@ -5,12 +5,12 @@ Recipe-me
 *Se pronuncia* 📖 /ˈrɛsɪpimi'/
 
 # Integrantes del proyecto ✒️
--Frank Palomino
--Kevin Rodríguez
--Sergi Francés
+- Frank Palomino
+- Kevin Rodríguez
+- Sergi Francés
 
 # Tutor
--Pepe Osca
+- Pepe Osca
 
 # Run_build del proyecto 
 
@@ -120,5 +120,7 @@ sudo npm install -g n
 sudo n latest
 
 ```npm start``` 
+
+### En mi ordenador funcionaba
 
 🎁🎁🎁Disfrutad de la magia 🎁🎁🎁
