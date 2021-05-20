@@ -12,7 +12,6 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { Redirect } from "react-router-dom";
 
 import axios from "axios";
 import Cookie from "universal-cookie";
@@ -38,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    // backgroundImage: "url(https://source.unsplash.com/random)",
     backgroundImage: "url(https://source.unsplash.com/collection/1353633)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
@@ -119,7 +117,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} onSubmit={handleSubmit}>
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
               margin="normal"
