@@ -1,8 +1,10 @@
-# proyectoFinal
+# Proyecto final
 
-Proyecto Final de ciclo Daw
+Recipe-me 
 
-# Integrantes del proyecto
+*Se pronuncia* 📖 /ˈrɛsɪpimi'/
+
+# Integrantes del proyecto ✒️
 -Frank Palomino
 -Kevin Rodríguez
 -Sergi Francés
@@ -10,46 +12,113 @@ Proyecto Final de ciclo Daw
 # Tutor
 -Pepe Osca
 
-# Documentación
+# Run_build del proyecto 
 
-[Documentacion en pages](https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/)
 
-## Descargar el repositorio
+Utilizamos puerto 8000 backend puerto 3000 frontend
 
-Buenas chicos, para quien no se acuerde para bajar el repositorio teneis que:
+## Pre-requisitos 📋 
 
-1. Crear una carpeta nueva en local, con cualquier nombre.
-2. Entrar en la carpeta, haced clic derecho y escoger "Git Bash Here" (Doy por supuesto que teneis el Git descargado (: ).
-3. Cuando se habra la terminal escribid `git clone https://github.com/FrankPalomino/proyectoFinal.git .` (el punto es para que se copie todo en esa misma carpeta y no cree otra).
-4. Ya tendreis el repositorio en local, ahora teneis que crear una nueva rama con `git checkout -b sergi` o `git checkout -b kevin`
-5. Ahora podreis trabajar en vuestra rama.
+* [Docker](https://www.docker.com/products/docker-desktop)
+* [Symfony](https://symfony.com/download) 
+* [React](https://reactjs.org/)
+* [PHP](https://www.php.net/downloads.php) (Nos funciona con PHP 8.0.5)
 
-## Guardar cambios realizados
+## Instalación 🔧
 
-Es importante que cada vez que tengais una pequeña parte que hayais comprobado que funcione guardar los cambios y subirlos:
+Nos descargamos el proyecto en la carpeta que queramos tenerlo. 
+```
+git clone https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me.
+```
+Nos vamos a la rama developer para tener la version mas reciente del proyecto.
+```
+git checkout developer
+```
 
-1. En la carpeta raiz haced clic derecho y escoger "Git Bash Here". La carpeta raiz es la que tiene la carpeta ".git".
-2. En la terminal escribid `git status` para comprobar que estais en la carpeta correcta y que hay cosas que no se han guardado, si habeis hecho modificaciones saldrán los archivos modificados, creado o eliminados en rojo.
-3. Escribid en la terminal `git add .` para que lo pase todo a la Staging Area.
-4. Ahora, solo para comprobar, volver a escribir `git status`, ahora los archivos deben salir en verde.
-5. Ahora pasaremos los cambios Commit Area con `git commit -m "comentario del commit que indique el cambio que se ha hecho"`.
-6. Ahora, solo para comprobar, volver a escribir `git status`, ahora los archivos han desaparecido porque ya están seguros en el commit.
-7. Finalmente subiremos al repositorio online `git push origin kevin` o `git push origin sergi`.
+### Empezamos ⚙️
+Vamos a la carpeta del proyecto/Backend.
 
-## Ver los cambios de los demás
+>Recordar siempre tener el sistema actualizado y no con versiones antiguas que nos puedan traer problemas futuros.
 
-Próximamente...
+```
+composer install
+```
 
-## Pull Request
+Una vez actualizado procedemos a instalar el contenedor mysql (instala versión 8.0)
 
-1. Después de hacer `git push origin sergi` entro a la web de github.
-2. Aparece un baner amarillo que pone compare & pull request.
+```
+bin/console make:docker:database  || php bin/console make:docker:database
+```
 
-- Si no os aparece el baner. Desde la web accedeis a vuestra Branch y encontrareis un banner blanco que pone algo tipo: This branch is 2 commits behind main. Aqui le dáis a pull request.
+Nos preguntará el tipo de base de datos que queremos instalar [0] __mysql__ versión __latest__ y el __nombreBaseDeDatos__ que queramos ponerle.
 
-3. Accedo y escribo un mensaje de las cosas que he modificado.
-4. Le doy al botón hacer pull request (petición de agregación).
-5. Finalmente aparece una pantalla mostrando si hay conflictos o no con otros archivos.
-   Si no hay conflictos le damos a -> Merge pull request
+Ejecutamos **TODOS** los contenedores disponibles.
+```sudo docker-compose up -d```
 
-6. Ahora el main estará actualizado con lo que he añadido.
+Chequea que los contenedores estan encendidos
+
+``` docker-compose ps```
+
+Comprobamos que tenemos acceso a la base de datos que hemos creado previamente.
+```
+docker-compose exec nombreBaseDeDatos mysql -u root --password=password
+```
+
+Si tienes problemas con el comando anterior asegurate que el usuario root existe y tiene privilegios 
+
+
+(en caso de que no)
+```
+CREATE USER 'root'@'%' IDENTIFIED BY password;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+```
+
+
+Empezamos con symfony
+```
+wget https://get.symfony.com/cli/installer -O - | bash
+```
+
+Creamos la base de datos en el docker
+```
+symfony console doctrine:database:create
+```
+
+Creamos una migración (sentencia SQL a la espera de ser ejecutada)
+```
+symfony console make:migration
+symfony console doctrine:migrations:migrate
+```
+
+Cargamos los datos con ingredientes, recetas y usuarios
+
+```symfony console doctrine:fixtures:load``` luego ``yes``
+
+
+Instalamos el certificado de autoridad con
+
+```symfony server:ca:install```
+
+
+Levantamos el servidor
+```symfony serve```
+
+Vamos hacia arriba de la consola y entramos en *localhost:8000* para abrirla.
+
+
+Una vez funcionando vamos a la carpeta frontend
+
+borrar carpetas node_modules (en caso de que existan)
+
+
+instalar nodepack manager
+```npm install```
+
+(en caso de error utilitzar los siguientes comandos)
+sudo npm install -g n
+sudo n latest
+
+```npm start``` 
+
+🎁🎁🎁Disfrutad de la magia 🎁🎁🎁
