@@ -7,6 +7,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import axios from "axios";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -19,6 +20,8 @@ import Button from "@material-ui/core/Button";
 //     border: "1px solid red",
 //   },
 // }));
+
+const baseDeleteUrl = 'https://127.0.0.1:8000/lista_compras/';
 
 const styles = (theme) => ({
   oldListas: {
@@ -81,6 +84,7 @@ class Listas extends Component {
       return item["@id"] !== id;
     });
     this.setState({listas : newList});
+    axios.delete(baseDeleteUrl + id.split("/")[2]);
   };
 
   render() {
