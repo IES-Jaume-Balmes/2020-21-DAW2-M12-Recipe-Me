@@ -40,11 +40,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard({ receta }) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  
 
   const anadirLista = (lista) => {
     const cookie = new Cookie();

@@ -8,11 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import CancelIcon from "@material-ui/icons/Cancel";
-import Cookie from "universal-cookie";
-import axios from "axios";
-const cookie = new Cookie();
-let arrayIngres = cookie.get("ingredientes");
-let baseUrl = "https://127.0.0.1:8000/lista_compras";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TarjetaListaActual(props) {
-  const titulo = props.titulo;
+  const arrayIngredients = props.arrayIngres;
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
-  const [list, setList] = React.useState(arrayIngres);
-
+  const [list, setList] = React.useState(arrayIngredients);
+  
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -41,29 +37,6 @@ export default function TarjetaListaActual(props) {
     setChecked(newChecked);
   };
 
-  const guardarListaCompra = async () => {
-    let arraySoloId = list.map((i) => i.id);
-    let jsonPeticion = {
-      propietario: "/users/" + cookie.get("user"),
-      name: titulo,
-      ingredients: arraySoloId,
-    };
-    //console.log(arraySoloId);
-    console.log(jsonPeticion);
-    await axios
-      .post(baseUrl, jsonPeticion)
-      .then((response) => {
-        console.log(response.data);
-        alert("Receta creada correctamente");
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Ha ocurrido un error");
-      });
-
-    //console.log(list);
-  };
-
   const handleRemove = (id) => {
     console.log(id);
     const newList = list.filter((item) => {
@@ -72,7 +45,7 @@ export default function TarjetaListaActual(props) {
     setList(newList);
   };
 
-  if (cookie.get("ingredientes")) {
+  if (list.length !== 0) {
     return (
       <div>
         <List className={classes.root}>
@@ -112,15 +85,6 @@ export default function TarjetaListaActual(props) {
             );
           })}
         </List>
-        {/* <button
-          type="button"
-          className="btn btn-primary mt-3"
-          onClick={() => {
-            guardarListaCompra();
-          }}
-        >
-          Guardar Lista de la compra
-        </button> */}
       </div>
     );
   } else {

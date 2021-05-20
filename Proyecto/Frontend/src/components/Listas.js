@@ -3,23 +3,15 @@ import "../css/Recetas.css";
 import TarjetaLista from "./Cards/TarjetaLista";
 import TarjetaListaActual from "./Cards/TarjetaListaActual";
 import { withStyles } from "@material-ui/core/styles";
-
+import Cookie from "universal-cookie";
 import TextField from "@material-ui/core/TextField";
 import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     "& > *": {
-//       margin: theme.spacing(1),
-//       width: "25ch",
-//     },
-//   },
-//   oldLists: {
-//     border: "1px solid red",
-//   },
-// }));
+const cookie = new Cookie();
+let arrayIngres = cookie.get("ingredientes");
+const baseUrl = "https://127.0.0.1:8000/lista_compras";
 
 const baseDeleteUrl = 'https://127.0.0.1:8000/lista_compras/';
 
@@ -62,7 +54,7 @@ const styles = (theme) => ({
 class Listas extends Component {
   state = {
     listas: [],
-    textField: "k",
+    textField: "",
   };
 
   handleText = async (e) => {
@@ -83,10 +75,33 @@ class Listas extends Component {
     const newList = this.state.listas.filter((item) => {
       return item["@id"] !== id;
     });
-    this.setState({listas : newList});
+    this.setState({ listas: newList });
     axios.delete(baseDeleteUrl + id.split("/")[2]);
   };
 
+  guardarListaCompra = async() => {
+    let arraySoloId = arrayIngres.map((i) => i.id);
+    console.log();
+    console.log();
+    console.log(arraySoloId);
+    let jsonPeticion = {
+      propietario: "/users/" + cookie.get("user"),
+      name: this.state.textField,
+      ingredients: arraySoloId,
+    };
+    
+    console.log(jsonPeticion);
+    await axios
+      .post(baseUrl, jsonPeticion)
+      .then((response) => {
+        console.log(response.data);
+        alert("Receta creada correctamente");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Ha ocurrido un error");
+      });
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -103,9 +118,14 @@ class Listas extends Component {
           <div className={classes.postIt}></div>
           <div className={classes.postItNaranja}></div>
           <div className={classes.listaIngredientes}>
-            <TarjetaListaActual titulo={this.state.textField} className="m-2" />
+            <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} />
           </div>
-          <Button variant="contained" color="primary" className="mt-3">
+          <Button
+            variant="contained"
+            color="primary"
+            className="mt-3"
+            onClick={this.guardarListaCompra}
+          >
             Guardar lista de la compra
           </Button>
         </Grid>
