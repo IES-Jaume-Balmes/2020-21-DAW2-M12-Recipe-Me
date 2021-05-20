@@ -52,13 +52,20 @@ export default class Usuario extends Component {
           <Grid item xs={4}>
             <TarjetaUser usuario={this.state.usuario} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={4}  direction="column" >
             <Button
+              
               variant="contained"
               color="secondary"
               onClick={() => this.cerrarSesion()}
             >
               Cerrar Sesión
+            </Button>
+            
+            <Button
+              variant="contained"
+              color="secondary">
+              Darse de baja
             </Button>
           </Grid>
         </Grid>
