@@ -13,6 +13,8 @@ const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
 const baseUrl = "https://127.0.0.1:8000/lista_compras";
 
+const baseDeleteUrl = 'https://127.0.0.1:8000/lista_compras/';
+
 const styles = (theme) => ({
   oldListas: {
     overflowY: "scroll",
@@ -74,6 +76,7 @@ class Listas extends Component {
       return item["@id"] !== id;
     });
     this.setState({ listas: newList });
+    axios.delete(baseDeleteUrl + id.split("/")[2]);
   };
 
   guardarListaCompra = async() => {
