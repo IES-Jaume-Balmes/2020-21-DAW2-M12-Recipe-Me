@@ -133,7 +133,7 @@ export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [buscar, setBuscar] = React.useState("");
+  const [buscar,/* setBuscar*/] = React.useState("");
 
   
 
