@@ -64,7 +64,7 @@ export default function SignInSide() {
   const classes = useStyles();
 
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
@@ -78,7 +78,7 @@ export default function SignInSide() {
   async function peticionApi() {
     let jsonPeticion = {
       email: email,
-      username: username,
+      name: name,
       password: password,
     };
     console.log(jsonPeticion);
@@ -111,30 +111,6 @@ export default function SignInSide() {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  autoComplete="uname"
-                  name="userName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="userName"
-                  label="User Name"
-                  autoFocus
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </Grid>
-              {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                />
-              </Grid> */}
-              <Grid item xs={12}>
-                <TextField
                   variant="outlined"
                   required
                   fullWidth
@@ -143,6 +119,19 @@ export default function SignInSide() {
                   name="email"
                   autoComplete="email"
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="uname"
+                  name="name"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Nombre completo"
+                  autoFocus
+                  onChange={(e) => setName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -158,14 +147,6 @@ export default function SignInSide() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
-              {/* <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid> */}
             </Grid>
             <Button
               type="submit"
