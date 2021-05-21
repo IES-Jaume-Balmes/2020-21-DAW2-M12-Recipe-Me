@@ -12,8 +12,6 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-
-
 import axios from "axios";
 import Cookie from "universal-cookie";
 
@@ -68,9 +66,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -97,12 +95,12 @@ export default function SignInSide() {
           cookie.set("username", response.username, { path: "/" });
           window.location.href = "./";
         } else {
-          alert("El usuario o contraseña no son correctos");
+          setError(true)
         }
       })
       .catch((error) => {
         console.log(error);
-        alert("Contraseña o usuario Incorrecto");
+        setError(true)
       });
   }
 
@@ -116,7 +114,7 @@ export default function SignInSide() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Entra!
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
             <TextField
@@ -130,6 +128,7 @@ export default function SignInSide() {
               autoComplete="email"
               autoFocus
               onChange={(e) => setEmail(e.target.value)}
+              error={error}
             />
             <TextField
               variant="outlined"
@@ -142,6 +141,8 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
+              error={error}
+              helperText={error ? "Email o contraseña incorrecto!" : ""}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
