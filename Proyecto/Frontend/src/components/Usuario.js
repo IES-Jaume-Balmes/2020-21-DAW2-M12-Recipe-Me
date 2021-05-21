@@ -4,6 +4,11 @@ import TarjetaUser from "./Cards/TarjetaUser";
 import Cookie from "universal-cookie";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const cookie = new Cookie();
 
@@ -19,15 +24,34 @@ const cookie = new Cookie();
   },
 }); */
 
+/*const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };*/
+
 export default class Usuario extends Component {
+  handleClickOpen = () => {
+    this.setState({open:true});
+  };
+
+  handleClose = () => {
+    this.setState({open:false});
+  };
+
   state = {
     usuario: {},
+    open: false,
   };
 
   cerrarSesion = () => {
     cookie.remove("user", { path: "/" });
     cookie.remove("username", { path: "/" });
-    cookie.remove("ingredientes", { path: "/" })
+    cookie.remove("ingredientes", { path: "/" });
 
     window.location.href = "./login";
   };
@@ -52,21 +76,58 @@ export default class Usuario extends Component {
           <Grid item xs={4}>
             <TarjetaUser usuario={this.state.usuario} />
           </Grid>
-          <Grid item xs={4}  direction="column" >
+          <Grid
+            item
+            xs={4}
+            container
+            direction="column"
+            justify="space-evenly"
+            alignItems="center"
+          >
             <Button
-              
               variant="contained"
               color="secondary"
               onClick={() => this.cerrarSesion()}
             >
               Cerrar Sesión
             </Button>
-            
-            <Button
+
+            {/*<Button
               variant="contained"
               color="secondary">
               Darse de baja
+            </Button>*/}
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={this.handleClickOpen}
+            >
+              Darse de baja
             </Button>
+            <Dialog
+              open={this.state.open}
+              onClose={this.handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Darse de baja en Recipe-Me"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Todos sus datos y recetas se eliminarán para siempre.
+                  ¿Estás seguro?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  No
+                </Button>
+                <Button onClick={this.handleClose} color="primary" autoFocus>
+                  Sí
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Grid>
         </Grid>
       </>
