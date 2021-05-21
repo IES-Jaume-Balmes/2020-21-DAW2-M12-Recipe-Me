@@ -15,7 +15,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Cookie from "universal-cookie";
 
-const baseUrl = "https://localhost:8000/login";
+const baseUrl = "https://localhost:8000/api/login_check";
 const cookie = new Cookie();
 
 function Copyright() {
@@ -86,21 +86,22 @@ export default function SignInSide() {
 
     await axios
       .post(baseUrl, jsonPeticion)
+      // .then((response) => {
+      //   return response.data;
+      //   console.log(response);
+      // })
       .then((response) => {
-        return response.data;
-      })
-      .then((response) => {
-        if (response != null) {
-          cookie.set("user", response.user, { path: "/" });
-          cookie.set("username", response.username, { path: "/" });
+        if (response.status === 200) {
+          cookie.set("token", response.data.token, { path: "/" });
+          // cookie.set("username", response.username, { path: "/" });
           window.location.href = "./";
         } else {
-          setError(true)
+          setError(true);
         }
       })
       .catch((error) => {
         console.log(error);
-        setError(true)
+        setError(true);
       });
   }
 

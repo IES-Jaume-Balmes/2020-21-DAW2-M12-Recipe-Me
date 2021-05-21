@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Routes() {
   const classes = useStyles();
-  if (!cookie.get("user")) {
+  if (!cookie.get("token")) {
     return (
       <Router>
         <Switch>

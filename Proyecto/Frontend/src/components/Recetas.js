@@ -6,6 +6,10 @@ import { withStyles } from "@material-ui/core/styles";
 // https://www.davidhu.io/react-spinners/
 import CircleLoader from "react-spinners/CircleLoader";
 import { EventEmitter } from "./utils/eventEmitter";
+import Cookie from "universal-cookie";
+import axios from "axios";
+
+const cookie = new Cookie();
 
 const styles = (theme) => ({
   gridContainer: {
@@ -25,8 +29,8 @@ const styles = (theme) => ({
 });
 
 class Recetas extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
       recetas: [],
       busquedaRecetas: [],
@@ -35,27 +39,59 @@ class Recetas extends Component {
     };
   }
 
-  mapearBusqueda(palabraABuscar){
-    let nuevoRecetas = this.state.recetas.filter((elemento)=>{
-      return elemento.name.toLowerCase().includes(palabraABuscar)
-    })
-    this.setState({busquedaRecetas: nuevoRecetas})
+  mapearBusqueda(palabraABuscar) {
+    let nuevoRecetas = this.state.recetas.filter((elemento) => {
+      return elemento.name.toLowerCase().includes(palabraABuscar);
+    });
+    this.setState({ busquedaRecetas: nuevoRecetas });
   }
-  
 
-  componentDidMount() {
-    fetch("https://127.0.0.1:8000/recipes")
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ recetas: data["hydra:member"] });
-        this.setState({ busquedaRecetas: data["hydra:member"] });
-        this.setState({ loading: false });
+  async peticionApi() {
+    let token = cookie.get("token");
+    const apiUrl = "https://127.0.0.1:8000/api/recipes";
+
+    await axios
+      .get(apiUrl, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       })
-      .catch(console.log);
-    EventEmitter.subscribe('buscar', (event)=>{this.mapearBusqueda(event)})
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ recetas: response.data["hydra:member"] });
+        this.setState({ busquedaRecetas: response.data["hydra:member"] });
+        this.setState({ loading: false });
+        // if (response.status === 200) {
+        //   console.log(response);
+        // } else {
+        //   console.log("Hay algo que falla");
+        // }
+      });
   }
+
+  // componentDidMount() {
+  //   fetch("https://127.0.0.1:8000/api/recipes", {
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //       Authorization: "Bearer " + token,
+  //       Host: "api.producthunt.com",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       this.setState({ recetas: data["hydra:member"] });
+  //       this.setState({ busquedaRecetas: data["hydra:member"] });
+  //       this.setState({ loading: false });
+  //     })
+  //     .catch(console.log);
+  //   EventEmitter.subscribe("buscar", (event) => {
+  //     this.mapearBusqueda(event);
+  //   });
+  // }
 
   render() {
+    this.peticionApi();
     const { classes } = this.props;
     return (
       <>
