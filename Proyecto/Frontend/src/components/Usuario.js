@@ -9,9 +9,11 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import axios from "axios";
+import CircleLoader from "react-spinners/CircleLoader";
 
 const cookie = new Cookie();
-
+const baseUrl = "https://127.0.0.1:8000/users/";
 /* const styles = (theme) => ({
   root: {
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -36,17 +38,44 @@ const cookie = new Cookie();
 
 export default class Usuario extends Component {
   handleClickOpen = () => {
-    this.setState({open:true});
+    this.setState({ open: true });
   };
 
   handleClose = () => {
-    this.setState({open:false});
+    this.setState({ open: false });
+  };
+
+  handleCloseByeBye = async () => {
+    this.setState({ open: false });
+
+    const deleteUsuario = "https://127.0.0.1:8000/users/"+cookie.get("user");
+      
+
+    console.log(deleteUsuario);
+  
+    await axios
+      .delete(deleteUsuario)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Ha ocurrido un error");
+      });
+
+    cookie.remove("user", { path: "/" });
+    cookie.remove("username", { path: "/" });
+    cookie.remove("ingredientes", { path: "/" });
+
+    window.location.href = "./login";
   };
 
   state = {
     usuario: {},
     open: false,
-  };
+    isLoading:true,
+    color:"#3F51B6",
+    };
 
   cerrarSesion = () => {
     cookie.remove("user", { path: "/" });
@@ -56,20 +85,29 @@ export default class Usuario extends Component {
     window.location.href = "./login";
   };
 
-  componentDidMount() {
+  componentDidMount = async () => {
     let idUser = cookie.get("user");
-
-    fetch(`https://127.0.0.1:8000/users/${idUser}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({ usuario: data });
+    await axios
+      .get(baseUrl + idUser)
+      .then((response) => {
+        console.log(response);
+        this.setState({ usuario: response,
+        isLoading:false,
+       });
+        
       })
       .catch(console.log);
-  }
+  };
 
+  
+  
+  
   render() {
     //const { classes } = this.props;
+    if(this.state.isLoading)
+      return <CircleLoader 
+      color={this.state.color}/>
+   
     return (
       <>
         <Grid container xs={12} justify="space-around">
@@ -92,14 +130,9 @@ export default class Usuario extends Component {
               Cerrar Sesión
             </Button>
 
-            {/*<Button
-              variant="contained"
-              color="secondary">
-              Darse de baja
-            </Button>*/}
             <Button
-              variant="outlined"
-              color="primary"
+              variant="contained"
+              color="secondary"
               onClick={this.handleClickOpen}
             >
               Darse de baja
@@ -115,15 +148,19 @@ export default class Usuario extends Component {
               </DialogTitle>
               <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                  Todos sus datos y recetas se eliminarán para siempre.
-                  ¿Estás seguro?
+                  Todos sus datos y recetas se eliminarán para siempre. ¿Estás
+                  seguro?
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
                 <Button onClick={this.handleClose} color="primary">
                   No
                 </Button>
-                <Button onClick={this.handleClose} color="primary" autoFocus>
+                <Button
+                  onClick={this.handleCloseByeBye}
+                  color="primary"
+                  autoFocus
+                >
                   Sí
                 </Button>
               </DialogActions>
@@ -132,5 +169,6 @@ export default class Usuario extends Component {
         </Grid>
       </>
     );
+    
   }
 }

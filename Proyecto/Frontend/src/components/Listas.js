@@ -81,8 +81,6 @@ class Listas extends Component {
 
   guardarListaCompra = async() => {
     let arraySoloId = arrayIngres.map((i) => i.id);
-    console.log();
-    console.log();
     console.log(arraySoloId);
     let jsonPeticion = {
       propietario: "/users/" + cookie.get("user"),
