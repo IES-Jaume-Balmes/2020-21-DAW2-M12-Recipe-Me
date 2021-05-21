@@ -47,12 +47,8 @@ export default class Usuario extends Component {
 
   handleCloseByeBye = async () => {
     this.setState({ open: false });
-
-    const deleteUsuario = "https://127.0.0.1:8000/users/"+cookie.get("user");
-      
-
+    const deleteUsuario = "https://127.0.0.1:8000/users/" + cookie.get("user");
     console.log(deleteUsuario);
-  
     await axios
       .delete(deleteUsuario)
       .then((response) => {
@@ -62,20 +58,18 @@ export default class Usuario extends Component {
         console.log(error);
         alert("Ha ocurrido un error");
       });
-
     cookie.remove("user", { path: "/" });
     cookie.remove("username", { path: "/" });
     cookie.remove("ingredientes", { path: "/" });
-
     window.location.href = "./login";
   };
 
   state = {
     usuario: {},
     open: false,
-    isLoading:true,
-    color:"#3F51B6",
-    };
+    isLoading: true,
+    color: "#3F51B6",
+  };
 
   cerrarSesion = () => {
     cookie.remove("user", { path: "/" });
@@ -91,23 +85,15 @@ export default class Usuario extends Component {
       .get(baseUrl + idUser)
       .then((response) => {
         console.log(response);
-        this.setState({ usuario: response,
-        isLoading:false,
-       });
-        
+        this.setState({ usuario: response, isLoading: false });
       })
       .catch(console.log);
   };
 
-  
-  
-  
   render() {
     //const { classes } = this.props;
-    if(this.state.isLoading)
-      return <CircleLoader 
-      color={this.state.color}/>
-   
+    if (this.state.isLoading) return <CircleLoader color={this.state.color} />;
+
     return (
       <>
         <Grid container xs={12} justify="space-around">
@@ -169,6 +155,5 @@ export default class Usuario extends Component {
         </Grid>
       </>
     );
-    
   }
 }
