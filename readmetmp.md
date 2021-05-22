@@ -14,3 +14,6 @@ https://jwt.io/
 
 ## Tutorial youtube
 https://www.youtube.com/watch?v=XT4oy1d1j-g&t=1368s
+
+## Customizar el token que enviamos
+https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/2-data-customization.md#eventsjwt_decoded---validating-data-in-the-jwt-payload
