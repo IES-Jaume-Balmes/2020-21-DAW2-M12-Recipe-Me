@@ -13,7 +13,15 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ApiResource(
  *      normalizationContext={"groups"={"lista_compra:read"}},
- *      denormalizationContext={"groups"={"lista_compra:write"}}
+ *      denormalizationContext={"groups"={"lista_compra:write"}},
+ *      collectionOperations={
+ *          "get"={"security"="is_granted('ROLE_ADMIN')"},
+ *          "post"={"security"="is_granted('ROLE_USER')"}
+ *      },
+ *      itemOperations={
+ *          "get"={"security"="is_granted('ROLE_ADMIN')"},
+ *          "delete"={"security"="is_granted('ROLE_USER') and object.getPropietario() == user"}
+ *      }
  * )
  * @ORM\Entity(repositoryClass=ListaCompraRepository::class)
  */

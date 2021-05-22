@@ -3,6 +3,7 @@
 namespace App\Test;
 
 use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\Client;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 
@@ -28,12 +29,18 @@ abstract class CustomApiTestCase extends ApiTestCase
 
     protected function logIn(Client $client, string $email, string $password)
     {
-        $client->request('GET', '/api/login_check', [
+        $response = $client->request('GET', '/api/login_check', [
             'json' => [
                 'email' => $email,
                 'password' => $password,
             ],
         ]);
+
+        // $this->assertEquals(200, $response->getStatusCode());
+        // $this->asserter()->assertResponsePropertyExists(
+        //     $response,
+        //     'token'
+        // );
 
         $this->assertResponseStatusCodeSame(200);
     }
@@ -46,5 +53,10 @@ abstract class CustomApiTestCase extends ApiTestCase
         $user = $this->createUser($email, $password);
         $this->logIn($client, $email, $password);
         return $user;
+    }
+
+    protected function getEntityManager(): EntityManagerInterface
+    {
+        return self::$container->get('doctrine')->getManager();
     }
 }

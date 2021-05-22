@@ -17,14 +17,14 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ApiResource(
  *     normalizationContext={"groups"={"user:read"}},
  *     denormalizationContext={"groups"={"user:write"}},
- *      collectionOperations={
- *          "get"={"security"="is_granted('ROLE_ADMIN')"},
- *          "post"
- *      },
- *      itemOperations={
- *          "get"={"security"="is_granted('ROLE_USER')"},
- *          "delete"={"security"="is_granted('ROLE_USER')"}
- *      }
+ *     collectionOperations={
+ *         "get"={"security"="is_granted('ROLE_ADMIN')"},
+ *         "post"
+ *     },
+ *     itemOperations={
+ *         "get"={"security"="is_granted('ROLE_USER')"},
+ *         "delete"={"security"="is_granted('ROLE_USER')"}
+ *     }
  * )
  * @UniqueEntity(fields={"email"})
  * @ORM\Entity(repositoryClass=UserRepository::class)

@@ -2,9 +2,12 @@ import React, { Component } from "react";
 //import TarjetaIngredients from "./Cards/TarjetaIngredients";
 import axios from "axios";
 import Select from "react-select";
+import Cookie from "universal-cookie";
 
 const baseUrl = "https://localhost:8000/api/ingredients";
 const baseUrlAdd = "https://localhost:8000/api/recipes";
+const cookie = new Cookie();
+let token = cookie.get("token");
 
 export default class CrearReceta extends Component {
   state = {
@@ -16,13 +19,21 @@ export default class CrearReceta extends Component {
     },
   };
 
-  componentDidMount() {
-    fetch(baseUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ ingredientsOption: data["hydra:member"] });
+  async componentDidMount() {
+    await axios
+      .get(baseUrl, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       })
-      .catch(console.log);
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          this.setState({ ingredientsOption: response.data["hydra:member"] });
+        } else {
+          console.log(response);
+        }
+      });
   }
 
   //Cambia la barra del buscador de ingredientes
@@ -55,7 +66,11 @@ export default class CrearReceta extends Component {
     };
     console.log(jsonPeticion);
     await axios
-      .post(baseUrlAdd, jsonPeticion)
+      .post(baseUrlAdd, jsonPeticion, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
       .then((response) => {
         console.log(response.data);
         this.setState({

@@ -106,7 +106,7 @@ export default class Usuario extends Component {
 
     return (
       <>
-        <Grid container xs={12} justify="space-around">
+        <Grid container justify="space-around">
           <Grid item xs={4}>
             <TarjetaUser usuario={this.state.usuario} />
           </Grid>
