@@ -40,6 +40,17 @@ Vamos a la carpeta del proyecto/Backend.
 
 >Recordar siempre tener el sistema actualizado y no con versiones antiguas que nos puedan traer problemas futuros.
 
+Antes de hacer un install, crear en la raiz del proyecto Backend un archivo ``.env`` con el siguiente contenido:
+
+```
+APP_ENV=dev
+APP_SECRET=ac24bd1e7f80b5b0f2eeea7239c97cba
+DATABASE_URL="mysql://root:2704@127.0.0.1:3306/serious_api"
+CORS_ALLOW_ORIGIN='^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'
+```
+ >Más información sobre el archivo ``.env`` en [Symfony](https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration).
+
+Ahora ejecutamos el comando
 ```
 composer install
 ```
