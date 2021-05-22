@@ -45,7 +45,7 @@ export default function TarjetaListaActual(props) {
     setList(newList);
   };
 
-  if (list.length !== 0) {
+  if (list !== undefined) {
     return (
       <div>
         <List className={classes.root}>

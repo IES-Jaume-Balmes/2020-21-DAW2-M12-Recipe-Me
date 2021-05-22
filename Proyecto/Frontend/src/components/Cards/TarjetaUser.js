@@ -59,11 +59,11 @@ const TarjetaUser = ({ usuario }) => {
       <CardMedia
         className={classes.media}
         image={imgString}
-        title={usuario.email}
+        title={usuario.data.email}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {usuario.email}
+          {usuario.data.email}
         </Typography>
       </CardContent>
       {/* <CardActions disableSpacing>

@@ -103,8 +103,6 @@ class Listas extends Component {
     var tokenDecoded = jwt_decode(token);
 
     let arraySoloId = arrayIngres.map((i) => i.id);
-    console.log();
-    console.log();
     console.log(arraySoloId);
     let jsonPeticion = {
       propietario: "/users/" + tokenDecoded.idUser,
