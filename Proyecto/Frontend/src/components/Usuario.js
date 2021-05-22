@@ -9,9 +9,6 @@ import jwt_decode from "jwt-decode";
 
 const cookie = new Cookie();
 const token = cookie.get("token");
-var tokenDecoded = jwt_decode(token);
-// console.log(tokenDecoded);
-const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
 
 /* const styles = (theme) => ({
   root: {
@@ -52,6 +49,8 @@ export default class Usuario extends Component {
   // }
 
   async componentDidMount() {
+    var tokenDecoded = jwt_decode(token);
+    const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
     await axios
       .get(profileEndpoint, {
         headers: {
