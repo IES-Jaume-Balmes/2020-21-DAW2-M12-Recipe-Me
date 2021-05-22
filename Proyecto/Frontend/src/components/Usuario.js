@@ -4,7 +4,6 @@ import TarjetaUser from "./Cards/TarjetaUser";
 import Cookie from "universal-cookie";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
-import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -70,7 +69,7 @@ export default class Usuario extends Component {
   state = {
     usuario: {},
     open: false,
-    isLoading: true,
+    loading: true,
     color: "#3F51B6",
   };
 
@@ -94,6 +93,7 @@ export default class Usuario extends Component {
         if (response.status === 200) {
           console.log(response.data);
           this.setState({ usuario: response.data });
+          this.setState({ loading: false });
         } else {
           console.log(response);
         }

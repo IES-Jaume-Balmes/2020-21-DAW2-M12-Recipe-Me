@@ -40,8 +40,6 @@ const TarjetaUser = ({ usuario }) => {
   // Para generar una imagen aleatoria colocamos un digito al final del string.
   const imgString = "https://source.unsplash.com/collection/1718802/";
 
-  //const imgFood = "https://source.unsplash.com/collection/1353633/";
-
   return (
     <Card key={usuario.username} className={classes.root}>
       <CardHeader
@@ -59,11 +57,11 @@ const TarjetaUser = ({ usuario }) => {
       <CardMedia
         className={classes.media}
         image={imgString}
-        title={usuario.data.email}
+        title={usuario.email}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {usuario.data.email}
+          {usuario.email}
         </Typography>
       </CardContent>
       {/* <CardActions disableSpacing>
