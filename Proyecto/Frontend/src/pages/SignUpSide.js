@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 
-const baseUrl = "https://localhost:8000/users";
+const baseUrl = "https://localhost:8000/api/users";
 
 function Copyright() {
   return (

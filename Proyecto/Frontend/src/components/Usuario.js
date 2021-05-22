@@ -28,25 +28,11 @@ export default class Usuario extends Component {
   };
 
   cerrarSesion = () => {
-    cookie.remove("user", { path: "/" });
-    cookie.remove("username", { path: "/" });
     cookie.remove("ingredientes", { path: "/" });
     cookie.remove("token", { path: "/" });
 
     window.location.href = "./login";
   };
-
-  // componentDidMount() {
-  //   let idUser = cookie.get("user");
-
-  //   fetch(`https://127.0.0.1:8000/users/${idUser}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       this.setState({ usuario: data });
-  //     })
-  //     .catch(console.log);
-  // }
 
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);

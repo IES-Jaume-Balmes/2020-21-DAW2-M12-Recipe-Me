@@ -54,7 +54,7 @@ const TarjetaUser = ({ usuario }) => {
           </IconButton>
         }
         title={usuario.username}
-        subheader={usuario.email}
+        subheader={usuario.name}
       />
       <CardMedia
         className={classes.media}

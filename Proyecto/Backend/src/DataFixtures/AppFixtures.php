@@ -27,7 +27,7 @@ class AppFixtures extends Fixture
         ];
         foreach ($administradores as $admin => $password) {
             $usuario = new User();
-            $usuario->setUsername($admin);
+            $usuario->setName($admin);
             $usuario->setEmail("$admin@recipeme.com");
             $usuario->setPassword($password);
             $usuario->setRoles(['ROLE_ADMIN']);
@@ -38,7 +38,7 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < 5; $i++) {
             $this->faker = Factory::create();
             $usuario = new User();
-            $usuario->setUsername($this->faker->name);
+            $usuario->setName($this->faker->name);
             $usuario->setEmail($this->faker->email);
             $usuario->setPassword($this->faker->password);
             $manager->persist($usuario);
