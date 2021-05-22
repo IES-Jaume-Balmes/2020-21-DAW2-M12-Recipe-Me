@@ -17,7 +17,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *          denormalizationContext={"groups"={"recipe:write"}},
  *          collectionOperations={
  *              "get"={"security"="is_granted('ROLE_USER')"},
- *              "post"
+ *              "post"={"security"="is_granted('ROLE_USER')"}
+ *          },
+ *          itemOperations={
+ *              "get"={"security"="is_granted('ROLE_USER')"},
+ *              "delete"={"security"="is_granted('ROLE_USER')"}
  *          }
  * )
  * @ORM\Entity(repositoryClass=RecipeRepository::class)
