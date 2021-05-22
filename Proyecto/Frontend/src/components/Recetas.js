@@ -66,6 +66,9 @@ class Recetas extends Component {
           console.log(response);
         }
       });
+    EventEmitter.subscribe("buscar", (event) => {
+      this.mapearBusqueda(event);
+    });
   }
 
   render() {
