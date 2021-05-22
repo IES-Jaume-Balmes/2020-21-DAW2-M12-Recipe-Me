@@ -1,4 +1,4 @@
 Icon?
 .DS_Store
-.env
-Proyecto/Backend/serious_restful_api/.env
+#.env
+#Proyecto/Backend/serious_restful_api/.env
