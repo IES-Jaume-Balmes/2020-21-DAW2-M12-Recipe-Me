@@ -4,8 +4,14 @@ import TarjetaUser from "./Cards/TarjetaUser";
 import Cookie from "universal-cookie";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 const cookie = new Cookie();
+const token = cookie.get("token");
+var tokenDecoded = jwt_decode(token);
+// console.log(tokenDecoded);
+const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
 
 /* const styles = (theme) => ({
   root: {
@@ -33,16 +39,33 @@ export default class Usuario extends Component {
     window.location.href = "./login";
   };
 
-  componentDidMount() {
-    let idUser = cookie.get("user");
+  // componentDidMount() {
+  //   let idUser = cookie.get("user");
 
-    fetch(`https://127.0.0.1:8000/users/${idUser}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({ usuario: data });
+  //   fetch(`https://127.0.0.1:8000/users/${idUser}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       this.setState({ usuario: data });
+  //     })
+  //     .catch(console.log);
+  // }
+
+  async componentDidMount() {
+    await axios
+      .get(profileEndpoint, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       })
-      .catch(console.log);
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          this.setState({ usuario: response.data });
+        } else {
+          console.log(response);
+        }
+      });
   }
 
   render() {

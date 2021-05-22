@@ -29,7 +29,7 @@ class JWTCreatedListener extends AbstractController
     public function onJWTCreated(JWTCreatedEvent $event)
     {
         $payload = $event->getData();
-        $payload['id'] = $this->getUser()->getId();
+        $payload['userId'] = $this->getUser()->getId();
 
         $event->setData($payload);
 
