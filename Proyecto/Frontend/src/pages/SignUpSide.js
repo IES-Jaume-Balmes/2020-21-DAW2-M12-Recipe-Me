@@ -66,9 +66,12 @@ export default function SignInSide() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return (
+      email.length > 0 && password.length > 0 && password === repeatPassword
+    );
   }
 
   function handleSubmit(event) {
@@ -145,6 +148,20 @@ export default function SignInSide() {
                   id="password"
                   autoComplete="current-password"
                   onChange={(e) => setPassword(e.target.value)}
+                />
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="repeatPassword"
+                  label="Repita el password"
+                  type="password"
+                  id="repeatPassword"
+                  autoComplete="current-repeatPassword"
+                  onChange={(e) => setRepeatPassword(e.target.value)}
+                  //error={error}
+                  //helperText={error ? "Email o contraseña incorrecto!" : ""}
                 />
               </Grid>
             </Grid>
