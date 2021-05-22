@@ -13,6 +13,7 @@ import jwt_decode from "jwt-decode";
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
 const listasEndPoint = "https://127.0.0.1:8000/api/lista_compras";
+
 const baseDeleteUrl = "https://127.0.0.1:8000/api/lista_compras/";
 let token = cookie.get("token");
 
@@ -65,9 +66,12 @@ class Listas extends Component {
   };
 
   // OBTENEMOS LISTAS GUARDADAS
+  //TODO: Obtener las listas del Json Usuario, no de listas
   async componentDidMount() {
+    var tokenDecoded = jwt_decode(token);
+    const userEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
     await axios
-      .get(listasEndPoint, {
+      .get(userEndpoint, {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -75,15 +79,16 @@ class Listas extends Component {
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
-          this.setState({ listas: response.data["hydra:member"] });
+          //TODO: Estamos obteniendo un IRI con la direccion a la lista
+          //TODO: Se tiene que hacer un axios a ese IRI y guardar el objeto en el STATE
+          // this.setState({ listas: response.data.listaCompras });
         } else {
           console.log(response);
         }
       });
   }
 
-  // TODO: Revisar que este bién con la nueva configuración.
-
+  //TODO: Pendiente de revisión
   eliminar = (id) => {
     const newList = this.state.listas.filter((item) => {
       return item["@id"] !== id;
@@ -97,15 +102,14 @@ class Listas extends Component {
   };
 
   // GUARDAMOS LISTA DE LA COMPRA
-  // TODO: gestionar ID usuario
 
   guardarListaCompra = async () => {
     var tokenDecoded = jwt_decode(token);
-
+    console.log(tokenDecoded);
     let arraySoloId = arrayIngres.map((i) => i.id);
-    console.log(arraySoloId);
+    //console.log(arraySoloId);
     let jsonPeticion = {
-      propietario: "/users/" + tokenDecoded.idUser,
+      propietario: "api/users/" + tokenDecoded.userId,
       name: this.state.textField,
       ingredients: arraySoloId,
     };
@@ -123,6 +127,7 @@ class Listas extends Component {
       })
       .catch((error) => {
         console.log(error);
+        console.log(jsonPeticion);
         alert("Ha ocurrido un error");
       });
   };

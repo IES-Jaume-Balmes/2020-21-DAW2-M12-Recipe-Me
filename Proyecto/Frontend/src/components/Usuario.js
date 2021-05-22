@@ -49,7 +49,8 @@ export default class Usuario extends Component {
 
   handleCloseByeBye = async () => {
     this.setState({ open: false });
-    const deleteUsuario = "https://127.0.0.1:8000/users/" + cookie.get("user");
+    var tokenDecoded = jwt_decode(token);
+    const deleteUsuario = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
     console.log(deleteUsuario);
     await axios
       .delete(deleteUsuario)

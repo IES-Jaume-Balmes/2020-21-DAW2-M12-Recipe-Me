@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: 14,
-    marginLeft: 10
+    marginLeft: 10,
   },
   pos: {
     marginBottom: 12,
@@ -45,10 +45,16 @@ export default function TarjetaLista({ lista, eliminar }) {
               color="textSecondary"
               align="center"
             >
-              {lista.createdAt.split("T")[0]}
+              {/* {lista.createdAt.split("T")[0]} */}
             </Typography>
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="comments" onClick={() => {eliminar(lista["@id"])}}>
+              <IconButton
+                edge="end"
+                aria-label="comments"
+                onClick={() => {
+                  eliminar(lista["@id"]);
+                }}
+              >
                 <CancelIcon />
               </IconButton>
             </ListItemSecondaryAction>
