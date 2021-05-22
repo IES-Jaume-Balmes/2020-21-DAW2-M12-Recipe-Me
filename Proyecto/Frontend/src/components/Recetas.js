@@ -46,7 +46,7 @@ class Recetas extends Component {
     this.setState({ busquedaRecetas: nuevoRecetas });
   }
 
-  async peticionApi() {
+  async componentDidMount() {
     let token = cookie.get("token");
     const apiUrl = "https://127.0.0.1:8000/api/recipes";
 
@@ -57,41 +57,18 @@ class Recetas extends Component {
         },
       })
       .then((response) => {
-        console.log(response.data);
-        this.setState({ recetas: response.data["hydra:member"] });
-        this.setState({ busquedaRecetas: response.data["hydra:member"] });
-        this.setState({ loading: false });
-        // if (response.status === 200) {
-        //   console.log(response);
-        // } else {
-        //   console.log("Hay algo que falla");
-        // }
+        if (response.status === 200) {
+          console.log(response.data);
+          this.setState({ recetas: response.data["hydra:member"] });
+          this.setState({ busquedaRecetas: response.data["hydra:member"] });
+          this.setState({ loading: false });
+        } else {
+          console.log(response);
+        }
       });
   }
 
-  // componentDidMount() {
-  //   fetch("https://127.0.0.1:8000/api/recipes", {
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //       Authorization: "Bearer " + token,
-  //       Host: "api.producthunt.com",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       this.setState({ recetas: data["hydra:member"] });
-  //       this.setState({ busquedaRecetas: data["hydra:member"] });
-  //       this.setState({ loading: false });
-  //     })
-  //     .catch(console.log);
-  //   EventEmitter.subscribe("buscar", (event) => {
-  //     this.mapearBusqueda(event);
-  //   });
-  // }
-
   render() {
-    this.peticionApi();
     const { classes } = this.props;
     return (
       <>

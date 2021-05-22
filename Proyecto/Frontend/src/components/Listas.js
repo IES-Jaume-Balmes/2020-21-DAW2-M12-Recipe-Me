@@ -11,9 +11,9 @@ import axios from "axios";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
-const baseUrl = "https://127.0.0.1:8000/lista_compras";
-
-const baseDeleteUrl = 'https://127.0.0.1:8000/lista_compras/';
+const listasEndPoint = "https://127.0.0.1:8000/api/lista_compras";
+const baseDeleteUrl = "https://127.0.0.1:8000/api/lista_compras/";
+let token = cookie.get("token");
 
 const styles = (theme) => ({
   oldListas: {
@@ -63,45 +63,70 @@ class Listas extends Component {
     });
   };
 
-  componentDidMount() {
-    fetch("https://127.0.0.1:8000/lista_compras")
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ listas: data["hydra:member"] });
+  // OBTENEMOS LISTAS GUARDADAS
+  async componentDidMount() {
+    await axios
+      .get(listasEndPoint, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          this.setState({ listas: response.data["hydra:member"] });
+        } else {
+          console.log(response);
+        }
       });
   }
 
-  eliminar = (id) => {
-    const newList = this.state.listas.filter((item) => {
-      return item["@id"] !== id;
-    });
-    this.setState({ listas: newList });
-    axios.delete(baseDeleteUrl + id.split("/")[2]);
-  };
+  // ELIMINAMOS DE LISTA DE LA COMPRA
+  // TODO: gestionar ID usuario
 
-  guardarListaCompra = async() => {
-    let arraySoloId = arrayIngres.map((i) => i.id);
-    console.log();
-    console.log();
-    console.log(arraySoloId);
-    let jsonPeticion = {
-      propietario: "/users/" + cookie.get("user"),
-      name: this.state.textField,
-      ingredients: arraySoloId,
-    };
-    
-    console.log(jsonPeticion);
-    await axios
-      .post(baseUrl, jsonPeticion)
-      .then((response) => {
-        console.log(response.data);
-        alert("Receta creada correctamente");
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Ha ocurrido un error");
-      });
-  };
+  // eliminar = (id) => {
+  //   const newList = this.state.listas.filter((item) => {
+  //     return item["@id"] !== id;
+  //   });
+  //   this.setState({ listas: newList });
+  //   axios.delete(baseDeleteUrl + id.split("/")[2], {
+  //     headers: {
+  //       Authorization: "Bearer " + token,
+  //     },
+  //   });
+  // };
+
+  // GUARDAMOS LISTA DE LA COMPRA
+  // TODO: gestionar ID usuario
+
+  // guardarListaCompra = async () => {
+  //   let arraySoloId = arrayIngres.map((i) => i.id);
+  //   console.log();
+  //   console.log();
+  //   console.log(arraySoloId);
+  //   let jsonPeticion = {
+  //     propietario: "/users/" + cookie.get("user"),
+  //     name: this.state.textField,
+  //     ingredients: arraySoloId,
+  //   };
+
+  //   console.log(jsonPeticion);
+  //   await axios
+  //     .post(listasEndPoint, jsonPeticion, {
+  //       headers: {
+  //         Authorization: "Bearer " + token,
+  //       },
+  //     })
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       alert("Receta creada correctamente");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       alert("Ha ocurrido un error");
+  //     });
+  // };
+
   render() {
     const { classes } = this.props;
     return (
@@ -118,7 +143,7 @@ class Listas extends Component {
           <div className={classes.postIt}></div>
           <div className={classes.postItNaranja}></div>
           <div className={classes.listaIngredientes}>
-            <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} />
+            {/* <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} /> */}
           </div>
           <Button
             variant="contained"
