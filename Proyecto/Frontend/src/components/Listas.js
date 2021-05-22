@@ -123,7 +123,7 @@ class Listas extends Component {
       })
       .then((response) => {
         console.log(response.data);
-        alert("Receta creada correctamente");
+        alert("ATENÇAO: --> IRI de la lista guardado correctamente");
       })
       .catch((error) => {
         console.log(error);
