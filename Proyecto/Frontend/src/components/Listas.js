@@ -8,6 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
@@ -81,51 +82,52 @@ class Listas extends Component {
       });
   }
 
-  // ELIMINAMOS DE LISTA DE LA COMPRA
-  // TODO: gestionar ID usuario
+  // TODO: Revisar que este bién con la nueva configuración.
 
-  // eliminar = (id) => {
-  //   const newList = this.state.listas.filter((item) => {
-  //     return item["@id"] !== id;
-  //   });
-  //   this.setState({ listas: newList });
-  //   axios.delete(baseDeleteUrl + id.split("/")[2], {
-  //     headers: {
-  //       Authorization: "Bearer " + token,
-  //     },
-  //   });
-  // };
+  eliminar = (id) => {
+    const newList = this.state.listas.filter((item) => {
+      return item["@id"] !== id;
+    });
+    this.setState({ listas: newList });
+    axios.delete(baseDeleteUrl + id.split("/")[2], {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+  };
 
   // GUARDAMOS LISTA DE LA COMPRA
   // TODO: gestionar ID usuario
 
-  // guardarListaCompra = async () => {
-  //   let arraySoloId = arrayIngres.map((i) => i.id);
-  //   console.log();
-  //   console.log();
-  //   console.log(arraySoloId);
-  //   let jsonPeticion = {
-  //     propietario: "/users/" + cookie.get("user"),
-  //     name: this.state.textField,
-  //     ingredients: arraySoloId,
-  //   };
+  guardarListaCompra = async () => {
+    var tokenDecoded = jwt_decode(token);
 
-  //   console.log(jsonPeticion);
-  //   await axios
-  //     .post(listasEndPoint, jsonPeticion, {
-  //       headers: {
-  //         Authorization: "Bearer " + token,
-  //       },
-  //     })
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       alert("Receta creada correctamente");
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       alert("Ha ocurrido un error");
-  //     });
-  // };
+    let arraySoloId = arrayIngres.map((i) => i.id);
+    console.log();
+    console.log();
+    console.log(arraySoloId);
+    let jsonPeticion = {
+      propietario: "/users/" + tokenDecoded.idUser,
+      name: this.state.textField,
+      ingredients: arraySoloId,
+    };
+
+    console.log(jsonPeticion);
+    await axios
+      .post(listasEndPoint, jsonPeticion, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        alert("Receta creada correctamente");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Ha ocurrido un error");
+      });
+  };
 
   render() {
     const { classes } = this.props;
@@ -143,7 +145,7 @@ class Listas extends Component {
           <div className={classes.postIt}></div>
           <div className={classes.postItNaranja}></div>
           <div className={classes.listaIngredientes}>
-            {/* <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} /> */}
+            <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} />
           </div>
           <Button
             variant="contained"

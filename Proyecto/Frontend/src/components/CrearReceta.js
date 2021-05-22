@@ -1,10 +1,10 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 //import TarjetaIngredients from "./Cards/TarjetaIngredients";
 import axios from "axios";
 import Select from "react-select";
 
-const baseUrl = "https://localhost:8000/ingredients";
-const baseUrlAdd = "https://localhost:8000/recipes";
+const baseUrl = "https://localhost:8000/api/ingredients";
+const baseUrlAdd = "https://localhost:8000/api/recipes";
 
 export default class CrearReceta extends Component {
   state = {

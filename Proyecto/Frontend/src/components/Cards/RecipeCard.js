@@ -40,9 +40,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard({ receta }) {
   const classes = useStyles();
-  
-
-  
 
   const anadirLista = (lista) => {
     const cookie = new Cookie();
