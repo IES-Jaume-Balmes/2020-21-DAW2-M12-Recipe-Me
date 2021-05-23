@@ -2,6 +2,7 @@
 title: "SetupSymfony"
 date: 2021-05-11T19:53:22+02:00
 draft: true
+geekdocHidden: true
 ---
 
 ## https://symfonycasts.com/screencast/symfony

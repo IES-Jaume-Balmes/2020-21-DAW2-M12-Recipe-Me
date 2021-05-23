@@ -2,6 +2,7 @@
 title: "Registro"
 date: 2021-05-11T19:53:02+02:00
 draft: true
+geekdocHidden: true
 --- 
 
 1. Crear el formulari de registre:
