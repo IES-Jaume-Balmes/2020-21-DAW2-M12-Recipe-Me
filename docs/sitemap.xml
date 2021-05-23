@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/</loc>
+    <lastmod>2021-05-23T16:27:19+02:00</lastmod>
+  </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</loc>
-    <lastmod>2021-05-23T12:25:36+02:00</lastmod>
+    <lastmod>2021-05-23T16:27:19+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</loc>
     <lastmod>2021-05-23T12:25:36+02:00</lastmod>
@@ -94,6 +97,12 @@
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-0/</loc>
     <lastmod>2021-05-11T19:45:08+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/base_de_datos/bbdd/</loc>
   </url><url>

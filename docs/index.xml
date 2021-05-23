@@ -5,7 +5,7 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Recipeme docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 May 2021 12:25:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 16:27:19 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Seguridad JWT</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</link>
@@ -182,6 +182,27 @@ bin/console security:encode-password Correcto:</description>
  Vamos al archivo ./.env y descomentamos la base de datos que vamos a utilizar. DATABASE_URL=&amp;ldquo;mysql://USUARIO:CONTRASEÑA@127.0.0.1:3306/DATABASE_NOMBRE?serverVersion=5.7&amp;rdquo; Borramos las otras para que no se confunda.    Insertamos en el terminal del proyecto:
  composer require symfony/security-bundle bin/console make:user bin/console make:migration    Conectamos con la base de datos:
  bin/console doctrine:migrations:migrate bin/console make:auth    En .</description>
+    </item>
+    
+    <item>
+      <title>Initial release</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</guid>
+      <description>This is the first release of the Geekdoc theme.
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.</description>
+    </item>
+    
+    <item>
+      <title>Hello Geekdoc</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
+      <description>This is the first release of the Geekdoc theme.
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
+Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim.</description>
     </item>
     
     <item>
