@@ -185,7 +185,7 @@ bin/console security:encode-password Correcto:</description>
     </item>
     
     <item>
-      <title>Hello Geekdoc</title>
+      <title>Hola Recipe-Users!</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
@@ -194,7 +194,7 @@ bin/console security:encode-password Correcto:</description>
     </item>
     
     <item>
-      <title>Initial release</title>
+      <title>Primer post</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       

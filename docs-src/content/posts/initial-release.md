@@ -1,5 +1,5 @@
 ---
-title: Initial release
+title: Primer post
 type: posts
 date: 2021-05-01
 geekdocHidden: true

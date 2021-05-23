@@ -1,7 +1,8 @@
 ---
-title: Hello Geekdoc
+title: Hola Recipe-Users!
 type: posts
 date: 2021-05-01
+geekdocHidden: true
 ---
 
 Se aproxima la tercera entrega del proyecto!!

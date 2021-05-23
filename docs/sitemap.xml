@@ -2,29 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</loc>
-    <lastmod>2021-05-23T12:25:36+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</loc>
-    <lastmod>2021-05-23T12:25:36+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</loc>
-    <lastmod>2021-05-23T12:18:56+02:00</lastmod>
-  </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/</loc>
     <lastmod>2021-05-23T12:18:32+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</loc>
-    <lastmod>2021-05-14T17:26:55+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/docs/hugo/</loc>
-    <lastmod>2021-05-14T16:10:23+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/vista/</loc>
-    <lastmod>2021-05-14T16:08:40+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/docs/</loc>
     <lastmod>2021-05-14T15:48:05+02:00</lastmod>
@@ -46,6 +25,30 @@
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/</loc>
     <lastmod>2021-05-11T19:58:18+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/</loc>
+    <lastmod>2021-05-11T19:47:05+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</loc>
+    <lastmod>2021-05-23T12:25:36+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</loc>
+    <lastmod>2021-05-23T12:25:36+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</loc>
+    <lastmod>2021-05-23T12:18:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</loc>
+    <lastmod>2021-05-14T17:26:55+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/docs/hugo/</loc>
+    <lastmod>2021-05-14T16:10:23+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/vista/</loc>
+    <lastmod>2021-05-14T16:08:40+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/API/</loc>
     <lastmod>2021-05-11T19:58:18+02:00</lastmod>
@@ -84,9 +87,6 @@
     <lastmod>2021-05-11T19:47:11+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/</loc>
-    <lastmod>2021-05-11T19:47:05+02:00</lastmod>
-  </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/</loc>
     <lastmod>2021-05-11T19:47:05+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/</loc>
