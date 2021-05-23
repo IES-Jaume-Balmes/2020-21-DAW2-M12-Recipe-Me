@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Recipeme docs</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/</link>
+    <description>Recent content in Backend on Recipeme docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 May 2021 12:18:32 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seguridad JWT</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</link>
+      <pubDate>Sun, 23 May 2021 12:25:36 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</guid>
+      <description>JSON Web Token    Usamos JWT para autorizar las operaciones de backend (Get, Post, Put, Delete).
+Utilizamos el paquete que nos ofrece Lexik y lo fuimos complementamos con un tutorial que encontramos en youtube.
+Un JWT no es mas que un objeto JSON codificado mediante una herramienta de encriptación privada de tu servidor, que llamamos clave privada. El servidor también posee una clave pública para verificar la identidad del Token.</description>
+    </item>
+    
+    <item>
+      <title>Añadidos</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</link>
+      <pubDate>Sun, 23 May 2021 12:18:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</guid>
+      <description>Añadidos    Login    Encriptamos el password en backend en el momento en que se hace una petición a la API.
+Delete Usuarios    Arreglamos el endpoint DELETE /users/id para que al borrar un usuario también se eliminen las listas de la compra donde él es propietario. Delete en cascada.
+Autorización    JSON Web Token</description>
+    </item>
+    
+  </channel>
+</rss>

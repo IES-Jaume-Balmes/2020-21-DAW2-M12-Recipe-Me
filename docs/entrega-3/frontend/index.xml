@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on Recipeme docs</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/</link>
+    <description>Recent content in Frontend on Recipeme docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 May 2021 19:47:05 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</guid>
+      <description>TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</description>
+    </item>
+    
+  </channel>
+</rss>

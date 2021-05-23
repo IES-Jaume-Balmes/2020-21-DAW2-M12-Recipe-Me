@@ -10,11 +10,13 @@
 
 
 
-    <meta name="description" content="Recipeme docs">
+    <meta name="description" content="Añadidos    Login    Encriptamos el password en backend en el momento en que se hace una petición a la API.
+Delete Usuarios    Arreglamos el endpoint DELETE /users/id para que al borrar un usuario también se eliminen las listas de la compra donde él es propietario. Delete en cascada.
+Autorización    JSON Web Token">
 
 
 
-    <title>Entrega 4 | Recipeme docs</title>
+    <title>Añadidos | Recipeme docs</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -43,7 +45,6 @@
 <link rel="preload" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" as="style">
 <link rel="stylesheet" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/index.xml" title="Recipeme docs" />
 
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
@@ -921,7 +922,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/" class="gdoc-nav__entry is-active">
                         Añadidos
                     </a>
                 </span>
@@ -1093,7 +1094,23 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Recipeme docs</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Entrega 4</span><meta itemprop='position' content='3' /></li>
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Recipeme docs</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-3/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-3/'><span itemprop='name'>Entrega 3</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/'><span itemprop='name'>Backend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Añadidos</span><meta itemprop='position' content='5' /></li>
+    
+
+    
+
     
 
     
@@ -1104,9 +1121,41 @@
     
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Entrega 4</h1>
-        
+        <h1>Añadidos</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h2 id="añadidos">
+        Añadidos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/#añadidos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Añadidos" href="#a%c3%b1adidos">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gdoc-page__anchorwrap">
+    <h3 id="login">
+        Login
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/#login" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Login" href="#login">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Encriptamos el password en backend en el momento en que se hace una petición a la API.</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="delete-usuarios">
+        Delete Usuarios
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/#delete-usuarios" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Delete Usuarios" href="#delete-usuarios">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Arreglamos el endpoint <code>DELETE /users/id</code> para que al borrar un usuario también se eliminen las listas de la compra donde él es propietario. Delete en cascada.</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="autorización">
+        Autorización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/#autorización" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Autorización" href="#autorizaci%c3%b3n">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div><p><a class="gdoc-markdown__link" href="./JWT.md">JSON Web Token</a></p>
+
 
     </article>
 

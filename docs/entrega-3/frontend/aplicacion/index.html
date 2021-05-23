@@ -10,11 +10,11 @@
 
 
 
-    <meta name="description" content="Recipeme docs">
+    <meta name="description" content="TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.">
 
 
 
-    <title>Entrega 4 | Recipeme docs</title>
+    <title>Aplicacion | Recipeme docs</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -43,7 +43,6 @@
 <link rel="preload" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" as="style">
 <link rel="stylesheet" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/index.xml" title="Recipeme docs" />
 
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
@@ -999,7 +998,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/" class="gdoc-nav__entry is-active">
                         Aplicacion
                     </a>
                 </span>
@@ -1093,7 +1092,23 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Recipeme docs</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Entrega 4</span><meta itemprop='position' content='3' /></li>
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Recipeme docs</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-3/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-3/'><span itemprop='name'>Entrega 3</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/'><span itemprop='name'>Frontend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Aplicacion</span><meta itemprop='position' content='5' /></li>
+    
+
+    
+
     
 
     
@@ -1104,9 +1119,187 @@
     
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Entrega 4</h1>
-        
+        <h1>Aplicacion</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h1 id="tarjetalistaactualjs">
+        TarjetaListaActual.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#tarjetalistaactualjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TarjetaListaActual.js" href="#tarjetalistaactualjs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Añade</span> <span class="nx">Ingredientes</span> <span class="nx">A</span> <span class="nx">la</span> <span class="nx">lista</span> <span class="nx">de</span> <span class="nx">la</span> <span class="nx">compra</span><span class="o">!!!&lt;</span><span class="err">/div&gt;;</span>
+  <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="usuariojs">
+        Usuario.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#usuariojs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Usuario.js" href="#usuariojs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-1">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-1">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Al desconectarse un usuario y conectarse con otro, si entraba a la lista de la compra aparecía la lista de la compra del usuario anterior. Esto ocurria ya que la cookie se guardaba en local y no habia una gestión de privacidad de esa cookie. Lo que se ha hecho es eliminar esa cookie al hacer logout</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">cookie</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;ingredientes&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span> <span class="p">});</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="signupsidejs">
+        SignUpSide.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#signupsidejs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor SignUpSide.js" href="#signupsidejs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Ahora la API encripta las contraseñas que se le envian an registrarse, con lo cual ya no hace falta encriptarlas desde frontend. Se ha eliminado la dependencia md5 del package.json</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="crearrecetajs">
+        CrearReceta.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#crearrecetajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CrearReceta.js" href="#crearrecetajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización-1">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-1">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Crear receta ya es funcional, de momento se recibe una respuesta de la API la cual se muestra por consola y a nivel de usuario se muestra un <code>alert</code>, que posteriormente se cambiará.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-2">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-2">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Encontramos dificultades a la hora de captar los datos del formulario de crear receta ya que uno de los datos era una array de objetos, con lo cual no servia la formula:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+  <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+    <span class="p">...</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">,</span>
+    <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div><p>Para poder capturar los datos de este input y ponerlos en el <code>state</code> correspondiente se utilizo la función:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+  <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+    <span class="p">...</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">,</span>
+    <span class="nx">ingredients</span><span class="o">:</span> <span class="nx">e</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div><p>De esta forma no se pierden los datos del formulario y se incluye la Array de objetos de los ingredientes</p>
+<ul>
+<li>A la hora de crear el json de <code>POST</code> para la API, se necesitaba solo el String con el Id de los ingredientes, con lo cual se hizo un mapeo a los datos de los ingredientes:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">arraySoloId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">ingredients</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="recetasjs">
+        Recetas.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#recetasjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Recetas.js" href="#recetasjs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculo">
+        Obstaculo
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculo" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculo" href="#obstaculo">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>A la hora de crear la tarjetas de las recetas en el menú principal, se creaban correctamente pero se generaba un error a causa de que estás tarjetas no tenian una Key, que en react es obligatorio para elementos que se repitan, con lo que se utilizó el Id para identificarlas:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">element</span><span class="p">[</span><span class="s2">&#34;@id&#34;</span><span class="p">]}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="utilseventemitterjs">
+        Utils/EventEmitter.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#utilseventemitterjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Utils/EventEmitter.js" href="#utilseventemitterjs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><ul>
+<li>Se ha añadido un script para utilizar objeto EventEmitter</li>
+<li>Problema que soluciona: La barra de busqueda se encuenta en un componente muy alejado de la pantalla en la que se muestran las recetas por lo que era complicado pasar los parametros de forma convencional padre-hijo. Un EventEmitter nos permite <code>suscribe</code> a una variable la cual si es modificada envia con <code>dispatch</code> esta información</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">EventEmitter</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="mi">_</span><span class="nx">events</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">dispatch</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="mi">_</span><span class="nx">events</span><span class="p">[</span><span class="nx">event</span><span class="p">])</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="mi">_</span><span class="nx">events</span><span class="p">[</span><span class="nx">event</span><span class="p">].</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">callback</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">},</span>
+  <span class="nx">subscribe</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="mi">_</span><span class="nx">events</span><span class="p">[</span><span class="nx">event</span><span class="p">])</span> <span class="k">this</span><span class="p">.</span><span class="mi">_</span><span class="nx">events</span><span class="p">[</span><span class="nx">event</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">this</span><span class="p">.</span><span class="mi">_</span><span class="nx">events</span><span class="p">[</span><span class="nx">event</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">EventEmitter</span> <span class="p">};</span>
+</code></pre></div><ul>
+<li>Primero se ha creado un estado más en Drawer.js, donde está el buscador</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">buscar</span><span class="p">,</span> <span class="nx">setBuscar</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+</code></pre></div><p>La barra de busqueda emitirá los datos a los subscriptores cuando haya cambios en su value</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)=&gt;</span><span class="nx">EventEmitter</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">&#39;buscar&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+</code></pre></div><ul>
+<li>Luego en el archivo Receta.js, que es el que pasa una array de objetos de tipo receta al componente que los renderiza, creamos un estado más</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">busquedaRecetas</span><span class="o">:</span> <span class="p">[],</span>
+</code></pre></div><ul>
+<li>En la función componentDidMount(), se define el EventEmitter subscriptor</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">EventEmitter</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&#34;buscar&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">mapearBusqueda</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><ul>
+<li>La palabra a buscar llegará en el evento, al cual se le pasa un callback y llamamos a la función mapearBusqueda()</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mapearBusqueda</span><span class="p">(</span><span class="nx">palabraABuscar</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">nuevoRecetas</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">recetas</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)=&gt;{</span>
+      <span class="k">return</span> <span class="nx">elemento</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">palabraABuscar</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">busquedaRecetas</span><span class="o">:</span> <span class="nx">nuevoRecetas</span><span class="p">})</span>
+  <span class="p">}</span>
+</code></pre></div><ul>
+<li>Esta función crea una nueva array que filtrará la array completa de recetas y nos devolverá las recetas cuyo nombre contenga la palabra buscada</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-3">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-3">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Al principio <code>nuevaRecetas</code> se setteaba directamente en recetas, modificando el array originas, el problema venía al borrar del buscador, está palabra se buscaba en la array reducida, el array con todas las recetas se perdía completamente. Por esta razón se creo el estado <code>busquedaRecetas</code> el cual se settea al principio igual que <code>recetas</code>, <code>recetas</code> permanecerá inmutable mientras <code>busquedaRecetas</code> será la que cambiará y se pasará al componente para ser renderizado.</p>
+
 
     </article>
 

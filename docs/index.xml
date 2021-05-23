@@ -5,7 +5,29 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Recipeme docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 14 May 2021 17:26:55 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 12:25:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seguridad JWT</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</link>
+      <pubDate>Sun, 23 May 2021 12:25:36 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</guid>
+      <description>JSON Web Token    Usamos JWT para autorizar las operaciones de backend (Get, Post, Put, Delete).
+Utilizamos el paquete que nos ofrece Lexik y lo fuimos complementamos con un tutorial que encontramos en youtube.
+Un JWT no es mas que un objeto JSON codificado mediante una herramienta de encriptación privada de tu servidor, que llamamos clave privada. El servidor también posee una clave pública para verificar la identidad del Token.</description>
+    </item>
+    
+    <item>
+      <title>Añadidos</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</link>
+      <pubDate>Sun, 23 May 2021 12:18:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/A%C3%B1adidos/</guid>
+      <description>Añadidos    Login    Encriptamos el password en backend en el momento en que se hace una petición a la API.
+Delete Usuarios    Arreglamos el endpoint DELETE /users/id para que al borrar un usuario también se eliminen las listas de la compra donde él es propietario. Delete en cascada.
+Autorización    JSON Web Token</description>
+    </item>
+    
     <item>
       <title>API</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</link>
@@ -216,6 +238,15 @@ npm start Y se abrirá en el puerto 3000 del localhost</description>
       <description>Login    Ahora los usarios se cargan desde la base de datos y se comprueba su autentificación. Para esto se está utilizando la librería universal-cookie, esta cookie se guardará al ser un login correcto.
 RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada receta
 &amp;lt;IconButton aria-label=&amp;#34;add to Lista&amp;#34; onClick={anadirLista}&amp;gt; &amp;lt;AddShoppingCartIcon /&amp;gt; &amp;lt;/IconButton&amp;gt; Este boton al ser clickado llama a la función anadirLista() que creará una cookie con los ingredientes de la receta clickada.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</guid>
+      <description>TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</description>
     </item>
     
   </channel>
