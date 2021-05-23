@@ -1,12 +1,12 @@
 more:
-  - name: News
+  - name: Novedades
     ref: "/posts"
     icon: "gdoc_notification"
   - name: Releases
     ref: "https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me/releases"
     external: true
     icon: "gdoc_download"
-  - name: "View Source"
+  - name: "Codigo fuente"
     ref: "https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me/tree/main/Proyecto"
     external: true
     icon: "gdoc_github"

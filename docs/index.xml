@@ -29,6 +29,15 @@ Autorización    JSON Web Token</description>
     </item>
     
     <item>
+      <title>Hola Recipe-Users!</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
+      <description>Se aproxima la tercera entrega del proyecto!! Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.</description>
+    </item>
+    
+    <item>
       <title>API</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/backend/API/</link>
       <pubDate>Fri, 14 May 2021 17:26:55 +0200</pubDate>
@@ -182,15 +191,6 @@ bin/console security:encode-password Correcto:</description>
  Vamos al archivo ./.env y descomentamos la base de datos que vamos a utilizar. DATABASE_URL=&amp;ldquo;mysql://USUARIO:CONTRASEÑA@127.0.0.1:3306/DATABASE_NOMBRE?serverVersion=5.7&amp;rdquo; Borramos las otras para que no se confunda.    Insertamos en el terminal del proyecto:
  composer require symfony/security-bundle bin/console make:user bin/console make:migration    Conectamos con la base de datos:
  bin/console doctrine:migrations:migrate bin/console make:auth    En .</description>
-    </item>
-    
-    <item>
-      <title>Hola Recipe-Users!</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
-      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
-      <description>Se aproxima la tercera entrega del proyecto!! Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.</description>
     </item>
     
     <item>
