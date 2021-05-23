@@ -5,9 +5,9 @@
 [Documentacion en github-pages](https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/)
 
 # Integrantes del proyecto ✒️
-- Frank Palomino
-- Kevin Rodríguez
-- Sergi Francés
+- [Frank Palomino](https://github.com/FrankPalomino)
+- [Kevin Rodríguez](https://github.com/KevinrodriguezFernand)
+- [Sergi Francés](https://github.com/francessergi)
 
 # Tutor
 - Pepe Osca
