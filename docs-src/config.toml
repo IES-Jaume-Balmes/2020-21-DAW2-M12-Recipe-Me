@@ -19,5 +19,4 @@ disablePathToLower = true
     startLevel = 1
     endLevel = 9
 
-# (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
-geekdocMenuBundle = true
+# geekdocMenuBundle = true
