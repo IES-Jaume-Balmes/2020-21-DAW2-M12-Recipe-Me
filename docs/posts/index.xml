@@ -7,22 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hola Recipe-Users!</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
+      <title>Release 3</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release3/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
-      <description>Se aproxima la tercera entrega del proyecto!! Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release3/</guid>
+      <description>Hola Recipe-Users! Se aproxima la tercera entrega del proyecto!!
+Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.</description>
+    </item>
+    
+    <item>
+      <title>Release 2</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release2/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release2/</guid>
+      <description>Y aqui llega Recipe-me V2!!
+Ha sido una semana muy dura, no dejan de aparecer los issues, pero para bién!! Todo lo que estaba en nuestras cabezas esta aterrizando a nuestro editor de hyper texto enriquecido favorito! Esta semana nos hemos centrado principalmente en la parte visual de la app. Como? QUe AúN nO lO hAS VisTo??? A que esperas para ver estas pantallitas sexys! En nuestro readme principal encontrarás la guía para hacer un Run Local.</description>
+    </item>
+    
+    <item>
+      <title>Release 1</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release1/</link>
+      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release1/</guid>
+      <description>Esta es la primera version de Recipe-me!
+Estamos muy ilusionados con este proyecto. Por ahora hemos conseguido:
+ Una versión trabajable de la API, con sus endpoints bonitos. Un Frontend basico con el que podemos comunicarnos con ella. Una base de datos relacional (MySql).  Seguimos!! ;)</description>
     </item>
     
     <item>
       <title>Primer post</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</link>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/primer-post/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</guid>
-      <description>Esta es la primera version de Recipe-me!
-Estamos muy ilusionados con este proyecto. Empezó como un pequeño ejercicio de clase y a partir de nuestras necesidades diarias hemos podido ver una oportunidad en el mercado. Tal vez finalmente todo quede como un simple proyecto de CFGS, o tal vez llegue un poco mas lejos. Lo que tenemos claro es que si llega a funcionar, mínimo contará con 3 usuarios :D</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/primer-post/</guid>
+      <description>Todo empezó como un pequeño ejercicio de clase, AJAX y Recetas en XML.
+A partir de nuestras necesidades diarias llegamos a la idea principal de nuestra app, facilitar el proceso de ir a comprar al super!!!!
+Y a quién no le va a gustar una app que te pregunta qué quieres comer y te dice qué necesitas ir a comprar?
+Pero no solo eso, también te genera una lista de la compra inteligente para ahorrar papel por supuesto.</description>
     </item>
     
   </channel>
