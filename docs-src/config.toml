@@ -1,5 +1,5 @@
 baseURL = "https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/"
-title = "Recipeme docs"
+title = "Documentación Recipe-me"
 theme = "hugo-geekdoc"
 publishDir = "../docs"
 

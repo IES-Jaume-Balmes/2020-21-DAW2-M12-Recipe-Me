@@ -1,8 +1,8 @@
-# Proyecto final
-
-Recipe-me 
+# Recipe-me
 
 *Se pronuncia* 📖 /ˈrɛsɪpimi'/
+
+[Documentacion en github-pages](https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/)
 
 # Integrantes del proyecto ✒️
 - Frank Palomino
@@ -30,7 +30,7 @@ Nos descargamos el proyecto en la carpeta que queramos tenerlo.
 ```
 git clone https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me.
 ```
-Nos vamos a la rama developer para tener la version mas reciente del proyecto.
+La version estable se encuentra en la rama **main** pero si queremos ver lo último en desarrollo tenemos que ir a la **rama developer** :
 ```
 git checkout developer
 ```
