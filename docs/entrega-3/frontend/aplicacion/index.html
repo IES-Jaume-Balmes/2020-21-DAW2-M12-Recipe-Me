@@ -1178,6 +1178,17 @@
         </a>
     </h1>
 </div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Añadido un diálogo  y un nuevo botón para que el usuario se pueda dar de baja en dos pasos ya que si pulsa el botón sin querer tenga que volver a presionar otro botón para darse de baja. El botón si del diálogo borra al usuario de la base de datos, la cookie y lo devuelve al /login.</li>
+<li>Cambio a la hora de recoger la información de la api y mostrarla en el componente con Fetch y pasarlo a axios.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
     <h2 id="obstaculos-1">
         Obstaculos
         <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-1">
@@ -1188,27 +1199,18 @@
 <li>Al desconectarse un usuario y conectarse con otro, si entraba a la lista de la compra aparecía la lista de la compra del usuario anterior. Esto ocurria ya que la cookie se guardaba en local y no habia una gestión de privacidad de esa cookie. Lo que se ha hecho es eliminar esa cookie al hacer logout</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">cookie</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;ingredientes&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span> <span class="p">});</span>
-</code></pre></div><div class="gdoc-page__anchorwrap">
+</code></pre></div><ul>
+<li>Se corrigió un pequeño bug que hacia que la app petara al entrar a las listas de la compra y no hubiera ingredientes añadidos</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">-</span> <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">+</span> <span class="k">if</span> <span class="p">(</span><span class="nx">list</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div><ul>
+<li>Pase de datos de componente, hemos tenido problemas al cambiar de Fetch a axios ya que el componente desconocía los datos  y los pedía antes que la función los recibiera. Falta por qué la función borre todas las recetas del mismo usuario.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
     <h1 id="signupsidejs">
         SignUpSide.js
         <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#signupsidejs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor SignUpSide.js" href="#signupsidejs">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h1>
-</div><div class="gdoc-page__anchorwrap">
-    <h2 id="actualización">
-        Actualización
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div><ul>
-<li>Ahora la API encripta las contraseñas que se le envian an registrarse, con lo cual ya no hace falta encriptarlas desde frontend. Se ha eliminado la dependencia md5 del package.json</li>
-</ul>
-<div class="gdoc-page__anchorwrap">
-    <h1 id="crearrecetajs">
-        CrearReceta.js
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#crearrecetajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CrearReceta.js" href="#crearrecetajs">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h1>
@@ -1220,12 +1222,61 @@
         </a>
     </h2>
 </div><ul>
-<li>Crear receta ya es funcional, de momento se recibe una respuesta de la API la cual se muestra por consola y a nivel de usuario se muestra un <code>alert</code>, que posteriormente se cambiará.</li>
+<li>
+<p>Ahora la API encripta las contraseñas que se le envian an registrarse, con lo cual ya no hace falta encriptarlas desde frontend. Se ha eliminado la dependencia md5 del package.json</p>
+</li>
+<li>
+<p>Ahora el UserName ya no es un nombre de usuario sino un nombre completo de la persona, ya que el usuario se loggeaba con el email y no con el user y causaba confuciones.</p>
+</li>
 </ul>
 <div class="gdoc-page__anchorwrap">
     <h2 id="obstaculos-2">
         Obstaculos
         <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-2">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Se encontro el fallo que hacía que las animaciones del login y el register no fuera correctas, Material UI estaba teniendo incompatibilidades con el paquete <code>bootstrap</code> así que se procedió a eliminarlo del proyecto.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="signinsidejs">
+        SignInSide.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#signinsidejs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor SignInSide.js" href="#signinsidejs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización-2">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-2">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Ahora si el usuario o la contraseña no son correctos no sale un alert de windows, sino que los input de email y contraseña se ponen en rojo y aparece un mensaje informando que el usuario o la contraseña no son correctos.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="crearrecetajs">
+        CrearReceta.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#crearrecetajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CrearReceta.js" href="#crearrecetajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización-3">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualización-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-3">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Crear receta ya es funcional, de momento se recibe una respuesta de la API la cual se muestra por consola y a nivel de usuario se muestra un <code>alert</code>, que posteriormente se cambiará.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="obstaculos-3">
+        Obstaculos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-3">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1320,13 +1371,67 @@
 <li>Esta función crea una nueva array que filtrará la array completa de recetas y nos devolverá las recetas cuyo nombre contenga la palabra buscada</li>
 </ul>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="obstaculos-3">
+    <h2 id="obstaculos-4">
         Obstaculos
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-3">
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstaculos-4" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstaculos" href="#obstaculos-4">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><p>Al principio <code>nuevaRecetas</code> se setteaba directamente en recetas, modificando el array originas, el problema venía al borrar del buscador, está palabra se buscaba en la array reducida, el array con todas las recetas se perdía completamente. Por esta razón se creo el estado <code>busquedaRecetas</code> el cual se settea al principio igual que <code>recetas</code>, <code>recetas</code> permanecerá inmutable mientras <code>busquedaRecetas</code> será la que cambiará y se pasará al componente para ser renderizado.</p>
+</div><ul>
+<li>Al principio <code>nuevaRecetas</code> se setteaba directamente en recetas, modificando el array originas, el problema venía al borrar del buscador, está palabra se buscaba en la array reducida, el array con todas las recetas se perdía completamente. Por esta razón se creo el estado <code>busquedaRecetas</code> el cual se settea al principio igual que <code>recetas</code>, <code>recetas</code> permanecerá inmutable mientras <code>busquedaRecetas</code> será la que cambiará y se pasará al componente para ser renderizado.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="tarjetalistajs">
+        TarjetaLista.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#tarjetalistajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TarjetaLista.js" href="#tarjetalistajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><ul>
+<li>Se ha modificado para que reciba en el <code>props</code> el callback del padre llamado <code>eliminar</code>, este callback es renderizado en cada tarjeta de lista de la compra guardado, para que hacer click en el boton de eliminar envie a la al padre el <code>id</code> de la lista que se quiera eliminar</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="listajs">
+        Lista.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#listajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Lista.js" href="#listajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualizaciones">
+        Actualizaciones
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#actualizaciones" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualizaciones" href="#actualizaciones">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Se ha añadido la función</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">eliminar</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">newList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">listas</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span><span class="p">[</span><span class="s2">&#34;@id&#34;</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">listas</span><span class="o">:</span> <span class="nx">newList</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div><p>la cual se pasa al componente hijo TarjetaLista.js como parametro</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">TarjetaLista</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">element</span><span class="p">[</span><span class="s2">&#34;@id&#34;</span><span class="p">]}</span> <span class="nx">lista</span><span class="o">=</span><span class="p">{</span><span class="nx">element</span><span class="p">}</span> <span class="nx">eliminar</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">eliminar</span><span class="p">}</span> <span class="o">/&gt;</span>
+</code></pre></div><p>Para eliminarlo de la base de datos se ha añadido una petición <code>axios</code> a la API</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">baseDeleteUrl</span> <span class="o">+</span> <span class="nx">id</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]);</span>
+</code></pre></div><ul>
+<li>Se hizo un <code>.split</code> al id porque llegaba la dirección y solo necesitabamos el id.</li>
+<li>El usuario puede añadir listas de la compra haciendo con el añadir lista compra, le pasamos el nombre de la lista actual como nombre el propietario lo recogemos con el cookie.get(&ldquo;User&rdquo;) y los ingredientes los recogemos solamente el id para añadirlos a la database.</li>
+<li>Cambio del botón guardar lista de la compra ya que queríamos poder hacer scrolling dentro de ese div sin necesidad de tener una página más grande que nuestra barra de menú lateral. Paseo de parámetro de componente hijo a padre (callback) para poder mandarle los ingredientes de la lista para añadirlos.</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="obstáculos">
+        Obstáculos:
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/#obstáculos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Obstáculos:" href="#obst%c3%a1culos">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Falta por desarrollar que cuando se añada correctamente la lista se actualice de manera automática a la página y no tengas que volver a cargar el componente para ver si se ha añadido correctamente. Problemas a la hora de recoger la lista de la compra y pedirle todos los ingredientes (aún no está desarrollada esa parte).</li>
+</ul>
 
 
     </article>
