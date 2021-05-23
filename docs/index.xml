@@ -5,7 +5,7 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Recipeme docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 May 2021 16:27:19 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 12:25:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Seguridad JWT</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</link>
@@ -185,24 +185,22 @@ bin/console security:encode-password Correcto:</description>
     </item>
     
     <item>
-      <title>Initial release</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <title>Hello Geekdoc</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</guid>
-      <description>This is the first release of the Geekdoc theme.
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
+      <description>Se aproxima la tercera entrega del proyecto!! Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.</description>
     </item>
     
     <item>
-      <title>Hello Geekdoc</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <title>Initial release</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/hello/</guid>
-      <description>This is the first release of the Geekdoc theme.
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
-Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim.</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/initial-release/</guid>
+      <description>Esta es la primera version de Recipe-me!
+Estamos muy ilusionados con este proyecto. Empezó como un pequeño ejercicio de clase y a partir de nuestras necesidades diarias hemos podido ver una oportunidad en el mercado. Tal vez finalmente todo quede como un simple proyecto de CFGS, o tal vez llegue un poco mas lejos. Lo que tenemos claro es que si llega a funcionar, mínimo contará con 3 usuarios :D</description>
     </item>
     
     <item>

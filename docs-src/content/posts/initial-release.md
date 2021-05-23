@@ -1,9 +1,10 @@
 ---
 title: Initial release
 type: posts
-date: 2020-01-08
+date: 2021-05-01
+geekdocHidden: true
 ---
 
-This is the first release of the Geekdoc theme.
+Esta es la primera version de Recipe-me!
 
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
+Estamos muy ilusionados con este proyecto. Empezó como un pequeño ejercicio de clase y a partir de nuestras necesidades diarias hemos podido ver una oportunidad en el mercado. Tal vez finalmente todo quede como un simple proyecto de CFGS, o tal vez llegue un poco mas lejos. Lo que tenemos claro es que si llega a funcionar, mínimo contará con 3 usuarios :D

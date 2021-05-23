@@ -1,11 +1,9 @@
 ---
 title: Hello Geekdoc
 type: posts
-date: 2020-01-06
+date: 2021-05-01
 ---
 
-This is the first release of the Geekdoc theme.
-
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
-
-Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram. Que no rota alters, ad sea sues exercise main rum, cu diam mas facility sea.
+Se aproxima la tercera entrega del proyecto!!
+Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app.
+Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.
