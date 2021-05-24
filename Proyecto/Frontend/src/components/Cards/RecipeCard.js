@@ -82,12 +82,11 @@ export default function RecipeReviewCard({ receta }) {
       <Card key={receta["@id"]} className={classes.root}>
         <CardHeader
           avatar={
-            // <Avatar
-            //   alt="Remy Sharp"
-            //   src={imgAvatar}
-            //   className={classes.large}
-            // />
-            <Avatar className={classes.orange}>N</Avatar>
+            <Avatar
+              alt="Remy Sharp"
+              src={imgAvatar}
+              className={classes.large}
+            />
           }
           action={
             <IconButton aria-label="settings">
