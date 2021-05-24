@@ -31,6 +31,7 @@ class ListaCompra
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"lista_compra:read","user:read"})
      */
     private $id;
 
@@ -43,19 +44,19 @@ class ListaCompra
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"lista_compra:read", "lista_compra:write"})
+     * @Groups({"lista_compra:read", "lista_compra:write","user:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"lista_compra:read","lista_compra:write"})
+     * @Groups({"lista_compra:read","lista_compra:write","user:read"})
      */
     private $createdAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Ingredient::class)
-     * @Groups({"lista_compra:read", "lista_compra:write"})
+     * @Groups({"lista_compra:read", "lista_compra:write","user:read"})
      */
     private $ingredients;
 

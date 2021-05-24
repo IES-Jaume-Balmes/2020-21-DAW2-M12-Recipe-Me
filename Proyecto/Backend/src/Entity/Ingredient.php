@@ -35,7 +35,7 @@ class Ingredient
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"ingredient:read","recipe:read", "lista_compra:read"})
+     * @Groups({"ingredient:read","recipe:read", "lista_compra:read","user:read"})
      */
     private $name;
 
