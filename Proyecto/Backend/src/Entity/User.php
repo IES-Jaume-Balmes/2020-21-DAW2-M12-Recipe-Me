@@ -23,7 +23,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *     },
  *     itemOperations={
  *         "get"={"security"="is_granted('ROLE_USER')"},
- *         "delete"={"security"="is_granted('ROLE_USER')"}
+ *         "delete"={"security"="is_granted('ROLE_USER') and object == user"}
  *     }
  * )
  * @UniqueEntity(fields={"email"})
