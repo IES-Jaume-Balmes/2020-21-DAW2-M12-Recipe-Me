@@ -20,11 +20,29 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import HomeIcon from "@material-ui/icons/Home";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-import { EventEmitter} from '../components/utils/eventEmitter';
+import SearchIcon from "@material-ui/icons/Search";
+import InputBase from "@material-ui/core/InputBase";
+import { EventEmitter } from "../components/utils/eventEmitter";
+import Cookie from "universal-cookie";
+import jwt_decode from "jwt-decode";
 
 const drawerWidth = 240;
+const cookie = new Cookie();
+
+function validToken() {
+  let token = cookie.get("token");
+  let decodedToken = jwt_decode(token);
+  // console.log("Decoded Token", decodedToken);
+  let currentDate = new Date();
+
+  // JWT exp is in seconds
+  if (decodedToken.exp * 1000 < currentDate.getTime()) {
+    console.log("Token expired.");
+    // cookie.remove("token", { path: "/" }); <---- No funciona
+  } else {
+    console.log("Valid token");
+  }
+}
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
@@ -87,40 +105,40 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   search: {
-    position: 'relative',
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
+    "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
-      width: 'auto',
+      width: "auto",
     },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   inputRoot: {
-    color: 'inherit',
+    color: "inherit",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
   content: {
@@ -133,10 +151,7 @@ export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [buscar,/* setBuscar*/] = React.useState("");
-
-  
-
+  const [buscar /* setBuscar*/] = React.useState("");
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -145,6 +160,8 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  validToken();
 
   return (
     <>
@@ -178,12 +195,12 @@ export default function MiniDrawer() {
             <InputBase
               placeholder="Search…"
               name="buscar"
-              onChange={(e)=>EventEmitter.dispatch('buscar', e.target.value)}
+              onChange={(e) => EventEmitter.dispatch("buscar", e.target.value)}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </div>
         </Toolbar>
