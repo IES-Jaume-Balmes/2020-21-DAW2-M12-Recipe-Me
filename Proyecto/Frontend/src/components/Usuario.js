@@ -61,8 +61,7 @@ export default class Usuario extends Component {
         console.log(error);
         alert("Ha ocurrido un error");
       });
-    cookie.remove("user", { path: "/" });
-    cookie.remove("username", { path: "/" });
+    cookie.remove("token", { path: "/" });
     cookie.remove("ingredientes", { path: "/" });
     window.location.href = "./login";
   };
