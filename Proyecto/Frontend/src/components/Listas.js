@@ -66,10 +66,9 @@ class Listas extends Component {
   };
 
   // OBTENEMOS LISTAS GUARDADAS
-  //TODO: Obtener las listas del Json Usuario, no de listas
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);
-    const userEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
+    const userEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}.json`;
     await axios
       .get(userEndpoint, {
         headers: {
@@ -79,22 +78,19 @@ class Listas extends Component {
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
-          //TODO: Estamos obteniendo un IRI con la direccion a la lista
-          //TODO: Se tiene que hacer un axios a ese IRI y guardar el objeto en el STATE
-          // this.setState({ listas: response.data.listaCompras });
+          this.setState({ listas: response.data.listaCompras });
         } else {
           console.log(response);
         }
       });
   }
 
-  //TODO: Pendiente de revisión
   eliminar = (id) => {
     const newList = this.state.listas.filter((item) => {
-      return item["@id"] !== id;
+      return item.id !== id;
     });
     this.setState({ listas: newList });
-    axios.delete(baseDeleteUrl + id.split("/")[2], {
+    axios.delete(baseDeleteUrl + id, {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -102,7 +98,6 @@ class Listas extends Component {
   };
 
   // GUARDAMOS LISTA DE LA COMPRA
-
   guardarListaCompra = async () => {
     var tokenDecoded = jwt_decode(token);
     console.log(tokenDecoded);
@@ -123,7 +118,8 @@ class Listas extends Component {
       })
       .then((response) => {
         console.log(response.data);
-        alert("ATENÇAO: --> IRI de la lista guardado correctamente");
+        alert("Lista guardada correctamente");
+        this.componentDidMount();
       })
       .catch((error) => {
         console.log(error);
@@ -131,6 +127,10 @@ class Listas extends Component {
         alert("Ha ocurrido un error");
       });
   };
+
+  validateForm() {
+    return this.state.textField != "";
+  }
 
   render() {
     const { classes } = this.props;
@@ -155,6 +155,7 @@ class Listas extends Component {
             color="primary"
             className="mt-3"
             onClick={this.guardarListaCompra}
+            disabled={!this.validateForm()}
           >
             Guardar lista de la compra
           </Button>
@@ -164,7 +165,7 @@ class Listas extends Component {
           <div className={classes.oldListas}>
             {this.state.listas.map((element) => (
               <TarjetaLista
-                key={element["@id"]}
+                key={element.id}
                 lista={element}
                 eliminar={this.eliminar}
               />

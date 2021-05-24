@@ -45,14 +45,14 @@ export default function TarjetaLista({ lista, eliminar }) {
               color="textSecondary"
               align="center"
             >
-              {/* {lista.createdAt.split("T")[0]} */}
+              {lista.createdAt.split("T")[0]}
             </Typography>
             <ListItemSecondaryAction>
               <IconButton
                 edge="end"
                 aria-label="comments"
                 onClick={() => {
-                  eliminar(lista["@id"]);
+                  eliminar(lista.id);
                 }}
               >
                 <CancelIcon />
