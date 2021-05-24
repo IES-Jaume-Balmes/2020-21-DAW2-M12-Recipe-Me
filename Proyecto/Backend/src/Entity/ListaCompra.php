@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *      denormalizationContext={"groups"={"lista_compra:write"}},
  *      collectionOperations={
  *          "get"={"security"="is_granted('ROLE_ADMIN')"},
- *          "post"={"security"="is_granted('ROLE_USER')"}
+ *          "post"={"security_post_denormalize"="is_granted('ROLE_USER') and object.getPropietario() == user"}
  *      },
  *      itemOperations={
  *          "get"={"security"="is_granted('ROLE_ADMIN')"},
