@@ -85,7 +85,7 @@ export default class Usuario extends Component {
     return (
       <>
         <Grid container justify="space-around">
-          <Grid item xs={4}>
+          <Grid item xs={8}>
             <TarjetaUser usuario={this.state.usuario} />
           </Grid>
           <Grid
