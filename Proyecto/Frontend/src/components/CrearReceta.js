@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Select from "react-select";
 import Cookie from "universal-cookie";
+import { Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 
 const baseUrl = "https://localhost:8000/api/ingredients";
 const baseUrlAdd = "https://localhost:8000/api/recipes";
@@ -17,6 +19,7 @@ export default class CrearReceta extends Component {
       description: "",
       ingredients: [],
     },
+    open : false,
   };
 
   async componentDidMount() {
@@ -44,7 +47,6 @@ export default class CrearReceta extends Component {
         ingredients: e,
       },
     });
-    console.log(this.state.form);
   };
 
   handleChange = async (e) => {
@@ -54,7 +56,6 @@ export default class CrearReceta extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    console.log(this.state.form);
   };
 
   crearReceta = async () => {
@@ -80,7 +81,7 @@ export default class CrearReceta extends Component {
             ingredients: [],
           },
         });
-        alert("Receta creada correctamente");
+        this.setState({open: true});
       })
       .catch((error) => {
         console.log(error);
@@ -95,6 +96,11 @@ export default class CrearReceta extends Component {
 
     return (
       <div>
+        <Snackbar anchorOrigin={{ vertical:'top' , horizontal:'center' }} open={this.state.open} autoHideDuration={6000} onClose={()=>{this.setState({open: false})}}>
+            <Alert onClose={()=>{this.setState({open: false})}} severity="success">
+              Receta añadida correctamente!
+            </Alert>
+          </Snackbar>
         <div>
           <h1>Receta</h1>
           <h5>Nombre</h5>

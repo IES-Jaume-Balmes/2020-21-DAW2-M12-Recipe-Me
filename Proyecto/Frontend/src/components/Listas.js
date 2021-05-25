@@ -5,10 +5,11 @@ import TarjetaListaActual from "./Cards/TarjetaListaActual";
 import { withStyles } from "@material-ui/core/styles";
 import Cookie from "universal-cookie";
 import TextField from "@material-ui/core/TextField";
-import { Grid } from "@material-ui/core";
+import { Grid, Snackbar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+import Alert from "@material-ui/lab/Alert";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
@@ -52,7 +53,7 @@ const styles = (theme) => ({
     position: "absolute",
   },
   gridListaActual: {
-    margin: "20px"
+    margin: "20px",
   },
 });
 
@@ -60,6 +61,7 @@ class Listas extends Component {
   state = {
     listas: [],
     textField: "",
+    open: false,
   };
 
   handleText = async (e) => {
@@ -121,13 +123,12 @@ class Listas extends Component {
       })
       .then((response) => {
         console.log(response.data);
-        alert("Lista guardada correctamente");
+        this.setState({open: true});
         this.componentDidMount();
       })
       .catch((error) => {
         console.log(error);
         console.log(jsonPeticion);
-        alert("Ha ocurrido un error");
       });
   };
 
@@ -139,6 +140,13 @@ class Listas extends Component {
     const { classes } = this.props;
     return (
       <Grid container justify="space-around">
+        <Grid item xs={12}>
+          <Snackbar anchorOrigin={{ vertical:'top' , horizontal:'center' }} open={this.state.open} autoHideDuration={6000} onClose={()=>{this.setState({open: false})}}>
+            <Alert onClose={()=>{this.setState({open: false})}} severity="success">
+              Lista añadida correctamente!
+            </Alert>
+          </Snackbar>
+        </Grid>
         <Grid item md={6}>
           <form noValidate autoComplete="off" className="mb-3">
             <Grid container>
