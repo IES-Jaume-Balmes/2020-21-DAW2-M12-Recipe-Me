@@ -86,14 +86,12 @@ export default function SignInSide() {
 
     await axios
       .post(baseUrl, jsonPeticion)
-      // .then((response) => {
-      //   return response.data;
-      //   console.log(response);
-      // })
       .then((response) => {
         if (response.status === 200) {
           cookie.set("token", response.data.token, { path: "/" });
-          // cookie.set("username", response.username, { path: "/" });
+          cookie.set("refresh_token", response.data.refresh_token, {
+            path: "/",
+          });
           window.location.href = "./";
         } else {
           setError(true);
