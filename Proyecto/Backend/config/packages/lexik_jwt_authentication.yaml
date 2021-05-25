@@ -8,7 +8,7 @@ lexik_jwt_authentication:
 # curl -X POST -H "Content-Type: application/json" https://localhost:8000/api/login_check -d '{"email":"frank@recipeme.com","password":"frank"}'
 
 # Petición con TOKEN:
-# curl -X POST -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImN0eSI6IkpXVCJ9.eyJpYXQiOjE2MjE5NTU4OTMsImV4cCI6MTYyMTk1NTkyMywicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImZyYW5rQHJlY2lwZW1lLmNvbSIsInVzZXJJZCI6MX0.ERUf50Jlk30GLUhwxTphw8hzYW7iGCZNNlDicWj4Fg2m2oxHkw9n5kCi4dU2LtSmCoQZuAFYGxVc6C2yEqv8_iC_b0RAUrPtJ39AzT0onEpGZRYrig-F6F9Tkk4inBpF7trqW2dF3Q5eJ89A-jf3bfIHM58gs2RgHn8xdppcCNkGkpLAWNS7Z7y1zUWgsdQv-ySpB1rMV4b3-lX0cC3mOMdDdfl0NEOGX00BtWPT8R7rAd-q5c02etkYenGQGFzJiZg1pcF5_a2CUJwRe-f_z02KMUR_9NManjVUsB3MzxW_J9HTSsgB5ZXnPiJK4NOVkYycIgLKnfrei2drO0sjXg" https://localhost:8000/api/recipes
+# curl -X POST -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImN0eSI6IkpXVCJ9.eyJpYXQiOjE2MjE5NzQzNDYsImV4cCI6MTYyMTk3NDM3Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImZyYW5rQHJlY2lwZW1lLmNvbSIsInVzZXJJZCI6MX0.kIQIbpbOCUeHyZlpIEMGxwQT0RQTT30-XX8zyvpsnh2A6gPluVvppigRJXE4GDUn6x0rcKXgdnglhXfxxXr1EgeyVvlnI84xKfErRVah514D3fbJto9w239CfDKJ59kbZ7aEnyDD4KrEbwWWsNU4Gxy1On9bzUrymedNI_h56m9HUcFsBgCeK9Z_b7hkSa6BWaTlzkXCpqT3oNRTNcY7ptXykcF0tz1ib_adPoxTMHi0ArWly8LfY8YuU1K_QPW9eBrGqp3Yxtr_zneoVEq3wDJb4DpEV8wWz5r6Q0ue4pDW5OUQI6LvQeGi9BnyInChb64IilbysESLBXNEVun6vA" https://localhost:8000/api/recipes
 
 # Petición con REFRESH TOKEN:
-# curl -X POST -H "Content-Type: application/json" https://localhost:8000/api/token/refresh -d '{"refresh_token":"1deb1a91dce45534c447e173ddbd4b805b9b589b2e6f2324f4f8cfe97ea89641b2bd02ee71a57c4df41dfe24529f8b9f451086c2c777e9ea0683369f1066525f"}'
+# curl -X POST -H "Content-Type: application/json" https://localhost:8000/api/token/refresh -d '{"refresh_token":"86f55546945b6c4cee618c1ced52d34f1ecfbbba3976fb2ea8c8abd17248bc4d3feb685aa997747d2e1772a791ce27b8cd3430d764e405d614078f1be89d37c1"}'
