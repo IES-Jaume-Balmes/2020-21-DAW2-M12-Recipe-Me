@@ -24,43 +24,45 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import { EventEmitter } from "../components/utils/eventEmitter";
 import Cookie from "universal-cookie";
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 import axios from "axios";
 
 const drawerWidth = 240;
 const cookie = new Cookie();
 const refreshUrl = "https://localhost:8000/api/token/refresh";
 
-async function validToken() {
-  let token = cookie.get("token");
+async function refreshToken() {
+  // let token = cookie.get("token");
   let refresh_token = cookie.get("refresh_token");
-  let decodedToken = jwt_decode(token);
-  let currentDate = new Date();
+  // let decodedToken = jwt_decode(token);
+  // let currentDate = new Date();
   let jsonPeticion = {
     refresh_token: refresh_token,
   };
 
   // En caso de que el token expire, generamos uno nuevo
-  if (decodedToken.exp * 1000 < currentDate.getTime()) {
-    console.log("Token expired.");
-    await axios
-      .post(refreshUrl, jsonPeticion)
-      .then((response) => {
-        if (response.status === 200) {
-          cookie.set("token", response.data.token, { path: "/" });
-          cookie.set("refresh_token", response.data.refresh_token, {
-            path: "/",
-          });
-        } else {
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  } else {
-    console.log("Valid token");
-  }
+  //if (decodedToken.exp * 1000 < currentDate.getTime()) {
+  //console.log("Token expired.");
+  await axios
+    .post(refreshUrl, jsonPeticion)
+    .then((response) => {
+      if (response.status === 200) {
+        cookie.set("token", response.data.token, { path: "/" });
+        cookie.set("refresh_token", response.data.refresh_token, {
+          path: "/",
+        });
+      } else {
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  // } else {
+  //   console.log("Valid token");
+  // }
 }
+
+refreshToken();
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
@@ -178,8 +180,6 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  validToken();
 
   return (
     <>
