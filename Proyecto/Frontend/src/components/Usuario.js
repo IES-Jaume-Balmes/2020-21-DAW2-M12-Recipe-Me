@@ -30,8 +30,8 @@ export default class Usuario extends Component {
     const deleteUsuario = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
     console.log(deleteUsuario);
     await axios
-      .delete(deleteUsuario,{
-        headers:{
+      .delete(deleteUsuario, {
+        headers: {
           Authorization: "Bearer " + token,
         },
       })
@@ -80,65 +80,72 @@ export default class Usuario extends Component {
   }
 
   render() {
-    
-
     return (
       <>
-        <Grid container justify="space-around">
-          <Grid item xs={8}>
+        <Grid container alignItems="stretch" direction="row" spacing={5}>
+          <Grid item xs={12} md={6}>
             <TarjetaUser usuario={this.state.usuario} />
           </Grid>
           <Grid
             item
-            xs={4}
+            xs={12}
+            md={6}
+            spacing={2}
             container
-            direction="column"
-            justify="space-evenly"
+            
+            //justify="space-between"
             alignItems="center"
           >
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={() => this.cerrarSesion()}
-            >
-              Cerrar Sesión
-            </Button>
-
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={this.handleClickOpen}
-            >
-              Darse de baja
-            </Button>
-            <Dialog
-              open={this.state.open}
-              onClose={this.handleClose}
-              aria-labelledby="alert-dialog-title"
-              aria-describedby="alert-dialog-description"
-            >
-              <DialogTitle id="alert-dialog-title">
-                {"Darse de baja en Recipe-Me"}
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText id="alert-dialog-description">
-                  Todos sus datos y recetas se eliminarán para siempre. ¿Estás
-                  seguro?
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={this.handleClose} color="primary">
-                  No
-                </Button>
+            <Grid container
+            direction="column"
+            spacing={5}>
+              <Grid item>
                 <Button
-                  onClick={this.handleCloseByeBye}
-                  color="primary"
-                  autoFocus
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => this.cerrarSesion()}
                 >
-                  Sí
+                  Cerrar Sesión
                 </Button>
-              </DialogActions>
-            </Dialog>
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={this.handleClickOpen}
+                >
+                  Darse de baja
+                </Button>
+                <Dialog
+                  open={this.state.open}
+                  onClose={this.handleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                >
+                  <DialogTitle id="alert-dialog-title">
+                    {"Darse de baja en Recipe-Me"}
+                  </DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      Todos sus datos y recetas se eliminarán para siempre.
+                      ¿Estás seguro?
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={this.handleClose} color="primary">
+                      No
+                    </Button>
+                    <Button
+                      onClick={this.handleCloseByeBye}
+                      color="primary"
+                      autoFocus
+                    >
+                      Sí
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </>
