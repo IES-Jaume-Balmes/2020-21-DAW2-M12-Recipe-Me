@@ -67,6 +67,10 @@ export default function SignInSide() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorPass, setErrorPass] = useState(false);
+  const [errorPassRep, setErrorPassRep] = useState(false);
+  const [errorNom, setErrorNom] = useState(false);
 
   function validateForm() {
     return (
@@ -98,6 +102,42 @@ export default function SignInSide() {
       });
   }
 
+  const comprobarEmail = (email)=>{
+    if(email === '' || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+
+      return setErrorEmail(true)
+      
+   
+    }
+    return setErrorEmail(false)
+  }
+
+  const comprobarPass = (pass)=>{
+    const regexPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    if(!regexPass.test(pass)) {
+
+      return setErrorPass(true)
+   
+    }
+    return setErrorPass(false)
+  }
+
+  const comprobarPassRep = (pass)=>{
+    if(pass !== password) {
+
+      return setErrorPassRep(true)
+   
+    }
+    return setErrorPassRep(false)
+  }
+
+  const comprobarNom = (nom)=>{
+    if(nom.trim() === ""){
+      return setErrorNom(true)
+    }
+    return setErrorNom(false)
+  }
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -122,6 +162,9 @@ export default function SignInSide() {
                   name="email"
                   autoComplete="email"
                   onChange={(e) => setEmail(e.target.value)}
+                  onBlur={(e)=>comprobarEmail(e.target.value)}
+                  error={errorEmail}
+                  helperText={errorEmail ? "Formato de Email incorrecto!" : ""}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -135,6 +178,9 @@ export default function SignInSide() {
                   label="Nombre completo"
                   autoFocus
                   onChange={(e) => setName(e.target.value)}
+                  onBlur={(e)=>comprobarNom(e.target.value)}
+                  error={errorNom}
+                  helperText={errorNom ? "Escribe un nombre!" : ""}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -148,6 +194,9 @@ export default function SignInSide() {
                   id="password"
                   autoComplete="current-password"
                   onChange={(e) => setPassword(e.target.value)}
+                  onBlur={(e)=>comprobarPass(e.target.value)}
+                  error={errorPass}
+                  helperText={errorPass ? "Debe tener mas de 6 caracteres, mayusculas y números!" : ""}
                 />
                 <TextField
                   variant="outlined"
@@ -160,8 +209,9 @@ export default function SignInSide() {
                   id="repeatPassword"
                   autoComplete="current-repeatPassword"
                   onChange={(e) => setRepeatPassword(e.target.value)}
-                  //error={error}
-                  //helperText={error ? "Email o contraseña incorrecto!" : ""}
+                  onBlur={(e)=>comprobarPassRep(e.target.value)}
+                  error={errorPassRep}
+                  helperText={errorPassRep ? "La contraseña no coincide!" : ""}
                 />
               </Grid>
             </Grid>
