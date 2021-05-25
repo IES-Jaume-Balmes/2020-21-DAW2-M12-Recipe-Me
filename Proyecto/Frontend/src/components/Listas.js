@@ -51,6 +51,9 @@ const styles = (theme) => ({
     width: "400px",
     position: "absolute",
   },
+  gridListaActual: {
+    margin: "20px"
+  },
 });
 
 class Listas extends Component {
@@ -129,38 +132,49 @@ class Listas extends Component {
   };
 
   validateForm() {
-    return this.state.textField != "";
+    return this.state.textField !== "";
   }
 
   render() {
     const { classes } = this.props;
     return (
       <Grid container justify="space-around">
-        <Grid item xs={4}>
+        <Grid item md={6}>
           <form noValidate autoComplete="off" className="mb-3">
-            <TextField
-              id="outlined-basic"
-              onChange={this.handleText}
-              label="Lista Actual"
-              variant="outlined"
-            />
+            <Grid container>
+              <Grid item xs={12} className={classes.gridListaActual}>
+                <TextField
+                  id="outlined-basic"
+                  onChange={this.handleText}
+                  label="Lista Actual"
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} className={classes.gridListaActual}>
+                <div className={classes.postIt}></div>
+                <div className={classes.postItNaranja}></div>
+                <div className={classes.listaIngredientes}>
+                  <TarjetaListaActual
+                    className="m-2"
+                    arrayIngres={arrayIngres}
+                  />
+                </div>
+              </Grid>
+              <Grid item xs={12} className={classes.gridListaActual}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="mt-3"
+                  onClick={this.guardarListaCompra}
+                  disabled={!this.validateForm()}
+                >
+                  Guardar lista de la compra
+                </Button>
+              </Grid>
+            </Grid>
           </form>
-          <div className={classes.postIt}></div>
-          <div className={classes.postItNaranja}></div>
-          <div className={classes.listaIngredientes}>
-            <TarjetaListaActual className="m-2" arrayIngres={arrayIngres} />
-          </div>
-          <Button
-            variant="contained"
-            color="primary"
-            className="mt-3"
-            onClick={this.guardarListaCompra}
-            disabled={!this.validateForm()}
-          >
-            Guardar lista de la compra
-          </Button>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item md={6}>
           <h1>Listas Guardadas</h1>
           <div className={classes.oldListas}>
             {this.state.listas.map((element) => (
