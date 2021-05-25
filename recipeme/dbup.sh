@@ -3,11 +3,9 @@
 cd ./Proyecto/Backend
 pwd \
 
+composer update
+docker-compose up -d
 symfony console doctrine:database:drop --force
-y
 symfony console doctrine:database:create
-symfony console doctrine:schema:create
-symfony console doctrine:fixtures:load
-
-
-
+symfony console --no-interaction doctrine:migrations:migrate
+symfony console --no-interaction doctrine:fixtures:load
