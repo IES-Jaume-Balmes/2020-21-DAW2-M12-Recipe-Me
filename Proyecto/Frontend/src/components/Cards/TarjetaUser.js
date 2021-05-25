@@ -8,18 +8,11 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Cookie from "universal-cookie";
-import jwt_decode from "jwt-decode";
+// import Cookie from "universal-cookie";
 
-const cookie = new Cookie();
-const token = cookie.get("token");
+//const cookie = new Cookie();
+//const token = cookie.get("token");
 
 const useStyles = makeStyles((theme) => ({
   root: {

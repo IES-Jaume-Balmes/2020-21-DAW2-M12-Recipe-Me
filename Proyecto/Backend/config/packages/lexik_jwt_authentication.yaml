@@ -2,3 +2,13 @@ lexik_jwt_authentication:
     secret_key: '%env(resolve:JWT_SECRET_KEY)%'
     public_key: '%env(resolve:JWT_PUBLIC_KEY)%'
     pass_phrase: '%env(JWT_PASSPHRASE)%'
+    token_ttl: 3600  # Tiempo de expiracion del TOKEN
+
+#Login 
+# curl -X POST -H "Content-Type: application/json" https://localhost:8000/api/login_check -d '{"email":"frank@recipeme.com","password":"frank"}'
+
+# Petición con TOKEN:
+# curl -X POST -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImN0eSI6IkpXVCJ9.eyJpYXQiOjE2MjE5NzQzNDYsImV4cCI6MTYyMTk3NDM3Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImZyYW5rQHJlY2lwZW1lLmNvbSIsInVzZXJJZCI6MX0.kIQIbpbOCUeHyZlpIEMGxwQT0RQTT30-XX8zyvpsnh2A6gPluVvppigRJXE4GDUn6x0rcKXgdnglhXfxxXr1EgeyVvlnI84xKfErRVah514D3fbJto9w239CfDKJ59kbZ7aEnyDD4KrEbwWWsNU4Gxy1On9bzUrymedNI_h56m9HUcFsBgCeK9Z_b7hkSa6BWaTlzkXCpqT3oNRTNcY7ptXykcF0tz1ib_adPoxTMHi0ArWly8LfY8YuU1K_QPW9eBrGqp3Yxtr_zneoVEq3wDJb4DpEV8wWz5r6Q0ue4pDW5OUQI6LvQeGi9BnyInChb64IilbysESLBXNEVun6vA" https://localhost:8000/api/recipes
+
+# Petición con REFRESH TOKEN:
+# curl -X POST -H "Content-Type: application/json" https://localhost:8000/api/token/refresh -d '{"refresh_token":"86f55546945b6c4cee618c1ced52d34f1ecfbbba3976fb2ea8c8abd17248bc4d3feb685aa997747d2e1772a791ce27b8cd3430d764e405d614078f1be89d37c1"}'

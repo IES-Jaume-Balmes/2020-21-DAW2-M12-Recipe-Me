@@ -24,8 +24,14 @@ security:
                 success_handler:          lexik_jwt_authentication.handler.authentication_success
                 failure_handler:          lexik_jwt_authentication.handler.authentication_failure
         
+        # put it before all your other firewall API entries
+        refresh:
+            pattern:  ^/api/token/refresh
+            stateless: true
+            anonymous: true
+            
         # Acceso al PHPSESSID para entrar en backend
-        main:
+        api:
             anonymous: true
             lazy: true
             provider: app_user_provider
@@ -69,6 +75,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/api/token/refresh, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
         # - { path: ^/admin, roles: ROLE_ADMIN }

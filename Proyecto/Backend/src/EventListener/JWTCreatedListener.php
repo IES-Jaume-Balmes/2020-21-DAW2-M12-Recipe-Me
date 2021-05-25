@@ -2,9 +2,11 @@
 
 namespace App\EventListener;
 
+use App\Entity\User;
+use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\JWTCreatedEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class JWTCreatedListener extends AbstractController
 {
@@ -28,8 +30,13 @@ class JWTCreatedListener extends AbstractController
      */
     public function onJWTCreated(JWTCreatedEvent $event)
     {
+        $email = $event->getUser()->getUsername();
+        $user = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->findOneBy(['email' => $email]);
+
         $payload = $event->getData();
-        $payload['userId'] = $this->getUser()->getId();
+        $payload['userId'] = $user->getId();
 
         $event->setData($payload);
 
