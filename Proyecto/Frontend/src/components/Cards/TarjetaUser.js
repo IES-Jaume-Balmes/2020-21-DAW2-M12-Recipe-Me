@@ -9,10 +9,8 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-// import Cookie from "universal-cookie";
-
-//const cookie = new Cookie();
-//const token = cookie.get("token");
+import Button from "@material-ui/core/Button";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,14 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/*function cerrarSesion() {
-  cookie.remove("ingredientes", { path: "/" });
-  cookie.remove("token", { path: "/" });
-
-  window.location.href = "./login";
-}*/
-
-const TarjetaUser = ({ usuario }) => {
+const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
   const classes = useStyles();
 
   // Para generar una imagen aleatoria colocamos un digito al final del string.
@@ -75,15 +66,27 @@ const TarjetaUser = ({ usuario }) => {
         </Typography>
       </CardContent>
       <CardContent>
-        {/*<Button variant="contained" color="secondary" onClick={cerrarSesion()}>
-          Cerrar Sesion
-      </Button>*/}
+        <Grid container direction="row" alignItems="center" justify="space-around">
+          <Grid>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => cerrarSesion()}
+            >
+              Cerrar Sesion
+            </Button>
+          </Grid>
+          <Grid>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => handleClickOpen()}
+            >
+              Darse de baja
+            </Button>
+          </Grid>
+        </Grid>
       </CardContent>
-      {/* <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-      </CardActions> */}
     </Card>
   );
 };

@@ -82,71 +82,43 @@ export default class Usuario extends Component {
   render() {
     return (
       <>
-        <Grid container alignItems="stretch" direction="row" spacing={5}>
+        <Grid container alignItems="center" justify="center" direction="row" spacing={5}>
           <Grid item xs={12} md={6}>
-            <TarjetaUser usuario={this.state.usuario} />
+            <TarjetaUser
+              usuario={this.state.usuario}
+              cerrarSesion={this.cerrarSesion}
+              handleClickOpen={this.handleClickOpen}
+            />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            spacing={2}
-            container
-            
-            //justify="space-between"
-            alignItems="center"
+
+          <Dialog
+            open={this.state.open}
+            onClose={this.handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
           >
-            <Grid container
-            direction="column"
-            spacing={5}>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => this.cerrarSesion()}
-                >
-                  Cerrar Sesión
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={this.handleClickOpen}
-                >
-                  Darse de baja
-                </Button>
-                <Dialog
-                  open={this.state.open}
-                  onClose={this.handleClose}
-                  aria-labelledby="alert-dialog-title"
-                  aria-describedby="alert-dialog-description"
-                >
-                  <DialogTitle id="alert-dialog-title">
-                    {"Darse de baja en Recipe-Me"}
-                  </DialogTitle>
-                  <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                      Todos sus datos y recetas se eliminarán para siempre.
-                      ¿Estás seguro?
-                    </DialogContentText>
-                  </DialogContent>
-                  <DialogActions>
-                    <Button onClick={this.handleClose} color="primary">
-                      No
-                    </Button>
-                    <Button
-                      onClick={this.handleCloseByeBye}
-                      color="primary"
-                      autoFocus
-                    >
-                      Sí
-                    </Button>
-                  </DialogActions>
-                </Dialog>
-              </Grid>
-            </Grid>
-          </Grid>
+            <DialogTitle id="alert-dialog-title">
+              {"Darse de baja en Recipe-Me"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Todos sus datos y recetas se eliminarán para siempre. ¿Estás
+                seguro?
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleClose} color="primary">
+                No
+              </Button>
+              <Button
+                onClick={this.handleCloseByeBye}
+                color="primary"
+                autoFocus
+              >
+                Sí
+              </Button>
+            </DialogActions>
+          </Dialog>
         </Grid>
       </>
     );
