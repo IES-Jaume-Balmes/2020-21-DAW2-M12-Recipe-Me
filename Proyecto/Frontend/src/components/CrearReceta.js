@@ -6,6 +6,9 @@ import Cookie from "universal-cookie";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import { RefreshToken } from "./utils/refreshToken";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 
 const baseUrl = "https://localhost:8000/api/ingredients";
 const baseUrlAdd = "https://localhost:8000/api/recipes";
@@ -32,7 +35,7 @@ export default class CrearReceta extends Component {
       })
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.data);
+          // console.log(response.data);
           this.setState({ ingredientsOption: response.data["hydra:member"] });
         } else {
           console.log(response);
@@ -71,6 +74,15 @@ export default class CrearReceta extends Component {
       },
     });
   };
+
+  validateForm() {
+    if (
+      this.state.form.name.length > 0 &&
+      this.state.form.description.length > 0 &&
+      this.state.form.ingredients.length > 0
+    )
+      return true;
+  }
 
   crearReceta = async () => {
     let arraySoloId = this.state.form.ingredients.map((i) => i.value);
@@ -127,39 +139,61 @@ export default class CrearReceta extends Component {
             Receta añadida correctamente!
           </Alert>
         </Snackbar>
-        <div>
-          <h1>Receta</h1>
-          <h5>Nombre</h5>
-          <input
-            name="name"
-            className="form-control my-2"
-            onChange={this.handleChange}
-          />
-          <h5>Descripcion</h5>
-          <textarea
-            className="form-control"
-            name="description"
-            rows="3"
-            onChange={this.handleChange}
-          ></textarea>
-          <h5>Ingredientes</h5>
-
-          <Select
-            isMulti
-            name="ingredients"
-            options={options}
-            className="basic-multi-select"
-            classNamePrefix="select"
-            placeholder="Buscar Ingrediente..."
-            onChange={this.handleChangeOption}
-          />
-        </div>
-        <button
-          className="btn btn-primary mt-3"
-          onClick={() => this.crearReceta()}
+        <Grid
+          container
+          direction="column"
+          alignItems="stretch"
+          spacing={5}
+          justify="center"
         >
-          Crear Receta
-        </button>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              required
+              id="outlined-basic"
+              variant="outlined"
+              label="Nombre"
+              name="name"
+              value={this.state.form.name}
+              onChange={this.handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              id="outlined-multiline-static"
+              label="Descripcion"
+              name="description"
+              value={this.state.form.description}
+              multiline
+              rows={5}
+              variant="outlined"
+              onChange={this.handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Select
+              isMulti
+              name="ingredients"
+              options={options}
+              className="basic-multi-select"
+              classNamePrefix="select"
+              placeholder="Buscar Ingrediente..."
+              value={this.state.form.ingredients}
+              onChange={this.handleChangeOption}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => this.crearReceta()}
+              disabled={!this.validateForm()}
+            >
+              Crear Receta
+            </Button>
+          </Grid>
+        </Grid>
       </div>
     );
   }
