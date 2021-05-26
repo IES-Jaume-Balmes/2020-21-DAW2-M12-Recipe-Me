@@ -23,7 +23,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          itemOperations={
  *              "get"={"security"="is_granted('ROLE_USER')"},
  *              "delete"={"security"="is_granted('ROLE_USER')"}
- *          }
+ *          },
+ *          attributes={"order"={"createdAt": "DESC"}}
  * )
  * @ORM\Entity(repositoryClass=RecipeRepository::class)
  */
