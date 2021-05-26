@@ -5,6 +5,7 @@ import Select from "react-select";
 import Cookie from "universal-cookie";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
+import { RefreshToken } from "./utils/refreshToken";
 
 const baseUrl = "https://localhost:8000/api/ingredients";
 const baseUrlAdd = "https://localhost:8000/api/recipes";
@@ -19,7 +20,7 @@ export default class CrearReceta extends Component {
       description: "",
       ingredients: [],
     },
-    open : false,
+    open: false,
   };
 
   async componentDidMount() {
@@ -36,6 +37,19 @@ export default class CrearReceta extends Component {
         } else {
           console.log(response);
         }
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
   }
 
@@ -81,7 +95,7 @@ export default class CrearReceta extends Component {
             ingredients: [],
           },
         });
-        this.setState({open: true});
+        this.setState({ open: true });
       })
       .catch((error) => {
         console.log(error);
@@ -96,11 +110,23 @@ export default class CrearReceta extends Component {
 
     return (
       <div>
-        <Snackbar anchorOrigin={{ vertical:'top' , horizontal:'center' }} open={this.state.open} autoHideDuration={6000} onClose={()=>{this.setState({open: false})}}>
-            <Alert onClose={()=>{this.setState({open: false})}} severity="success">
-              Receta añadida correctamente!
-            </Alert>
-          </Snackbar>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          open={this.state.open}
+          autoHideDuration={6000}
+          onClose={() => {
+            this.setState({ open: false });
+          }}
+        >
+          <Alert
+            onClose={() => {
+              this.setState({ open: false });
+            }}
+            severity="success"
+          >
+            Receta añadida correctamente!
+          </Alert>
+        </Snackbar>
         <div>
           <h1>Receta</h1>
           <h5>Nombre</h5>

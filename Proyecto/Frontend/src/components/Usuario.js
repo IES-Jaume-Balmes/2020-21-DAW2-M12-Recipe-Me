@@ -11,6 +11,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import axios from "axios";
+import { RefreshToken } from "./utils/refreshToken";
 
 const cookie = new Cookie();
 const token = cookie.get("token");
@@ -39,9 +40,18 @@ export default class Usuario extends Component {
         console.log(response.data);
         this.cerrarSesion();
       })
-      .catch((error) => {
-        console.log(error);
-        alert("Ha ocurrido un error");
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
   };
 
@@ -55,7 +65,7 @@ export default class Usuario extends Component {
   cerrarSesion = () => {
     cookie.remove("ingredientes", { path: "/" });
     cookie.remove("token", { path: "/" });
-
+    cookie.remove("refresh_token", { path: "/" });
     window.location.href = "./login";
   };
 
@@ -69,20 +79,33 @@ export default class Usuario extends Component {
         },
       })
       .then((response) => {
-        if (response.status === 200) {
-          console.log(response.data);
-          this.setState({ usuario: response.data });
-          this.setState({ loading: false });
+        console.log(response.data);
+        this.setState({ usuario: response.data });
+        this.setState({ loading: false });
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+        } else if (error.request) {
+          console.log(error.request);
         } else {
-          console.log(response);
+          console.log("Error", error.message);
         }
+        // console.log(error.config);
       });
   }
 
   render() {
     return (
       <>
-        <Grid container alignItems="center" justify="center" direction="row" spacing={5}>
+        <Grid
+          container
+          alignItems="center"
+          justify="center"
+          direction="row"
+          spacing={5}
+        >
           <Grid item xs={12} md={6}>
             <TarjetaUser
               usuario={this.state.usuario}
