@@ -11,9 +11,11 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import axios from "axios";
+import TarjetaLista from "./Cards/TarjetaLista";
 
 const cookie = new Cookie();
 const token = cookie.get("token");
+const baseDeleteUrl = "https://127.0.0.1:8000/api/lista_compras/";
 
 export default class Usuario extends Component {
   handleClickOpen = () => {
@@ -46,6 +48,7 @@ export default class Usuario extends Component {
   };
 
   state = {
+    listas: [],
     usuario: {},
     open: false,
     loading: true,
@@ -59,9 +62,22 @@ export default class Usuario extends Component {
     window.location.href = "./login";
   };
 
+  eliminar = (id) => {
+    const newList = this.state.listas.filter((item) => {
+      return item.id !== id;
+    });
+    this.setState({ listas: newList });
+    axios.delete(baseDeleteUrl + id, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+  };
+
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);
     const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
+    
     await axios
       .get(profileEndpoint, {
         headers: {
@@ -73,6 +89,20 @@ export default class Usuario extends Component {
           console.log(response.data);
           this.setState({ usuario: response.data });
           this.setState({ loading: false });
+        } else {
+          console.log(response);
+        }
+      });
+        await axios
+      .get(profileEndpoint, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          this.setState({ listas: response.data.listaCompras });
         } else {
           console.log(response);
         }
@@ -90,6 +120,19 @@ export default class Usuario extends Component {
               handleClickOpen={this.handleClickOpen}
             />
           </Grid>
+          {/*Tarjeta Lista de la compra*/}
+          <Grid item md={6}>
+          <h1>Listas Guardadas</h1>
+          <div >
+            {this.state.listas.map((element) => (
+              <TarjetaLista
+                key={element.id}
+                lista={element}
+                eliminar={this.eliminar}
+              />
+            ))}
+          </div>
+        </Grid>
 
           <Dialog
             open={this.state.open}
