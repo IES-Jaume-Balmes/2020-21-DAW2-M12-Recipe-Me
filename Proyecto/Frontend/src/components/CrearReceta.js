@@ -62,10 +62,12 @@ export default class CrearReceta extends Component {
   };
 
   validateForm() {
-
-    if(this.state.form.name.length > 0 && this.state.form.description.length > 0 && this.state.form.ingredients.length > 0)
+    if (
+      this.state.form.name.length > 0 &&
+      this.state.form.description.length > 0 &&
+      this.state.form.ingredients.length > 0
+    )
       return true;
-    
   }
 
   crearReceta = async () => {
@@ -104,8 +106,6 @@ export default class CrearReceta extends Component {
     let options = this.state.ingredientsOption.map(function (ingredient) {
       return { value: ingredient["@id"], label: ingredient.name };
     });
-
-    
 
     return (
       <div>
@@ -174,10 +174,8 @@ export default class CrearReceta extends Component {
             <Button
               variant="contained"
               color="primary"
-              //onClick={() => this.crearReceta()}
               onClick={() => this.crearReceta()}
               disabled={!this.validateForm()}
-              //onClick={()=> this.validateForm()}
             >
               Crear Receta
             </Button>

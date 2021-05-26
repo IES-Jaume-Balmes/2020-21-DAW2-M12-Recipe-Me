@@ -132,3 +132,17 @@ Al tener el token para nuestro componente ya sea para cargar su información o d
         },
       })
 ```
+
+## Crear receta
+No se podrán añadir recetas a no ser que contenga nombre, descripción e ingredientes.
+
+```
+  validateForm() {
+
+    if(this.state.form.name.length > 0 && this.state.form.description.length > 0 && this.state.form.ingredients.length > 0)
+      return true;
+    
+  }
+```
+Esta función chequeará si se puede añadir la receta. Después reseteara todos los campos para que el usuario pueda volver añadir otra.
+
