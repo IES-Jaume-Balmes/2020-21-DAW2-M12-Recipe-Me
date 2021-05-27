@@ -132,6 +132,9 @@ Al tener el token para nuestro componente ya sea para cargar su información o d
         },
       })
 ```
+Añadido al usuario datos de sus listas y los ingredientes que ha utilizado en estas.
+Se han añadido estos datos dentro de UsuarioCard. 
+Cuando la api nos devuelve la información le pasamos una función la cual setea al estado el número con la información del usuario sobre los ingredientes y las listas. Después simplemente se las pasamos al componente hijo con los "props" y alil lo pintamos de esta manera.
 
 ## Crear receta
 No se podrán añadir recetas a no ser que contenga nombre, descripción e ingredientes.
@@ -146,3 +149,11 @@ No se podrán añadir recetas a no ser que contenga nombre, descripción e ingre
 ```
 Esta función chequeará si se puede añadir la receta. Después reseteara todos los campos para que el usuario pueda volver añadir otra.
 
+## RecipeCard.js
+Hemos añadido la funcionalidad para poder darle like. Podemos dar y quitar el like esta funcionalidad esta por desarrollar veremos si nos da tiempo a poder terminarla.
+
+```js
+const [like, setLike] = useState(false);
+
+<IconButton aria-label="add to favorites" color={like ? 'secondary' :"default"} onClick={() => setLike(!like)}>
+```
