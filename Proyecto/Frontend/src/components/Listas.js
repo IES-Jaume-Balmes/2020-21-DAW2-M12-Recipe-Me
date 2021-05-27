@@ -163,15 +163,6 @@ class Listas extends Component {
     console.log(lista.ingredients);
   };
 
-  copiarPortapapeles = () => {
-    const prueba = "prueba";
-    let selectFake = document.createElement("input");
-    document.body.appendChild(selectFake);
-    selectFake.value = prueba;
-    selectFake.select();
-    document.execCommand("copy");
-  };
-
   render() {
     const { classes } = this.props;
     return (
