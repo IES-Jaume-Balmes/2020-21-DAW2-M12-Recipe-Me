@@ -117,11 +117,8 @@ export default class Usuario extends Component {
       }
       this.setState({ ingredientesUsados: contador });
       this.setState({ numeroListas: this.state.usuario.listaCompras.length });
-    }
-    //return <h1>contador</h1>
-    //console.log(this.state.usuario.listaCompras.length);
+    }   
     console.log(this.state.numeroListas);
-    //console.log(this.state.usuario.listaCompras.length);
   }
 
   render() {
@@ -142,12 +139,12 @@ export default class Usuario extends Component {
           </Grid>
           <Grid item   >
             <Grid>
-              <Grid>
+              <Grid item>
                 <h3>{this.state.numeroListas}</h3>
                 </Grid>
               <Grid>Listas Guardadas</Grid>
             </Grid>
-            <Grid>
+            <Grid item>
               <div>
                 <h3>{this.state.ingredientesUsados}</h3>
               </div>
