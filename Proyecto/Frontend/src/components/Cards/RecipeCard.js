@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard({ receta }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [like, setLike] = useState(false);
 
   const anadirLista = (lista) => {
     const cookie = new Cookie();
@@ -135,7 +136,8 @@ export default function RecipeReviewCard({ receta }) {
           >
             <AddShoppingCartIcon />
           </IconButton>
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="add to favorites" color={like ? 'secondary' :"default"} onClick={() => setLike(!like)}
+          >
             <FavoriteIcon />
           </IconButton>
         </CardActions>
