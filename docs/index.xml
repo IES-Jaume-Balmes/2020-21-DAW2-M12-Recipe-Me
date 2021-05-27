@@ -5,7 +5,36 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Documentación Recipe-me</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 May 2021 12:25:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 May 2021 19:32:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</link>
+      <pubDate>Thu, 27 May 2021 19:32:36 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</guid>
+      <description>Landing page API    Ahora podemos acceder mediante dos autenticadores a la API.
+ JWT PHPSESSID  </description>
+    </item>
+    
+    <item>
+      <title>Axios</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</link>
+      <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</guid>
+      <description>Interceptores    Creamos una funcion para interceptar las llamadas asyncronas. Aplican el header con token automaticamente. En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.</description>
+    </item>
+    
+    <item>
+      <title>JWT</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</link>
+      <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</guid>
+      <description>Token refresca automaticamente    Enviamos un token de refresco junto con el token original. Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.
+Privatización de operaciones de usuario    </description>
+    </item>
+    
     <item>
       <title>Seguridad JWT</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/backend/JWT/</link>
@@ -290,6 +319,15 @@ RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada r
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</guid>
       <description>TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/</guid>
+      <description>Listas.js    Actualización     Ahora es responsive, se tuvo que introducir a componentes Grid que hacian un mejor manejo del css-grid Al guardar una lista de la compra mostraba un alert predeterminado de Chrome, ahora tiene un componente Snackbar que muestra una alerta cuando una Lista de la compra a sido añadida correctamente.  &amp;lt;Snackbar anchorOrigin={{ vertical: &amp;#34;top&amp;#34;, horizontal: &amp;#34;center&amp;#34; }} open={this.state.open} autoHideDuration={6000} onClose={() =&amp;gt; { this.</description>
     </item>
     
   </channel>

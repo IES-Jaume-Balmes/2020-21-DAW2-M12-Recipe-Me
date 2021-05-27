@@ -10,11 +10,11 @@
 
 
 
-    <meta name="description" content="Documentación Recipe-me">
+    <meta name="description" content="Interceptores    Creamos una funcion para interceptar las llamadas asyncronas. Aplican el header con token automaticamente. En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.">
 
 
 
-    <title>News | Documentación Recipe-me</title>
+    <title>Axios | Documentación Recipe-me</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -43,7 +43,6 @@
 <link rel="preload" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" as="style">
 <link rel="stylesheet" href="/2020-21-DAW2-M12-Recipe-Me/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/index.xml" title="Documentación Recipe-me" />
 
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
@@ -1021,7 +1020,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" checked>
             <label for="navtree-6e6c58e8" class="flex justify-between">
             
             
@@ -1131,7 +1130,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-b23c6ff6" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-b23c6ff6" class="gdoc-nav__toggle" checked>
             <label for="navtree-b23c6ff6" class="flex justify-between">
             
             
@@ -1187,7 +1186,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/" class="gdoc-nav__entry is-active">
                         Axios
                     </a>
                 </span>
@@ -1256,7 +1255,7 @@
             <span class="flex">
                 <svg class="icon gdoc_notification"><use xlink:href="#gdoc_notification"></use></svg>
                 <a href="/2020-21-DAW2-M12-Recipe-Me/posts/"
-                    class="gdoc-nav__entry is-active">
+                    class="gdoc-nav__entry ">
                     Novedades
                 </a>
             </span>
@@ -1344,93 +1343,78 @@
             <div class="gdoc-page">
                 
     
-        <article class="gdoc-markdown gdoc-post">
-            <header class="gdoc-post__header">
-                <h1 class="gdoc-post__title"><a href="/2020-21-DAW2-M12-Recipe-Me/posts/release3/">Release 3</a></h1>
-                <div class="gdoc-post__date">
-                    <svg class="icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
-                    <time datetime="2021-05-23T00:00:00Z">
-                        
-                        May 23, 2021
-                    </time>
-                </div>
-            </header>
-            <section>
-                Hola Recipe-Users! Se aproxima la tercera entrega del proyecto!!
-Nuestros objectivos iniciales eran muy ambiciosos. A estas alturas nos damos cuenta de que este proyecto necesita mucho tiempo y dedicación. Aún habiendo invertido el 200% de nosotros mismos vemos que vamos a necesitar mínimo un mes mas con el mismo esfuerzo para pulir al máximo los detalles de nuestra web-app. Seguimos a tope! Vamos a llegar hasta donde podamos durante el mes de mayo.
-            </section>
-            
-            <div class="gdoc-post__readmore">
-                <a class="flex-inline align-center fake-link" title="Read full post" href="/2020-21-DAW2-M12-Recipe-Me/posts/release3/">Read full post</a>
-            </div>
-            
-        </article>
+
+
     
-        <article class="gdoc-markdown gdoc-post">
-            <header class="gdoc-post__header">
-                <h1 class="gdoc-post__title"><a href="/2020-21-DAW2-M12-Recipe-Me/posts/release2/">Release 2</a></h1>
-                <div class="gdoc-post__date">
-                    <svg class="icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
-                    <time datetime="2021-05-16T00:00:00Z">
-                        
-                        May 16, 2021
-                    </time>
-                </div>
-            </header>
-            <section>
-                Y aqui llega Recipe-me V2!!
-Ha sido una semana muy dura, no dejan de aparecer los issues, pero para bién!! Todo lo que estaba en nuestras cabezas esta aterrizando a nuestro editor de hyper texto enriquecido favorito! Esta semana nos hemos centrado principalmente en la parte visual de la app. Como? QUe AúN nO lO hAS VisTo??? A que esperas para ver estas pantallitas sexys! En nuestro readme principal encontrarás la guía para hacer un Run Local.
-            </section>
-            
-            <div class="gdoc-post__readmore">
-                <a class="flex-inline align-center fake-link" title="Read full post" href="/2020-21-DAW2-M12-Recipe-Me/posts/release2/">Read full post</a>
-            </div>
-            
-        </article>
+
+
+
+
+
+
+<div class="gdoc-page__header flex flex-wrap
+     justify-between 
+     hidden-mobile 
+    " itemprop="breadcrumb">
     
-        <article class="gdoc-markdown gdoc-post">
-            <header class="gdoc-post__header">
-                <h1 class="gdoc-post__title"><a href="/2020-21-DAW2-M12-Recipe-Me/posts/release1/">Release 1</a></h1>
-                <div class="gdoc-post__date">
-                    <svg class="icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
-                    <time datetime="2021-05-09T00:00:00Z">
-                        
-                        May 9, 2021
-                    </time>
-                </div>
-            </header>
-            <section>
-                Esta es la primera version de Recipe-me!
-Estamos muy ilusionados con este proyecto. Por ahora hemos conseguido:
- Una versión trabajable de la API, con sus endpoints bonitos. Un Frontend basico con el que podemos comunicarnos con ella. Una base de datos relacional (MySql).  Seguimos!! ;)
-            </section>
+    <div>
+        <svg class="icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
             
-        </article>
+            
+            
+            
     
-        <article class="gdoc-markdown gdoc-post">
-            <header class="gdoc-post__header">
-                <h1 class="gdoc-post__title"><a href="/2020-21-DAW2-M12-Recipe-Me/posts/primer-post/">Primer post</a></h1>
-                <div class="gdoc-post__date">
-                    <svg class="icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
-                    <time datetime="2021-05-01T00:00:00Z">
-                        
-                        May 1, 2021
-                    </time>
-                </div>
-            </header>
-            <section>
-                Todo empezó como un pequeño ejercicio de clase, AJAX y Recetas en XML.
-A partir de nuestras necesidades diarias llegamos a la idea principal de nuestra app, facilitar el proceso de ir a comprar al super!!!!
-Y a quién no le va a gustar una app que te pregunta qué quieres comer y te dice qué necesitas ir a comprar?
-Pero no solo eso, también te genera una lista de la compra inteligente para ahorrar papel por supuesto.
-            </section>
-            
-            <div class="gdoc-post__readmore">
-                <a class="flex-inline align-center fake-link" title="Read full post" href="/2020-21-DAW2-M12-Recipe-Me/posts/primer-post/">Read full post</a>
-            </div>
-            
-        </article>
     
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/'><span itemprop='name'>Frontend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Axios</span><meta itemprop='position' content='5' /></li>
+    
+
+    
+
+    
+
+    
+
+        </ol>
+    </div>
+    
+    
+</div>
+
+
+    <article class="gdoc-markdown">
+        <h1>Axios</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h1 id="interceptores">
+        Interceptores
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/#interceptores" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Interceptores" href="#interceptores">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><p>Creamos una funcion para interceptar las llamadas asyncronas.
+Aplican el header con token automaticamente.
+En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.</p>
+
+
+    </article>
 
                 
 
