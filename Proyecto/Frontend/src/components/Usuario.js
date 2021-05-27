@@ -11,7 +11,6 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import axios from "axios";
-import { RefreshToken } from "./utils/refreshToken";
 
 const cookie = new Cookie();
 const token = cookie.get("token");
@@ -29,29 +28,21 @@ export default class Usuario extends Component {
     this.setState({ open: false });
     var tokenDecoded = jwt_decode(token);
     const deleteUsuario = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
-    console.log(deleteUsuario);
+    //console.log(deleteUsuario);
     await axios
-      .delete(deleteUsuario, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .delete(deleteUsuario)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.cerrarSesion();
       })
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
           console.log("Error", error.message);
         }
-        // console.log(error.config);
       });
   };
 
@@ -72,27 +63,20 @@ export default class Usuario extends Component {
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);
     const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
-    await axios
-      .get(profileEndpoint, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+    axios
+      .get(profileEndpoint)
       .then((response) => {
-        console.log(response.data);
         this.setState({ usuario: response.data });
         this.setState({ loading: false });
       })
       .catch(function (error) {
-        if (error.response.data.message === "Expired JWT Token") {
+        if (error.response) {
           console.log(error.response.data);
-          RefreshToken();
         } else if (error.request) {
           console.log(error.request);
         } else {
           console.log("Error", error.message);
         }
-        // console.log(error.config);
       });
   }
 
