@@ -94,7 +94,7 @@ export default class Usuario extends Component {
         this.setState({ loading: false });
         this.datosUser();
       })
-      .catch(function (error) {
+      /*.catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
           RefreshToken();
@@ -104,7 +104,7 @@ export default class Usuario extends Component {
           console.log("Error", error.message);
         }
         // console.log(error.config);
-      });
+      });*/
   }
 
   datosUser() {

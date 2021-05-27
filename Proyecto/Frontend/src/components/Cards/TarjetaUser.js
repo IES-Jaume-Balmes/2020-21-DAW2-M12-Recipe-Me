@@ -53,11 +53,6 @@ const TarjetaUser = ({
         avatar={
           <Avatar alt="Remy Sharp" src={imgString} className={classes.large} />
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={usuario.username}
         subheader={usuario.name}
       />
@@ -105,7 +100,7 @@ const TarjetaUser = ({
           <Grid item>
             <Button
               variant="contained"
-              color="yellow"
+              
               onClick={() => handleClickOpen()}
             >
               Darse de baja
