@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -13,7 +13,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Cookie from "universal-cookie";
-import { Grid } from "@material-ui/core";
+import { Grid, Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard({ receta }) {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
 
   const anadirLista = (lista) => {
     const cookie = new Cookie();
@@ -51,7 +53,7 @@ export default function RecipeReviewCard({ receta }) {
     lista.forEach((i) => {
       ingres.push({
         id: i["@id"],
-        nombre: i.name,
+        name: i.name,
       });
     });
 
@@ -65,8 +67,8 @@ export default function RecipeReviewCard({ receta }) {
       return true;
     });
 
+    setOpen(true);
     cookie.set("ingredientes", otro, { path: "/" });
-    console.log(cookie.get("ingredientes"));
   };
 
   // Para generar una imagen aleatoria colocamos un digito al final del string.
@@ -79,6 +81,23 @@ export default function RecipeReviewCard({ receta }) {
 
   return (
     <Grid item xs={12} sm={6} md={3}>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => {
+          setOpen(false);
+        }}
+      >
+        <Alert
+          onClose={() => {
+            setOpen(false);
+          }}
+          severity="success"
+        >
+          Ingredientes añadidos correctamente!
+        </Alert>
+      </Snackbar>
       <Card key={receta["@id"]} className={classes.root}>
         <CardHeader
           avatar={

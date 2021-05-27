@@ -61,13 +61,14 @@ const styles = (theme) => ({
 class Listas extends Component {
   state = {
     listas: [],
-    textField: "",
+    nombreLista: "",
     open: false,
+    arrayIngredientes: arrayIngres,
   };
 
   handleText = async (e) => {
     this.setState({
-      textField: e.target.value,
+      nombreLista: e.target.value,
     });
   };
 
@@ -134,11 +135,11 @@ class Listas extends Component {
   guardarListaCompra = async () => {
     var tokenDecoded = jwt_decode(token);
     console.log(tokenDecoded);
-    let arraySoloId = arrayIngres.map((i) => i.id);
+    let arraySoloId = this.state.arrayIngredientes.map((i) => i.id);
     //console.log(arraySoloId);
     let jsonPeticion = {
       propietario: "api/users/" + tokenDecoded.userId,
-      name: this.state.textField,
+      name: this.state.nombreLista,
       ingredients: arraySoloId,
     };
 
@@ -170,8 +171,25 @@ class Listas extends Component {
   };
 
   validateForm() {
-    return this.state.textField !== "";
+    return this.state.nombreLista !== "";
   }
+
+  actualizarLista = (id) => {
+    //console.log(id)
+    const newList = this.state.arrayIngredientes.filter((item) => {
+      return item.id !== id;
+    });
+    this.setState({ arrayIngredientes: newList });
+    //console.log(this.state.arrayIngredientes)
+  };
+
+  cargarListaGuardada = (lista) => {
+    console.log(this.state.arrayIngredientes);
+    console.log(lista);
+    this.setState({ nombreLista: lista.name });
+    this.setState({ arrayIngredientes: lista.ingredients });
+    console.log(lista.ingredients);
+  };
 
   render() {
     const { classes } = this.props;
@@ -201,6 +219,7 @@ class Listas extends Component {
             <Grid container>
               <Grid item xs={12} className={classes.gridListaActual}>
                 <TextField
+                  value={this.state.nombreLista}
                   id="outlined-basic"
                   onChange={this.handleText}
                   label="Lista Actual"
@@ -213,7 +232,8 @@ class Listas extends Component {
                 <div className={classes.listaIngredientes}>
                   <TarjetaListaActual
                     className="m-2"
-                    arrayIngres={arrayIngres}
+                    arrayIngres={this.state.arrayIngredientes}
+                    actualizar={this.actualizarLista}
                   />
                 </div>
               </Grid>
@@ -239,6 +259,7 @@ class Listas extends Component {
                 key={element.id}
                 lista={element}
                 eliminar={this.eliminar}
+                cargar={this.cargarListaGuardada}
               />
             ))}
           </div>
