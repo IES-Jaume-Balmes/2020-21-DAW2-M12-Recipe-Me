@@ -51,7 +51,7 @@ export default function RecipeReviewCard({ receta }) {
     lista.forEach((i) => {
       ingres.push({
         id: i["@id"],
-        nombre: i.name,
+        name: i.name,
       });
     });
 
@@ -66,7 +66,7 @@ export default function RecipeReviewCard({ receta }) {
     });
 
     cookie.set("ingredientes", otro, { path: "/" });
-    console.log(cookie.get("ingredientes"));
+    //console.log(cookie.get("ingredientes"));
   };
 
   // Para generar una imagen aleatoria colocamos un digito al final del string.
