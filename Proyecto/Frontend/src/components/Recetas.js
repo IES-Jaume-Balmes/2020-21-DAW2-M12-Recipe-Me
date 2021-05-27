@@ -3,25 +3,12 @@ import "../css/Recetas.css";
 import RecipeCard from "./Cards/RecipeCard";
 import { Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-// https://www.davidhu.io/react-spinners/
 import CircleLoader from "react-spinners/CircleLoader";
 import { EventEmitter } from "./utils/eventEmitter";
-import Cookie from "universal-cookie";
 import axios from "axios";
-import { RefreshToken } from "./utils/refreshToken";
-
-const cookie = new Cookie();
 
 const styles = (theme) => ({
-  gridContainer: {
-    // paddingTop: "30px",
-    // paddingLeft: "30px",
-    // paddingRight: "30px",
-  },
   override: {
-    // display: "block",
-    // margin: 0,
-    // border: "red",
     height: "100vh" /* Magic here */,
     display: "flex",
     justifyContent: "center",
@@ -48,31 +35,20 @@ class Recetas extends Component {
   }
 
   async componentDidMount() {
-    let token = cookie.get("token");
+    // let token = cookie.get("token");
     const apiUrl = "https://127.0.0.1:8000/api/recipes";
 
     await axios
-      .get(apiUrl, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .get(apiUrl)
       .then((response) => {
-        if (response.status === 200) {
-          console.log(response.data);
-          this.setState({ recetas: response.data["hydra:member"] });
-          this.setState({ busquedaRecetas: response.data["hydra:member"] });
-          this.setState({ loading: false });
-        } else {
-          //console.log(response);
-        }
+        // console.log(response.data);
+        this.setState({ recetas: response.data["hydra:member"] });
+        this.setState({ busquedaRecetas: response.data["hydra:member"] });
+        this.setState({ loading: false });
       })
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -99,7 +75,7 @@ class Recetas extends Component {
             />
           </Grid>
         </Grid>
-        <Grid container spacing={4} className={classes.gridContainer}>
+        <Grid container spacing={4}>
           {this.state.busquedaRecetas.map((element) => (
             <RecipeCard key={element["@id"]} receta={element} />
           ))}
