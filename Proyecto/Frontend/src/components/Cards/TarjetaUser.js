@@ -66,8 +66,8 @@ const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
         </Typography>
       </CardContent>
       <CardContent>
-        <Grid container direction="row" alignItems="center" justify="space-around">
-          <Grid>
+        <Grid container direction="row" alignItems="center" justify="space-around" spacing={2}>
+          <Grid item>
             <Button
               variant="contained"
               color="secondary"
@@ -76,7 +76,7 @@ const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
               Cerrar Sesion
             </Button>
           </Grid>
-          <Grid>
+          <Grid item>
             <Button
               variant="contained"
               color="secondary"

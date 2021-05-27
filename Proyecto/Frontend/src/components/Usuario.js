@@ -16,6 +16,14 @@ import { RefreshToken } from "./utils/refreshToken";
 const cookie = new Cookie();
 const token = cookie.get("token");
 
+/*const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: "#FDF0A0",
+  },
+}));*/
+
 export default class Usuario extends Component {
   handleClickOpen = () => {
     this.setState({ open: true });
@@ -60,6 +68,8 @@ export default class Usuario extends Component {
     open: false,
     loading: true,
     color: "#3F51B6",
+    ingredientesUsados: 0,
+    numeroListas: 0,
   };
 
   cerrarSesion = () => {
@@ -82,6 +92,7 @@ export default class Usuario extends Component {
         console.log(response.data);
         this.setState({ usuario: response.data });
         this.setState({ loading: false });
+        this.datosUser();
       })
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
@@ -96,24 +107,54 @@ export default class Usuario extends Component {
       });
   }
 
+  datosUser() {
+    let listas = this.state.usuario.listaCompras;
+    let contador = 0;
+
+    for (let i = 0; i < listas.length; i++) {
+      for (let j = 0; j < listas[i].ingredients.length; j++) {
+        contador++;
+      }
+      this.setState({ ingredientesUsados: contador });
+      this.setState({ numeroListas: this.state.usuario.listaCompras.length });
+    }
+    //return <h1>contador</h1>
+    //console.log(this.state.usuario.listaCompras.length);
+    console.log(this.state.numeroListas);
+    //console.log(this.state.usuario.listaCompras.length);
+  }
+
   render() {
     return (
       <>
         <Grid
           container
-          alignItems="center"
-          justify="center"
+          //alignItems="center"
           direction="row"
-          spacing={5}
+          spacing={2}
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs md={6}>
             <TarjetaUser
               usuario={this.state.usuario}
               cerrarSesion={this.cerrarSesion}
               handleClickOpen={this.handleClickOpen}
             />
           </Grid>
+          <Grid item   >
+            <Grid>
+              <Grid>
+                <h3>{this.state.numeroListas}</h3>
+                </Grid>
+              <Grid>Listas Guardadas</Grid>
+            </Grid>
+            <Grid>
+              <div>
+                <h3>{this.state.ingredientesUsados}</h3>
+              </div>
 
+              <div>Ingredientes Usados</div>
+            </Grid>
+          </Grid>
           <Dialog
             open={this.state.open}
             onClose={this.handleClose}
