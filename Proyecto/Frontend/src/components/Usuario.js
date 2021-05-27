@@ -126,17 +126,20 @@ export default class Usuario extends Component {
       <>
         <Grid
           container
-          //alignItems="center"
+          alignItems="center"
           direction="row"
-          spacing={2}
+          justify="center"
         >
-          <Grid item xs md={6}>
+          <Grid item xs={12} md={6}>
             <TarjetaUser
               usuario={this.state.usuario}
+              numeroListas={this.state.numeroListas}
+              numeroIngredientes={this.state.ingredientesUsados}
               cerrarSesion={this.cerrarSesion}
               handleClickOpen={this.handleClickOpen}
             />
           </Grid>
+          {/*
           <Grid item   >
             <Grid>
               <Grid item>
@@ -151,7 +154,7 @@ export default class Usuario extends Component {
 
               <div>Ingredientes Usados</div>
             </Grid>
-          </Grid>
+          </Grid>*/}
           <Dialog
             open={this.state.open}
             onClose={this.handleClose}
