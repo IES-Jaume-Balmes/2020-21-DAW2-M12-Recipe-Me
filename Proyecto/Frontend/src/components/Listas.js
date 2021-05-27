@@ -5,12 +5,13 @@ import TarjetaListaActual from "./Cards/TarjetaListaActual";
 import { withStyles } from "@material-ui/core/styles";
 import Cookie from "universal-cookie";
 import TextField from "@material-ui/core/TextField";
-import { Grid, Snackbar } from "@material-ui/core";
+import { Grid, IconButton, Snackbar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Alert from "@material-ui/lab/Alert";
 import { RefreshToken } from "./utils/refreshToken";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
@@ -191,6 +192,15 @@ class Listas extends Component {
     console.log(lista.ingredients);
   };
 
+  copiarPortapapeles = ()=>{
+    const prueba = "prueba";
+    let selectFake = document.createElement("input");
+    document.body.appendChild(selectFake);
+    selectFake.value=prueba;
+    selectFake.select()
+    document.execCommand("copy");
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -216,15 +226,34 @@ class Listas extends Component {
         </Grid>
         <Grid item md={6}>
           <form noValidate autoComplete="off" className="mb-3">
-            <Grid container>
-              <Grid item xs={12} className={classes.gridListaActual}>
+            <Grid container alignItems="center">
+              <Grid item xs={6} className={classes.gridListaActual}>
                 <TextField
                   value={this.state.nombreLista}
                   id="outlined-basic"
                   onChange={this.handleText}
                   label="Lista Actual"
                   variant="outlined"
+                  fullWidth={true}
                 />
+              </Grid>
+              <Grid item xs={4}>
+                <label htmlFor="icon-button-file">
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    onClick={()=>{
+                      let texto = "";
+                      this.state.arrayIngredientes.forEach((item)=>{
+                        return texto +="\n- "+item.name;
+                      })
+                      navigator.clipboard.writeText(texto)
+                    }}
+                  >
+                    <FileCopyIcon />
+                  </IconButton>
+                </label>
               </Grid>
               <Grid item xs={12} className={classes.gridListaActual}>
                 <div className={classes.postIt}></div>
