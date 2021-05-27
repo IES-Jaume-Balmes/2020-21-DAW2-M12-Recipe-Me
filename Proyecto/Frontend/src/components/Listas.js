@@ -10,7 +10,6 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Alert from "@material-ui/lab/Alert";
-import { RefreshToken } from "./utils/refreshToken";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 
 const cookie = new Cookie();
@@ -78,31 +77,19 @@ class Listas extends Component {
     var tokenDecoded = jwt_decode(token);
     const userEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}.json`;
     await axios
-      .get(userEndpoint, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .get(userEndpoint)
       .then((response) => {
-        if (response.status === 200) {
-          console.log(response.data);
-          this.setState({ listas: response.data.listaCompras });
-        } else {
-          console.log(response);
-        }
+        console.log(response.data);
+        this.setState({ listas: response.data.listaCompras });
       })
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
           console.log("Error", error.message);
         }
-        // console.log(error.config);
       });
   }
 
@@ -111,25 +98,16 @@ class Listas extends Component {
       return item.id !== id;
     });
     this.setState({ listas: newList });
-    axios
-      .delete(baseDeleteUrl + id, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-      .catch(function (error) {
-        if (error.response.data.message === "Expired JWT Token") {
-          console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
-        } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log("Error", error.message);
-        }
-        // console.log(error.config);
-      });
+    axios.delete(baseDeleteUrl + id).catch(function (error) {
+      if (error.response.data.message === "Expired JWT Token") {
+        console.log(error.response.data);
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log("Error", error.message);
+      }
+      // console.log(error.config);
+    });
   };
 
   // GUARDAMOS LISTA DE LA COMPRA
@@ -146,11 +124,7 @@ class Listas extends Component {
 
     console.log(jsonPeticion);
     await axios
-      .post(listasEndPoint, jsonPeticion, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .post(listasEndPoint, jsonPeticion)
       .then((response) => {
         console.log(response.data);
         this.setState({ open: true });
@@ -159,9 +133,6 @@ class Listas extends Component {
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -192,14 +163,14 @@ class Listas extends Component {
     console.log(lista.ingredients);
   };
 
-  copiarPortapapeles = ()=>{
+  copiarPortapapeles = () => {
     const prueba = "prueba";
     let selectFake = document.createElement("input");
     document.body.appendChild(selectFake);
-    selectFake.value=prueba;
-    selectFake.select()
+    selectFake.value = prueba;
+    selectFake.select();
     document.execCommand("copy");
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -243,12 +214,12 @@ class Listas extends Component {
                     color="primary"
                     aria-label="upload picture"
                     component="span"
-                    onClick={()=>{
+                    onClick={() => {
                       let texto = "";
-                      this.state.arrayIngredientes.forEach((item)=>{
-                        return texto +="\n- "+item.name;
-                      })
-                      navigator.clipboard.writeText(texto)
+                      this.state.arrayIngredientes.forEach((item) => {
+                        return (texto += "\n- " + item.name);
+                      });
+                      navigator.clipboard.writeText(texto);
                     }}
                   >
                     <FileCopyIcon />

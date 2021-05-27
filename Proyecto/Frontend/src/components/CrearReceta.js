@@ -2,18 +2,14 @@ import React, { Component } from "react";
 //import TarjetaIngredients from "./Cards/TarjetaIngredients";
 import axios from "axios";
 import Select from "react-select";
-import Cookie from "universal-cookie";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import { RefreshToken } from "./utils/refreshToken";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
 const baseUrl = "https://localhost:8000/api/ingredients";
 const baseUrlAdd = "https://localhost:8000/api/recipes";
-const cookie = new Cookie();
-let token = cookie.get("token");
 
 export default class CrearReceta extends Component {
   state = {
@@ -28,11 +24,7 @@ export default class CrearReceta extends Component {
 
   async componentDidMount() {
     await axios
-      .get(baseUrl, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .get(baseUrl)
       .then((response) => {
         if (response.status === 200) {
           // console.log(response.data);
@@ -44,9 +36,6 @@ export default class CrearReceta extends Component {
       .catch(function (error) {
         if (error.response.data.message === "Expired JWT Token") {
           console.log(error.response.data);
-          RefreshToken();
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -93,11 +82,7 @@ export default class CrearReceta extends Component {
     };
     console.log(jsonPeticion);
     await axios
-      .post(baseUrlAdd, jsonPeticion, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .post(baseUrlAdd, jsonPeticion)
       .then((response) => {
         console.log(response.data);
         this.setState({
