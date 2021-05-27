@@ -5,6 +5,7 @@ import Select from "react-select";
 import Cookie from "universal-cookie";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
+import { RefreshToken } from "./utils/refreshToken";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -39,6 +40,19 @@ export default class CrearReceta extends Component {
         } else {
           console.log(response);
         }
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
   }
 
@@ -93,7 +107,6 @@ export default class CrearReceta extends Component {
             ingredients: [],
           },
         });
-
         this.setState({ open: true });
       })
       .catch((error) => {

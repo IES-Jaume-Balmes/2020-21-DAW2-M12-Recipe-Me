@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
@@ -22,7 +23,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *          itemOperations={
  *              "get"={"security"="is_granted('ROLE_USER')"},
  *              "delete"={"security"="is_granted('ROLE_USER')"}
- *          }
+ *          },
+ *          attributes={"order"={"createdAt": "DESC"}}
  * )
  * @ORM\Entity(repositoryClass=RecipeRepository::class)
  */
@@ -38,18 +40,21 @@ class Recipe
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"recipe:read", "recipe:write", "user:read", "user:write"})
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"recipe:read", "recipe:write", "user:read", "user:write"})
+     * @Assert\NotBlank()
      */
     private $description;
 
     /**
      * @ORM\ManyToMany(targetEntity=Ingredient::class, inversedBy="recipes")
      * @Groups({"recipe:read", "recipe:write", "user:read", "user:write"})
+     * @Assert\NotBlank()
      */
     private $ingredients;
 

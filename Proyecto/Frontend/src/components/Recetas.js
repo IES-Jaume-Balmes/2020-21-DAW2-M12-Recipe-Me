@@ -8,6 +8,7 @@ import CircleLoader from "react-spinners/CircleLoader";
 import { EventEmitter } from "./utils/eventEmitter";
 import Cookie from "universal-cookie";
 import axios from "axios";
+import { RefreshToken } from "./utils/refreshToken";
 
 const cookie = new Cookie();
 
@@ -63,8 +64,21 @@ class Recetas extends Component {
           this.setState({ busquedaRecetas: response.data["hydra:member"] });
           this.setState({ loading: false });
         } else {
-          console.log(response);
+          //console.log(response);
         }
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
     EventEmitter.subscribe("buscar", (event) => {
       this.mapearBusqueda(event);

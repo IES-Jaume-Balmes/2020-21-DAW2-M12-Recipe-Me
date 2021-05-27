@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Alert from "@material-ui/lab/Alert";
+import { RefreshToken } from "./utils/refreshToken";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
@@ -87,6 +88,19 @@ class Listas extends Component {
         } else {
           console.log(response);
         }
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
   }
 
@@ -95,11 +109,25 @@ class Listas extends Component {
       return item.id !== id;
     });
     this.setState({ listas: newList });
-    axios.delete(baseDeleteUrl + id, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+    axios
+      .delete(baseDeleteUrl + id, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
+      });
   };
 
   // GUARDAMOS LISTA DE LA COMPRA
@@ -123,12 +151,21 @@ class Listas extends Component {
       })
       .then((response) => {
         console.log(response.data);
-        this.setState({open: true});
+        this.setState({ open: true });
         this.componentDidMount();
       })
-      .catch((error) => {
-        console.log(error);
-        console.log(jsonPeticion);
+      .catch(function (error) {
+        if (error.response.data.message === "Expired JWT Token") {
+          console.log(error.response.data);
+          RefreshToken();
+          // console.log(error.response.status);
+          // console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+        // console.log(error.config);
       });
   };
 
@@ -141,8 +178,20 @@ class Listas extends Component {
     return (
       <Grid container justify="space-around">
         <Grid item xs={12}>
-          <Snackbar anchorOrigin={{ vertical:'top' , horizontal:'center' }} open={this.state.open} autoHideDuration={6000} onClose={()=>{this.setState({open: false})}}>
-            <Alert onClose={()=>{this.setState({open: false})}} severity="success">
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={this.state.open}
+            autoHideDuration={6000}
+            onClose={() => {
+              this.setState({ open: false });
+            }}
+          >
+            <Alert
+              onClose={() => {
+                this.setState({ open: false });
+              }}
+              severity="success"
+            >
               Lista añadida correctamente!
             </Alert>
           </Snackbar>
