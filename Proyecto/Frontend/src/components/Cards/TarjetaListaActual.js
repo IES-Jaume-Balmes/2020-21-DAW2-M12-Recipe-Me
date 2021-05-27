@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TarjetaListaActual(props) {
-  const arrayIngredients = props.arrayIngres;
+  const actualizar = props.actualizar;
   const classes = useStyles();
-  const [checked, setChecked] = React.useState([0]);
-  const [list, setList] = React.useState(arrayIngredients);
+  const [checked, setChecked] = useState([0]);
+  const [list, setList] = useState(props.arrayIngres);
   
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -37,12 +37,18 @@ export default function TarjetaListaActual(props) {
     setChecked(newChecked);
   };
 
+  useEffect(() => {
+    //console.log(props.arrayIngres)
+    setList(props.arrayIngres)
+  },[props.arrayIngres])
+
   const handleRemove = (id) => {
-    console.log(id);
-    const newList = list.filter((item) => {
+    //console.log(id);
+    /* const newList = list.filter((item) => {
       return item.id !== id;
     });
-    setList(newList);
+    setList(newList); */
+    actualizar(id);
   };
 
   if (list !== undefined) {
@@ -51,7 +57,6 @@ export default function TarjetaListaActual(props) {
         <List className={classes.root}>
           {list.map((value, index) => {
             const labelId = `checkbox-list-label-${index}`;
-
             return (
               <ListItem
                 key={index}
@@ -69,7 +74,7 @@ export default function TarjetaListaActual(props) {
                     inputProps={{ "aria-labelledby": labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={`${value.nombre}`} />
+                <ListItemText id={labelId} primary={`${value.name}`} />
                 <ListItemSecondaryAction>
                   <IconButton
                     edge="end"

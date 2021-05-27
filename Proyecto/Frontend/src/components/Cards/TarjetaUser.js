@@ -35,7 +35,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
+const TarjetaUser = ({
+  usuario,
+  cerrarSesion,
+  handleClickOpen,
+  numeroListas,
+  numeroIngredientes,
+}) => {
   const classes = useStyles();
 
   // Para generar una imagen aleatoria colocamos un digito al final del string.
@@ -46,11 +52,6 @@ const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
       <CardHeader
         avatar={
           <Avatar alt="Remy Sharp" src={imgString} className={classes.large} />
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
         }
         title={usuario.username}
         subheader={usuario.name}
@@ -65,9 +66,29 @@ const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
           {usuario.email}
         </Typography>
       </CardContent>
+      <CardMedia>
+        <Grid container  alignItems="center" justify="space-around" style={{textAlign:'center',color:'grey'}}>
+          <Grid item>
+            <Grid item>
+              {numeroListas}
+            </Grid>
+            <Grid item>Listas Guardadas</Grid>
+          </Grid>
+          <Grid >
+            <Grid item>{numeroIngredientes}</Grid>
+            <Grid item>Ingredientes Usados</Grid>
+          </Grid>
+        </Grid>
+      </CardMedia>
       <CardContent>
-        <Grid container direction="row" alignItems="center" justify="space-around">
-          <Grid>
+        <Grid
+          container
+          direction="row"
+          alignItems="center"
+          justify="space-around"
+          spacing={2}
+        >
+          <Grid item>
             <Button
               variant="contained"
               color="secondary"
@@ -76,10 +97,10 @@ const TarjetaUser = ({ usuario, cerrarSesion, handleClickOpen }) => {
               Cerrar Sesion
             </Button>
           </Grid>
-          <Grid>
+          <Grid item>
             <Button
               variant="contained"
-              color="secondary"
+              
               onClick={() => handleClickOpen()}
             >
               Darse de baja

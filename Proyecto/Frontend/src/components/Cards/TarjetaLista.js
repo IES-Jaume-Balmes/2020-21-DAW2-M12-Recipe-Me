@@ -29,14 +29,14 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TarjetaLista({ lista, eliminar }) {
+export default function TarjetaLista({ lista, eliminar , cargar}) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardContent>
         <List>
-          <ListItem>
+          <ListItem onClick={()=>{cargar(lista)}}>
             <Typography variant="h5" component="h2">
               {lista.name}
             </Typography>
