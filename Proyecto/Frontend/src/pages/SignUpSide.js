@@ -113,7 +113,8 @@ export default function SignInSide() {
   };
 
   const comprobarPass = (pass) => {
-    const regexPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    const regexPass =
+      /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
     if (!regexPass.test(pass)) {
       return setErrorPass(true);
     }
