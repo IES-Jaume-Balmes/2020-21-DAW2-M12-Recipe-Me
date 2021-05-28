@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on Documentación Recipe-me</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/</link>
+    <description>Recent content in Frontend on Documentación Recipe-me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 May 2021 19:47:05 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Axios</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</link>
+      <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</guid>
+      <description>Interceptores    Creamos una funcion para interceptar las llamadas asyncronas. Aplican el header con token automaticamente. En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/</guid>
+      <description>Listas.js    Actualización     Ahora es responsive, se tuvo que introducir a componentes Grid que hacian un mejor manejo del css-grid Al guardar una lista de la compra mostraba un alert predeterminado de Chrome, ahora tiene un componente Snackbar que muestra una alerta cuando una Lista de la compra a sido añadida correctamente.  &amp;lt;Snackbar anchorOrigin={{ vertical: &amp;#34;top&amp;#34;, horizontal: &amp;#34;center&amp;#34; }} open={this.state.open} autoHideDuration={6000} onClose={() =&amp;gt; { this.</description>
+    </item>
+    
+  </channel>
+</rss>

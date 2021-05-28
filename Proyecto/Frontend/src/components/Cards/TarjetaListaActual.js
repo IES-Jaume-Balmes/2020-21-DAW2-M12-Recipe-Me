@@ -38,16 +38,10 @@ export default function TarjetaListaActual(props) {
   };
 
   useEffect(() => {
-    //console.log(props.arrayIngres)
     setList(props.arrayIngres)
   },[props.arrayIngres])
 
   const handleRemove = (id) => {
-    //console.log(id);
-    /* const newList = list.filter((item) => {
-      return item.id !== id;
-    });
-    setList(newList); */
     actualizar(id);
   };
 

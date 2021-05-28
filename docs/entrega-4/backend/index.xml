@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Documentación Recipe-me</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/</link>
+    <description>Recent content in Backend on Documentación Recipe-me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 May 2021 19:30:03 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</link>
+      <pubDate>Thu, 27 May 2021 19:32:36 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</guid>
+      <description>Landing page API    Ahora podemos acceder mediante dos autenticadores a la API.
+ JWT PHPSESSID  </description>
+    </item>
+    
+    <item>
+      <title>JWT</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</link>
+      <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</guid>
+      <description>Token refresca automaticamente    Enviamos un token de refresco junto con el token original. Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.
+Privatización de operaciones de usuario    </description>
+    </item>
+    
+  </channel>
+</rss>
