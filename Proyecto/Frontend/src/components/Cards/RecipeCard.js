@@ -44,6 +44,7 @@ export default function RecipeReviewCard({ receta }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [like, setLike] = useState(false);
+  const [fav, setFav] = useState(false);
 
   const anadirLista = (lista) => {
     const cookie = new Cookie();
@@ -111,8 +112,10 @@ export default function RecipeReviewCard({ receta }) {
           }
           action={
             <IconButton aria-label="settings">
-              <StarIcon style={{ color: "yellow" }} />
+              <StarIcon aria-label="add to favorites" style={{ color: fav ?"yellow" : "grey"}} onClick={()=>setFav(!fav)} />
             </IconButton>
+            /* <IconButton aria-label="add to favorites" color={like ? 'secondary' :"default"} onClick={() => setLike(!like)}
+          >*/
           }
           title={receta.name}
           // subheader="September 14, 2016"
