@@ -89,7 +89,6 @@ export default function SignInSide() {
       password: password,
     };
     console.log(jsonPeticion);
-    delete axios.defaults.headers.common["Authorization"];
     await axios
       .post(baseUrl, jsonPeticion)
       .then((response) => {
