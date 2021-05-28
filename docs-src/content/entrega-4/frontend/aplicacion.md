@@ -253,3 +253,5 @@ const [like, setLike] = useState(false);
   </Alert>
 </Snackbar>
 ```
+
+- Podemos marcar nuestras recetas como favoritas con una estrella que cuando la clicamos se pone en amarillo, en un futuro nos gustaría que puedes mirarlas como favoritas.... 
