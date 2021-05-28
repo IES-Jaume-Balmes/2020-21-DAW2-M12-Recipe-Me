@@ -6,10 +6,13 @@ import Cookie from "universal-cookie";
 
 const cookie = new Cookie();
 const refreshUrl = "https://localhost:8000/api/token/refresh";
-axios.defaults.headers.common["Authorization"] =
+
+export const axiosIntercepted = axios.create();
+
+axiosIntercepted.defaults.headers.common["Authorization"] =
   "Bearer " + cookie.get("token");
 
-axios.interceptors.response.use(
+axiosIntercepted.interceptors.response.use(
   (response) => {
     return response;
   },
@@ -44,7 +47,7 @@ axios.interceptors.response.use(
               path: "/",
             });
             // console.log(originalRequest.url);
-            return axios.get(originalRequest.url, {
+            return axiosIntercepted.get(originalRequest.url, {
               headers: {
                 Authorization: "Bearer " + res.token,
               },
@@ -58,7 +61,7 @@ axios.interceptors.response.use(
   }
 );
 
-axios.interceptors.request.use(
+axiosIntercepted.interceptors.request.use(
   (response) => {
     return response;
   },
@@ -93,7 +96,7 @@ axios.interceptors.request.use(
               path: "/",
             });
             // console.log(originalRequest.url);
-            return axios.get(originalRequest.url, {
+            return axiosIntercepted.get(originalRequest.url, {
               headers: {
                 Authorization: "Bearer " + res.token,
               },

@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import CircleLoader from "react-spinners/CircleLoader";
 import { EventEmitter } from "./utils/eventEmitter";
-import axios from "axios";
+import { axiosIntercepted } from "../index";
 
 const styles = (theme) => ({
   override: {
@@ -38,7 +38,7 @@ class Recetas extends Component {
     // let token = cookie.get("token");
     const apiUrl = "https://127.0.0.1:8000/api/recipes";
 
-    await axios
+    await axiosIntercepted
       .get(apiUrl)
       .then((response) => {
         // console.log(response.data);

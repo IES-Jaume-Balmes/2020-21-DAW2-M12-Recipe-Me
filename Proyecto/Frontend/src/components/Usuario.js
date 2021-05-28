@@ -10,7 +10,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import axios from "axios";
+import { axiosIntercepted } from "../index";
 
 const cookie = new Cookie();
 const token = cookie.get("token");
@@ -37,7 +37,7 @@ export default class Usuario extends Component {
     var tokenDecoded = jwt_decode(token);
     const deleteUsuario = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
     //console.log(deleteUsuario);
-    await axios
+    await axiosIntercepted
       .delete(deleteUsuario)
       .then((response) => {
         // console.log(response.data);
@@ -73,7 +73,7 @@ export default class Usuario extends Component {
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);
     const profileEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}`;
-    axios
+    axiosIntercepted
       .get(profileEndpoint)
       .then((response) => {
         this.setState({ usuario: response.data });

@@ -7,10 +7,10 @@ import Cookie from "universal-cookie";
 import TextField from "@material-ui/core/TextField";
 import { Grid, IconButton, Snackbar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Alert from "@material-ui/lab/Alert";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
+import { axiosIntercepted } from "../index";
 
 const cookie = new Cookie();
 let arrayIngres = cookie.get("ingredientes");
@@ -76,7 +76,7 @@ class Listas extends Component {
   async componentDidMount() {
     var tokenDecoded = jwt_decode(token);
     const userEndpoint = `https://127.0.0.1:8000/api/users/${tokenDecoded.userId}.json`;
-    await axios
+    await axiosIntercepted
       .get(userEndpoint)
       .then((response) => {
         console.log(response.data);
@@ -98,7 +98,7 @@ class Listas extends Component {
       return item.id !== id;
     });
     this.setState({ listas: newList });
-    axios.delete(baseDeleteUrl + id).catch(function (error) {
+    axiosIntercepted.delete(baseDeleteUrl + id).catch(function (error) {
       if (error.response.data.message === "Expired JWT Token") {
         console.log(error.response.data);
       } else if (error.request) {
@@ -123,7 +123,7 @@ class Listas extends Component {
     };
 
     console.log(jsonPeticion);
-    await axios
+    await axiosIntercepted
       .post(listasEndPoint, jsonPeticion)
       .then((response) => {
         console.log(response.data);

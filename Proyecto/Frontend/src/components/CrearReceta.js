@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import TarjetaIngredients from "./Cards/TarjetaIngredients";
-import axios from "axios";
+import { axiosIntercepted } from "../index";
 import Select from "react-select";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
@@ -23,7 +23,7 @@ export default class CrearReceta extends Component {
   };
 
   async componentDidMount() {
-    await axios
+    await axiosIntercepted
       .get(baseUrl)
       .then((response) => {
         if (response.status === 200) {
@@ -81,7 +81,7 @@ export default class CrearReceta extends Component {
       ingredients: arraySoloId,
     };
     console.log(jsonPeticion);
-    await axios
+    await axiosIntercepted
       .post(baseUrlAdd, jsonPeticion)
       .then((response) => {
         console.log(response.data);
