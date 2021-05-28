@@ -111,7 +111,7 @@ export default function RecipeReviewCard({ receta }) {
           }
           action={
             <IconButton aria-label="settings">
-              <StarIcon aria-label="add to favorites" style={{ color: fav ?"yellow" : "grey"}} onClick={()=>setFav(!fav)} />
+              <StarIcon aria-label="add to favorites" style={{ color: fav ?"#fbc02d" : "grey"}} onClick={()=>setFav(!fav)} />
             </IconButton>
             
           }
