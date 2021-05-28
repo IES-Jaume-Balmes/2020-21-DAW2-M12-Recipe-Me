@@ -35,7 +35,7 @@ export default function TarjetaLista({ lista, eliminar , cargar}) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <List>
+        <List style={{cursor:"pointer"}}>
           <ListItem onClick={()=>{cargar(lista)}}>
             <Typography variant="h5" component="h2">
               {lista.name}
