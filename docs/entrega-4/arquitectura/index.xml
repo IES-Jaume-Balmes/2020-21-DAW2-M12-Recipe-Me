@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Base_de_datos on Documentación Recipe-me</title>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/</link>
+    <description>Recent content in Base_de_datos on Documentación Recipe-me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 May 2021 19:59:27 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CambiosAq</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/cambiosAq/</link>
+      <pubDate>Sat, 29 May 2021 11:45:10 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/cambiosAq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cambios en BDD</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/CambiosBD/</link>
+      <pubDate>Sat, 29 May 2021 11:08:25 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/CambiosBD/</guid>
+      <description>Quitamos    La tabla roles carece de utilidad ya que finalmente los roles de usuario quedan directamente almacenados en la tabla usuario en formato array.
+Añadimos     Columna roles en la tabla usuario. Columna createdAt en la tabla recetas. Nueva tabla refresh_tokens autogenerada automaticamente por el paquete markitosgv. Contiene información del token de refresco: fecha de validez, nombre de usuario, id del token y el token en si.</description>
+    </item>
+    
+  </channel>
+</rss>

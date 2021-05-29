@@ -1,1 +1,0 @@
-![Mapa base de datos](/2020-21-DAW2-M12-Recipe-Me/BBDDfinal.png)

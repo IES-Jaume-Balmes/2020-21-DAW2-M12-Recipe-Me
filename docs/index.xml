@@ -5,15 +5,24 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Documentación Recipe-me</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 May 2021 11:08:25 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 11:45:10 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cambios</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/</link>
+      <title>CambiosAq</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/cambiosAq/</link>
+      <pubDate>Sat, 29 May 2021 11:45:10 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/cambiosAq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cambios en BDD</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/CambiosBD/</link>
       <pubDate>Sat, 29 May 2021 11:08:25 +0200</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/</guid>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/arquitectura/CambiosBD/</guid>
       <description>Quitamos    La tabla roles carece de utilidad ya que finalmente los roles de usuario quedan directamente almacenados en la tabla usuario en formato array.
-Añadimos     Columna roles en la tabla usuario. Columna createdAt en la tabla recetas.  Modificamos    Nomenclatura para algunas columnas para hacerlo mas entendible.</description>
+Añadimos     Columna roles en la tabla usuario. Columna createdAt en la tabla recetas. Nueva tabla refresh_tokens autogenerada automaticamente por el paquete markitosgv. Contiene información del token de refresco: fecha de validez, nombre de usuario, id del token y el token en si.</description>
     </item>
     
     <item>
@@ -343,15 +352,6 @@ RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada r
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</guid>
       <description>TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/</guid>
-      <description></description>
     </item>
     
     <item>
