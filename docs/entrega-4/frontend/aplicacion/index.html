@@ -1075,8 +1075,8 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/" class="gdoc-nav__entry ">
-                        API
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/" class="gdoc-nav__entry ">
+                        Firewalls API-Platform
                     </a>
                 </span>
             
@@ -1100,7 +1100,7 @@
             
                 <span class="flex">
                     <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/" class="gdoc-nav__entry ">
-                        JWT
+                        JWT Refresh
                     </a>
                 </span>
             
@@ -1118,6 +1118,67 @@
             
             
         
+            
+            
+
+            
+            
+            
+            
+            
+            
+
+            <li>
+            
+            <input type="checkbox" id="navtree-371986e2" class="gdoc-nav__toggle" >
+            <label for="navtree-371986e2" class="flex justify-between">
+            
+            
+                <span class="flex">Base_de_datos</span>
+            
+            
+                <svg class="icon gdoc_keyborad_arrow_left"><use xlink:href="#gdoc_keyborad_arrow_left"></use></svg>
+                <svg class="icon gdoc_keyborad_arrow_down hidden"><use xlink:href="#gdoc_keyborad_arrow_down"></use></svg>
+            </label>
+            
+
+            
+                
+    
+
+    <ul class="gdoc-nav__list">
+        
+            
+            
+
+            
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/" class="gdoc-nav__entry ">
+                        Bbdd
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+        
+    </ul>
+
+            
+            </li>
+            
             
             
 
@@ -1186,8 +1247,8 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/" class="gdoc-nav__entry ">
-                        Axios
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/" class="gdoc-nav__entry ">
+                        Interceptores Axios
                     </a>
                 </span>
             
@@ -1438,10 +1499,40 @@
   <span class="o">&lt;</span><span class="err">/Alert&gt;</span>
 <span class="o">&lt;</span><span class="err">/Snackbar&gt;</span>
 </code></pre></div><p>El funcionamiento es sencillo, se crea una variable de estado a <code>false</code>, y en la función <code>guardarListaCompra</code> cuando la respuesta de la API es correcta, cambia el valor de <code>open</code> a <code>true</code>. Luego el alert se cerrará automaticamente después de 6 segundos o cuando el usuario le de al boton de cerrar.</p>
-<div class="gdoc-page__anchorwrap">
-    <h1 id="indexjs">
-        Index.js
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#indexjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Index.js" href="#indexjs">
+<ul>
+<li>Se ha cambiado el nombre de la variable de estado <code>textField</code> por <code>nombreLista</code> ya que la primera no definia correctamente la función de esa variable.</li>
+<li>Se ha introducido la variable de estado <code>arrayIngredientes</code>, antes se utilizaba solo <code>arrayIngres</code> que eran los ingredientes guardados en un cookie, ahora al estar en una variable de estado es más fácil controlar el renderizado de los componentes que dependen de la lista de ingredientes.</li>
+<li>Se ha añadido la función <code>actualizarLista()</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">actualizarLista</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">newList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">arrayIngredientes</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">arrayIngredientes</span><span class="o">:</span> <span class="nx">newList</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div><p>Esta función se le pasa como parametro al componente <code>TarjetaListaActual</code> la cual controla si un elemento de la lista de ingredientes es eliminado. (callback)</p>
+<ul>
+<li>Se ha añadido la función <code>cargarListaGuardada()</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">cargarListaGuardada</span> <span class="o">=</span> <span class="p">(</span><span class="nx">lista</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">nombreLista</span><span class="o">:</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">name</span> <span class="p">});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">arrayIngredientes</span><span class="o">:</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">ingredients</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div><p>Que se encarga de actualizar las variable de estado de nombre y lista de ingredientes en la parte de <code>TarjetaListaActual</code> para al hacer clic en una lista guardada se cargue automaticamente en la <code>TarjetaListaActual</code></p>
+<ul>
+<li>Se ha añadido un boton para copiar la lista de la compra, que se está visualizando, en el portapapeles. Para esto se ha añadido un boton con la función en el parametro <code>onClick</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">texto</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">arrayIngredientes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">texto</span> <span class="o">+=</span> <span class="s2">&#34;\n- &#34;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="nx">texto</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="tarjetalistaactualjs">
+        TarjetaListaActual.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#tarjetalistaactualjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TarjetaListaActual.js" href="#tarjetalistaactualjs">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h1>
@@ -1449,6 +1540,51 @@
     <h2 id="actualización-1">
         Actualización
         <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-1">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Ahora recive como <code>props</code> la función <code>actualizarLista</code> a través del parametro <code>actualizar</code></li>
+<li>Se ha añadido la función de react <code>useEffect()</code> para que al recibir una actualización de la lista de ingredientes vuelva a rendedizar los contenidos de dicha Array:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setList</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">arrayIngres</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">props</span><span class="p">.</span><span class="nx">arrayIngres</span><span class="p">]);</span>
+</code></pre></div><ul>
+<li>Se ha modificado la función <code>handleRemove</code> para que simplemente llame a la función que se le paso como parametro desde el componente padre y le pase como parametro el id del ingrediente a eliminar:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">handleRemove</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">actualizar</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="tarjetalistajs">
+        TarjetaLista.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#tarjetalistajs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TarjetaLista.js" href="#tarjetalistajs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización-2">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-2">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Ahora recibe como <code>props</code> la función <code>cargarListaGuardada</code> para que al clickar en cada una de las listas guardadas devuelva en el callback la lista clickada, así se actualizará <code>TarjetaListaActual</code> actomaticamente:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">ListItem</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()=&gt;{</span><span class="nx">cargar</span><span class="p">(</span><span class="nx">lista</span><span class="p">)}}</span><span class="o">&gt;</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="indexjs">
+        Index.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#indexjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Index.js" href="#indexjs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><div class="gdoc-page__anchorwrap">
+    <h2 id="actualización-3">
+        Actualización
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-3">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1463,9 +1599,9 @@
         </a>
     </h1>
 </div><div class="gdoc-page__anchorwrap">
-    <h2 id="actualización-2">
+    <h2 id="actualización-4">
         Actualización
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-2">
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-4" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-4">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1480,9 +1616,9 @@
         </a>
     </h1>
 </div><div class="gdoc-page__anchorwrap">
-    <h2 id="actualización-3">
+    <h2 id="actualización-5">
         Actualización
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-3">
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#actualización-5" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Actualización" href="#actualizaci%c3%b3n-5">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1528,14 +1664,12 @@ Se compueba en la siguiente función si la contraseña es valida</li>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">errorPassRep</span><span class="p">,</span> <span class="nx">setErrorPassRep</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div><p>Y junto a un evento <code>onBlur={(e)=&gt;comprobarPassRep(e.target.value)}</code>.
 Se compueba en la siguiente función si las contraseñas coinciden</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">comprobarPassRep</span> <span class="o">=</span> <span class="p">(</span><span class="nx">pass</span><span class="p">)=&gt;{</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">pass</span> <span class="o">!==</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
-
-      <span class="k">return</span> <span class="nx">setErrorPassRep</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-   
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">setErrorPassRep</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">comprobarPassRep</span> <span class="o">=</span> <span class="p">(</span><span class="nx">pass</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">pass</span> <span class="o">!==</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">setErrorPassRep</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
   <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">setErrorPassRep</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">};</span>
 </code></pre></div><div class="gdoc-page__anchorwrap">
     <h2 id="usuario">
         Usuario
@@ -1553,21 +1687,63 @@ Se compueba en la siguiente función si las contraseñas coinciden</p>
           <span class="nx">Authorization</span><span class="o">:</span> <span class="s2">&#34;Bearer &#34;</span> <span class="o">+</span> <span class="nx">token</span><span class="p">,</span>
         <span class="p">},</span>
       <span class="p">})</span>
-</code></pre></div><div class="gdoc-page__anchorwrap">
+</code></pre></div><p>Añadido al usuario datos de sus listas y los ingredientes que ha utilizado en estas.
+Se han añadido estos datos dentro de UsuarioCard.
+Cuando la api nos devuelve la información le pasamos una función la cual setea al estado el número con la información del usuario sobre los ingredientes y las listas. Después simplemente se las pasamos al componente hijo con los &ldquo;props&rdquo; y alil lo pintamos de esta manera.</p>
+<div class="gdoc-page__anchorwrap">
     <h2 id="crear-receta">
         Crear receta
         <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#crear-receta" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Crear receta" href="#crear-receta">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><p>No se podrán añadir recetas a no ser que contenga nombre, descripción e ingredientes.</p>
+</div><ul>
+<li>No se podrán añadir recetas a no ser que contenga nombre, descripción e ingredientes.</li>
+</ul>
 <pre><code>  validateForm() {
 
     if(this.state.form.name.length &gt; 0 &amp;&amp; this.state.form.description.length &gt; 0 &amp;&amp; this.state.form.ingredients.length &gt; 0)
       return true;
-    
+
   }
 </code></pre><p>Esta función chequeará si se puede añadir la receta. Después reseteara todos los campos para que el usuario pueda volver añadir otra.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="recipecardjs">
+        RecipeCard.js
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/#recipecardjs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor RecipeCard.js" href="#recipecardjs">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Hemos añadido la funcionalidad para poder darle like. Podemos dar y quitar el like esta funcionalidad esta por desarrollar veremos si nos da tiempo a poder terminarla.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">like</span><span class="p">,</span> <span class="nx">setLike</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="o">&lt;</span><span class="nx">IconButton</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&#34;add to favorites&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">like</span> <span class="o">?</span> <span class="s1">&#39;secondary&#39;</span> <span class="o">:</span><span class="s2">&#34;default&#34;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setLike</span><span class="p">(</span><span class="o">!</span><span class="nx">like</span><span class="p">)}</span><span class="o">&gt;</span>
+</code></pre></div><ul>
+<li>Ahora la función que crea la cookie ya no llama <code>nombre</code> al nombre del ingrediente sino <code>name</code>, para que sea igual que lo que devuelve la API.</li>
+<li>Ahora al clickar en el boton del carrito para añadirlo a la lista de la compra sale un mensaje en la parte superior avisando que los ingredientes han sido añadidos correctamente. Para esto se ha creado una nueva variable de estado <code>const [open, setOpen] = useState(false);</code> y se ha ingregrado los componentes <code>Snackbar</code> y <code>Alert</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">Snackbar</span>
+  <span class="nx">anchorOrigin</span><span class="o">=</span><span class="p">{{</span> <span class="nx">vertical</span><span class="o">:</span> <span class="s2">&#34;top&#34;</span><span class="p">,</span> <span class="nx">horizontal</span><span class="o">:</span> <span class="s2">&#34;center&#34;</span> <span class="p">}}</span>
+  <span class="nx">open</span><span class="o">=</span><span class="p">{</span><span class="nx">open</span><span class="p">}</span>
+  <span class="nx">autoHideDuration</span><span class="o">=</span><span class="p">{</span><span class="mi">6000</span><span class="p">}</span>
+  <span class="nx">onClose</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setOpen</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="p">}}</span>
+<span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Alert</span>
+    <span class="nx">onClose</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setOpen</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}}</span>
+    <span class="nx">severity</span><span class="o">=</span><span class="s2">&#34;success&#34;</span>
+  <span class="o">&gt;</span>
+    <span class="nx">Ingredientes</span> <span class="nx">añadidos</span> <span class="nx">correctamente</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/Alert&gt;</span>
+<span class="o">&lt;</span><span class="err">/Snackbar&gt;</span>
+</code></pre></div><ul>
+<li>Podemos marcar nuestras recetas como favoritas con una estrella que cuando la clicamos se pone en amarillo, en un futuro nos gustaría que puedes mirarlas como favoritas&hellip;.</li>
+</ul>
 
 
     </article>

@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/</loc>
+    <lastmod>2021-05-28T19:59:27+02:00</lastmod>
+  </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/</loc>
     <lastmod>2021-05-26T19:47:05+02:00</lastmod>
   </url><url>
@@ -35,13 +38,16 @@
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</loc>
-    <lastmod>2021-05-27T19:32:36+02:00</lastmod>
-  </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</loc>
+    <lastmod>2021-05-28T19:59:27+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release4/</loc>
+    <lastmod>2021-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/</loc>
     <lastmod>2021-05-27T19:32:36+02:00</lastmod>
   </url><url>
-    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</loc>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/</loc>
     <lastmod>2021-05-27T19:30:46+02:00</lastmod>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</loc>
@@ -136,6 +142,8 @@
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-2/frontend/aplicacion/</loc>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</loc>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/</loc>
   </url><url>
     <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/aplicacion/</loc>
   </url><url>

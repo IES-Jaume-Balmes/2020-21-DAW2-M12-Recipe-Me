@@ -53,6 +53,7 @@ axiosIntercepted.interceptors.response.use(
               },
             });
           });
+        //TODO: Catch para el caso del refresco expirado -> Logout
         resolve(response);
       }
 
@@ -102,6 +103,7 @@ axiosIntercepted.interceptors.request.use(
               },
             });
           });
+        //TODO: Catch para el caso del refresco expirado -> Logout
         resolve(response);
       }
 

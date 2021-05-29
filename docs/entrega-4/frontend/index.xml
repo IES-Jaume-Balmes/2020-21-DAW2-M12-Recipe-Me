@@ -7,12 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 26 May 2021 19:47:05 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Axios</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</link>
+      <title>Interceptores Axios</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/</link>
       <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</guid>
-      <description>Interceptores    Creamos una funcion para interceptar las llamadas asyncronas. Aplican el header con token automaticamente. En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/</guid>
+      <description>Interceptores Axios    En el archivo base de nuestro frontend (Frontend/src/index.src) hemos creado una constante de la clase Axios con unas particularidades. Esta constante se encargará de interceptar las peticiones Axios que se hagan con ella y les aplicará su funcionalidad particular.
+El objetivo es que cada petición de tipo interceptor incluya por defecto el Json Web Token y además en caso de que el token esté expirado, se encargue de solicitar un nuevo JWT mediante el token de refresco y finalmente, vuelva a ejecutar la petición de manera automática.</description>
     </item>
     
     <item>

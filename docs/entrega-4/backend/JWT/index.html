@@ -10,12 +10,14 @@
 
 
 
-    <meta name="description" content="Token refresca automaticamente    Enviamos un token de refresco junto con el token original. Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.
-Privatización de operaciones de usuario    ">
+    <meta name="description" content="JWT Auto-Refresco    Hemos querido implementar un método para autorefrescar el token, de este modo ofrecemos seguridad para nuestros usuarios y ademas evitamos que necesiten logearse cada vez que caduque el token.
+Para ello utilizamos el bundle de markitosgv:
+Al logearnos recibimos 2 tokens. El token normal que contiene nuestras credenciales y un refresh_token que ademas se almacena en la base de datos de nuestro servidor.
+Al hacer una petición a backendya sabemos que el usuario envía el token normal para demostrar que esta autorizado para hacer esa operación.">
 
 
 
-    <title>JWT | Documentación Recipe-me</title>
+    <title>JWT Refresh | Documentación Recipe-me</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -1076,8 +1078,8 @@ Privatización de operaciones de usuario    ">
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/" class="gdoc-nav__entry ">
-                        API
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/" class="gdoc-nav__entry ">
+                        Firewalls API-Platform
                     </a>
                 </span>
             
@@ -1101,7 +1103,7 @@ Privatización de operaciones de usuario    ">
             
                 <span class="flex">
                     <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/" class="gdoc-nav__entry is-active">
-                        JWT
+                        JWT Refresh
                     </a>
                 </span>
             
@@ -1119,6 +1121,67 @@ Privatización de operaciones de usuario    ">
             
             
         
+            
+            
+
+            
+            
+            
+            
+            
+            
+
+            <li>
+            
+            <input type="checkbox" id="navtree-371986e2" class="gdoc-nav__toggle" >
+            <label for="navtree-371986e2" class="flex justify-between">
+            
+            
+                <span class="flex">Base_de_datos</span>
+            
+            
+                <svg class="icon gdoc_keyborad_arrow_left"><use xlink:href="#gdoc_keyborad_arrow_left"></use></svg>
+                <svg class="icon gdoc_keyborad_arrow_down hidden"><use xlink:href="#gdoc_keyborad_arrow_down"></use></svg>
+            </label>
+            
+
+            
+                
+    
+
+    <ul class="gdoc-nav__list">
+        
+            
+            
+
+            
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/" class="gdoc-nav__entry ">
+                        Bbdd
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+        
+    </ul>
+
+            
+            </li>
+            
             
             
 
@@ -1187,8 +1250,8 @@ Privatización de operaciones de usuario    ">
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/" class="gdoc-nav__entry ">
-                        Axios
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/" class="gdoc-nav__entry ">
+                        Interceptores Axios
                     </a>
                 </span>
             
@@ -1385,7 +1448,7 @@ Privatización de operaciones de usuario    ">
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/'><span itemprop='name'>Backend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>JWT</span><meta itemprop='position' content='5' /></li>
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/'><span itemprop='name'>Backend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>JWT Refresh</span><meta itemprop='position' content='5' /></li>
     
 
     
@@ -1402,24 +1465,32 @@ Privatización de operaciones de usuario    ">
 
 
     <article class="gdoc-markdown">
-        <h1>JWT</h1>
+        <h1>JWT Refresh</h1>
         <div class="gdoc-page__anchorwrap">
-    <h1 id="token-refresca-automaticamente">
-        Token refresca automaticamente
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/#token-refresca-automaticamente" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Token refresca automaticamente" href="#token-refresca-automaticamente">
+    <h1 id="jwt-auto-refresco">
+        JWT Auto-Refresco
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/#jwt-auto-refresco" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor JWT Auto-Refresco" href="#jwt-auto-refresco">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h1>
-</div><p>Enviamos un token de refresco junto con el token original.
-Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.</p>
+</div><p>Hemos querido implementar un método para <strong>autorefrescar el token</strong>, de este modo ofrecemos seguridad para nuestros usuarios y ademas evitamos que necesiten logearse cada vez que caduque el token.</p>
+<p>Para ello utilizamos el bundle de <a class="gdoc-markdown__link" href="https://github.com/markitosgv/JWTRefreshTokenBundle">markitosgv</a>:</p>
+<p>Al logearnos recibimos <strong>2 tokens</strong>. El token normal que contiene nuestras credenciales y un <code>refresh_token</code> que ademas se almacena en la base de datos de nuestro servidor.</p>
+<p>Al hacer una petición a <code>backend</code>ya sabemos que el usuario envía el <strong>token normal</strong> para demostrar que esta autorizado para hacer esa operación.</p>
+<p>Ese token tiene una fecha de expiración, que podemos controlar desde el archivo <code>Backend/config/packages/lexik_jwt_authentication</code>. Hemos puesto que expire en 3600 segundos (1 hora).</p>
 <div class="gdoc-page__anchorwrap">
-    <h1 id="privatización-de-operaciones-de-usuario">
-        Privatización de operaciones de usuario
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/#privatización-de-operaciones-de-usuario" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Privatización de operaciones de usuario" href="#privatizaci%c3%b3n-de-operaciones-de-usuario">
+    <h2 id="funcionamiento">
+        Funcionamiento
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/#funcionamiento" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Funcionamiento" href="#funcionamiento">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
-    </h1>
-</div>
+    </h2>
+</div><p>En el caso de que el <strong>token normal</strong> se encuentre expirado, el usuario tiene la oportunidad de enviar su <strong>token de refresco</strong> para solicitar un nuevo <strong>token normal</strong>.</p>
+<p>Todo esto lo hacemos automáticamente mediente unos <a class="gdoc-markdown__link" href="../frontend/InterceptoresAxios">interceptores de peticiones</a> <code>axios</code> que hemos colocado en nuestro <strong>Frontend</strong>.</p>
+<p>Al hacerlo, nuestra API, mediante el <code>package de markitosgv</code>, se encarga automáticamente de comprobar si ese <strong>refresh_token</strong> es valido o ya se encuentra caducado.</p>
+<p>En caso de que sea válido, devuelve al usuario un nuevo objeto json con un par de <strong>tokens</strong> con una fecha de expiración actualizada.</p>
+<p>En el archivo <code>Backend/config/packages/gesdinet_jwt_refresh_token</code> podemos configurar el tiempo de expiración de nuestro <strong>token de refresco</strong>. En caso de que al pedir un nuevo <strong>token</strong> mediante el <strong>token de refresco</strong> resulte que no sea válido por caducidad, el frontend nos redirigirá automáticamente a la pantalla de <code>login</code> y eliminará todas las <strong>cookies</strong> que contienen información del <code>Usuario</code>.</p>
+
 
     </article>
 

@@ -10,13 +10,12 @@
 
 
 
-    <meta name="description" content="  Crear el formulari de registre: https://symfony.com/doc/4.2/doctrine/registration_form.html
-  Configurar base de dades https://symfony.com/doc/current/doctrine.html#configuring-the-database
- php bin/console doctrine:database:create php bin/console make:entity php bin/console make:migration php bin/console doctrine:migrations:migrate    ">
+    <meta name="description" content="Interceptores Axios    En el archivo base de nuestro frontend (Frontend/src/index.src) hemos creado una constante de la clase Axios con unas particularidades. Esta constante se encargará de interceptar las peticiones Axios que se hagan con ella y les aplicará su funcionalidad particular.
+El objetivo es que cada petición de tipo interceptor incluya por defecto el Json Web Token y además en caso de que el token esté expirado, se encargue de solicitar un nuevo JWT mediante el token de refresco y finalmente, vuelva a ejecutar la petición de manera automática.">
 
 
 
-    <title>Registro | Documentación Recipe-me</title>
+    <title>Interceptores Axios | Documentación Recipe-me</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -118,7 +117,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-2d01c28b" class="gdoc-nav__toggle" checked>
+            <input type="checkbox" id="navtree-2d01c28b" class="gdoc-nav__toggle" >
             <label for="navtree-2d01c28b" class="flex justify-between">
             
             
@@ -1022,7 +1021,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" checked>
             <label for="navtree-6e6c58e8" class="flex justify-between">
             
             
@@ -1193,7 +1192,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-b23c6ff6" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-b23c6ff6" class="gdoc-nav__toggle" checked>
             <label for="navtree-b23c6ff6" class="flex justify-between">
             
             
@@ -1249,7 +1248,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/" class="gdoc-nav__entry is-active">
                         Interceptores Axios
                     </a>
                 </span>
@@ -1447,7 +1446,7 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-0/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-0/'><span itemprop='name'>Entrega 0</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/'><span itemprop='name'>Instrucciones</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Registro</span><meta itemprop='position' content='5' /></li>
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/'><span itemprop='name'>Frontend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Interceptores Axios</span><meta itemprop='position' content='5' /></li>
     
 
     
@@ -1464,23 +1463,17 @@
 
 
     <article class="gdoc-markdown">
-        <h1>Registro</h1>
-        <ol>
-<li>
-<p>Crear el formulari de registre:
-<a href="https://symfony.com/doc/4.2/doctrine/registration_form.html">https://symfony.com/doc/4.2/doctrine/registration_form.html</a></p>
-</li>
-<li>
-<p>Configurar base de dades
-<a href="https://symfony.com/doc/current/doctrine.html#configuring-the-database">https://symfony.com/doc/current/doctrine.html#configuring-the-database</a></p>
-<ul>
-<li>php bin/console doctrine:database:create</li>
-<li>php bin/console make:entity</li>
-<li>php bin/console make:migration</li>
-<li>php bin/console doctrine:migrations:migrate</li>
-</ul>
-</li>
-</ol>
+        <h1>Interceptores Axios</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h1 id="interceptores-axios">
+        Interceptores Axios
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/#interceptores-axios" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Interceptores Axios" href="#interceptores-axios">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><p>En el archivo base de nuestro <strong>frontend</strong> (<code>Frontend/src/index.src</code>) hemos creado una constante de la clase <code>Axios</code> con unas particularidades. Esta constante se encargará de interceptar las peticiones <code>Axios</code> que se hagan con ella y les aplicará su funcionalidad particular.</p>
+<p>El objetivo es que cada petición de tipo <code>interceptor</code> incluya por defecto el <strong>Json Web Token</strong> y además en caso de que el token esté expirado, se encargue de solicitar un nuevo JWT mediante el <strong>token de refresco</strong> y finalmente, vuelva a ejecutar la petición de manera automática.</p>
+<p>En caso de que el <strong>token de refresco</strong> también haya expirado, la función hará un <code>catch</code> del error y hará un logout del usuario, conduciendolo a la pantalla de <strong>login</strong> y eliminando sus cookies personales.</p>
 
 
     </article>

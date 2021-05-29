@@ -5,34 +5,48 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Documentación Recipe-me</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 27 May 2021 19:32:36 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 19:59:27 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>API</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</link>
+      <title>Release 4</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release4/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release4/</guid>
+      <description>Hola Recipe-Users!
+Último objetivo la presentación. Ha sido un mes duro de sonrisas y lagrimas queremos seguir desarrollando todas las ideas infinitas que tenemos y se nos ocurren a medida que seguimos creando pero, el tiempo es el que es. Estamos satisfechos, contentos y felices de que en un año atípico contra todo pronóstico nace Recipe-Me. Hemos sabido superar cualquier obstáculo que nos impedia avanzar a base de comunicación y ayudándonos entre los minions de Recipe-workers.</description>
+    </item>
+    
+    <item>
+      <title>Firewalls API-Platform</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/</link>
       <pubDate>Thu, 27 May 2021 19:32:36 +0200</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</guid>
-      <description>Landing page API    Ahora podemos acceder mediante dos autenticadores a la API.
- JWT PHPSESSID  </description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/</guid>
+      <description>Acceso a Swagger + JWT    Hasta ahora hemos conseguido que nuestros usuarios puedan acceder a los endpoints mediante el Json Web Token y su herramienta de refresco.
+Pero esto nos ocasionó un problema. No podíamos trabajar con la herramienta Swaggerde la API, ya que cada endpoint nos pedía un JWT y nuestra manera de acceder y almacenarlos estaba preparada para funcionar mediante las herramientas de Frontend.
+(Recordemos que Swagger es la interfaz gráfica para la API que nos ofrece el paquete de Api Platform).</description>
     </item>
     
     <item>
-      <title>Axios</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</link>
+      <title>Interceptores Axios</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/</link>
       <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/JWT/</guid>
-      <description>Interceptores    Creamos una funcion para interceptar las llamadas asyncronas. Aplican el header con token automaticamente. En caso de error solicitan un nuevo token y refrescan la informacion de manera automatica.</description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/frontend/InterceptoresAxios/</guid>
+      <description>Interceptores Axios    En el archivo base de nuestro frontend (Frontend/src/index.src) hemos creado una constante de la clase Axios con unas particularidades. Esta constante se encargará de interceptar las peticiones Axios que se hagan con ella y les aplicará su funcionalidad particular.
+El objetivo es que cada petición de tipo interceptor incluya por defecto el Json Web Token y además en caso de que el token esté expirado, se encargue de solicitar un nuevo JWT mediante el token de refresco y finalmente, vuelva a ejecutar la petición de manera automática.</description>
     </item>
     
     <item>
-      <title>JWT</title>
+      <title>JWT Refresh</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</link>
       <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</guid>
-      <description>Token refresca automaticamente    Enviamos un token de refresco junto con el token original. Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.
-Privatización de operaciones de usuario    </description>
+      <description>JWT Auto-Refresco    Hemos querido implementar un método para autorefrescar el token, de este modo ofrecemos seguridad para nuestros usuarios y ademas evitamos que necesiten logearse cada vez que caduque el token.
+Para ello utilizamos el bundle de markitosgv:
+Al logearnos recibimos 2 tokens. El token normal que contiene nuestras credenciales y un refresh_token que ademas se almacena en la base de datos de nuestro servidor.
+Al hacer una petición a backendya sabemos que el usuario envía el token normal para demostrar que esta autorizado para hacer esa operación.</description>
     </item>
     
     <item>
@@ -319,6 +333,15 @@ RecipeCards.js    se ha creado un boton de añadir a lista de la compra a cada r
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-3/frontend/aplicacion/</guid>
       <description>TarjetaListaActual.js    Obstaculos     Se ha encontrado un error al mostrar la lista de la compra por primera vez, al no existir una lista de la compra en una cookie, al hacer un .map el código peta al ser null. Este problema estaba gestionado en versiones anteriores pero se elimino en algún punto. Se ha vuelto a introducir el codigo que controla esa condición, si no existe cookie enviará el siguiente mensaje.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/bbdd/</guid>
+      <description></description>
     </item>
     
     <item>

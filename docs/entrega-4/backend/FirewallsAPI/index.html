@@ -10,13 +10,13 @@
 
 
 
-    <meta name="description" content="  Crear el formulari de registre: https://symfony.com/doc/4.2/doctrine/registration_form.html
-  Configurar base de dades https://symfony.com/doc/current/doctrine.html#configuring-the-database
- php bin/console doctrine:database:create php bin/console make:entity php bin/console make:migration php bin/console doctrine:migrations:migrate    ">
+    <meta name="description" content="Acceso a Swagger &#43; JWT    Hasta ahora hemos conseguido que nuestros usuarios puedan acceder a los endpoints mediante el Json Web Token y su herramienta de refresco.
+Pero esto nos ocasionó un problema. No podíamos trabajar con la herramienta Swaggerde la API, ya que cada endpoint nos pedía un JWT y nuestra manera de acceder y almacenarlos estaba preparada para funcionar mediante las herramientas de Frontend.
+(Recordemos que Swagger es la interfaz gráfica para la API que nos ofrece el paquete de Api Platform).">
 
 
 
-    <title>Registro | Documentación Recipe-me</title>
+    <title>Firewalls API-Platform | Documentación Recipe-me</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -118,7 +118,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-2d01c28b" class="gdoc-nav__toggle" checked>
+            <input type="checkbox" id="navtree-2d01c28b" class="gdoc-nav__toggle" >
             <label for="navtree-2d01c28b" class="flex justify-between">
             
             
@@ -1022,7 +1022,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" checked>
             <label for="navtree-6e6c58e8" class="flex justify-between">
             
             
@@ -1077,7 +1077,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/" class="gdoc-nav__entry is-active">
                         Firewalls API-Platform
                     </a>
                 </span>
@@ -1447,7 +1447,7 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-0/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-0/'><span itemprop='name'>Entrega 0</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-0/instrucciones/'><span itemprop='name'>Instrucciones</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Registro</span><meta itemprop='position' content='5' /></li>
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/'><span itemprop='name'>Backend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Firewalls API-Platform</span><meta itemprop='position' content='5' /></li>
     
 
     
@@ -1464,23 +1464,84 @@
 
 
     <article class="gdoc-markdown">
-        <h1>Registro</h1>
-        <ol>
-<li>
-<p>Crear el formulari de registre:
-<a href="https://symfony.com/doc/4.2/doctrine/registration_form.html">https://symfony.com/doc/4.2/doctrine/registration_form.html</a></p>
-</li>
-<li>
-<p>Configurar base de dades
-<a href="https://symfony.com/doc/current/doctrine.html#configuring-the-database">https://symfony.com/doc/current/doctrine.html#configuring-the-database</a></p>
+        <h1>Firewalls API-Platform</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h1 id="acceso-a-swagger--jwt">
+        Acceso a Swagger + JWT
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/#acceso-a-swagger--jwt" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Acceso a Swagger &#43; JWT" href="#acceso-a-swagger--jwt">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><p>Hasta ahora hemos conseguido que nuestros usuarios puedan acceder a los endpoints mediante el <code>Json Web Token</code> y su herramienta de <code>refresco</code>.</p>
+<p>Pero esto nos ocasionó un problema. No podíamos trabajar con la herramienta <code>Swagger</code>de la <strong>API</strong>, ya que cada endpoint nos pedía un JWT y nuestra manera de acceder y almacenarlos estaba preparada para funcionar mediante las herramientas de <strong>Frontend</strong>.</p>
+<p>(Recordemos que <code>Swagger</code> es la interfaz gráfica para la <strong>API</strong> que nos ofrece el paquete de <a class="gdoc-markdown__link" href="https://api-platform.com/docs/distribution/">Api Platform</a>).</p>
+<p>Solucionamos el problema añadiendo un segundo modo de autentificación. El token de sessión o también llamado <code>PHPSESSID</code>.</p>
+<p>Hemos creado un controlador de login que va acompañado de un archivo <code>.twig</code> para crear una pequeña vista.</p>
+<p>Todo esto lo gestionamos mediante el archivo de seguridad que encontramos en:
+<code>Backend/config/security.yaml</code></p>
+<pre><code>firewalls:
+    # Acceso login al web token para entrar con token
+    login:
+        pattern:  ^/api/login
+        stateless: true
+        anonymous: true
+        json_login:
+            check_path:               /api/login_check
+            username_path: email
+            password_path: password
+            success_handler:          lexik_jwt_authentication.handler.authentication_success
+            failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+    
+    # put it before all your other firewall API entries
+    refresh:
+        pattern:  ^/api/token/refresh
+        stateless: true
+        anonymous: true
+        
+    # Acceso al PHPSESSID para entrar en backend
+    api:
+        anonymous: true
+        lazy: true
+        provider: app_user_provider
+        json_login:
+            check_path: app_login
+            username_path: email
+            password_path: password
+        guard:
+            authenticators:
+                - lexik_jwt_authentication.jwt_token_authenticator
+                - App\Security\LoginFormAuthenticator
+            entry_point: lexik_jwt_authentication.jwt_token_authenticator
+        logout:
+            path: app_logout
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h1 id="privatización-de-operaciones-de-usuario">
+        Privatización de operaciones de usuario
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/#privatización-de-operaciones-de-usuario" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Privatización de operaciones de usuario" href="#privatizaci%c3%b3n-de-operaciones-de-usuario">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div><p>Mediante las anotaciones del <code>Bundle de API Platform</code>podemos controlar el acceso a nuestros <code>endpoints</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="sd">/**
+</span><span class="sd"> * @ApiResource(
+</span><span class="sd"> *      collectionOperations={
+</span><span class="sd"> *          &#34;get&#34;={&#34;security&#34;=&#34;is_granted(&#39;ROLE_ADMIN&#39;)&#34;},
+</span><span class="sd"> *          &#34;post&#34;={&#34;security_post_denormalize&#34;=&#34;is_granted(&#39;ROLE_USER&#39;) and object.getPropietario() == user&#34;}
+</span><span class="sd"> *      },
+</span><span class="sd"> *      itemOperations={
+</span><span class="sd"> *          &#34;get&#34;={&#34;security&#34;=&#34;is_granted(&#39;ROLE_ADMIN&#39;)&#34;},
+</span><span class="sd"> *          &#34;delete&#34;={&#34;security&#34;=&#34;is_granted(&#39;ROLE_USER&#39;) and object.getPropietario() == user&#34;}
+</span><span class="sd"> *      }
+</span><span class="sd"> * )
+</span><span class="sd"> * @ORM\Entity(repositoryClass=ListaCompraRepository::class)
+</span><span class="sd"> */</span>
+</code></pre></div><p>Aqui arriba encontramos el ejemplo del acceso a nuestras listas de la compra.</p>
+<p>Por una parte tenemos las <code>collectionOperations</code> que són los endpoints que nos devuelven una colección de objetos de la classe <code>Lista_Compra</code> y por otra parte tenemos las <code>itemOperations</code> que nos permiten operar con un único objeto.
+Por ejemplo:</p>
 <ul>
-<li>php bin/console doctrine:database:create</li>
-<li>php bin/console make:entity</li>
-<li>php bin/console make:migration</li>
-<li>php bin/console doctrine:migrations:migrate</li>
+<li>Para obtener la información de todas las listas de la compra, hemos puesto que únicamente puedan hacerlo los usuarios con el <code>ROL DE ADMINISTRADOR</code>.</li>
+<li>Para crear una lista de la compra, tenemos que asegurarnos que únicamente puedan hacerlo usuarios con el <code>ROL DE USUARIO O SUPERIOR</code> <u>y además</u> el usuario al que se le asigna esa lista únicamente puede ser <strong>él mismo</strong>. De este modo, nos aseguramos de que <strong>Manolo</strong> solo pueda <code>POSTEAR</code> Listas de la compra para <strong>Manolo</strong> y no para <strong>Luisa</strong>.</li>
 </ul>
-</li>
-</ol>
 
 
     </article>

@@ -7,23 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 27 May 2021 19:30:03 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>API</title>
-      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</link>
+      <title>Firewalls API-Platform</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/</link>
       <pubDate>Thu, 27 May 2021 19:32:36 +0200</pubDate>
       
-      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/API/</guid>
-      <description>Landing page API    Ahora podemos acceder mediante dos autenticadores a la API.
- JWT PHPSESSID  </description>
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/FirewallsAPI/</guid>
+      <description>Acceso a Swagger + JWT    Hasta ahora hemos conseguido que nuestros usuarios puedan acceder a los endpoints mediante el Json Web Token y su herramienta de refresco.
+Pero esto nos ocasionó un problema. No podíamos trabajar con la herramienta Swaggerde la API, ya que cada endpoint nos pedía un JWT y nuestra manera de acceder y almacenarlos estaba preparada para funcionar mediante las herramientas de Frontend.
+(Recordemos que Swagger es la interfaz gráfica para la API que nos ofrece el paquete de Api Platform).</description>
     </item>
     
     <item>
-      <title>JWT</title>
+      <title>JWT Refresh</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</link>
       <pubDate>Thu, 27 May 2021 19:30:46 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/backend/JWT/</guid>
-      <description>Token refresca automaticamente    Enviamos un token de refresco junto con el token original. Al caducar el token original enviamos en token de refresco a cambio de un nuevo token.
-Privatización de operaciones de usuario    </description>
+      <description>JWT Auto-Refresco    Hemos querido implementar un método para autorefrescar el token, de este modo ofrecemos seguridad para nuestros usuarios y ademas evitamos que necesiten logearse cada vez que caduque el token.
+Para ello utilizamos el bundle de markitosgv:
+Al logearnos recibimos 2 tokens. El token normal que contiene nuestras credenciales y un refresh_token que ademas se almacena en la base de datos de nuestro servidor.
+Al hacer una petición a backendya sabemos que el usuario envía el token normal para demostrar que esta autorizado para hacer esa operación.</description>
     </item>
     
   </channel>
