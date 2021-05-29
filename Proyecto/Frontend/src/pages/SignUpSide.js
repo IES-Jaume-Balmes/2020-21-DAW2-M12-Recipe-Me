@@ -230,7 +230,7 @@ export default function SignInSide() {
             <Grid container justify="flex-end">
               <Grid item>
                 <Link href="/login" variant="body2">
-                  Ya tienes una cuenta? Logeate
+                  ¿Ya tienes una cuenta? Logeate!
                 </Link>
               </Grid>
             </Grid>
