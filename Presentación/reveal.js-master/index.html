@@ -19,6 +19,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
+        <section id="Full-Stack">
           <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/1"
@@ -27,41 +28,36 @@
           >
             <textarea data-template>
               ## Recipe-me!
-            </textarea>
+              ---
+              ## Arquitectura
+              <img class="r-stretch" src="../../docs-src/static/Arquitectura2.png"/>
+              ---
+              ## Database
+              <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png"/>
+          </textarea
+            >
           </section>
         </section>
-        <section>
+        <section id="Backend">
           <section
             data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/2"
-            data-background-opacity="0.6"
-            data-background-color="white"
+            data-background-image="./static/api-platform.png"
+            data-background-color="#30C1C2"
+            data-background-size="contain"
           >
             <textarea data-template>
-              ## Frontend
-              A paragraph with some text and a [link](http://hakim.se).
-              ---
-              ## Slide 2
-              ---
-              ## Interceptores Axios
+            ## Backend
+            [`Symfony require api`](https://api-platform.com/)
             </textarea>
           </section>
-        </section>
-        <section>
           <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/3"
-            data-background-opacity="0.6"
+            data-background-opacity="0.4"
             data-background-color="white"
           >
             <textarea data-template>
-              ## Backend
-              ---
-              ## Database
-              <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png" height="600" />
-              ---
-              ## Api Platform
-              [`Symfony require api`](https://api-platform.com/)
+              ## Data access
               ```php
               /**
               * @ApiResource(
@@ -80,12 +76,30 @@
               * @ORM\Entity(repositoryClass=UserRepository::class)
               */
               ```
-              ### Swagger
               ---
-              ## Endpoints
-              [link](#/1/2).
+              ## Autenticación y autorización
+              - Json Web Token
+              [Interceptores Axios](#/2/2).
+              - PHPSESSID
+              
+            </textarea>
+          </section>
+        </section>
+        <section id="Frontend">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Frontend
+              A paragraph with some text and a [link](http://hakim.se).
               ---
-              ## Json Web Token
+              ## Slide 2
+              ---
+              ## Interceptores Axios
+              [Json Web Token](#/1/2).
             </textarea>
           </section>
         </section>
