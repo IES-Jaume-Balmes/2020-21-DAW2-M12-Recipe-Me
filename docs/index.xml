@@ -5,7 +5,17 @@
     <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/</link>
     <description>Recent content on Documentación Recipe-me</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 May 2021 19:59:27 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 11:08:25 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cambios</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/</link>
+      <pubDate>Sat, 29 May 2021 11:08:25 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/</guid>
+      <description>Quitamos    La tabla roles carece de utilidad ya que finalmente los roles de usuario quedan directamente almacenados en la tabla usuario en formato array.
+Añadimos     Columna roles en la tabla usuario. Columna createdAt en la tabla recetas.  Modificamos    Nomenclatura para algunas columnas para hacerlo mas entendible.</description>
+    </item>
+    
     <item>
       <title>Release 4</title>
       <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/posts/release4/</link>

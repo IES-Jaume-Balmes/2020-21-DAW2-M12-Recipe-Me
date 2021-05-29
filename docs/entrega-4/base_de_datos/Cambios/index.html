@@ -10,11 +10,12 @@
 
 
 
-    <meta name="description" content="Dependencias:     Añadimos las dependencias que vamos a necesitar:  &gt; composer require doctrine/doctrine-bundle &gt; composer require doctrine/orm &gt; composer require symfony/maker-bundle &gt; composer require symfony/security-bundle &gt; composer require symfony/web-profiler-bundle  Hay mas, pero en principio, el resto ya vendran por defecto.  Creamos los archivos necesarios con el maker de symfony.  &gt; bin/console make:controller SecurityController Creamos la entidad Usuario:    &gt; bin/console make:user  Queremos almacenar su informacion en la base de datos [YES].">
+    <meta name="description" content="Quitamos    La tabla roles carece de utilidad ya que finalmente los roles de usuario quedan directamente almacenados en la tabla usuario en formato array.
+Añadimos     Columna roles en la tabla usuario. Columna createdAt en la tabla recetas.  Modificamos    Nomenclatura para algunas columnas para hacerlo mas entendible.">
 
 
 
-    <title>Instrucciones Login | Documentación Recipe-me</title>
+    <title>Cambios | Documentación Recipe-me</title>
 
     <link rel="icon" href="/2020-21-DAW2-M12-Recipe-Me/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -181,7 +182,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-98bea48d" class="gdoc-nav__toggle" checked>
+            <input type="checkbox" id="navtree-98bea48d" class="gdoc-nav__toggle" >
             <label for="navtree-98bea48d" class="flex justify-between">
             
             
@@ -211,7 +212,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-4bff3beb" class="gdoc-nav__toggle" checked>
+            <input type="checkbox" id="navtree-4bff3beb" class="gdoc-nav__toggle" >
             <label for="navtree-4bff3beb" class="flex justify-between">
             
             
@@ -339,7 +340,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/" class="gdoc-nav__entry is-active">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/" class="gdoc-nav__entry ">
                         Instrucciones Login
                     </a>
                 </span>
@@ -1020,7 +1021,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-6e6c58e8" class="gdoc-nav__toggle" checked>
             <label for="navtree-6e6c58e8" class="flex justify-between">
             
             
@@ -1137,7 +1138,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-371986e2" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-371986e2" class="gdoc-nav__toggle" checked>
             <label for="navtree-371986e2" class="flex justify-between">
             
             
@@ -1193,7 +1194,7 @@
             
             
                 <span class="flex">
-                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/" class="gdoc-nav__entry ">
+                    <a href="/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/" class="gdoc-nav__entry is-active">
                         Cambios
                     </a>
                 </span>
@@ -1476,7 +1477,7 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-1/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-1/'><span itemprop='name'>Entrega 1</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/'><span itemprop='name'>Backend</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Instrucciones Login</span><meta itemprop='position' content='5' /></li>
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/' href='/2020-21-DAW2-M12-Recipe-Me/'><span itemprop='name'>Documentación Recipe-me</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/'><span itemprop='name'>Entrega Final</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/' href='/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/'><span itemprop='name'>Base_de_datos</span></a><meta itemprop='position' content='4' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Cambios</span><meta itemprop='position' content='5' /></li>
     
 
     
@@ -1493,70 +1494,34 @@
 
 
     <article class="gdoc-markdown">
-        <h1>Instrucciones Login</h1>
+        <h1>Cambios</h1>
         <div class="gdoc-page__anchorwrap">
-    <h2 id="dependencias">
-        Dependencias:
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/#dependencias" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Dependencias:" href="#dependencias">
+    <h2 id="quitamos">
+        Quitamos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/#quitamos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Quitamos" href="#quitamos">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><ol>
-<li>Añadimos las dependencias que vamos a necesitar:</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&gt;</span> <span class="nx">composer</span> <span class="k">require</span> <span class="nx">doctrine</span><span class="o">/</span><span class="nx">doctrine</span><span class="o">-</span><span class="nx">bundle</span>
-<span class="o">&gt;</span> <span class="nx">composer</span> <span class="k">require</span> <span class="nx">doctrine</span><span class="o">/</span><span class="nx">orm</span>
-<span class="o">&gt;</span> <span class="nx">composer</span> <span class="k">require</span> <span class="nx">symfony</span><span class="o">/</span><span class="nx">maker</span><span class="o">-</span><span class="nx">bundle</span>
-<span class="o">&gt;</span> <span class="nx">composer</span> <span class="k">require</span> <span class="nx">symfony</span><span class="o">/</span><span class="nx">security</span><span class="o">-</span><span class="nx">bundle</span>
-<span class="o">&gt;</span> <span class="nx">composer</span> <span class="k">require</span> <span class="nx">symfony</span><span class="o">/</span><span class="nx">web</span><span class="o">-</span><span class="nx">profiler</span><span class="o">-</span><span class="nx">bundle</span>
-</code></pre></div><ul>
-<li>Hay mas, pero en principio, el resto ya vendran por defecto.</li>
-</ul>
-<ol start="2">
-<li>Creamos los archivos necesarios con el maker de symfony.</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&gt;</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">console</span> <span class="nx">make</span><span class="o">:</span><span class="nx">controller</span> <span class="nx">SecurityController</span>
-</code></pre></div><div class="gdoc-page__anchorwrap">
-    <h2 id="creamos-la-entidad-usuario">
-        Creamos la entidad Usuario:
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/#creamos-la-entidad-usuario" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Creamos la entidad Usuario:" href="#creamos-la-entidad-usuario">
+</div><p>La <strong>tabla roles</strong> carece de utilidad ya que finalmente los roles de usuario quedan directamente almacenados en la <strong>tabla usuario</strong> en formato <code>array</code>.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="añadimos">
+        Añadimos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/#añadimos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Añadimos" href="#a%c3%b1adimos">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&gt;</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">console</span> <span class="nx">make</span><span class="o">:</span><span class="nx">user</span>
-</code></pre></div><ul>
-<li>Queremos almacenar su informacion en la base de datos <strong>[YES]</strong>.</li>
-<li>Symfony se encarga automaticamente de generar el archivo y las rutas. También se encarga de definir las tablas y las columnas de nuestra <strong>BDD</strong>.</li>
+</div><ul>
+<li><strong>Columna roles</strong> en la <strong>tabla usuario</strong>.</li>
+<li><strong>Columna createdAt</strong> en la <strong>tabla recetas</strong>.</li>
 </ul>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="creamos-el-sistema-de-autentificación">
-        Creamos el sistema de autentificación:
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/#creamos-el-sistema-de-autentificación" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Creamos el sistema de autentificación:" href="#creamos-el-sistema-de-autentificaci%c3%b3n">
+    <h2 id="modificamos">
+        Modificamos
+        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-4/base_de_datos/Cambios/#modificamos" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Modificamos" href="#modificamos">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&gt;</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">console</span> <span class="nx">make</span><span class="o">:</span><span class="nx">auth</span> 
-</code></pre></div><ul>
-<li>Respondemos de manera logica a los parametros.</li>
-<li>Le asignamos como controlador la clase <strong>SecurityController</strong> que hemos creado antes.</li>
-<li>Vamos a <strong>./src/Controllers/SecurityController</strong> y podemos cambiar la ruta por defecto.</li>
-</ul>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="archivo-de-configuración">
-        Archivo de configuración:
-        <a data-clipboard-text="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Recipe-Me/entrega-1/backend/LOGIN/#archivo-de-configuración" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Archivo de configuración:" href="#archivo-de-configuraci%c3%b3n">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div><div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">App</span><span class="o">/</span><span class="nx">config</span><span class="o">/</span><span class="nx">packages</span><span class="o">/</span><span class="nx">security</span><span class="o">.</span><span class="nx">yaml</span>
-</code></pre></div><p>En el apartado <strong>encoders</strong> lo configuramos para que use el algoritmo que nosotros queramos.</p>
-<pre><code>security:
-    encoders:
-        App\Entity\User:
-            algorithm: md5
-            encode_as_base64: false
-            iterations: 0
-</code></pre><p>El resto se habrá configurado automáticamente según lo que hemos ido introduciendo en la linea de comandos.</p>
+</div><p>Nomenclatura para algunas columnas para hacerlo mas entendible.</p>
 
 
     </article>
