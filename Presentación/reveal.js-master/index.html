@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
@@ -19,27 +19,73 @@
   <body>
     <div class="reveal">
       <div class="slides">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/1"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Recipe-me!
+            </textarea>
+          </section>
+        </section>
         <section>
-          <section data-markdown>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
             <textarea data-template>
               ## Frontend
               A paragraph with some text and a [link](http://hakim.se).
               ---
               ## Slide 2
               ---
-              ## Slide 3
+              ## Interceptores Axios
             </textarea>
           </section>
         </section>
         <section>
-          <section data-markdown>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/3"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
             <textarea data-template>
               ## Backend
-              A paragraph with some text and a [link](http://hakim.se).
               ---
-              ## Slide 2
+              ## Database
+              <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png" height="600" />
               ---
-              ## Slide 3
+              ## Api Platform
+              [`Symfony require api`](https://api-platform.com/)
+              ```php
+              /**
+              * @ApiResource(
+              *     normalizationContext={"groups"={"user:read"}},
+              *     denormalizationContext={"groups"={"user:write"}},
+              *     collectionOperations={
+              *         "get"={"security"="is_granted('ROLE_ADMIN')"},
+              *         "post"
+              *     },
+              *     itemOperations={
+              *         "get"={"security"="is_granted('ROLE_USER')"},
+              *         "delete"={"security"="is_granted('ROLE_USER') and object == user"}
+              *     }
+              * )
+              * @UniqueEntity(fields={"email"})
+              * @ORM\Entity(repositoryClass=UserRepository::class)
+              */
+              ```
+              ### Swagger
+              ---
+              ## Endpoints
+              [link](#/1/2).
+              ---
+              ## Json Web Token
             </textarea>
           </section>
         </section>
