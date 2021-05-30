@@ -53,7 +53,7 @@
               <img class="r-stretch" src="../../docs-src/static/login.png"/>
               ---
               ## Propuestas de futuro
-              <div class="propuestas">
+              <div class="r-fit-text">
                 
                 <ul>
                 <li>Las listas se ordenarán por likes (los usuarios podrán hacer like a las recetas).</li>
@@ -63,6 +63,7 @@
                <li>El usuario podrá subir su propia foto de perfil editar su información.</li>
                <li>Las recetas tendrán foto propia y podremos ver la persona que la creó.</li>
                <li>Crear comunidad de Recipe-Users.</li>
+               <li>Subir aplicación a servidor</li>
             </ul>
             </div>
               ---
@@ -126,9 +127,9 @@
               ## Frontend
                [React](https://reactjs.org/)
               </textarea>
-            </section>
-            <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
-              <textarea data-template>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
             ## Material utilizado 
 
             - Material-UI
@@ -136,14 +137,14 @@
             - Cookie from Universal-cookie
             
             </textarea>
-            </section>
-              <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
-                <textarea data-template>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
               ## Enrutamiento de la aplicación
               </textarea>
-              </section>
-              <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
-                <textarea data-template>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
               ```js
               export default function Routes() {
                 const classes = useStyles();
@@ -178,21 +179,61 @@
               }
               ```
               </textarea>
-              </section>
-              <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
-                <textarea data-template>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
               ## Interceptores Axios
               [Json web Token](#/1/2).
               </textarea>
-              </section>
+                </section>
             </section>
             <section id="CasosUso">
-              <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
-              <textarea data-template>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
               ## Casos de uso
             </textarea>
-          </section>
-            </section>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
+            ### Eliminar Ingrediente de la lista de la compra
+
+            <div class="r-fit-text">Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente padre (Listas.js)</div>
+					<pre data-id="code-animation" ><code class="hljs" data-trim data-line-numbers>
+            Listas.js
+            actualizarLista = (id) => {
+              const newList = this.state.arrayIngredientes.filter((item) => {
+                return item.id !== id;
+              });
+              this.setState({ arrayIngredientes: newList });
+            };
+
+            TarjetaListaActual.js 
+            const actualizar = props.actualizar;
+            const handleRemove = (id) => {
+              actualizar(id);
+            };
+            <IconButton edge="end" aria-label="comments" onClick={() => {
+                handleRemove(value.id);
+            }}></code></pre>      
+          </textarea>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                  
+                  <textarea data-template>
+                    ### Guardar Lista
+                    <div class="r-fit-text">Botón que hace llamada </div>
+                  <pre data-id="code-animation" ><code class="hljs" data-trim data-line-numbers>
+                    guardarListaCompra = async () => {
+                      var tokenDecoded = jwt_decode(token);
+                      let arraySoloId = this.state.arrayIngredientes.map((i) => i.id);
+                      let jsonPeticion = {
+                        propietario: "api/users/" + tokenDecoded.userId,
+                        name: this.state.nombreLista,
+                        ingredients: arraySoloId,
+                      };
+                    }
+                  </code></pre></textarea>
+                </section>
         </div>
     </div>
 
