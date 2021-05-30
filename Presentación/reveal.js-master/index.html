@@ -112,7 +112,7 @@
               ---
               ## Autenticación y autorización
               - Json Web Token
-              [Interceptores Axios](#/2/2).
+              [Interceptores Axios](#/2/3).
               - PHPSESSID
               
             </textarea>
@@ -129,7 +129,43 @@
               <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
                 <textarea data-template>
               ## Enrutamiento de la aplicación
-             
+              </textarea>
+              </section>
+              <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                <textarea data-template>
+              ```js
+              export default function Routes() {
+                const classes = useStyles();
+                if (!cookie.get("token")) {
+                  return (
+                    <Router>
+                      <Switch>
+                        <Route path="/login" component={SignInSide} />
+                        <Route path="/register" component={SignUpSide} />
+                        <Route component={SignInSide} />
+                      </Switch>
+                    </Router>
+                  );
+                }
+              
+                return (
+                  <Router>
+                    <div className={classes.root}>
+                      <Route path="/" component={Drawer} />
+                      <main className={classes.content}>
+                        <div className={classes.toolbar} />
+                        <Switch>
+                          <Route path="/" exact component={Recetas} />
+                          <Route path="/recetas" component={CrearReceta} />
+                          <Route path="/listas" component={Listas} />
+                          <Route path="/perfil" component={Perfil} />
+                        </Switch>
+                      </main>
+                    </div>
+                  </Router>
+                );
+              }
+              ```
               </textarea>
               </section>
               <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
