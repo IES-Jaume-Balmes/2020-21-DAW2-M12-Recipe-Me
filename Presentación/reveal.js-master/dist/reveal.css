@@ -1903,4 +1903,11 @@ html.print-pdf .aria-status {
     font-size: inherit !important;
     color: inherit !important;
   }
+
+}
+
+.propuestas ul >li{
+    padding-top: 5px;
+    font-size: 0.5em;
+    
 }

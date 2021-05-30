@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>reveal.js</title>
 
@@ -15,18 +13,14 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="reveal">
-      <div class="slides">
-        <section id="Full-Stack">
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/1"
-            data-background-opacity="0.6"
-            data-background-color="white"
-          >
-            <textarea data-template>
+        <div class="slides">
+            <section id="Full-Stack">
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/1" data-background-opacity="0.6" data-background-color="white">
+                    <textarea data-template>
               ## Recipe-me!
               ---
               ## 
@@ -59,6 +53,20 @@
               <img class="r-stretch" src="../../docs-src/static/login.png"/>
               ---
               ## Propuestas de futuro
+              <div class="propuestas">
+                
+                <ul>
+                <li>Las listas se ordenarán por likes (los usuarios podrán hacer like a las recetas).</li>
+               <li>Las recetas tendrán propietario y estos las podrán editar y eliminar.</li>
+               <li>En la lista podrás tachar lo que has añadido a tu compra para hacer una versión 
+              mas realista del post it. </li>
+               <li>El usuario podrá subir su propia foto de perfil editar su información.</li>
+               <li>Las recetas tendrán foto propia y podremos ver la persona que la creó.</li>
+               <li>Crear comunidad de Recipe-Users.</li>
+            </ul>
+            </div>
+              ---
+              ## Reflexión y conclusiones
               ---
               Gracias Recipers!
 
@@ -79,14 +87,9 @@
             ## Backend
             [`Symfony require api`](https://api-platform.com/)
             </textarea>
-          </section>
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/3"
-            data-background-opacity="0.4"
-            data-background-color="white"
-          >
-            <textarea data-template>
+                </section>
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.4" data-background-color="white">
+                    <textarea data-template>
               ## Data access
               ```php
               /**
@@ -113,16 +116,11 @@
               - PHPSESSID
               
             </textarea>
-          </section>
-        </section>
-        <section id="Frontend">
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/2"
-            data-background-opacity="0.6"
-            data-background-color="white"
-          >
-            <textarea data-template>
+                </section>
+            </section>
+            <section id="Frontend">
+                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.6" data-background-color="white">
+                    <textarea data-template>
               ## Frontend
               A paragraph with some text and a [link](http://hakim.se).
               ---
@@ -143,9 +141,9 @@
               
 
             </textarea>
-          </section>
-        </section>
-      </div>
+                </section>
+            </section>
+        </div>
     </div>
 
     <script src="dist/reveal.js"></script>
@@ -153,15 +151,16 @@
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
-        hash: true,
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      })
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        })
     </script>
-  </body>
+</body>
+
 </html>
