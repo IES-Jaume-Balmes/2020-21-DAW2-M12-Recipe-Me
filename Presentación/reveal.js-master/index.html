@@ -129,87 +129,51 @@
             data-background-color="white"
           >
             <textarea data-template>
-            ## Frontend
-            # Aqui debería ir un elemento que ayude a empezar a explicar
-            </textarea>
-          </section>
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/4"
-            data-background-opacity="0.4"
-            data-background-color="white"
-          >
-            <textarea data-template>
-          ## Material utilizado 
-
-          - Material-UI
-          - Router
-          - Cookie from Universal-cookie
-          
-          </textarea
-            >
-          </section>
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/5"
-            data-background-opacity="0.4"
-            data-background-color="white"
-          >
-            <textarea data-template>
-            ## Enrutamiento de la aplicación
-            </textarea>
-          </section>
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/6"
-            data-background-opacity="0.4"
-            data-background-color="white"
-          >
-            <textarea data-template>
-            ```js
-            export default function Routes() {
-              const classes = useStyles();
-              if (!cookie.get("token")) {
+              ## Frontend
+              # Aqui debería ir un elemento que ayude a empezar a explicar
+              ---
+              ## Material utilizado 
+              - Material-UI
+              - Router
+              - Cookie from Universal-cookie
+              ---
+              ## Enrutamiento de la aplicación
+              ```js
+              export default function Routes() {
+                const classes = useStyles();
+                if (!cookie.get("token")) {
+                  return (
+                    <Router>
+                      <Switch>
+                        <Route path="/login" component={SignInSide} />
+                        <Route path="/register" component={SignUpSide} />
+                        <Route component={SignInSide} />
+                      </Switch>
+                    </Router>
+                  );
+                }
+              
                 return (
                   <Router>
-                    <Switch>
-                      <Route path="/login" component={SignInSide} />
-                      <Route path="/register" component={SignUpSide} />
-                      <Route component={SignInSide} />
-                    </Switch>
+                    <div className={classes.root}>
+                      <Route path="/" component={Drawer} />
+                      <main className={classes.content}>
+                        <div className={classes.toolbar} />
+                        <Switch>
+                          <Route path="/" exact component={Recetas} />
+                          <Route path="/recetas" component={CrearReceta} />
+                          <Route path="/listas" component={Listas} />
+                          <Route path="/perfil" component={Perfil} />
+                        </Switch>
+                      </main>
+                    </div>
                   </Router>
                 );
               }
-            
-              return (
-                <Router>
-                  <div className={classes.root}>
-                    <Route path="/" component={Drawer} />
-                    <main className={classes.content}>
-                      <div className={classes.toolbar} />
-                      <Switch>
-                        <Route path="/" exact component={Recetas} />
-                        <Route path="/recetas" component={CrearReceta} />
-                        <Route path="/listas" component={Listas} />
-                        <Route path="/perfil" component={Perfil} />
-                      </Switch>
-                    </main>
-                  </div>
-                </Router>
-              );
-            }
-            ```
-            </textarea>
-          </section>
-          <section
-            data-markdown
-            data-background-image="https://source.unsplash.com/collection/1353633/7"
-            data-background-opacity="0.4"
-            data-background-color="white"
-          >
-            <textarea data-template>
-            ## Interceptores Axios
-            [Json web Token](#/1/2).
+              ```
+              ---
+              ## Interceptores Axios
+              [Json web Token](#/1/2).
             </textarea>
           </section>
         </section>
@@ -271,7 +235,7 @@
         </section>
 
         <!--###### QUINTA COLUMNA ######-->
-        <section id="Full-Stack">
+        <section id="Cierre">
           <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/11"
@@ -281,7 +245,6 @@
             <textarea data-template>
               ## Propuestas de futuro
               <div class="r-fit-text">
-                
                 <ul>
                   <li>Las listas se ordenarán por likes (los usuarios podrán hacer like a las recetas).</li>
                   <li>Las recetas tendrán propietario y estos las podrán editar y eliminar.</li>
