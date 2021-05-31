@@ -555,12 +555,12 @@
               ---
               ### Eliminar Ingrediente de la lista de la compra ❌
               <div class="r-fit-text">
-              Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente padre (Listas.js)
+              Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente de arriba (Listas.js)
               </div>
               ---
               ### Seguimos utilizando el estado de arrayIngredientes del componente Listas.js          
               ---
-              <div class="r-fit-text"> Le pasaremos como Prop al componente hijo esta función para que cuando el usuario clique en el boton le devuelva el id,borre y actualice la lista de ingredientes nueva.</div>
+              <div class="r-fit-text"> Le pasaremos como Prop al componente TarjetaListaActual esta función para que cuando el usuario clique en el boton le devuelva el id,borre y actualice la lista de ingredientes nueva.</div>
 
               <pre data-id="code-animation" >
                 <code class="hljs" data-trim data-line-numbers>
@@ -574,7 +574,7 @@
                 </code></pre>
               ---
 
-                <div class="r-fit-text"> TarjetaListaActual.js le pasa un callbackcon el id del ingrediente que se tiene que borrar.</div>
+                <div class="r-fit-text"> TarjetaListaActual.js le pasa el callback con el id del ingrediente que  tiene que borrar.</div>
               
                 <pre data-id="code-animation" >
                   <code class="hljs" data-trim data-line-numbers> 
@@ -609,7 +609,7 @@
               ### Volver a visualizar una lista guardada 🥕
               Podemos recuperar una lista que hayamos guardado previamente para volver a realizar la compra.
               ---
-              <div class="r-fit-text">Mismo procedimiento que el eliminar, esta vez trabajamos con el componente TarjetaLista.js, Seteamos el estado de la lista que es clicada para recuperar los datos</div>
+              <div class="r-fit-text">Mismo procedimiento que eliminar, esta vez trabajamos con el componente TarjetaLista.js, Seteamos el estado de la lista que es clicada para recuperar los datos</div>
               <pre data-id="code-animation" >
                 <code class="hljs" data-trim data-line-numbers>
                   cargarListaGuardada = (lista) => {
@@ -633,6 +633,7 @@
                   }}
                 </code></pre>
               ---
+              #### Mensaje Whatsapp
                 ![](static/listaWhats.png)
             </textarea>
                 </section>
