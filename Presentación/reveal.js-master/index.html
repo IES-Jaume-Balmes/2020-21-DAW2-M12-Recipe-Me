@@ -31,7 +31,10 @@
           >
             <textarea data-template>
                 ## Recipe-me!
-                **¿Qué problema resuelve Recipe-me?**
+                **¿Qué 3 problemas resuelve Recipe-me?**
+                1. Falta de tiempo <!-- .element: class="fragment fade-in-then-out" -->
+                2. Organización <!-- .element: class="fragment fade-in-then-out" -->
+                3. Optimización <!-- .element: class="fragment fade-in-then-out" -->
                 ---
                 ## Frameworks
                 <img align="left" height="200" src="http://www.chipsypc.com/wp-content/uploads/2010/10/symfony_black_03.png">
@@ -61,6 +64,12 @@
 
         <!--###### BACKEND ######-->
         <section id="Backend">
+          <!-- <section
+            data-background-iframe="http://127.0.0.1:3000/login"
+            data-background-interactive
+          >
+            <h2 style="color: black;">Frontend</h2>
+          </section> -->
           <section
             data-background-iframe="https://127.0.0.1:8000/api"
             data-background-interactive
@@ -90,14 +99,14 @@
                 @UniqueEntity(fields={"email"})
                 @ORM\Entity(repositoryClass=UserRepository::class)
                 ```
-                ---
-                ## Autenticación y autorización
-                - Json Web Token
-                [Interceptores Axios](#/2/3).
-                - PHPSESSID
             </textarea>
           </section>
-          <section>
+          <section
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <h2>Estructuración de carpetas</h2>
             <p class="fragment fade-in-then-out">
               Controller ➡️ Controladores vistas backend
             </p>
@@ -113,15 +122,25 @@
             <p class="fragment fade-in-then-out">
               EventListener ➡️ Constructor de Json Web Token
             </p>
-            <p class="fragment fade-in-then-out">
+            <p class="fragment fade-in">
               Repository ➡️ Constructores para Entidades
             </p>
           </section>
           <section>
+            <h2>Autenticación y autorización</h2>
+            <p>PHPSESSID</p>
             <iframe
-              width="1200"
+              align="left"
+              width="400"
               height="400"
-              src="https://github1s.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me"
+              src="https://localhost:8000"
+            ></iframe>
+            <p>Json Web Token</p>
+            <iframe
+              align="right"
+              width="400"
+              height="400"
+              src="http://localhost:3000"
             ></iframe>
           </section>
         </section>
