@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <title>reveal.js</title>
 
@@ -13,16 +15,21 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="reveal">
-        <div class="slides">
-            <!--###### DESCRIPCION GENERAL / TECNOLOGIAS ######-->
-            <!--###### ARQUITECTURA Y DISEÑO ######-->
-            <section id="Full-Stack">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/1" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>
+      <div class="slides">
+        <!--###### DESCRIPCION GENERAL / TECNOLOGIAS ######-->
+        <!--###### ARQUITECTURA Y DISEÑO ######-->
+        <section id="Full-Stack">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/1"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
                 ## Recipe-me! 🍳
                 **¿Qué 3 problemas resuelve Recipe-me?**
                 1. Falta de tiempo <!-- .element: class="fragment fade-in-then-out" -->
@@ -52,21 +59,17 @@
                 ## Database 🗳️
                 <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png"/>
             </textarea>
-                </section>
-            </section>
+          </section>
+        </section>
 
-            <!--###### BACKEND ######-->
-            <section id="Backend">
+        <!--###### BACKEND ######-->
+        <section id="Backend">
           <!-- <section
             data-background-iframe="http://127.0.0.1:3000/login"
             data-background-interactive
           >
             <h2 style="color: black;">Frontend</h2>
           </section> -->
-                    <h2 style="color: black;">Backend</h2>
-                </section>
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>
           <section
             data-background-iframe="https://127.0.0.1:8000/api"
             data-background-interactive
@@ -97,7 +100,7 @@
                 @ORM\Entity(repositoryClass=UserRepository::class)
                 ```
             </textarea>
-                </section>
+          </section>
           <section
             data-background-image="https://source.unsplash.com/collection/1353633/2"
             data-background-opacity="0.4"
@@ -120,13 +123,15 @@
               EventListener ➡️ Constructor de Json Web Token
             </p>
             <p class="fragment fade-in">
-                        Repository ➡️ Constructores para Entidades
-                    </p>
-                </section>
-                <section>
+              Repository ➡️ Constructores para Entidades
+            </p>
+          </section>
+          <section>
             <h2>Autenticación y autorización</h2>
+            <iframe
               align="left"
               width="400"
+              height="400"
               src="https://localhost:8000"
             ></iframe>
             <iframe
@@ -134,13 +139,29 @@
               width="400"
               height="400"
               src="http://localhost:3000"
-                </section>
-            </section>
+            ></iframe>
+          </section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+                ## Refresco automatico!
+            </textarea>
+          </section>
+        </section>
 
-            <!--###### FRONTEND ######-->
-            <section id="Frontend">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/3" data-background-opacity="0.6" data-background-color="white">
-                    <textarea data-template>
+        <!--###### FRONTEND ######-->
+        <section id="Frontend">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/3"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
               ## Frontend
               ---
               ## Material utilizado 
@@ -190,15 +211,12 @@
                         cookie.set("refresh_token", res.refresh_token, {
                           path: "/",
                         });
-                        // console.log(originalRequest.url);
                         return axiosIntercepted.get(originalRequest.url, {
                           headers: {
                             Authorization: "Bearer " + res.token,
                           },
                         });
                       });
-                    //TODO: Catch para el caso del refresco expirado -> Logout
-                    resolve(response);
                   }
 
                   return Promise.reject(error);
@@ -207,15 +225,19 @@
             );
               ```
             </textarea>
-                </section>
-            </section>
+          </section>
+        </section>
 
-            <!--###### FUNCION LOGIN Y REGISTER ######-->
-            <section id="login">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/4" data-background-opacity="0.4" data-background-color="white">
+        <!--###### FUNCION LOGIN Y REGISTER ######-->
+        <section id="login">
+          <section
+            data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/3"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
           
-                    <textarea data-template>
+            <textarea data-template>
               ## Registro y login 🙋
               ---
               Basado en plantilla de Material UI
@@ -304,17 +326,22 @@
               </div>
               </textarea
             >
-                </section>
+          </section>
           <section
             data-background-iframe="http://localhost:3000/"
             data-background-interactive
           ></section>
-            </section>
+        </section>
 
-            <!--###### FUNCION VISUALIZAR RECETAS ######-->
-            <section id="visualizar-recetas">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/5" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>
+        <!--###### FUNCION VISUALIZAR RECETAS ######-->
+        <section id="visualizar-recetas">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/5"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
               ## Visualizar recetas 📖
               ---
               Todas las recetas se visualizan en la pantalla principal
@@ -345,7 +372,7 @@
               ))}
               ```
             </textarea>
-                </section>
+          </section>
           <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/2"
@@ -416,80 +443,17 @@
             data-background-iframe="http://localhost:3000/"
             data-background-interactive
           ></section>
-            </section>
-
-            <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.6" data-background-color="white">
-                <textarea data-template>
-            ## Buscar receta 🔍
-            ---
-            El usuario gracias al buscador puede buscar una receta.
-            ---
-            El input de busqueda tiene un EventEmmiter
-            ```
-            onChange={(e) => EventEmitter.dispatch("buscar", e.target.value)}
-            ```
-            ---
-            El componente que renderiza las recetas recibe este cambio
-            ```
-            EventEmitter.subscribe("buscar", (event) => {
-              this.mapearBusqueda(event);
-            });
-            ```
-            ---
-            Y mapea el array de recetas para que coincida con la palabra buscada
-            ```
-            mapearBusqueda(palabraABuscar) {
-              let nuevoRecetas = this.state.recetas.filter((elemento) => {
-                return elemento.name.toLowerCase().includes(palabraABuscar);
-              });
-              this.setState({ busquedaRecetas: nuevoRecetas });
-            }
-            ```
-            ---
-            Resultado
-            </textarea
-          >
         </section>
-        <section
-          data-background-iframe="http://localhost:3000/"
-          data-background-interactive
-        ></section>
-        <section
-          data-markdown
-          data-background-image="https://source.unsplash.com/collection/1353633/2"
-          data-background-opacity="0.6"
-          data-background-color="white"
-        >
-          <textarea data-template>
-              ## Crear Receta 👨‍🍳
-              ---
-              El usuario puede crear receta
-              ---
-              Se comprueba que los inputs no estén vacios
-              ```
-              this.state.form.name.length > 0 &&
-              this.state.form.description.length > 0 &&
-              this.state.form.ingredients.length > 0
-              ```
-              ---
-              Se hace una llamada a API para cargar los Ingredientes
-            onClick={()=>setFav(!fav)}
-            onClick={() => setLike(!like)}
-            ```
-            </textarea
+
+        <!--###### FUNCION CREAR RECETAS ######-->
+        <section id="crear-recetas">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/6"
+            data-background-opacity="0.4"
+            data-background-color="white"
           >
-        </section>
-        <section
-          data-background-iframe="http://localhost:3000/"
-          data-background-interactive
-        ></section>
-      </section>
-
-
-            <!--###### FUNCION CREAR RECETAS ######-->
-            <section id="crear-recetas">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/6" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>       
+            <textarea data-template>
               ## Crear Receta 👨‍🍳
               ---
               El usuario puede crear receta
@@ -532,7 +496,7 @@
               ---
               Resultado:
             </textarea>
-            </section>
+          </section>
           <section
             data-background-iframe="http://localhost:3000/"
             data-background-interactive
@@ -645,11 +609,102 @@
                 ]
               }'
               ```
+              ---
+              ### Eliminar Ingrediente de la lista de la compra
+              <div class="r-fit-text">
+              Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente padre (Listas.js)
+              </div>
+              <pre data-id="code-animation" >
+                <code class="hljs" data-trim data-line-numbers>
+                Listas.js
+                actualizarLista = (id) => {
+                  const newList = this.state.arrayIngredientes.filter((item) => {
+                    return item.id !== id;
+                  });
+                  this.setState({ arrayIngredientes: newList });
+                };
 
-            <!--###### FUTURO Y CONCLUSIONES ######-->
-            <section id="Cierre">
-                <section data-markdown data-background-image="https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" data-background-opacity="0.6" data-background-color="white">
-                    <textarea data-template>
+                TarjetaListaActual.js 
+                const actualizar = props.actualizar;
+                const handleRemove = (id) => {
+                  actualizar(id);
+                };
+                <IconButton edge="end" aria-label="comments" onClick={() => {
+                    handleRemove(value.id);
+                }}>
+                </code>
+              </pre>  
+              ---
+              ## Guardar Lista
+              ### Botón que hace llamada
+              <pre data-id="code-animation" >
+                <code class="hljs" data-trim data-line-numbers>
+                guardarListaCompra = async () => {
+                  var tokenDecoded = jwt_decode(token);
+                  let arraySoloId = this.state.arrayIngredientes.map((i) => i.id);
+                  let jsonPeticion = {
+                    propietario: "api/users/" + tokenDecoded.userId,
+                    name: this.state.nombreLista,
+                    ingredients: arraySoloId,
+                  };
+                }
+                </code>
+              </pre>
+            </textarea>
+          </section>
+        </section>
+
+        <!--###### FUNCION CERRAR SESION DARSE DE BAJA ######-->
+        <section id="panel-usuario">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/8"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Panel de usuario
+              ```
+              curl -X 'GET' \
+                -H "Authorization: Bearer {token}" \
+                'https://localhost:8000/api/users/1' \
+              ```
+              ```
+              {
+                "email": "frank@recipeme.com",
+                "name": "frank",
+                "listaCompras": [
+                  {
+                    "id": 9,
+                    "name": "Picnic en F1",
+                    "createdAt": "2021-05-26T14:01:45+00:00",
+                    "ingredients": [
+                      {
+                      "id": 4,
+                      "name": "Aceite de colza"
+                      },
+                      {
+                      "id": 11,
+                      "name": "Aceite de oliva"
+                      }
+                    ]
+                  }
+                ]
+                ```
+
+            </textarea>
+          </section>
+        </section>
+
+        <!--###### FUTURO Y CONCLUSIONES ######-->
+        <section id="Cierre">
+          <section
+            data-markdown
+            data-background-image="https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
               ## Behind the musgo
               ---
               ## Ideas para el futuro
@@ -672,9 +727,9 @@
               ---
               ## Gracias Recipers!
             </textarea>
-                </section>
-            </section>
-        </div>
+          </section>
+        </section>
+      </div>
     </div>
 
     <script src="dist/reveal.js"></script>
@@ -682,15 +737,15 @@
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script>
-        // More info about initialization & config:
-        // - https://revealjs.com/initialization/
-        // - https://revealjs.com/config/
-        Reveal.initialize({
-            hash: true,
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-        })
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      })
     </script>
-</body>
+  </body>
 </html>
