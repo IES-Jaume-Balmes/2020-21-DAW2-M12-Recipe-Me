@@ -30,7 +30,6 @@
           >
             <textarea data-template>
                 ## Recipe-me!
-                # Aqui debería ir un elemento que ayude a empezar a explicar
                 ---
                 ## 
                 **¿Qué problema resuelve Recipe-me?**
@@ -59,12 +58,6 @@
                 ---
                 ## Database
                 <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png"/>
-                ---
-                ## Login
-                <div class="r-stack r-stretch">
-                  <img src="../../docs-src/static/login.png" >
-                  <img class="fragment" src="https://rosolutions.com.mx/blog/wp-content/uploads/2018/11/1_g15QJL_ONdBGAdjgnld3pg.png" >
-                </div>
             </textarea>
           </section>
         </section>
@@ -92,22 +85,18 @@
             <textarea data-template>
                 ## Data access
                 ```php
-                /**
-                * @ApiResource(
-                *     normalizationContext={"groups"={"user:read"}},
-                *     denormalizationContext={"groups"={"user:write"}},
-                *     collectionOperations={
-                *         "get"={"security"="is_granted('ROLE_ADMIN')"},
-                *         "post"
-                *     },
-                *     itemOperations={
-                *         "get"={"security"="is_granted('ROLE_USER')"},
-                *         "delete"={"security"="is_granted('ROLE_USER') and object == user"}
-                *     }
-                * )
-                * @UniqueEntity(fields={"email"})
-                * @ORM\Entity(repositoryClass=UserRepository::class)
-                */
+                @ApiResource(
+                    collectionOperations={
+                        "get"={"security"="is_granted('ROLE_ADMIN')"},
+                        "post"
+                    },
+                    itemOperations={
+                        "get"={"security"="is_granted('ROLE_USER')"},
+                        "delete"={"security"="is_granted('ROLE_USER') and object == user"}
+                    }
+                )
+                @UniqueEntity(fields={"email"})
+                @ORM\Entity(repositoryClass=UserRepository::class)
                 ```
                 ---
                 ## Autenticación y autorización
@@ -130,7 +119,6 @@
           >
             <textarea data-template>
               ## Frontend
-              # Aqui debería ir un elemento que ayude a empezar a explicar
               ---
               ## Material utilizado 
               - Material-UI
@@ -229,6 +217,37 @@
           </section>
         </section>
 
+        <!--###### FUNCION LOGIN ######-->
+        <section id="login">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/9"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Registro y login
+              Registro
+              ```
+              curl -X POST -H "Content-Type: application/json" 
+              https://localhost:8000/api/users 
+              -d '{"email":"frank@recipeme.com","password":"frank"}'
+              ```
+              Login
+              ```
+              curl -X POST -H "Content-Type: application/json" 
+              https://localhost:8000/api/login_check 
+              -d '{"email":"frank@recipeme.com","password":"frank"}'
+              ```
+              ---
+              <div class="r-stack r-stretch">
+                <img src="../../docs-src/static/login.png" >
+                <img class="fragment" src="https://rosolutions.com.mx/blog/wp-content/uploads/2018/11/1_g15QJL_ONdBGAdjgnld3pg.png" >
+              </div>
+            </textarea>
+          </section>
+        </section>
+
         <!--###### CUARTA COLUMNA ######-->
         <section id="CasosUso">
           <section
@@ -239,7 +258,6 @@
           >
             <textarea data-template>
               ## Casos de uso
-              # Aqui debería ir un elemento que ayude a empezar a explicar
               ---
               ### Eliminar Ingrediente de la lista de la compra
               <div class="r-fit-text">
