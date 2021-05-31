@@ -141,6 +141,16 @@
               src="http://localhost:3000"
             ></iframe>
           </section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+                ## Refresco automatico!
+            </textarea>
+          </section>
         </section>
 
         <!--###### FRONTEND ######-->
@@ -231,15 +241,12 @@
                         cookie.set("refresh_token", res.refresh_token, {
                           path: "/",
                         });
-                        // console.log(originalRequest.url);
                         return axiosIntercepted.get(originalRequest.url, {
                           headers: {
                             Authorization: "Bearer " + res.token,
                           },
                         });
                       });
-                    //TODO: Catch para el caso del refresco expirado -> Logout
-                    resolve(response);
                   }
 
                   return Promise.reject(error);
