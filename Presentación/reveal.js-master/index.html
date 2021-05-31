@@ -271,6 +271,10 @@
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/5" data-background-opacity="0.4" data-background-color="white">
                     <textarea data-template>
               ## Visualizar recetas
+              ---
+              Todas las recetas se visualizan en la pantalla principal
+              ---
+              Hacemos una petición a la petición API
               ```
               curl -X 'GET' \
                 -H "Authorization: Bearer {token}" \
@@ -280,20 +284,121 @@
               ```
               eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImN0eSI6IkpXVCJ9.eyJpYXQiOjE2MjE5NzQzNDYsImV4cCI6MTYyMTk3NDM3Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImZyYW5rQHJlY2lwZW1lLmNvbSIsInVzZXJJZCI6MX0.kIQIbpbOCUeHyZlpIEMGxwQT0RQTT30-XX8zyvpsnh2A6gPluVvppigRJXE4GDUn6x0rcKXgdnglhXfxxXr1EgeyVvlnI84xKfErRVah514D3fbJto9w239CfDKJ59kbZ7aEnyDD4KrEbwWWsNU4Gxy1On9bzUrymedNI_h56m9HUcFsBgCeK9Z_b7hkSa6BWaTlzkXCpqT3oNRTNcY7ptXykcF0tz1ib_adPoxTMHi0ArWly8LfY8YuU1K_QPW9eBrGqp3Yxtr_zneoVEq3wDJb4DpEV8wWz5r6Q0ue4pDW5OUQI6LvQeGi9BnyInChb64IilbysESLBXNEVun6vA
               ```
+              ---
+              La API devuelve la lista de recetas, que se guarda en dos variables de estado
+              ```
+              this.setState({ recetas: response.data["hydra:member"] });
+              this.setState({ busquedaRecetas: response.data["hydra:member"] });
+              ```
+              ---
+              Una de estás variables tendrá toda las recetas y otra guardará la busqueda de recetas
+              ---
+              Al no haber ninguna busqueda la lista completa será mapeada y pasada al componente RecipeCard,js para ser rederizada
+              ```
+              {this.state.busquedaRecetas.map((element) => (
+                <RecipeCard key={element["@id"]} receta={element} />
+              ))}
+              ```
             </textarea>
                 </section>
             </section>
 
+            <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.6" data-background-color="white">
+                <textarea data-template>
+            ## Buscar receta 🔍
+            ---
+            El usuario gracias al buscador puede buscar una receta.
+            ---
+            El input de busqueda tiene un EventEmmiter
+            ```
+            onChange={(e) => EventEmitter.dispatch("buscar", e.target.value)}
+            ```
+            ---
+            El componente que renderiza las recetas recibe este cambio
+            ```
+            EventEmitter.subscribe("buscar", (event) => {
+              this.mapearBusqueda(event);
+            });
+            ```
+            ---
+            Y mapea el array de recetas para que coincida con la palabra buscada
+            ```
+            mapearBusqueda(palabraABuscar) {
+              let nuevoRecetas = this.state.recetas.filter((elemento) => {
+                return elemento.name.toLowerCase().includes(palabraABuscar);
+              });
+              this.setState({ busquedaRecetas: nuevoRecetas });
+            }
+            ```
+            ---
+            Resultado
+            </textarea
+          >
+        </section>
+        <section
+          data-background-iframe="http://localhost:3000/"
+          data-background-interactive
+        ></section>
+        <section
+          data-markdown
+          data-background-image="https://source.unsplash.com/collection/1353633/2"
+          data-background-opacity="0.6"
+          data-background-color="white"
+        >
+          <textarea data-template>
+            ## Dar like/favorito a una receta 🌟
+            ---
+            El usuario puede dar like y poner en favorito
+            ---
+            Utilizamos dos variables de estado
+            ```js
+            const [like, setLike] = useState(false);
+            const [fav, setFav] = useState(false);
+            ```
+            ---
+            El usuario cambia el valor de estas variables
+            ```js
+            onClick={()=>setFav(!fav)}
+            onClick={() => setLike(!like)}
+            ```
+            </textarea
+          >
+        </section>
+        <section
+          data-background-iframe="http://localhost:3000/"
+          data-background-interactive
+        ></section>
+      </section>
+
+
             <!--###### FUNCION CREAR RECETAS ######-->
             <section id="crear-recetas">
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/6" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>
-              ## Crear Recetas
+                    <textarea data-template>       
+              ## Crear Receta 👨‍🍳
+              ---
+              El usuario puede crear receta
+              ---
+              Se comprueba que los inputs no estén vacios
+              ```
+              this.state.form.name.length > 0 &&
+              this.state.form.description.length > 0 &&
+              this.state.form.ingredients.length > 0
+              ```
+              ---
+              Se hace una llamada a API para cargar los Ingredientes
               ```
               curl -X 'GET' \
                 -H "Authorization: Bearer {token}" \
                 'https://localhost:8000/api/ingredients' \
               ```
+              ---
+              Se guarda la lista de ingredientes (1000)
+              ```
+              this.setState({ ingredientsOption: response.data["hydra:member"] });
+              ```
+              ---
+              Se envia la petición a la API
               ```
               curl -X 'POST' \
                 'https://localhost:8000/api/recipes' \
@@ -309,15 +414,107 @@
                 ]
               }'
               ```
+              ---
+              Resultado:
             </textarea>
-                </section>
+            </section>
+            <section
+            data-background-iframe="http://localhost:3000/"
+            data-background-interactive
+          ></section>
             </section>
 
-            <!--###### FUNCION CREAR LISTAS ######-->
-            <section id="crear-listas">
-                <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/7" data-background-opacity="0.4" data-background-color="white">
-                    <textarea data-template>
-              ## Crear Listas
+        <!--###### FUNCION CREAR LISTAS ######-->
+        <section id="crear-listas">
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/3"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Añadir ingrediente a la lista 🍖🍅
+              ---
+              El usuario puede añadir ingredienes a la lista desde las recetas
+              ---
+              Al cliclar en el carrito se recogen los ingredientes de la receta
+              ```js
+              onClick={() => {
+                anadirLista(receta.ingredients);
+              }}
+              ```
+              ---
+              Se crear una cookie para guardar la Lista
+              ```js
+              const cookie = new Cookie();
+              ```
+              ---
+              Si la cookie ya existe se cargan los ingredientes
+              ```js
+              if (cookie.get("ingredientes")) {
+                ingres = cookie.get("ingredientes");
+              }
+              ```
+              ---
+              Por cada ingrediente se crea un objeto
+              ```js
+              lista.forEach((i) => {
+                ingres.push({
+                  id: i["@id"],
+                  name: i.name,
+                });
+              ```
+              ---
+              Se filtra que no se repitan los ingredientes
+              ```js
+              let otro = ingres.filter((obj) => {
+                if (noRepes.includes(obj.id)) {
+                  return false;
+                }
+                noRepes.push(obj.id);
+                return true;
+              });
+              ```
+              ---
+              Finalmente guardamos la cookie
+              ```js
+              cookie.set("ingredientes", otro, { path: "/" });
+              ```
+              ---
+              El componente Lista.js carga la cookie de ingredientes
+              ```js
+              let arrayIngres = cookie.get("ingredientes");
+              ```
+              ---
+              Los ingredientes se carga en una variable de estado
+              ```js
+              state = {
+                arrayIngredientes: arrayIngres,
+              };
+              ```
+              ---
+              Esta variable se le pasa al componente como parametro
+              ```js
+              arrayIngres={this.state.arrayIngredientes} 
+              ```
+              ---
+              Resultado
+
+              </textarea
+            >
+          </section>
+          <section
+            data-background-iframe="http://localhost:3000/"
+            data-background-interactive
+          ></section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/7"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Crear Listas 🖊️
               ```
               curl -X 'POST' \
                 'https://localhost:8000/api/lista_compras' \
