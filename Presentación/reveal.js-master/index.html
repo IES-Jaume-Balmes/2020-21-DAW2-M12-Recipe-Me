@@ -23,14 +23,17 @@
             <section id="Full-Stack">
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/1" data-background-opacity="0.4" data-background-color="white">
                     <textarea data-template>
-                ## Recipe-me!
-                **¿Qué problema resuelve Recipe-me?**
+                ## Recipe-me! 🍳
+                **¿Qué 3 problemas resuelve Recipe-me?**
+                1. Falta de tiempo <!-- .element: class="fragment fade-in-then-out" -->
+                2. Organización <!-- .element: class="fragment fade-in-then-out" -->
+                3. Optimización <!-- .element: class="fragment fade-in-then-out" -->
                 ---
-                ## Frameworks
+                ## Frameworks 🧰
                 <img align="left" height="200" src="http://www.chipsypc.com/wp-content/uploads/2010/10/symfony_black_03.png">
                 <img align="right" height="200" src="https://wpintegrate.com/wp-content/uploads/2017/07/react-logo.png">
                 ---
-                ## Herramientas
+                ## Herramientas 🧰
                 <img style="margin:1em" height="125" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/800px-Npm-logo.svg.png">
                 <img style="margin:1em" height="125" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-composer-transparent.png">
                 <img style="margin:1em" height="125" src="https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png">
@@ -40,13 +43,13 @@
                 <img style="margin:1em" height="125" src="https://image.flaticon.com/icons/png/512/25/25231.png">  
                       
                 ---
-                ## Arquitectura
+                ## Arquitectura 🏢
                 <div class="r-stack">
                   <img  src="../../docs-src/static/Arquitectura.jpeg" >
                   <img class="fragment" src="../../docs-src/static/Arquitectura2.png" >
                 </div>
                 ---
-                ## Database
+                ## Database 🗳️
                 <img class="r-stretch" src="../../docs-src/static/BBDDfinal.png"/>
             </textarea>
                 </section>
@@ -54,11 +57,29 @@
 
             <!--###### BACKEND ######-->
             <section id="Backend">
-                <section data-background-iframe="https://127.0.0.1:8000/api" data-background-interactive>
+          <!-- <section
+            data-background-iframe="http://127.0.0.1:3000/login"
+            data-background-interactive
+          >
+            <h2 style="color: black;">Frontend</h2>
+          </section> -->
                     <h2 style="color: black;">Backend</h2>
                 </section>
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.4" data-background-color="white">
                     <textarea data-template>
+          <section
+            data-background-iframe="https://127.0.0.1:8000/api"
+            data-background-interactive
+          >
+            <h2 style="color: black;">Backend</h2>
+          </section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <textarea data-template>
                 ## Data access
                 Ejemplo entidad Usuario
                 ```php
@@ -75,35 +96,44 @@
                 @UniqueEntity(fields={"email"})
                 @ORM\Entity(repositoryClass=UserRepository::class)
                 ```
-                ---
-                ## Autenticación y autorización
-                - Json Web Token
-                [Interceptores Axios](#/2/3).
-                - PHPSESSID
             </textarea>
                 </section>
-                <section>
-                    <p class="fragment fade-in-then-out">
-                        Controller ➡️ Controladores vistas backend
-                    </p>
-                    <p class="fragment fade-in-then-out">
-                        DataFixtures ➡️ Cargadores datos de prueba
-                    </p>
-                    <p class="fragment fade-in-then-out">
-                        DataPersister ➡️ Encriptador password usuario
-                    </p>
-                    <p class="fragment fade-in-then-out">
-                        Entity ➡️ Entidades para crear esquemas BDD y API
-                    </p>
-                    <p class="fragment fade-in-then-out">
-                        EventListener ➡️ Constructor de Json Web Token
-                    </p>
-                    <p class="fragment fade-in-then-out">
+          <section
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.4"
+            data-background-color="white"
+          >
+            <h2>Estructuración de carpetas</h2>
+            <p class="fragment fade-in-then-out">
+              Controller ➡️ Controladores vistas backend
+            </p>
+            <p class="fragment fade-in-then-out">
+              DataFixtures ➡️ Cargadores datos de prueba
+            </p>
+            <p class="fragment fade-in-then-out">
+              DataPersister ➡️ Encriptador password usuario
+            </p>
+            <p class="fragment fade-in-then-out">
+              Entity ➡️ Entidades para crear esquemas BDD y API
+            </p>
+            <p class="fragment fade-in-then-out">
+              EventListener ➡️ Constructor de Json Web Token
+            </p>
+            <p class="fragment fade-in">
                         Repository ➡️ Constructores para Entidades
                     </p>
                 </section>
                 <section>
-                    <iframe width="1200" height="400" src="https://github1s.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Recipe-Me"></iframe>
+            <h2>Autenticación y autorización</h2>
+              align="left"
+              width="400"
+              src="https://localhost:8000"
+            ></iframe>
+            <iframe
+              align="right"
+              width="400"
+              height="400"
+              src="http://localhost:3000"
                 </section>
             </section>
 
@@ -117,41 +147,11 @@
               - Material-UI
               - Router
               - Cookie from Universal-cookie
+              - Axios
+              - EventEmitter
               ---
               ## Enrutamiento de la aplicación
-              ```js
-              export default function Routes() {
-                const classes = useStyles();
-                if (!cookie.get("token")) {
-                  return (
-                    <Router>
-                      <Switch>
-                        <Route path="/login" component={SignInSide} />
-                        <Route path="/register" component={SignUpSide} />
-                        <Route component={SignInSide} />
-                      </Switch>
-                    </Router>
-                  );
-                }
-              
-                return (
-                  <Router>
-                    <div className={classes.root}>
-                      <Route path="/" component={Drawer} />
-                      <main className={classes.content}>
-                        <div className={classes.toolbar} />
-                        <Switch>
-                          <Route path="/" exact component={Recetas} />
-                          <Route path="/recetas" component={CrearReceta} />
-                          <Route path="/listas" component={Listas} />
-                          <Route path="/perfil" component={Perfil} />
-                        </Switch>
-                      </main>
-                    </div>
-                  </Router>
-                );
-              }
-              ```
+              ![](static/frontend.png)
               ---
               ## Interceptores Axios
               [Json web Token](#/1/2).
@@ -213,9 +213,29 @@
             <!--###### FUNCION LOGIN Y REGISTER ######-->
             <section id="login">
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/4" data-background-opacity="0.4" data-background-color="white">
+            data-background-image="https://source.unsplash.com/collection/1353633/3"
+          
                     <textarea data-template>
-              ## Registro y login
+              ## Registro y login 🙋
+              ---
+              Basado en plantilla de Material UI
+
+              ![](static/template_register.png)
+              ---
+              Validado sin librerias
+              ```js
+              const comprobarPass = (pass) => {
+                const regexPass =
+                  /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+                if (!regexPass.test(pass)) {
+                  return setErrorPass(true);
+                }
+                return setErrorPass(false);
+              };
+              ```
+              ---
               Registro
+              
               ```
               curl -X POST -H "Content-Type: application/json" 
               https://localhost:8000/api/users 
@@ -258,19 +278,44 @@
               }
               ```
               ---
+              Redireccionado al Login.
+              ```
+              await axios
+              .post(baseUrl, jsonPeticion)
+              .then((response) => {
+                console.log(response.data);
+                window.location.href = "./login";
+              })
+              ```
+              ---
+              Inicio de sesión guardado en una cookie
+              ```js
+              if (response.status === 200) {
+                cookie.set("token", response.data.token, { path: "/" });
+                cookie.set("refresh_token", response.data.refresh_token, {
+                  path: "/",
+                });
+                window.location.href = "./";
+              ```
+              ---
               <div class="r-stack r-stretch">
                 <img src="../../docs-src/static/login.png" >
                 <img class="fragment" src="https://rosolutions.com.mx/blog/wp-content/uploads/2018/11/1_g15QJL_ONdBGAdjgnld3pg.png" >
               </div>
-            </textarea>
+              </textarea
+            >
                 </section>
+          <section
+            data-background-iframe="http://localhost:3000/"
+            data-background-interactive
+          ></section>
             </section>
 
             <!--###### FUNCION VISUALIZAR RECETAS ######-->
             <section id="visualizar-recetas">
                 <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/5" data-background-opacity="0.4" data-background-color="white">
                     <textarea data-template>
-              ## Visualizar recetas
+              ## Visualizar recetas 📖
               ---
               Todas las recetas se visualizan en la pantalla principal
               ---
@@ -301,6 +346,76 @@
               ```
             </textarea>
                 </section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Buscar receta 🔍
+              ---
+              El usuario gracias al buscador puede buscar una receta.
+              ---
+              El input de busqueda tiene un EventEmmiter
+              ```
+              onChange={(e) => EventEmitter.dispatch("buscar", e.target.value)}
+              ```
+              ---
+              El componente que renderiza las recetas recibe este cambio
+              ```
+              EventEmitter.subscribe("buscar", (event) => {
+                this.mapearBusqueda(event);
+              });
+              ```
+              ---
+              Y mapea el array de recetas para que coincida con la palabra buscada
+              ```
+              mapearBusqueda(palabraABuscar) {
+                let nuevoRecetas = this.state.recetas.filter((elemento) => {
+                  return elemento.name.toLowerCase().includes(palabraABuscar);
+                });
+                this.setState({ busquedaRecetas: nuevoRecetas });
+              }
+              ```
+              ---
+              Resultado
+              </textarea
+            >
+          </section>
+          <section
+            data-background-iframe="http://localhost:3000/"
+            data-background-interactive
+          ></section>
+          <section
+            data-markdown
+            data-background-image="https://source.unsplash.com/collection/1353633/2"
+            data-background-opacity="0.6"
+            data-background-color="white"
+          >
+            <textarea data-template>
+              ## Dar like/favorito a una receta 🌟
+              ---
+              El usuario puede dar like y poner en favorito
+              ---
+              Utilizamos dos variables de estado
+              ```js
+              const [like, setLike] = useState(false);
+              const [fav, setFav] = useState(false);
+              ```
+              ---
+              El usuario cambia el valor de estas variables
+              ```js
+              onClick={()=>setFav(!fav)}
+              onClick={() => setLike(!like)}
+              ```
+              </textarea
+            >
+          </section>
+          <section
+            data-background-iframe="http://localhost:3000/"
+            data-background-interactive
+          ></section>
             </section>
 
             <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/2" data-background-opacity="0.6" data-background-color="white">
@@ -346,18 +461,18 @@
           data-background-color="white"
         >
           <textarea data-template>
-            ## Dar like/favorito a una receta 🌟
-            ---
-            El usuario puede dar like y poner en favorito
-            ---
-            Utilizamos dos variables de estado
-            ```js
-            const [like, setLike] = useState(false);
-            const [fav, setFav] = useState(false);
-            ```
-            ---
-            El usuario cambia el valor de estas variables
-            ```js
+              ## Crear Receta 👨‍🍳
+              ---
+              El usuario puede crear receta
+              ---
+              Se comprueba que los inputs no estén vacios
+              ```
+              this.state.form.name.length > 0 &&
+              this.state.form.description.length > 0 &&
+              this.state.form.ingredients.length > 0
+              ```
+              ---
+              Se hace una llamada a API para cargar los Ingredientes
             onClick={()=>setFav(!fav)}
             onClick={() => setLike(!like)}
             ```
@@ -418,11 +533,11 @@
               Resultado:
             </textarea>
             </section>
-            <section
+          <section
             data-background-iframe="http://localhost:3000/"
             data-background-interactive
           ></section>
-            </section>
+        </section>
 
         <!--###### FUNCION CREAR LISTAS ######-->
         <section id="crear-listas">
