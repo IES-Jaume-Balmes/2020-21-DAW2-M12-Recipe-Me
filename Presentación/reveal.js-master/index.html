@@ -557,6 +557,11 @@
               <div class="r-fit-text">
               Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente padre (Listas.js)
               </div>
+              ---
+              ### Seguimos utilizando el estado de arrayIngredientes del componente Listas.js          
+              ---
+              <div class="r-fit-text"> Le pasaremos como Prop al componente hijo esta función para que cuando el usuario clique en el boton le devuelva el id,borre y actualice la lista de ingredientes nueva.</div>
+
               <pre data-id="code-animation" >
                 <code class="hljs" data-trim data-line-numbers>
                 Listas.js
@@ -566,20 +571,27 @@
                   });
                   this.setState({ arrayIngredientes: newList });
                 };
+                </code></pre>
+              ---
 
-                TarjetaListaActual.js 
+                <div class="r-fit-text"> TarjetaListaActual.js le pasa un callbackcon el id del ingrediente que se tiene que borrar.</div>
+              
+                <pre data-id="code-animation" >
+                  <code class="hljs" data-trim data-line-numbers> 
                 const actualizar = props.actualizar;
                 const handleRemove = (id) => {
                   actualizar(id);
                 };
-                <IconButton edge="end" aria-label="comments" onClick={() => {
+                <IconButton onClick={ () => {
                     handleRemove(value.id);
                 }}>
                 </code>
               </pre>  
               ---
               ## Guardar Lista 📓
-              ### Botón que hace llamada
+              ### Daremos nombre a nuestra lista primero de todo.
+
+              #### Botón que hace llamada (Estructura que mandamos a la Api)
               <pre data-id="code-animation" >
                 <code class="hljs" data-trim data-line-numbers>
                 guardarListaCompra = async () => {
@@ -595,16 +607,14 @@
               </pre>
               ---
               ### Volver a visualizar una lista guardada 🥕
-              Podemos recuperar una lista que hayamos guardado previamente para volverla a utilizar
+              Podemos recuperar una lista que hayamos guardado previamente para volver a realizar la compra.
               ---
+              <div class="r-fit-text">Mismo procedimiento que el eliminar, esta vez trabajamos con el componente TarjetaLista.js, Seteamos el estado de la lista que es clicada para recuperar los datos</div>
               <pre data-id="code-animation" >
                 <code class="hljs" data-trim data-line-numbers>
                   cargarListaGuardada = (lista) => {
-                    console.log(this.state.arrayIngredientes);
-                    console.log(lista);
                     this.setState({ nombreLista: lista.name });
                     this.setState({ arrayIngredientes: lista.ingredients });
-                    console.log(lista.ingredients);
                   };
                 </code></pre>
               ---
@@ -622,10 +632,12 @@
                     navigator.clipboard.writeText(texto);
                   }}
                 </code></pre>
+              ---
+                ![](static/listaWhats.png)
             </textarea>
                 </section>
             </section>
-            
+
             <!--###### FUNCION CERRAR SESION DARSE DE BAJA ######-->
             <section id="panel-usuario">
               <section data-markdown data-background-image="https://source.unsplash.com/collection/1353633/8" data-background-opacity="0.4" data-background-color="white">
@@ -679,6 +691,11 @@
 
             Muy a nuestro pesar el usuario tendrá la opción de darse de baja...
             ---
+            Esta diseñado para que no apetezca dejarnos nunca...
+
+            <img data-src="./static/yes.gif">
+            ---
+            ### En caso contrario avisamos a la Api que el usuario ya no quiere continuar...
             <pre data-id="code-animation"  >
               <code class="hljs" data-trim data-line-numbers>
                 handleCloseByeBye = async () => {
