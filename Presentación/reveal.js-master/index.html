@@ -283,10 +283,6 @@
               </textarea
             >
           </section>
-          <section
-            data-background-iframe="http://localhost:3000/"
-            data-background-interactive
-          ></section>
         </section>
 
         <!--###### FUNCION VISUALIZAR RECETAS ######-->
@@ -321,7 +317,7 @@
               ---
               Una de estás variables tendrá toda las recetas y otra guardará la busqueda de recetas
               ---
-              Al no haber ninguna busqueda la lista completa será mapeada y pasada al componente RecipeCard,js para ser rederizada
+              Al no haber ninguna busqueda la lista completa será mapeada y pasada al componente RecipeCard,js para ser renderizada
               ```
               {this.state.busquedaRecetas.map((element) => (
                 <RecipeCard key={element["@id"]} receta={element} />
@@ -362,10 +358,6 @@
             >
           </section>
           <section
-            data-background-iframe="http://localhost:3000/"
-            data-background-interactive
-          ></section>
-          <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/2"
             data-background-opacity="0.6"
@@ -390,10 +382,6 @@
               </textarea
             >
           </section>
-          <section
-            data-background-iframe="http://localhost:3000/"
-            data-background-interactive
-          ></section>
         </section>
 
         <!--###### FUNCION CREAR RECETAS ######-->
@@ -448,7 +436,6 @@
               Resultado:
             </textarea>
                 </section>
-                <section data-background-iframe="http://localhost:3000/" data-background-interactive></section>
             </section>
 
             <!--###### FUNCION CREAR LISTAS ######-->
@@ -526,33 +513,12 @@
             >
           </section>
           <section
-            data-background-iframe="http://localhost:3000/"
-            data-background-interactive
-          ></section>
-          <section
             data-markdown
             data-background-image="https://source.unsplash.com/collection/1353633/7"
             data-background-opacity="0.4"
             data-background-color="white"
           >
             <textarea data-template>
-              ## Crear Listas 🖊️
-              ```
-              curl -X 'POST' \
-                'https://localhost:8000/api/lista_compras' \
-                -H 'accept: application/ld+json' \
-                -H 'Content-Type: application/ld+json' \
-                -H "Authorization: Bearer {token}" \
-                -d '{
-                "propietario": "api/users/3",
-                "name": "Cena de navidad",
-                "ingredients": [
-                  "api/ingredients/2",
-                  "api/ingredients/3"
-                ]
-              }'
-              ```
-              ---
               ### Eliminar Ingrediente de la lista de la compra ❌
               <div class="r-fit-text">
               Esta función se encuentra en el componente TarjetaListaActual el cual recibe información del componente de arriba (Listas.js)
@@ -587,6 +553,23 @@
                 }}>
                 </code>
               </pre>  
+              ---
+              ## Crear Listas 🖊️
+              ```
+              curl -X 'POST' \
+                'https://localhost:8000/api/lista_compras' \
+                -H 'accept: application/ld+json' \
+                -H 'Content-Type: application/ld+json' \
+                -H "Authorization: Bearer {token}" \
+                -d '{
+                "propietario": "api/users/3",
+                "name": "Cena de navidad",
+                "ingredients": [
+                  "api/ingredients/2",
+                  "api/ingredients/3"
+                ]
+              }'
+              ```
               ---
               ## Guardar Lista 📓
               ### Daremos nombre a nuestra lista primero de todo.
